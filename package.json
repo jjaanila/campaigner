@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config webpack.base.config.js",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.base.config.js"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress"
   },
   "dependencies": {
     "html-webpack-plugin": "^5.5.0",
@@ -34,6 +34,7 @@
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
     "sass-loader": "^12.4.0",
+    "url-loader": "^4.1.1",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.4.4",
     "webpack": "^5.67.0",
