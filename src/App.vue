@@ -1,18 +1,16 @@
 <template>
-  <main>
-    Hello
-  </main>
+  <main>Hello</main>
 </template>
 
 <script>
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
-    };
-  }
-};
+      msg: 'Welcome to Your Vue.js App',
+    }
+  },
+}
 </script>
 
 <style lang="scss">
