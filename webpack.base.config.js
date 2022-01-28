@@ -1,96 +1,104 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const InlineChunkHtmlPlugin = require("react-dev-utils/InlineChunkHtmlPlugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
-module.exports = {
-  entry: "./src/main.js",
-  output: {
-    path: path.resolve(__dirname, "./dist"),
-    publicPath: "/dist/",
-    filename: "build.js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["vue-style-loader", "css-loader"]
-      },
-      {
-        test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.sass$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader?indentedSyntax"]
-      },
-      {
-        test: /\.vue$/,
-        loader: "vue-loader",
-        options: {
-          loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            scss: ["vue-style-loader", "css-loader", "sass-loader"],
-            sass: [
-              "vue-style-loader",
-              "css-loader",
-              "sass-loader?indentedSyntax"
-            ]
-          }
-          // other vue-loader options go here
-        }
-      },
-      {
-        test: /\.js$/,
-        loader: "babel-loader",
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]?[hash]"
-        }
-      }
-    ]
-  },
-  resolve: {
-    alias: {
-      vue$: "vue/dist/vue.esm.js"
+module.exports = function(env, argv) {
+  const { mode } = argv;
+  const isProduction = mode === "production";
+  return {
+    entry: "./src/main.js",
+    output: {
+      path: path.resolve(__dirname, "./dist"),
+      publicPath: ""
     },
-    extensions: ["*", ".js", ".vue", ".json"]
-  },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    overlay: true
-  },
-  performance: {
-    hints: false
-  },
-  devtool: "#eval-source-map"
+    module: {
+      rules: [
+        { test: /\.pug$/, loader: "pug-loader" },
+        {
+          test: /\.css$/,
+          use: ["vue-style-loader", "css-loader"]
+        },
+        {
+          test: /\.scss$/,
+          use: ["vue-style-loader", "css-loader", "sass-loader"]
+        },
+        {
+          test: /\.sass$/,
+          use: ["vue-style-loader", "css-loader", "sass-loader?indentedSyntax"]
+        },
+        {
+          test: /\.vue$/,
+          loader: "vue-loader",
+          options: {
+            loaders: {
+              // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
+              // the "scss" and "sass" values for the lang attribute to the right configs here.
+              // other preprocessors should work out of the box, no loader config like this necessary.
+              scss: ["vue-style-loader", "css-loader", "sass-loader"],
+              sass: [
+                "vue-style-loader",
+                "css-loader",
+                "sass-loader?indentedSyntax"
+              ]
+            }
+            // other vue-loader options go here
+          }
+        },
+        {
+          test: /\.js$/,
+          loader: "babel-loader",
+          exclude: /node_modules/
+        },
+        {
+          test: /\.(png|jpg|gif|svg)$/,
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]?[hash]"
+          }
+        }
+      ]
+    },
+    resolve: {
+      alias: {
+        vue$: "vue/dist/vue.esm.js"
+      },
+      extensions: ["*", ".js", ".vue", ".json"]
+    },
+    devServer: {
+      historyApiFallback: true,
+      hot: true
+    },
+    performance: {
+      hints: false
+    },
+    devtool: isProduction ? "source-map" : "eval-cheap-source-map",
+    plugins: [
+      new VueLoaderPlugin(),
+      new HtmlWebpackPlugin({
+        inject: false,
+        cache: false,
+        template: "./templates/index.pug",
+        filename: "index.html",
+        title: "inline"
+      })
+    ],
+    optimization: isProduction
+      ? {
+          minimize: true,
+          minimizer: [
+            new TerserPlugin({
+              terserOptions: {
+                compress: { warnings: true, comparisons: false },
+                mangle: { safari10: true },
+                output: { ascii_only: true },
+                safari10: true
+              },
+              parallel: true
+            }),
+            new CssMinimizerPlugin()
+          ]
+        }
+      : {}
+  };
 };
-
-if (process.env.NODE_ENV === "production") {
-  module.exports.devtool = "#source-map";
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    // Inlines chunks with `runtime` in the name
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ]);
-}
