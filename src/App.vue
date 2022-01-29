@@ -458,55 +458,56 @@
 
       <chapter-title name="Ukko's Fingers" />
       <section-title name="The Mad Chief" />
-      \DndArea{Ukko's Fist (Ukonnyrkki) settlement} Ukko's Fist is a settlement north of Bluebill's Nest. A small castle
-      and few tens of log houses are surrounded by a crude wooden wall. Fields surround the keep and most of the
-      citizens have housing in the safety of settlement walls. Majority of the citizens are farmers but few crafts, like
-      weaving and woodcrafting are also practiced. Farming of barley is however the main source of income. Ukko's Fist
-      is led by \pagelink{npc:chiefIkaheimo}{Chief Ikäheimo}, who has ruled the settlement well in the past. During the
-      last months his actions have seemed unpredictable. He has increased the amount of combat training of citizens
-      significantly so they have very little time after farming and training duties. He also started selling majority of
-      their produced barley to a forestry group and rumours tell that the price was lower than what the Sword cities
-      were paying. He is being mind controlled by Joukahainen with a gem on his golden ring which he fiddles with when
-      he is being forced to a decision. He received the ring as an anonymous gift. \DndSubArea{Keep} The keep in the
-      center of the settlement is the home of Chief Ikäheimo and his wife \pagelink{npc:commoner}{Tarjanne}. The keep
-      has two floors above the ground and a dungeon floor for prisoners. On the ground floor there are the main hall,
-      kitchen, arms storage and two smaller bedrooms for guests or house staff. On the top floor, there are the main bed
-      room, a reading room and two more bed rooms for house staff. In the dungeon are few cells with just one prisoner
-      witch Autere. \paragraph{\pagelink{npc:autere}{Witch Autere}} She is an old black haired elf lady who lived in
-      Ukko's Fist. She was publicly accepted healer whose "experiments" with old magics got the blind eye of the
-      village. However, a half a year ago she was thrown into jail for "crossing the line" but the reason wasn't
-      publicly announced. In her words, she didn't do anything, which is true. Chief Ikäheimo threw her into jail
-      because she would have noticed the mind controlling ring. She knows about old magic and is able to tell the party
-      about their situation after they help free her. She has had enough of helping other people for nothing. After she
-      is freed, she will tell that they have used an old spell that transferred the party to another plane. Usually
-      there would have been another person that ends the spell in their own plane. There might be another way but she
-      doesn't know it. The royal archives in the Sword cities could contain the answer. If the party requests her to
-      inspect Chief Ikäheimo for a disease one last time, she complies. They just have to figure out how to do that with
-      the wife. If they succeed, Autere realizes the ring's significance and tells the party to destroy it. After all of
-      this, Autere leaves the town. For curing the chief, chief gives them a 1 carat Diamond as a reward.
-      \paragraph{Chief Ikäheimo} A strong middle-aged dwarf male who is the son of late smith Ikäheimo. Rose to chiefdom
-      through his skill of inspiring and natural charm by a public vote. Has become overconfident over the years and
-      easily irritable after he received the ring. The ring works with a bit of delay, so he may start answering
-      truthfully, but then switch to a lie. After this he fiddles his ring. Has a task for the party which requires them
-      to fetch a travelling seer and throw him into his dungeon. He claims that the seer is actually a known necromancer
-      who is suspected of Armas Eteläterä's murder. Truly, he has just been working as a fortuneteller and may be able
-      to identify the ring. He can be found in the local inn. The reward will be 10gp each and his trust. The party is
-      able to notice his fiddling with a DC 18 Perception check. When they face more an more lies, the check should
-      become easier. The check can be tried again each time they meet him. \paragraph{\pagelink{npc:commoner}{Tarjanne}}
-      Wife of Chief Ikäheimo. Calm and rational dwarf lady who has been worried about her husband because he hasn't been
-      the same for a while. She suspects sickness and asks the party to heal her husband. She would have asked Autere
-      but she is in the dungeon. \paragraph{\pagelink{npc:soldierOfTheSword}{Dog (Koira)}} The dungeon guard Dog is a
-      thoughtful dwarf male. Not very strong, so he isn't the best soldier but guarding cells doesn't usually require
-      much physically and he likes the solidarity. He has been thinking about why the witch has been jailed because she
-      seemed like a good person. She even healed his syphilis (huovintauti). Dog can be assured of his theory by finding
-      some information to back it up and with DC 10 persuasion check. They can also lie about the information. They just
-      need the credibility for that, so bringing the seer to the dungeon works fine. If successful, he will let the
-      party to fake an intrusion somehow. Another way to enter the dungeon is through a chimney that goes through the
-      whole keep. On upper floors, it can be accessed through kitchen or the main bed room. Finding the vent requires a
-      DC 15 Perception check in one of the rooms when searching for a way into the dungeon. \DndSubArea{Heaven's Inn
-      (Taivain Majatalo)} A small inn next to the settlement entrance. The seer has a room upstairs. There are five men
-      sharing a table downstairs. The innkeeper is not around. When the party goes upstairs there are four doors of
-      which one is open. When they approach any of the doors, they hear a voice from the open room: "Come in.".
+      <area-title name="Ukko's Fist (Ukonnyrkki) settlement" />
+      Ukko's Fist is a settlement north of Bluebill's Nest. A small castle and few tens of log houses are surrounded by
+      a crude wooden wall. Fields surround the keep and most of the citizens have housing in the safety of settlement
+      walls. Majority of the citizens are farmers but few crafts, like weaving and woodcrafting are also practiced.
+      Farming of barley is however the main source of income. Ukko's Fist is led by \pagelink{npc:chiefIkaheimo}{Chief
+      Ikäheimo}, who has ruled the settlement well in the past. During the last months his actions have seemed
+      unpredictable. He has increased the amount of combat training of citizens significantly so they have very little
+      time after farming and training duties. He also started selling majority of their produced barley to a forestry
+      group and rumours tell that the price was lower than what the Sword cities were paying. He is being mind
+      controlled by Joukahainen with a gem on his golden ring which he fiddles with when he is being forced to a
+      decision. He received the ring as an anonymous gift. \DndSubArea{Keep} The keep in the center of the settlement is
+      the home of Chief Ikäheimo and his wife \pagelink{npc:commoner}{Tarjanne}. The keep has two floors above the
+      ground and a dungeon floor for prisoners. On the ground floor there are the main hall, kitchen, arms storage and
+      two smaller bedrooms for guests or house staff. On the top floor, there are the main bed room, a reading room and
+      two more bed rooms for house staff. In the dungeon are few cells with just one prisoner witch Autere.
+      \paragraph{\pagelink{npc:autere}{Witch Autere}} She is an old black haired elf lady who lived in Ukko's Fist. She
+      was publicly accepted healer whose "experiments" with old magics got the blind eye of the village. However, a half
+      a year ago she was thrown into jail for "crossing the line" but the reason wasn't publicly announced. In her
+      words, she didn't do anything, which is true. Chief Ikäheimo threw her into jail because she would have noticed
+      the mind controlling ring. She knows about old magic and is able to tell the party about their situation after
+      they help free her. She has had enough of helping other people for nothing. After she is freed, she will tell that
+      they have used an old spell that transferred the party to another plane. Usually there would have been another
+      person that ends the spell in their own plane. There might be another way but she doesn't know it. The royal
+      archives in the Sword cities could contain the answer. If the party requests her to inspect Chief Ikäheimo for a
+      disease one last time, she complies. They just have to figure out how to do that with the wife. If they succeed,
+      Autere realizes the ring's significance and tells the party to destroy it. After all of this, Autere leaves the
+      town. For curing the chief, chief gives them a 1 carat Diamond as a reward. \paragraph{Chief Ikäheimo} A strong
+      middle-aged dwarf male who is the son of late smith Ikäheimo. Rose to chiefdom through his skill of inspiring and
+      natural charm by a public vote. Has become overconfident over the years and easily irritable after he received the
+      ring. The ring works with a bit of delay, so he may start answering truthfully, but then switch to a lie. After
+      this he fiddles his ring. Has a task for the party which requires them to fetch a travelling seer and throw him
+      into his dungeon. He claims that the seer is actually a known necromancer who is suspected of Armas Eteläterä's
+      murder. Truly, he has just been working as a fortuneteller and may be able to identify the ring. He can be found
+      in the local inn. The reward will be 10gp each and his trust. The party is able to notice his fiddling with a DC
+      18 Perception check. When they face more an more lies, the check should become easier. The check can be tried
+      again each time they meet him. \paragraph{\pagelink{npc:commoner}{Tarjanne}} Wife of Chief Ikäheimo. Calm and
+      rational dwarf lady who has been worried about her husband because he hasn't been the same for a while. She
+      suspects sickness and asks the party to heal her husband. She would have asked Autere but she is in the dungeon.
+      \paragraph{\pagelink{npc:soldierOfTheSword}{Dog (Koira)}} The dungeon guard Dog is a thoughtful dwarf male. Not
+      very strong, so he isn't the best soldier but guarding cells doesn't usually require much physically and he likes
+      the solidarity. He has been thinking about why the witch has been jailed because she seemed like a good person.
+      She even healed his syphilis (huovintauti). Dog can be assured of his theory by finding some information to back
+      it up and with DC 10 persuasion check. They can also lie about the information. They just need the credibility for
+      that, so bringing the seer to the dungeon works fine. If successful, he will let the party to fake an intrusion
+      somehow. Another way to enter the dungeon is through a chimney that goes through the whole keep. On upper floors,
+      it can be accessed through kitchen or the main bed room. Finding the vent requires a DC 15 Perception check in one
+      of the rooms when searching for a way into the dungeon. \DndSubArea{Heaven's Inn (Taivain Majatalo)} A small inn
+      next to the settlement entrance. The seer has a room upstairs. There are five men sharing a table downstairs. The
+      innkeeper is not around. When the party goes upstairs there are four doors of which one is open. When they
+      approach any of the doors, they hear a voice from the open room: "Come in.".
       \paragraph{\pagelink{npc:kaukovalta}{Seer Kaukovalta}} Seer Kaukovalta is an old male human with bald head and a
       long fake beard. It can be noticed with DC 10 perception check. The beard is just for the looks, it, in his words,
       is more convincing in seer work than his completely bald face. He has been hairless since born. He sits on his bed
@@ -526,10 +527,11 @@
       blood stains on the foliage. They continue into a hole under a trunk of a fallen tree. They can crawl after him
       into a dark tunnel that fits only one man at a time. The tunnel takes them into a low room where only small
       characters can stand straight. Others suffer -1 for all combat rolls (not damage) due to awkward positions during
-      their time there. The place is completely dark. \DndArea{Underdark (Maanalanen)} These tunnels need to be describe
-      as vast and completely dark but only some of them are made explorable in this adventure. You should let the Deep
-      Gnomes guide the party e.g. to \DndSubAreaRef{Dark Chamber} and describe how deep you are going. Don't take the
-      map too literally. \clearpage \begin{figure}[h!] \caption{Underdark}
+      their time there. The place is completely dark.
+      <area-title name="Underdark (Maanalanen)" />
+      These tunnels need to be describe as vast and completely dark but only some of them are made explorable in this
+      adventure. You should let the Deep Gnomes guide the party e.g. to \DndSubAreaRef{Dark Chamber} and describe how
+      deep you are going. Don't take the map too literally. \clearpage \begin{figure}[h!] \caption{Underdark}
       \includegraphics[scale=0.20]{img/underdark.png} \end{figure} \clearpage \DndSubArea{Entrance} A low room with a
       12ft pit on the other side. Narrow ledges go around it and can be used to go around the pit with DC 10 dexterity
       for larger than small creatures. If the party causes noise, \pagelink{monster:deepGnome}{Deep Gnomes} from
@@ -548,122 +550,133 @@
       has old runes on it that spell Light Carver (Valonvuolija). Old runes can be read only by few in Pohjola.
       \DndItemHeader{Light Carver (Valonvuolija)}{Wondrous item, rare} Dagger +2. A light obsidian dagger that makes one
       blind in daylight but gives perfect vision in the dark. Basically, it flips the light and dark sights, so a
-      wielder with dark sight can see in light. \DndSubArea{Dark Chamber} A chamber that was revealed by Deep Gnome
-      miners. When they entered it, four Darkmantles attacked and killed them. Their remains are still there. The hole
-      they made is on the top of the chamber near the ceiling. The ceiling is weirdly black and cannot be brighten with
-      light sources. Darkmantles are keeping it dark and waiting an attack opportunity. \DndSubArea{Treasury} This area
+      wielder with dark sight can see in light.
+      <sub-area-title name="Dark Chamber" />
+      A chamber that was revealed by Deep Gnome miners. When they entered it, four Darkmantles attacked and killed them.
+      Their remains are still there. The hole they made is on the top of the chamber near the ceiling. The ceiling is
+      weirdly black and cannot be brighten with light sources. Darkmantles are keeping it dark and waiting an attack
+      opportunity.
+      <sub-area-title name="Treasury" />
       contains the treasures of Deep Gnomes. In addition to Light Carver and 100gp, there are also two 1 carat diamonds,
       five malachites and lots of iron.
       <section-title name="To the Sword" />
-      \DndArea{Forestry Camp} A base camp for metsäläinen loggers to camp in. They are logging and selling the wood to
-      provide income for Metsäläiset organization. They have spread their activities from north towards south are almost
-      at the Fuller river. Logging supports their cause because they can also search for ancient sites for the
-      information they are missing. They have set their camp in an ancient hill-fort of Meadowruin (Ahonraunio) long
-      abandoned. The loggers were the ones who destroyed the bridge with a log "bulldozer", a massive amount of logs
-      tied together and powered by the river current. The camp has one long log house which has sleeping space for
-      loggers. It has two rooms, a small kitchen in the end and a large room full of bunks. A small hole in the wall
-      allows the loggers to get their rations from the kitchen. One human male is handling the cooking by stirring a
-      large pot of stew. There may be plenty of logger Commoners around depending the time of day. There is also another
-      log house for the camp officer. Two guards stand outside and the officer is inside keeping accounts and
-      calculating paychecks. He has a bird's feet on his shirt. The officer, \pagelink{npc:commoner}{Kauko}, is quite
-      unpleasantly blunt man and cannot be intimidated easily. He lies that they know nothing about the bridge collapse
-      but suspects the rebels of the refugee camp up river of framing them. Workers may be more easily intimidated but
-      there may be a large number of them, so things may turn ugly! The workers can admit that they did it but they were
-      just commanded to do so. If the officer is intimated to speak, he tells that the point is to accelerate the
-      restlessness in Pohjola. He receives his commands in letters carried by birds but isn't sure who is sending them.
-      \DndArea{Ambushed by metsäläiset} An ambush that is supposed to happen after the party has disrupted metsäläiset
-      for the first time, or the second time, your call. Metsäläiset want to know who they are dealing with so they try
-      to interrogate at least one member of the party. A \pagelink{monster:northernDruid}{Northern Druid} and 3
-      \pagelink{monster:deathDog}{Death Dogs} are hiding next to the road. When the party arrives the Druid starts to
-      speak and the dogs start to circle around the party. He requests to know who the party members are and asks why
-      they interfered with the operation at the marshes. A fight may ensue. \DndArea{Refugee Camp} Refugees of the Sword
-      cities have built a camp to the south side of Fuller river. They have their own village of shacks and some have
-      even built small log cabins. More refugees are coming in constantly and there is shortage of food. There is also a
-      problem with northern barbarians regularly attacking the camp. The refugees can tell about the political turmoil
-      and the spoilt river water. They all have their own beliefs of the causes behind the issues. They have heard about
-      the collapsed bridge and are worried about their supply delivery. Most of the people around seem starved and
-      desperate. Refugee leader tells that the barbarians have a safe place up north in an old ruin. They must have food
-      stored there since they have been robbing a lot lately. Refugee camp leader
-      \pagelink{npc:soldierOfTheSword}{Kyösti} try to assure the party that they had nothing to do with the bridge
-      collapse. He requests the party to take care of the barbarians. They have nothing to offer as reward in addition
-      to a warm meal but they suspect that the ancient barbarian stronghold may hold valuables treasures. There are also
-      rumours of a ghost in the camp. A small ghost of a \pagelink{monster:myling}{child} has reportedly appeared two
-      times at night. It cries and tries to attack people. Kyösti thinks people are hallucinating because of hunger. If
-      the party kills the ghost, it will vanish and reappear the next night. A desperate refugee woman killed her
-      newborn child, because she wasn't able to nourish him, and buried him under their shack due to shame. The child's
-      soul has been trapped into this plane and can be freed only with proper burial, i.e. a Myling (Ihtiriekko). The
-      woman committed suicide afterwards which caused a great shock in the camp. She had told others that she sent the
-      child away with the father. In truth, the father hasn't been involved in a long time and has left the camp. After
-      the party resolves the case, Kyösti writes them a letter to be delivered to the court of Eteläterä. A reward waits
-      for the party there. The letter is sealed with a purple seal of a horizontal sword with the top half removed. If
-      read, It contains also intelligence information of the area. This isn't just a refugee camp after all but an
-      intelligence unit has been hidden here. The letter writes that they suspect the loggers of sabotage at the bridge.
-      Kyösti proposes that the party takes care of the barbarians before leaving to the Sword. If the party does so,
-      Kyösti confesses his part in Eteläterä's intelligence operation and asks if the party found anything about
-      metsäläiset. He includes the information to the letter and hands it over to the party.
+      <area-title name="Forestry Camp" />
+      A base camp for metsäläinen loggers to camp in. They are logging and selling the wood to provide income for
+      Metsäläiset organization. They have spread their activities from north towards south are almost at the Fuller
+      river. Logging supports their cause because they can also search for ancient sites for the information they are
+      missing. They have set their camp in an ancient hill-fort of Meadowruin (Ahonraunio) long abandoned. The loggers
+      were the ones who destroyed the bridge with a log "bulldozer", a massive amount of logs tied together and powered
+      by the river current. The camp has one long log house which has sleeping space for loggers. It has two rooms, a
+      small kitchen in the end and a large room full of bunks. A small hole in the wall allows the loggers to get their
+      rations from the kitchen. One human male is handling the cooking by stirring a large pot of stew. There may be
+      plenty of logger Commoners around depending the time of day. There is also another log house for the camp officer.
+      Two guards stand outside and the officer is inside keeping accounts and calculating paychecks. He has a bird's
+      feet on his shirt. The officer, \pagelink{npc:commoner}{Kauko}, is quite unpleasantly blunt man and cannot be
+      intimidated easily. He lies that they know nothing about the bridge collapse but suspects the rebels of the
+      refugee camp up river of framing them. Workers may be more easily intimidated but there may be a large number of
+      them, so things may turn ugly! The workers can admit that they did it but they were just commanded to do so. If
+      the officer is intimated to speak, he tells that the point is to accelerate the restlessness in Pohjola. He
+      receives his commands in letters carried by birds but isn't sure who is sending them.
+      <area-title name="Ambushed by metsäläiset" />
+      An ambush that is supposed to happen after the party has disrupted metsäläiset for the first time, or the second
+      time, your call. Metsäläiset want to know who they are dealing with so they try to interrogate at least one member
+      of the party. A \pagelink{monster:northernDruid}{Northern Druid} and 3 \pagelink{monster:deathDog}{Death Dogs} are
+      hiding next to the road. When the party arrives the Druid starts to speak and the dogs start to circle around the
+      party. He requests to know who the party members are and asks why they interfered with the operation at the
+      marshes. A fight may ensue. \DndArea{Refugee Camp} Refugees of the Sword cities have built a camp to the south
+      side of Fuller river. They have their own village of shacks and some have even built small log cabins. More
+      refugees are coming in constantly and there is shortage of food. There is also a problem with northern barbarians
+      regularly attacking the camp. The refugees can tell about the political turmoil and the spoilt river water. They
+      all have their own beliefs of the causes behind the issues. They have heard about the collapsed bridge and are
+      worried about their supply delivery. Most of the people around seem starved and desperate. Refugee leader tells
+      that the barbarians have a safe place up north in an old ruin. They must have food stored there since they have
+      been robbing a lot lately. Refugee camp leader \pagelink{npc:soldierOfTheSword}{Kyösti} try to assure the party
+      that they had nothing to do with the bridge collapse. He requests the party to take care of the barbarians. They
+      have nothing to offer as reward in addition to a warm meal but they suspect that the ancient barbarian stronghold
+      may hold valuables treasures. There are also rumours of a ghost in the camp. A small ghost of a
+      \pagelink{monster:myling}{child} has reportedly appeared two times at night. It cries and tries to attack people.
+      Kyösti thinks people are hallucinating because of hunger. If the party kills the ghost, it will vanish and
+      reappear the next night. A desperate refugee woman killed her newborn child, because she wasn't able to nourish
+      him, and buried him under their shack due to shame. The child's soul has been trapped into this plane and can be
+      freed only with proper burial, i.e. a Myling (Ihtiriekko). The woman committed suicide afterwards which caused a
+      great shock in the camp. She had told others that she sent the child away with the father. In truth, the father
+      hasn't been involved in a long time and has left the camp. After the party resolves the case, Kyösti writes them a
+      letter to be delivered to the court of Eteläterä. A reward waits for the party there. The letter is sealed with a
+      purple seal of a horizontal sword with the top half removed. If read, It contains also intelligence information of
+      the area. This isn't just a refugee camp after all but an intelligence unit has been hidden here. The letter
+      writes that they suspect the loggers of sabotage at the bridge. Kyösti proposes that the party takes care of the
+      barbarians before leaving to the Sword. If the party does so, Kyösti confesses his part in Eteläterä's
+      intelligence operation and asks if the party found anything about metsäläiset. He includes the information to the
+      letter and hands it over to the party.
       <section-title name="Temple of Päivätär" />
-      \DndArea{Holy of The Valley (Alangon Pyhä)} This is an ancient temple that is used by northern barbarians as a
-      shelter. The temple is located in the middle of a valley between two fjelds but on the ground there is only a
-      stone platform and stairs down into the temple. Barbarians have set up a leather tent on top of it to hide it and
-      cover it from the elements. Inside, they have ripped down all ancient symbols and replaced them with their own,
-      crude wall paintings of animals, animal skulls and spruce branches. In the tent are also some of the food they
-      have stolen or hunted, mainly meat in a sled. The party can just steal the sled or delve into the temple. There
-      are no barbarians around except the three \pagelink{monster:barbarian}{barbarian} guards on top. When the party
-      comes back up from the temple they will face a barbarian raiding party and are forced to escape into the temple.
-      \DndSubArea{The Entrance Top} A leather tent that conceals a sled full of meat and dairy products and a stone
-      platform that has a heavy iron double door that can be locked from inside. Few guards are guarding. When the group
-      returns from the temple they notice a raid party of 15 barbarians close by riding towards them. Escaping is hard
-      so they are forced to fight or escape into the temple. \DndSubArea{Entry Hall} A stone stairway takes the party
-      into a 60ft wide and 100ft long hall filled with animal hides, straw beds and food storage. Another large iron
-      door separates the stairs from this hall but it is open now. It can also be locked with a latch. Not that many
-      weapons around because the barbarians are out raiding. No-one is in sight. A thorough search of the hall reveals a
-      letter that orders the barbarians to keep on raiding. "Metsäläiset will honour the contract". The letter is sealed
-      with the same black eagle as the letters before. The party also finds a blue painting of a woman's face behind the
-      layer of grime on the back wall. Seeing the lady brings a sentence into the party member's minds:
-      \begin{DndReadAloud} I am an eye set in a blue face. My gaze feeds the world. If I go blind so does the world.
-      (Silmä kasvoin sinisten, ravitsija maailmankaiken, näköni jos veisi, veisi näön maan, sokeaksi kaiken tekisi.)
-      \end{DndReadAloud} This is a riddle and the correct answer is the sun. Even thinking of the correct answer with
-      any language causes a secret door to open and reveal another hall. \DndSubArea{Päivätär Shrine} This hall is
-      slightly smaller than the first one. A grand statue of the sun, although dusty, stands at the back of it, and a
-      red carpet leads to it. A ray of light shines through the ceiling at it. It comes from a magical one-way window
-      that works also as an escape hatch. A dark figure lays in front of it covered in dust. It is hard to see what it
-      is. When the party enters the room the figure starts to move. It is a \pagelink{monster:youngGoldDragon}{Young
-      Gold Dragon} that has been hibernating under a spell and commanded to guard the temple. It shakes off the dust and
-      reveals the golden scales in all their glory. It queries the party of their purpose with a low voice. If the party
-      is meaning good, the dragon can explain that this is Päivätär's shrine and he is commanded to guard it until the
-      sun is eaten and all hope is lost. The dragon can be convinced to help kill the barbarians or fly the party up to
-      the window. Päivätär is the goddess of day and sun, a beautiful lady who "owns the gold of the sun" just like
-      Kuutar, the goddess of the moon, owns "the silver of the moon". Unfortunately, there is not much more information
-      of these goddesses in Finnish folk lore. Praying at the shrine and gifting the goddess a decent amount of gp will
-      yield a magical item. E.g. giving min. 10gp with a decent prayer will give some potion, e.g. Potion of Healing
-      (Greater), min. 50gp yields some magical item e.g. Lantern of Revealing. Min. 200gp yields an uncommon weapon and
-      min. 500gp a rare armor. These limits are not set in stone so you should consider the PC's sacrifice. One item per
-      PC! Extra prayers give nothing and won't take the money either! If the party don't know how to pray maybe the
-      dragon can give them a hint to offer some "gold of the sun" to the goddess. \DndItemHeader{Sunstroke
-      (Auringonpistos)}{Sword, uncommon} Some Sword +1. A plain high quality sword. \DndItemHeader{Rays of Our Lives
-      (Päivien Viemä)}{Medium Armor, uncommon} Some Armor +1. A plain high quality steel armor. \DndItemHeader{Sunmist
-      Blade (Auer)}{Sword, rare} Some Sword +2. A sword with golden decoration. \DndItemHeader{Heartgleam
-      (Sydänkajo)}{Medium Armor, rare} Some Armor +2. A steel armor with golden trims and golden sun on the chest.
-      \clearpage \begin{figure}[h!] \caption{Shrine of Päivätär} \includegraphics[scale=0.20]{img/paivatar_shrine.png}
-      \end{figure} \clearpage
+      <area-title name="Holy of The Valley (Alangon Pyhä)" />
+      This is an ancient temple that is used by northern barbarians as a shelter. The temple is located in the middle of
+      a valley between two fjelds but on the ground there is only a stone platform and stairs down into the temple.
+      Barbarians have set up a leather tent on top of it to hide it and cover it from the elements. Inside, they have
+      ripped down all ancient symbols and replaced them with their own, crude wall paintings of animals, animal skulls
+      and spruce branches. In the tent are also some of the food they have stolen or hunted, mainly meat in a sled. The
+      party can just steal the sled or delve into the temple. There are no barbarians around except the three
+      \pagelink{monster:barbarian}{barbarian} guards on top. When the party comes back up from the temple they will face
+      a barbarian raiding party and are forced to escape into the temple.
+      <sub-area-title name="The Entrance Top" />
+      A leather tent that conceals a sled full of meat and dairy products and a stone platform that has a heavy iron
+      double door that can be locked from inside. Few guards are guarding. When the group returns from the temple they
+      notice a raid party of 15 barbarians close by riding towards them. Escaping is hard so they are forced to fight or
+      escape into the temple.
+      <sub-area-title name="Entry Hall" />
+      A stone stairway takes the party into a 60ft wide and 100ft long hall filled with animal hides, straw beds and
+      food storage. Another large iron door separates the stairs from this hall but it is open now. It can also be
+      locked with a latch. Not that many weapons around because the barbarians are out raiding. No-one is in sight. A
+      thorough search of the hall reveals a letter that orders the barbarians to keep on raiding. "Metsäläiset will
+      honour the contract". The letter is sealed with the same black eagle as the letters before. The party also finds a
+      blue painting of a woman's face behind the layer of grime on the back wall. Seeing the lady brings a sentence into
+      the party member's minds: \begin{DndReadAloud} I am an eye set in a blue face. My gaze feeds the world. If I go
+      blind so does the world. (Silmä kasvoin sinisten, ravitsija maailmankaiken, näköni jos veisi, veisi näön maan,
+      sokeaksi kaiken tekisi.) \end{DndReadAloud} This is a riddle and the correct answer is the sun. Even thinking of
+      the correct answer with any language causes a secret door to open and reveal another hall.
+      <sub-area-title name="Päivätär Shrine" />
+      This hall is slightly smaller than the first one. A grand statue of the sun, although dusty, stands at the back of
+      it, and a red carpet leads to it. A ray of light shines through the ceiling at it. It comes from a magical one-way
+      window that works also as an escape hatch. A dark figure lays in front of it covered in dust. It is hard to see
+      what it is. When the party enters the room the figure starts to move. It is a
+      \pagelink{monster:youngGoldDragon}{Young Gold Dragon} that has been hibernating under a spell and commanded to
+      guard the temple. It shakes off the dust and reveals the golden scales in all their glory. It queries the party of
+      their purpose with a low voice. If the party is meaning good, the dragon can explain that this is Päivätär's
+      shrine and he is commanded to guard it until the sun is eaten and all hope is lost. The dragon can be convinced to
+      help kill the barbarians or fly the party up to the window. Päivätär is the goddess of day and sun, a beautiful
+      lady who "owns the gold of the sun" just like Kuutar, the goddess of the moon, owns "the silver of the moon".
+      Unfortunately, there is not much more information of these goddesses in Finnish folk lore. Praying at the shrine
+      and gifting the goddess a decent amount of gp will yield a magical item. E.g. giving min. 10gp with a decent
+      prayer will give some potion, e.g. Potion of Healing (Greater), min. 50gp yields some magical item e.g. Lantern of
+      Revealing. Min. 200gp yields an uncommon weapon and min. 500gp a rare armor. These limits are not set in stone so
+      you should consider the PC's sacrifice. One item per PC! Extra prayers give nothing and won't take the money
+      either! If the party don't know how to pray maybe the dragon can give them a hint to offer some "gold of the sun"
+      to the goddess. \DndItemHeader{Sunstroke (Auringonpistos)}{Sword, uncommon} Some Sword +1. A plain high quality
+      sword. \DndItemHeader{Rays of Our Lives (Päivien Viemä)}{Medium Armor, uncommon} Some Armor +1. A plain high
+      quality steel armor. \DndItemHeader{Sunmist Blade (Auer)}{Sword, rare} Some Sword +2. A sword with golden
+      decoration. \DndItemHeader{Heartgleam (Sydänkajo)}{Medium Armor, rare} Some Armor +2. A steel armor with golden
+      trims and golden sun on the chest. \clearpage \begin{figure}[h!] \caption{Shrine of Päivätär}
+      \includegraphics[scale=0.20]{img/paivatar_shrine.png} \end{figure} \clearpage
       <chapter-title name="Kingdom In Twain" />
       <section-title name="Southern Hospitality" />
       <section-title name="Northern Hostility" />
       <section-title name="Endgame" />
       <chapter-title name="Home of Darkness" />
-      \DndArea{Kuurankaru} The capital of metsäläiset. A village built of stone and ice up north at the bank of northern
-      part of Viper's Rend on the side of Winter's Teeth (Talvenhampaat) mountains. The area between the mountains is
-      called Winter's Throat (Talvenkurkku). \paragraph{Mistress Loviatar} The queen of metsäläiset, the mistress of
-      north. She is descendant of Louhi, the evil witch queen from the beginning of time and the one who created Pohjola
-      demiplane. Loviatar shares Louhi's interests and tries to take Pohjola with the help of Perkele. For that, she
-      needs to first find four pieces of Tursaansydän (Heart of Tursas), the key to Perkele's prison. She has ordered
-      her people metsäläiset to search for ancient places for information. She already holds one piece of Tursaansydän
-      and carries it everywhere. This piece was given to Louhi for safekeeping and has been passed on for generations.
-      Loviatar has skin of pure white, black long hair and is as beautiful as every Louhi's kin has been (very). She
-      commands her people with the help of Joukahainen, her advisor. \DndSubArea{Viper's Rend toll station} Another
-      source of income for metsäläiset is the river toll station in the northern part of Viper's Rend. They collect
-      tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the station
-      costs 100gp without any load.
+      <area-title name="Kuurankaru" />
+      The capital of metsäläiset. A village built of stone and ice up north at the bank of northern part of Viper's Rend
+      on the side of Winter's Teeth (Talvenhampaat) mountains. The area between the mountains is called Winter's Throat
+      (Talvenkurkku). \paragraph{Mistress Loviatar} The queen of metsäläiset, the mistress of north. She is descendant
+      of Louhi, the evil witch queen from the beginning of time and the one who created Pohjola demiplane. Loviatar
+      shares Louhi's interests and tries to take Pohjola with the help of Perkele. For that, she needs to first find
+      four pieces of Tursaansydän (Heart of Tursas), the key to Perkele's prison. She has ordered her people metsäläiset
+      to search for ancient places for information. She already holds one piece of Tursaansydän and carries it
+      everywhere. This piece was given to Louhi for safekeeping and has been passed on for generations. Loviatar has
+      skin of pure white, black long hair and is as beautiful as every Louhi's kin has been (very). She commands her
+      people with the help of Joukahainen, her advisor.
+      <sub-area-title name="Viper's Rend Toll Station" />
+      Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend. They
+      collect tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the
+      station costs 100gp without any load.
       <part-title name="NPCs" />
       <part-title name="Monsters" />
       <part-title name="Help" />
