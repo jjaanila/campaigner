@@ -17,10 +17,7 @@ export default {
   },
   computed: {
     h5Id() {
-      if (this.id) {
-        return this.id
-      }
-      return generateId(this.name, 'area')
+      return this.id ?? generateId(this.name, 'area')
     },
   },
 }

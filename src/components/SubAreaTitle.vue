@@ -17,10 +17,7 @@ export default {
   },
   computed: {
     h6Id() {
-      if (this.id) {
-        return this.id
-      }
-      return generateId(this.name, 'subarea')
+      return this.id ?? generateId(this.name, 'subarea')
     },
   },
 }

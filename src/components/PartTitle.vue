@@ -17,10 +17,7 @@ export default {
   },
   computed: {
     h2Id() {
-      if (this.id) {
-        return this.id
-      }
-      return generateId(this.name, 'part')
+      return this.id ?? generateId(this.name, 'part')
     },
   },
 }

@@ -17,10 +17,7 @@ export default {
   },
   computed: {
     h3Id() {
-      if (this.id) {
-        return this.id
-      }
-      return generateId(this.name, 'chapter')
+      return this.id ?? generateId(this.name, 'chapter')
     },
   },
 }
