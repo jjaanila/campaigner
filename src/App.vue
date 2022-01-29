@@ -393,8 +393,13 @@
       congratulations to Halla farm and to explain the situation. The party does not feel any different. DC 10 religion
       check can be done to remember mention of an ancient foreign god of forest, Tapio. The party has now received
       Tellervo's blessing and they will find an item leaning against a tree during their trip back to Halla Farm and
-      20pp. \DndItemHeader{World Oak Branch (Maailman Tammen Oksa)}{Wondrous item, rare} Quarterstaff +1. A sturdy but
-      divinely light quarterstaff.
+      20pp.
+      <item
+        name="World Oak Branch (Maailman Tammen Oksa)"
+        properties="Wondrous item, rare"
+        description="Quarterstaff +1. A sturdy but
+      divinely light quarterstaff."
+      />
       <chapter-title name="The Only Shade of Gray" />
 
       \DndArea{The Gray Bridge} The Gray Bridge crosses across the ferocious current of Viper's Rend east of

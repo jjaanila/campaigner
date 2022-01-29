@@ -8,6 +8,7 @@ import AreaTitle from './AreaTitle.vue'
 import SubAreaTitle from './SubAreaTitle.vue'
 import ReadAloud from './ReadAloud.vue'
 import CaptionedFigure from './CaptionedFigure.vue'
+import Item from './Item.vue'
 
 export default {
   CampaignTitle,
@@ -20,4 +21,5 @@ export default {
   SubAreaTitle,
   ReadAloud,
   CaptionedFigure,
+  Item,
 }
