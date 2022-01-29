@@ -693,6 +693,23 @@
       station costs 100gp without any load.
       <part-title name="NPCs" />
       <part-title name="Monsters" />
+      <monster
+        name="Saltwater Scrag"
+        description="Louhi's interests and tries to take Pohjola with the help of Perkele. For that, she needs to first find
+      four pieces of Tursaansydän"
+        size="large"
+        type="giant"
+        alignment="chaotic evil"
+        :armorClass="14"
+        :hitPoints="hitPointsDice"
+        :speedFt="30"
+        :strength="18"
+        :dexterity="13"
+        :constitution="20"
+        :intelligence="7"
+        :wisdom="9"
+        :charisma="7"
+      />
       <part-title name="Help" />
     </page>
   </main>
@@ -701,12 +718,18 @@
 <script>
 import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
+import Dice from './Dice'
 export default {
   name: 'app',
   data() {
     return {
       tursaansydan,
     }
+  },
+  computed: {
+    hitPointsDice() {
+      return new Dice(2, 12, 20)
+    },
   },
 }
 </script>

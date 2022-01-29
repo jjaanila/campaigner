@@ -9,6 +9,7 @@ import SubAreaTitle from './SubAreaTitle.vue'
 import ReadAloud from './ReadAloud.vue'
 import CaptionedFigure from './CaptionedFigure.vue'
 import Item from './Item.vue'
+import Monster from './Monster.vue'
 
 export default {
   CampaignTitle,
@@ -22,4 +23,5 @@ export default {
   ReadAloud,
   CaptionedFigure,
   Item,
+  Monster,
 }
