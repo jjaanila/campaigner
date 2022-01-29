@@ -6,6 +6,7 @@ import SectionTitle from './SectionTitle.vue'
 import PartTitle from './PartTitle.vue'
 import AreaTitle from './AreaTitle.vue'
 import SubAreaTitle from './SubAreaTitle.vue'
+import ReadAloud from './ReadAloud.vue'
 
 export default {
   CampaignTitle,
@@ -16,4 +17,5 @@ export default {
   PartTitle,
   AreaTitle,
   SubAreaTitle,
+  ReadAloud,
 }

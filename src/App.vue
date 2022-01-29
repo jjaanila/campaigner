@@ -119,51 +119,59 @@
       <chapter-title name="Prisoners of Gundarlun" />
       <chapter-title name="Welcome to Pohjola" />
       <section-title name="In Bluebill's Nest" />
-      \begin{DndReadAloud} You see restless dreams. You run through a forest with a wold pack. Soar through the skies in
-      a snow storm. Scramble through snow higher than you are. Skitter through city streets while dodging human feet.
-      You keep on jumping from dream to dream, unable to wake up. Suddenly, dream ends and you open your eyes. You all
-      are laying on mossy ground of a spruce forest. The sun peeks between the tree branches and the only voice you hear
-      is the soft wind in the trees. \end{DndReadAloud} \begin{DndReadAloud} Näette levottomia unia. Juoksette metsän
-      läpi susi kannoillanne. Kiidätte ilman halki lumimyrskyssä. Rämmitte itseänne korkeammassa lumihangessa. Kipitätte
-      kaupungien kaduilla väistellen ihmisten jalkola. Aivan kuin hyppisitte unesta toiseen, ette vain saa itseänne
-      hereille. Pian unet päättyvät kuin seinään ja avaatte silmänne. Makaatte vanhan kuusimetsän siimeksessä
-      sammalmatolla. Aurinko pilkottaa puiden oksien välistä ja ainoa ääni minkä kuulette on tuulen vaimea humina.
-      \end{DndReadAloud} The party has woken up in Pohjola. They are few kilometers from Bluebill's Nest where they
-      should find themselves soon enough, one way or another. The party is still in shackles. Pohjola has their own
-      gods, habits and culture. They know nothing of other lands and the knowledge of plane travellers, like our party,
-      has long since forgotten. If the party asks about their situation the common folk should think they are crazy or
-      laugh at them. They may refer to fairy tales where witches from other lands arrive to Pohjola to do evil. Of
-      course these tales were once true, but this hasn't happened for over hundred years. \DndArea{Bluebill's Nest
-      (Sotkala)} Bluebill's Nest is a small village which lives of fishing and hunting and trading with occasional
-      travelers. A major road and river bypass the village so there is usually quite a bit of traffic. However, not many
-      are willing to live this far away from major cities. Hunting and fishing are not that prolific professions either
-      so the houses are modest and simply built log cabins. There are 11 smaller cabins and one larger, the White Rabbit
-      Inn. One of the other smaller houses has wooden stands in front with fishes drying out in the morning sun. There
-      is an old man repairing fishing nets on the porch. To north starts the road to the city of Sword, which follows
-      the south bank of Fuller river. To the north is the road to the Gray Keep, Halla farm and the city of Brass
-      Buckler. To the east is Hallasuo, huge marshland with just few inhabitants. To the west is river Viper's Rend
-      (Kyynsärö). \DndSubArea{Courtyard} \begin{DndReadAloud} The dirt courtyard is in the center of the line of houses.
-      On its edge is a well but otherwise the yard doesn't seem to get much use. However, now there are four
-      \pagelink{npc:soldierOfTheSword}{guards} cleaning their boots and chatting. A fancy looking wagon stands next to
-      the road and a young elf man steps around anxiously. The man has fine clothing, brown long hair, and a sword on
-      his hip. \end{DndReadAloud} \paragraph{\pagelink{npc:kainoKalpa}{Kaino Kalpa}} The man is Kaino Kalpa, a bastard
-      of half-king Untamo Eteläterä. He is a proud man and doesn't appreciate that people remind him of his
-      bastardiness. He thinks of himself as a prince and plans to travel to the court of Eteläterä to gain influence. He
-      has been assigned to the Gray Keep since teenage and now that he has reached adulthood, it is his time. He has no
-      time for mere peasants and want's to get moving as soon as possible. He plans to benefit from the unstable
-      situation of the Blade and raise his ranks amid political chaos. He won't share his intent except if the party
-      allies with him in the future. Kaino is able to tell the party about the turmoil in Sword cities. Two families
-      descendants of the last Sword King are at each other's throats after Eteläterä's heir Armas Eteläterä fell to his
-      dead from castle tower. The court of Eteläterä is suspicious of Pohjanterä. He doesn't mention that the Fuller
-      river (Veriura) which flows between the two cities has changed color, tastes foul and reportedly causes sickness
-      of children and weak of health. Pohjanterä court rumours that Eteläterä poisoned the water as revenge and the
-      southern half-king has a secret source of clean water or a way to purify it. Secretly he thinks that the death of
-      the heir is his chance to become the new heir. \paragraph{\pagelink{npc:commoner}{Kala-Kosti}} An old man sitting
-      on his porch repairing fishing nets. Can tell about refugees upriver that are coming from the Sword cities
-      escaping restlessness. If asked, he tends to fish along the rivers because lake Iänlampi is not the best fishing
-      spot. It actually doesn't have fish at all, but let's not reveal that yet. \DndSubArea{White Rabbit Inn} The inn
-      is a small two-story log building and has tavern downstairs. On the left is a wooden counter and the kitchen. Next
-      to it are stairs that take to upstairs where are 3 two bed rooms up for rent. There are 5 tables downstairs.
+      <read-aloud>
+        You see restless dreams. You run through a forest with a wold pack. Soar through the skies in a snow storm.
+        Scramble through snow higher than you are. Skitter through city streets while dodging human feet. You keep on
+        jumping from dream to dream, unable to wake up. Suddenly, dream ends and you open your eyes. You all are laying
+        on mossy ground of a spruce forest. The sun peeks between the tree branches and the only voice you hear is the
+        soft wind in the trees.
+      </read-aloud>
+      <read-aloud>
+        Näette levottomia unia. Juoksette metsän läpi susi kannoillanne. Kiidätte ilman halki lumimyrskyssä. Rämmitte
+        itseänne korkeammassa lumihangessa. Kipitätte kaupungien kaduilla väistellen ihmisten jalkola. Aivan kuin
+        hyppisitte unesta toiseen, ette vain saa itseänne hereille. Pian unet päättyvät kuin seinään ja avaatte
+        silmänne. Makaatte vanhan kuusimetsän siimeksessä sammalmatolla. Aurinko pilkottaa puiden oksien välistä ja
+        ainoa ääni minkä kuulette on tuulen vaimea humina.
+      </read-aloud>
+      The party has woken up in Pohjola. They are few kilometers from Bluebill's Nest where they should find themselves
+      soon enough, one way or another. The party is still in shackles. Pohjola has their own gods, habits and culture.
+      They know nothing of other lands and the knowledge of plane travellers, like our party, has long since forgotten.
+      If the party asks about their situation the common folk should think they are crazy or laugh at them. They may
+      refer to fairy tales where witches from other lands arrive to Pohjola to do evil. Of course these tales were once
+      true, but this hasn't happened for over hundred years. \DndArea{Bluebill's Nest (Sotkala)} Bluebill's Nest is a
+      small village which lives of fishing and hunting and trading with occasional travelers. A major road and river
+      bypass the village so there is usually quite a bit of traffic. However, not many are willing to live this far away
+      from major cities. Hunting and fishing are not that prolific professions either so the houses are modest and
+      simply built log cabins. There are 11 smaller cabins and one larger, the White Rabbit Inn. One of the other
+      smaller houses has wooden stands in front with fishes drying out in the morning sun. There is an old man repairing
+      fishing nets on the porch. To north starts the road to the city of Sword, which follows the south bank of Fuller
+      river. To the north is the road to the Gray Keep, Halla farm and the city of Brass Buckler. To the east is
+      Hallasuo, huge marshland with just few inhabitants. To the west is river Viper's Rend (Kyynsärö).
+      \DndSubArea{Courtyard}
+      <read-aloud>
+        The dirt courtyard is in the center of the line of houses. On its edge is a well but otherwise the yard doesn't
+        seem to get much use. However, now there are four \pagelink{npc:soldierOfTheSword}{guards} cleaning their boots
+        and chatting. A fancy looking wagon stands next to the road and a young elf man steps around anxiously. The man
+        has fine clothing, brown long hair, and a sword on his hip.
+      </read-aloud>
+      \paragraph{\pagelink{npc:kainoKalpa}{Kaino Kalpa}} The man is Kaino Kalpa, a bastard of half-king Untamo
+      Eteläterä. He is a proud man and doesn't appreciate that people remind him of his bastardiness. He thinks of
+      himself as a prince and plans to travel to the court of Eteläterä to gain influence. He has been assigned to the
+      Gray Keep since teenage and now that he has reached adulthood, it is his time. He has no time for mere peasants
+      and want's to get moving as soon as possible. He plans to benefit from the unstable situation of the Blade and
+      raise his ranks amid political chaos. He won't share his intent except if the party allies with him in the future.
+      Kaino is able to tell the party about the turmoil in Sword cities. Two families descendants of the last Sword King
+      are at each other's throats after Eteläterä's heir Armas Eteläterä fell to his dead from castle tower. The court
+      of Eteläterä is suspicious of Pohjanterä. He doesn't mention that the Fuller river (Veriura) which flows between
+      the two cities has changed color, tastes foul and reportedly causes sickness of children and weak of health.
+      Pohjanterä court rumours that Eteläterä poisoned the water as revenge and the southern half-king has a secret
+      source of clean water or a way to purify it. Secretly he thinks that the death of the heir is his chance to become
+      the new heir. \paragraph{\pagelink{npc:commoner}{Kala-Kosti}} An old man sitting on his porch repairing fishing
+      nets. Can tell about refugees upriver that are coming from the Sword cities escaping restlessness. If asked, he
+      tends to fish along the rivers because lake Iänlampi is not the best fishing spot. It actually doesn't have fish
+      at all, but let's not reveal that yet. \DndSubArea{White Rabbit Inn} The inn is a small two-story log building and
+      has tavern downstairs. On the left is a wooden counter and the kitchen. Next to it are stairs that take to
+      upstairs where are 3 two bed rooms up for rent. There are 5 tables downstairs.
       \paragraph{\pagelink{npc:commoner}{Tuomikki}} A female dwarf with a strong attitude. Is not happy about her
       husband's tendency to disappear to drink. "That's where he always goes. Too keen on the liquid barley! The milk of
       Pekko!" The husband is gone again so she has got drunk as well. The husband, \pagelink{npc:commoner}{Rautia}, the
