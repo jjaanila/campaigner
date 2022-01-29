@@ -100,8 +100,9 @@
       jail was shut with magical key called Tursaansydän, that is a large amethyst cut into shape of four tangled
       arrows. THis key was split into four pieces that were hidden in Pohjola. This was done as insurance if Perkele
       would be needed once again for some yet unknown reason. A spell protects the pieces. They can open the cell only
-      when joined to the original shape, but the key also can only be destroyed when it is whole. \begin{figure}[h!]
-      \caption{Rough sketch of Tursaansydän} \includegraphics[scale=0.75]{img/tursaansydan.png} \end{figure}
+      when joined to the original shape, but the key also can only be destroyed when it is whole.
+
+      <captioned-figure :path="tursaansydan" caption="Rough sketch of Tursaansydän" width="20rem" />
 
       <section-title name="Today" />
       Kalevans have lived hundreds of years in peace and abundance. There has been enough grain, beer, game and
@@ -694,10 +695,13 @@
 
 <script>
 import 'normalize.css'
+import tursaansydan from './img/tursaansydan.png'
 export default {
   name: 'app',
   data() {
-    return {}
+    return {
+      tursaansydan,
+    }
   },
 }
 </script>
