@@ -2,11 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
-module.exports = function(env, argv) {
+module.exports = function (env, argv) {
   const { mode } = argv
   const isProduction = mode === 'production'
   return {
-    entry: './src/main.js',
+    entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, './dist'),
       publicPath: '',
