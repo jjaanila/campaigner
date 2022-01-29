@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { generateId } from './utils'
 export default {
   name: 'SubAreaTitle',
   props: {
