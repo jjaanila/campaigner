@@ -1,14 +1,26 @@
 <template>
-  <h2 class="part-title">{{ name }}</h2>
+  <h2 :id="h2Id" class="part-title">{{ name }}</h2>
 </template>
 
 <script>
+import { generateId } from './utils'
 export default {
   name: 'PartTitle',
   props: {
     name: {
       type: String,
       required: true,
+    },
+    id: {
+      type: String,
+    },
+  },
+  computed: {
+    h2Id() {
+      if (this.id) {
+        return this.id
+      }
+      return generateId(this.name, 'part')
     },
   },
 }

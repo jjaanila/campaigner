@@ -1,5 +1,5 @@
 <template>
-  <h6 class="sub-area-title">{{ name }}</h6>
+  <h6 :id="h6Id" class="sub-area-title">{{ name }}</h6>
 </template>
 
 <script>
@@ -9,6 +9,17 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    id: {
+      type: String,
+    },
+  },
+  computed: {
+    h6Id() {
+      if (this.id) {
+        return this.id
+      }
+      return generateId(this.name, 'subarea')
     },
   },
 }

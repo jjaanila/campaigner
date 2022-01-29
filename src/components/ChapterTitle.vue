@@ -1,14 +1,26 @@
 <template>
-  <h3 class="chapter-title">{{ name }}</h3>
+  <h3 :id="h3Id" class="chapter-title">{{ name }}</h3>
 </template>
 
 <script>
+import { generateId } from './utils'
 export default {
   name: 'ChapterTitle',
   props: {
     name: {
       type: String,
       required: true,
+    },
+    id: {
+      type: String,
+    },
+  },
+  computed: {
+    h3Id() {
+      if (this.id) {
+        return this.id
+      }
+      return generateId(this.name, 'chapter')
     },
   },
 }
