@@ -6,11 +6,10 @@
 export default {
   name: 'SectionTitle',
   props: {
-    name: String,
-    required: true,
-  },
-  data() {
-    return {}
+    name: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>

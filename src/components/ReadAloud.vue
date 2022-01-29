@@ -5,9 +5,6 @@
 <script>
 export default {
   name: 'ReadAloud',
-  data() {
-    return {}
-  },
 }
 </script>
 

@@ -6,11 +6,10 @@
 export default {
   name: 'CampaignTitle',
   props: {
-    name: String,
-    required: true,
-  },
-  data() {
-    return {}
+    name: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>
