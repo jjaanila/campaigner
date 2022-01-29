@@ -13,7 +13,13 @@ export default {
 
 <style>
 .page {
-  width: calc(100vw - 8rem);
-  margin: 4rem;
+  width: 60%;
+  margin: 8rem;
+}
+@media only screen and (max-width: 600px) {
+  .page {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
 }
 </style>

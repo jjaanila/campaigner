@@ -718,5 +718,8 @@ body {
 main {
   position: absolute;
   width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 </style>
