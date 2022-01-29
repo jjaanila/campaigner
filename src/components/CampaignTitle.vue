@@ -15,4 +15,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.campaign-title {
+  text-align: center;
+  counter-reset: h2counter;
+}
+</style>

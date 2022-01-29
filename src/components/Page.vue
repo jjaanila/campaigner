@@ -13,6 +13,7 @@ export default {
 
 <style>
 .page {
-  column-count: 2;
+  width: calc(100vw - 8rem);
+  margin: 4rem;
 }
 </style>
