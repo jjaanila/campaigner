@@ -15,16 +15,21 @@
         <ability-score name="WIS" :value="wisdom" />
         <ability-score name="CHA" :value="charisma" />
       </div>
+      <monster-stat-row label="Skills" :value="skillsStr" />
+      <monster-stat-row label="Senses" :value="sensesStr" />
+      <monster-stat-row label="Languages" :value="languagesStr" />
+      <monster-stat-row label="Challenge" :value="challengeRatingStr" />
     </div>
     <div class="monster-right"></div>
   </div>
 </template>
 
 <script>
-import { generateId } from '../utils'
+import { generateId, capitalize } from '../utils'
 import MonsterStatRow from './MonsterStatRow.vue'
 import AbilityScore from './AbilityScore.vue'
 import Dice from '../Dice'
+import { isInteger } from '../validators'
 export default {
   name: 'Monster',
   components: {
@@ -89,6 +94,19 @@ export default {
       type: Number,
       required: true,
     },
+    challengeRating: {
+      type: Number,
+      required: true
+    },
+    skills: {
+      type: Array,
+    },
+    senses: {
+      type: Array,
+    },
+    languages: {
+      type: Array,
+    },
     id: {
       type: String,
     },
@@ -101,13 +119,35 @@ export default {
       return `${this.speedFt} ft.`
     },
     propertiesStr() {
-      return `${this.size[0].toUpperCase() + this.size.substring(1)} ${this.type ? ' ' + this.type : ''}${
+      return `${capitalize(this.size)} ${this.type ? ' ' + this.type : ''}${
         this.race ? ', ' + this.race : ''
       }${this.alignment ? ', ' + this.alignment : ''}`
     },
     hitPointsStr() {
       return this.hitPoints.toString()
     },
+    skillsStr() {
+      return this.skills.map(skillObject => `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`).join(', ')
+    },
+    sensesStr() {
+      return this.senses.join(', ')
+    },
+    languagesStr() {
+      return this.languages.map(capitalize).join(', ')
+    },
+    challengeRatingStr() {
+      switch (this.challengeRating){
+        case 0.125:
+          return '1/8'
+        case 0.25:
+          return '1/4'
+        case 0.50:
+          return '1/2'
+        default:
+          isInteger(this.challengeRating)
+          return this.challengeRating
+      }
+    }
   },
 }
 </script>

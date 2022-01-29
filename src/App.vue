@@ -709,6 +709,10 @@
         :intelligence="7"
         :wisdom="9"
         :charisma="7"
+        :challengeRating="1/2"
+        :skills="[{name: 'perception', modifier: 2}, {name: 'nature', modifier: -4}]"
+        :senses="['darkvision 60 ft.']"
+        :languages="['aquan', 'giant']"
       />
       <part-title name="Help" />
     </page>
