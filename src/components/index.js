@@ -10,6 +10,7 @@ import ReadAloud from './ReadAloud.vue'
 import CaptionedFigure from './CaptionedFigure.vue'
 import Item from './Item.vue'
 import Monster from './Monster.vue'
+import IdLink from './IdLink.vue'
 
 export default {
   CampaignTitle,
@@ -24,4 +25,5 @@ export default {
   CaptionedFigure,
   Item,
   Monster,
+  IdLink,
 }

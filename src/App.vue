@@ -425,8 +425,8 @@
       />
       <chapter-title name="The Only Shade of Gray" />
       <area-title name='The Gray Bridge' />
-      The Gray Bridge crosses across the ferocious current of Viper's Rend east of
-      \DndAreaRef{Gray keep} and west of \DndAreaRef{Halla Farm}. It is an important supply route providing seafood and
+      The Gray Bridge crosses across the ferocious current of Viper's Rend east of <id-link name='The Gray Keep' type='area' />
+      and west of <id-link name='Halla Farm' type='area' />. It is an important supply route providing seafood and
       minerals to the settlements of Pohjola. At the start of this adventure, metsäläiset have destroyed the bridge to
       harass kalevans. The bridge will be repaired during first few days. Crossing the river is very hard due to its
       strong current. A group of \pagelink{npc:soldierOfTheSword}{Soldiers of the Sword} guards the bridge. Another
@@ -455,10 +455,11 @@
       by a \pagelink{monster:saltwaterScrag}{Saltwater Scrag}. It has anchored some boats to the ocean floor and eaten
       the fishermen and their catch. The party has to take a boat to lure the scrag out of the sea. Killing the scrag
       may reveal its nest on the sea floor that contains a 2 carat diamond and the Cap of Water Breathing. Ikitiera
-      offers a reward of 10 50gp gemstones. \DndItemHeader{Cap of Water Breathing (Meren Myssy)}{Wondrous item,
-      uncommon} While wearing this cap underwater, you can speak its command word as an action to create a bubble of air
+      offers a reward of 10 50gp gemstones.
+      <item name='Cap of Water Breathing (Meren Myssy)' properties='Wondrous item,
+      uncommon' description='While wearing this cap underwater, you can speak its command word as an action to create a bubble of air
       around your head. It allows you to breathe normally underwater. This bubble stays with you until you speak the
-      command word again, the cap is removed, or you are no longer underwater.
+      command word again, the cap is removed, or you are no longer underwater.' />
       <section-title name="Fishy Business" />
       \paragraph{\pagelink{npc:grayKeepMilitia}{Commander Pulkkinen}} A military officer turned ex-fisherman Pulkkinen
       is a burly dwarf male with rugged worker hands and a face oldened by sea weather. He is not the most traditional
@@ -576,17 +577,17 @@
       their time there. The place is completely dark.
       <area-title name="Underdark (Maanalanen)" />
       These tunnels need to be describe as vast and completely dark but only some of them are made explorable in this
-      adventure. You should let the Deep Gnomes guide the party e.g. to \DndSubAreaRef{Dark Chamber} and describe how
+      adventure. You should let the Deep Gnomes guide the party e.g. to <id-link name='Dark Chamber' type='subarea' /> and describe how
       deep you are going. Don't take the map too literally. \clearpage \begin{figure}[h!] \caption{Underdark}
       \includegraphics[scale=0.20]{img/underdark.png} \end{figure} \clearpage
       <sub-area-title name='Entrance' />
       A low room with a
-      12ft pit on the other side. Narrow ledges go around it and can be used to go around the pit with DC 10 dexterity
+      12 ft. pit on the other side. Narrow ledges go around it and can be used to go around the pit with DC 10 dexterity
       for larger than small creatures. If the party causes noise, \pagelink{monster:deepGnome}{Deep Gnomes} from
-      \DndSubAreaRef{Guard Chamber} will come investigate.
+      <id-link name='Guard Chamber' type='subarea' /> will come investigate.
       <sub-area-title name='River Chamber' />
       An underground river goes through
-      this room and can take the party next to \DndSubAreaRef{Living Chamber}.
+      this room and can take the party next to <id-link name='Living Chamber' type='subarea' />.
       <sub-area-title name='Guard Chamber' />
       A room Deep Gnomes use as a guarding spot ensuring no-one unexpected wanders into their tunnels. Has two guarding Deep Gnomes.
       <sub-area-title name='Animal Chamber' />
@@ -600,11 +601,11 @@
       Five Deep Gnomes are examining Leino and trying to help him medically. One of the
       Deep Gnomes is their healer and expects Leino to survive. He can give the party a quest to retrieve the remains of
       their fellow Deep Gnomes that dug too deep and are likely killed by the beasts of the depths in
-      \DndSubAreaRef{Dark Chamber}. He promises 100gp and a fine obsidian Dagger they found from the depths. The dagger
+      <id-link name='Dark Chamber' type='subarea' />. He promises 100gp and a fine obsidian Dagger they found from the depths. The dagger
       has old runes on it that spell Light Carver (Valonvuolija). Old runes can be read only by few in Pohjola.
-      \DndItemHeader{Light Carver (Valonvuolija)}{Wondrous item, rare} Dagger +2. A light obsidian dagger that makes one
+      <item name='Light Carver (Valonvuolija)' properties='Wondrous item, rare' description='Dagger +2. A light obsidian dagger that makes one
       blind in daylight but gives perfect vision in the dark. Basically, it flips the light and dark sights, so a
-      wielder with dark sight can see in light.
+      wielder with dark sight can see in light.' />
       <sub-area-title name="Dark Chamber" />
       A chamber that was revealed by Deep Gnome miners. When they entered it, four Darkmantles attacked and killed them.
       Their remains are still there. The hole they made is on the top of the chamber near the ceiling. The ceiling is
@@ -707,12 +708,16 @@
       Revealing. Min. 200gp yields an uncommon weapon and min. 500gp a rare armor. These limits are not set in stone so
       you should consider the PC's sacrifice. One item per PC! Extra prayers give nothing and won't take the money
       either! If the party don't know how to pray maybe the dragon can give them a hint to offer some "gold of the sun"
-      to the goddess. \DndItemHeader{Sunstroke (Auringonpistos)}{Sword, uncommon} Some Sword +1. A plain high quality
-      sword. \DndItemHeader{Rays of Our Lives (Päivien Viemä)}{Medium Armor, uncommon} Some Armor +1. A plain high
-      quality steel armor. \DndItemHeader{Sunmist Blade (Auer)}{Sword, rare} Some Sword +2. A sword with golden
-      decoration. \DndItemHeader{Heartgleam (Sydänkajo)}{Medium Armor, rare} Some Armor +2. A steel armor with golden
-      trims and golden sun on the chest. \clearpage \begin{figure}[h!] \caption{Shrine of Päivätär}
-      \includegraphics[scale=0.20]{img/paivatar_shrine.png} \end{figure} \clearpage
+      to the goddess.
+      <item name='Sunstroke (Auringonpistos)' properties='Sword, uncommon' description='Some Sword +1. A plain high quality
+      sword.' />
+      <item name='Rays of Our Lives (Päivien Viemä)' properties='Medium Armor, uncommon' description='Some Armor +1. A plain high
+      quality steel armor.' />
+      <item name='Sunmist Blade (Auer)' properties='Sword, rare' description='Some Sword +2. A sword with golden
+      decoration.' />
+      <item name='Heartgleam (Sydänkajo)' properties='Medium Armor, rare' description='Some Armor +2. A steel armor with golden
+      trims and golden sun on the chest.' />
+      <captioned-figure :path="paivatarShrine" caption='Temple of Päivätär' width="30rem" />
       <chapter-title name="Kingdom In Twain" />
       <section-title name="Southern Hospitality" />
       <section-title name="Northern Hostility" />
@@ -733,7 +738,6 @@
       Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend. They
       collect tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the
       station costs 100gp without any load.
-      <part-title name="NPCs" />
       <part-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
       <part-title name="Help" />
@@ -745,6 +749,7 @@
 import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
 import ukkoMonastery from './img/ukko_monastery.png'
+import paivatarShrine from './img/paivatar_shrine.png'
 import campaignJson from '../campaign'
 import { sortByKey } from './utils'
 import { parseCampaign } from './parser'
@@ -757,6 +762,7 @@ export default {
     return {
       tursaansydan,
       ukkoMonastery,
+      paivatarShrine,
       monsters: sortByKey(campaign.monsters, 'name'),
     }
   },
