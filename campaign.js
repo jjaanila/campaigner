@@ -266,7 +266,7 @@ module.exports = Object.freeze({
           damage: { throws: 1, sides: 4, constant: 3 },
         },
         {
-          name: 'Dagger',
+          name: 'Throwing Dagger',
           type: 'ranged',
           toHit: 5,
           rangeFt: 20,
@@ -608,13 +608,12 @@ module.exports = Object.freeze({
       ],
       actions: [
         {
-          name: 'Spear',
+          name: 'Two-handed Spear',
           type: 'melee',
           toHit: 3,
           reachFt: 5,
           damageType: 'piercing',
           damage: { throws: 1, sides: 8, constant: 1 },
-          extra: 'Two-handed.',
         },
         {
           name: 'Spear',
@@ -625,8 +624,8 @@ module.exports = Object.freeze({
           damage: { throws: 1, sides: 6, constant: 1 },
         },
         {
-          name: 'Spear',
-          type: 'melee',
+          name: 'Throw Spear',
+          type: 'ranged',
           toHit: 3,
           rangeFt: 20,
           disadvantageRangeFt: 60,
