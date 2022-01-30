@@ -28,6 +28,7 @@ export default {
 }
 .monster-action-name {
   font-weight: bold;
+  font-style: italic;
 }
 .monster-action-descriptiom {
   margin-left: 0.25rem;

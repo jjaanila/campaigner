@@ -19,7 +19,7 @@ export default {
   display: block;
   border-bottom: 1px solid #58180d;
   color: #58180d;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 </style>

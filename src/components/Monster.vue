@@ -183,8 +183,8 @@ export default {
   margin: 1rem 0;
   background-color: #fdf1dc;
   padding: 0.5rem;
-  border-top: 3px double #59190d;
-  border-bottom: 3px double #59190d;
+  border-top: 4px double #59190d;
+  border-bottom: 4px double #59190d;
   font-size: 0.75rem;
 }
 .monster-left,.monster-right {
