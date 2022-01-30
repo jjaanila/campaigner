@@ -35,5 +35,6 @@ export default {
 }
 .ability-score-name {
   font-weight: bold;
+  color: #58180d;
 }
 </style>

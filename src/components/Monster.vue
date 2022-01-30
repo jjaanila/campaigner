@@ -3,10 +3,12 @@
     <span class="monster-name">{{ name }}</span>
     <div class="monster-left">
       <span class="monster-properties">{{ propertiesStr }}</span>
+      <p class="monster-description">{{ description }}</p>
+      <monster-divider />
       <monster-stat-row label="Armor Class" :value="armorClass" />
       <monster-stat-row label="Hit Points" :value="hitPointsStr" />
       <monster-stat-row label="Speed" :value="speed" />
-      <p class="monster-description">{{ description }}</p>
+      <monster-divider />
       <div class="monster-ability-scores">
         <ability-score name="STR" :value="strength" />
         <ability-score name="DEX" :value="dexterity" />
@@ -15,10 +17,17 @@
         <ability-score name="WIS" :value="wisdom" />
         <ability-score name="CHA" :value="charisma" />
       </div>
-      <monster-stat-row label="Skills" :value="skillsStr" />
-      <monster-stat-row label="Senses" :value="sensesStr" />
-      <monster-stat-row label="Languages" :value="languagesStr" />
-      <monster-stat-row label="Challenge" :value="challengeRatingStr" />
+      <monster-divider />
+      <monster-stat-row class="monster-skills" label="Skills" :value="skillsStr" />
+      <monster-stat-row class="monster-senses" label="Senses" :value="sensesStr" />
+      <monster-stat-row class="monster-languages" label="Languages" :value="languagesStr" />
+      <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
+      <monster-divider />
+      <monster-action v-for="passive in passives" :key="passive.name" :name="passive.name" :descriptiom="passive.description" />
+      <monster-section-header name="Actions" v-if="actions.length > 0" />
+      <monster-action v-for="action in actions" :key="action.name" :name="action.name" :descriptiom="action.description" />
+      <monster-section-header name="Reactions" v-if="reactions.length > 0" />
+      <monster-action v-for="reaction in reactions" :key="reaction.name" :name="reaction.name" :descriptiom="reaction.description" />
     </div>
     <div class="monster-right"></div>
   </div>
@@ -28,12 +37,18 @@
 import { generateId, capitalize } from '../utils'
 import MonsterStatRow from './MonsterStatRow.vue'
 import AbilityScore from './AbilityScore.vue'
+import MonsterSectionHeader from './MonsterSectionHeader.vue'
+import MonsterAction from './MonsterAction.vue'
+import MonsterDivider from './MonsterDivider.vue'
 import Dice from '../Dice'
 import { isInteger } from '../validators'
 export default {
   name: 'Monster',
   components: {
     'monster-stat-row': MonsterStatRow,
+    'monster-section-header': MonsterSectionHeader,
+    'monster-action': MonsterAction,
+    'monster-divider': MonsterDivider,
     'ability-score': AbilityScore,
   },
   props: {
@@ -110,6 +125,15 @@ export default {
     id: {
       type: String,
     },
+    passives: {
+      type: Array
+    },
+    actions: {
+      type: Array
+    },
+    reactions: {
+      type: Array
+    }
   },
   computed: {
     containerId() {
@@ -176,10 +200,15 @@ export default {
 }
 .monster-description {
   margin: 0.25rem 0 0.25rem 0;
+  font-style: italic;
 }
 .monster-ability-scores {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  margin: 0.25rem 0;
+}
+.monster-challenge-rating {
+  margin-bottom: 0.25rem;
 }
 </style>

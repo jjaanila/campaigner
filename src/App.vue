@@ -713,6 +713,9 @@
         :skills="[{name: 'perception', modifier: 2}, {name: 'nature', modifier: -4}]"
         :senses="['darkvision 60 ft.']"
         :languages="['aquan', 'giant']"
+        :actions="[{name: 'Claw', description: 'Asd'}]"
+        :reactions="[{name: 'Parry', description: 'Asd'}]"
+        :passives="[{name: 'Shy', description: 'Asd'}]"
       />
       <part-title name="Help" />
     </page>
