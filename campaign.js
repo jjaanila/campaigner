@@ -1188,7 +1188,7 @@ module.exports = Object.freeze({
       ],
     },
     {
-      name: 'With Autere',
+      name: 'Witch Autere',
       size: 'medium',
       type: 'humanoid (female elf)',
       alignment: 'chaotic good',

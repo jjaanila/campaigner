@@ -6,7 +6,7 @@ export const parseCampaign = campaignJson => {
     monsters: campaignJson.monsters.map(monster => ({
       ...monster,
       hitPoints: Dice.deserialize(monster.hitPoints),
-      actions: monster.actions.map(action => ({
+      actions: monster.actions?.map(action => ({
         ...action,
         damage: action.damage && Dice.deserialize(action.damage),
       })),

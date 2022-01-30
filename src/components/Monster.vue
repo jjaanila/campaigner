@@ -17,9 +17,11 @@
         <ability-score name="CHA" :value="charisma" />
       </div>
       <monster-divider />
+      <monster-stat-row class="monster-saving-throws" label="Saving Throws" :value="savingThrowsStr" />
       <monster-stat-row class="monster-skills" label="Skills" :value="skillsStr" />
-      <monster-stat-row class="monster-resistances" label="Damage Resistances" :value="damageResistancesStr" />
-      <monster-stat-row class="monster-immunities" label="Damage Immunities" :value="damageImmunitiesStr" />
+      <monster-stat-row class="monster-damage-resistances" label="Damage Resistances" :value="damageResistancesStr" />
+      <monster-stat-row class="monster-damage-immunities" label="Damage Immunities" :value="damageImmunitiesStr" />
+      <monster-stat-row class="monster-condition-immunities" label="Condition Immunities" :value="conditionImmunitiesStr" />
       <monster-stat-row class="monster-senses" label="Senses" :value="sensesStr" />
       <monster-stat-row class="monster-languages" label="Languages" :value="languagesStr" />
       <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
@@ -114,6 +116,10 @@ export default {
       type: Number,
       required: true
     },
+    savingThrows: {
+      type: Array,
+      default: () => []
+    },
     skills: {
       type: Array,
       default: () => []
@@ -127,6 +133,10 @@ export default {
       default: () => []
     },
     damageImmunities: {
+      type: Array,
+      default: () => []
+    },
+    conditionImmunities: {
       type: Array,
       default: () => []
     },
@@ -168,6 +178,9 @@ export default {
     hitPointsStr() {
       return this.hitPoints.toString()
     },
+    savingThrowsStr() {
+      return this.savingThrows.map(capitalize).join(', ')
+    },
     skillsStr() {
       return this.skills.map(skillObject => `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`).join(', ')
     },
@@ -176,6 +189,9 @@ export default {
     },
     damageImmunitiesStr() {
       return this.damageImmunities.map(str => str.toLowerCase()).join(', ')
+    },
+    damageImmunitiesStr() {
+      return this.conditionImmunities.map(str => str.toLowerCase()).join(', ')
     },
     sensesStr() {
       return this.senses.join(', ')
