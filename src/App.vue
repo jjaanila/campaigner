@@ -96,9 +96,9 @@
       of havoc and misery in Pohjola, as they tried to interrupt settlers from organizing and building their new
       communities. Demon raids were common and in the end, kapes "ate the moon" by concealing it with a spell and it was
       common belief was that sun would be next target. Väinämöinen wanted to do one more favor for his people. With the
-      help of his brother Ilmarinen and the gods of Pohjola, he managed to imprison Perkele under lake Iänlampi. THe
+      help of his brother Ilmarinen and the gods of Pohjola, he managed to imprison Perkele under lake Iänlampi. The
       jail was shut with magical key called Tursaansydän, that is a large amethyst cut into shape of four tangled
-      arrows. THis key was split into four pieces that were hidden in Pohjola. This was done as insurance if Perkele
+      arrows. This key was split into four pieces that were hidden in Pohjola. This was done as insurance if Perkele
       would be needed once again for some yet unknown reason. A spell protects the pieces. They can open the cell only
       when joined to the original shape, but the key also can only be destroyed when it is whole.
 
@@ -139,7 +139,9 @@
       They know nothing of other lands and the knowledge of plane travellers, like our party, has long since forgotten.
       If the party asks about their situation the common folk should think they are crazy or laugh at them. They may
       refer to fairy tales where witches from other lands arrive to Pohjola to do evil. Of course these tales were once
-      true, but this hasn't happened for over hundred years. \DndArea{Bluebill's Nest (Sotkala)} Bluebill's Nest is a
+      true, but this hasn't happened for over hundred years.
+      <area-title name="Bluebill's Nest (Sotkala)" />
+      Bluebill's Nest is a
       small village which lives of fishing and hunting and trading with occasional travelers. A major road and river
       bypass the village so there is usually quite a bit of traffic. However, not many are willing to live this far away
       from major cities. Hunting and fishing are not that prolific professions either so the houses are modest and
@@ -148,11 +150,11 @@
       fishing nets on the porch. To north starts the road to the city of Sword, which follows the south bank of Fuller
       river. To the north is the road to the Gray Keep, Halla farm and the city of Brass Buckler. To the east is
       Hallasuo, huge marshland with just few inhabitants. To the west is river Viper's Rend (Kyynsärö).
-      \DndSubArea{Courtyard}
+      <sub-area-title name='Courtyard' />
       <read-aloud>
         The dirt courtyard is in the center of the line of houses. On its edge is a well but otherwise the yard doesn't
         seem to get much use. However, now there are four \pagelink{npc:soldierOfTheSword}{guards} cleaning their boots
-        and chatting. A fancy looking wagon stands next to the road and a young elf man steps around anxiously. The man
+        and chatting. A fancy looking wagon stands next to the road and a young human man steps around anxiously. The man
         has fine clothing, brown long hair, and a sword on his hip.
       </read-aloud>
       \paragraph{\pagelink{npc:kainoKalpa}{Kaino Kalpa}} The man is Kaino Kalpa, a bastard of half-king Untamo
@@ -170,7 +172,9 @@
       the new heir. \paragraph{\pagelink{npc:commoner}{Kala-Kosti}} An old man sitting on his porch repairing fishing
       nets. Can tell about refugees upriver that are coming from the Sword cities escaping restlessness. If asked, he
       tends to fish along the rivers because lake Iänlampi is not the best fishing spot. It actually doesn't have fish
-      at all, but let's not reveal that yet. \DndSubArea{White Rabbit Inn} The inn is a small two-story log building and
+      at all, but let's not reveal that yet.
+      <sub-area-title name='White Rabbit Inn' />
+      The inn is a small two-story log building and
       has tavern downstairs. On the left is a wooden counter and the kitchen. Next to it are stairs that take to
       upstairs where are 3 two bed rooms up for rent. There are 5 tables downstairs.
       \paragraph{\pagelink{npc:commoner}{Tuomikki}} A female dwarf with a strong attitude. Is not happy about her
@@ -204,7 +208,9 @@
       get rid of in their house basement. "They are so big and hairy!" The party can take the task of getting rid of the
       rats. Ilmari can also tell the party about Körri, family's cat who has been missing for weeks. If the party gets
       rid of the rats, Toiva will pay them 10gp and provide a free room for one night. Ilmari tells that he will go see
-      "the grandpa" and runs away. \DndSubArea{Toiva's house} The simple house of Toiva, Ano and Ilmari has two large
+      "the grandpa" and runs away.
+      <sub-area-title name="Toiva's House" />
+      The simple house of Toiva, Ano and Ilmari has two large
       rooms and a cellar. It is a log house with simple wooden furniture. Dried food has been stored to the first room
       and it also has a fireplace. Second room two beds, where in the larger one lies a woman, Ano. The only sign of
       consciousness are the open eyes and occasional swallowing. This disease cannot be cured. In the cellar the party
@@ -214,7 +220,8 @@
       cat demon to get the command over his little minions. You can play this out a bit with Körri's behaviour but this
       is just a weird side quest. Don't expect it to continue.
       <section-title name="Bandit Camp" />
-      \DndArea{Bandit Camp} A party of 1 \pagelink{monster:banditCaptain}{Bandit Captain} 4
+      <area-title name='Bandit Camp' />
+      A party of 1 \pagelink{monster:banditCaptain}{Bandit Captain} 4
       \pagelink{monster:bandit}{Bandits} have camped close to the road. One of them is keeping watch nearby close to the
       road, others are maintaining their gear but have put Rautia to do the blacksmithing. Their plan is to take Rautia
       with them, but he doesn't actually mind. He is enjoying the perks of his new environment, contents of a captured
@@ -223,19 +230,19 @@
       beer and tells that he is heading towards Ukonnyrkki settlement which is nearby. A chest in the camp contains
       50gp.
       <section-title name="Wedding" />
-
-      \DndArea{Halla Farm} This is a large farm south of Sotkala, next to a huge marshland Hallasuo. The marshland has
+      <area-title name='Halla Farm' />
+      This is a large farm south of Sotkala, next to a huge marshland Hallasuo. The marshland has
       been owned by Halla family for centuries but marsh doesn't much so the land is worthless. Also the air in the
       marshes cools down significantly during the nights making the environment even harsher for plants. Not many dare
       to venture there as tales tell that people go mad and drown themselves into swamp pools. People got lost and their
       clothes were found from the marshes. It is rumored that evil creatures inhabit the area nowadays. Tapio Halla or
-      other family members can tell about these tales and rumours. \begin{DndReadAloud} You arrive to a farmstead and
+      other family members can tell about these tales and rumours. <read-aloud> You arrive to a farmstead and
       see a lot of people sitting around a long table. All of them are wearing exceptionally clean and formal clothes
       and the place has been decorated with birch branches and flowers. This is a wedding of the man at the end of the
       long table, Antero Halla and his fiancee Vilja Halla. The man at the end of the table rises and the crowd goes
       silent. The man holds a tin bucket high and starts to sing: "Mehtolan metinen muori, Metän kultanen kuningas, Tule
       nyt häihin härköisiis, Pitkän villaisi pitoihin." He starts walking and others rise up and follow. Soon they form
-      a line and move behind the lead singer. \end{DndReadAloud} If the party follows: \begin{DndReadAloud} The crowd
+      a line and move behind the lead singer. </read-aloud> If the party follows: <read-aloud> The crowd
       walks silently across the road and climbs all the way to top of a nearby hill. There the leader stops at a large
       gray ash tree. The tree is lush but barely the party sees some ornaments on its branches. The man lays down the
       container. He puts his hands inside and brings up a freshly cleaned bear skull, still dripping last drops of
@@ -243,7 +250,7 @@
       käypi pohjoisesta ja etelästä ja kaikilta tuulilta." Suddenly Vilja opens her mouth and sings with the same
       melody: "Tule, poikani polonen, Tuolla on ollut suuren suon sivulla, Ei oo tulta ei tulusta, Vara saaha valkijata"
       The man walks up to the tree and ties the fresh skull on the trunk. Suddenly the party realize that the ornaments
-      are older skulls. Silently the crowd turns back and starts walking back to the farm. \end{DndReadAloud} At the
+      are older skulls. Silently the crowd turns back and starts walking back to the farm. </read-aloud> At the
       farm the crowd returns to celebration. Here the party can find the Halla family, father Tapio, mother Vilja, and
       three girls Kylli, Lempo, and Mielo. Tapio or Vilja can explain that the ritual returns the bear back to its
       mother who will send it back on earth to be hunted again. They can also tell about the marshes, about temperature
@@ -252,7 +259,8 @@
       arrive to the bear celebration (karhunpeijaiset). Their farm is on the south east side of the marshes. They cannot
       leave their kids right now so they request the party to investigate and promise to pay 20g.
       <section-title name="Forgotten Marshes" />
-      \DndSubArea{Halla Farm -> Hallaneva Farm} To east leads a little traversed path. It goes through grassy lands and
+      <sub-area-title name='Halla Farm -> Hallaneva Farm' />
+      To east leads a little traversed path. It goes through grassy lands and
       sparse woods. To north the party sees denser forests with no visible paths. After few kilometers they meet a
       stranger, a tough looking dwarf woman next to a wagon, which leans heavily on its side. The woman
       \pagelink{npc:commoner}{Jutikka Äyräs}, a merchant, sits against its side and examines a broken wagon wheel in her
@@ -264,8 +272,10 @@
       promises to pay 20gp each. In reality she wants to lure them into a trap, the same one she lured the Halla brother
       Jurva and his son Osmo. Luckily their mother and sick daughter stayed home. DC 15 insight check allows the party
       to sense that something fishy is going on. DC 10 intimidation check will make to reveal what she knows about the
-      trap and the operation. \DndArea{Hallasuo encampment} The party can try to fix the wagon they will need
-      Carpenter's Tools and a DC 18 check. If the succeed, the woman will request them to escort her with even higher
+      trap and the operation.
+      <sub-area-title name='Hallasuo encampment' />
+      The party can try to fix the wagon they will need
+      Carpenter's Tools and a DC 18 check. If they succeed, the woman will request them to escort her with even higher
       fee. If the party helps to escort the lady, she leads them to a hidden path covered with branches and takes them
       into the forest. After some walking, a hemp web is dropped from trees high above and the party is ambushed. DC 15
       Wisdom saving throw allows them to notice the web. DC 10 Acrobatics saving throw to get out of the way. Characters
@@ -289,7 +299,8 @@
       that either tells about the search operation in the marshes. A secret group has hired kobolds to search for some
       kind structure or artifact at the marshes. They don't really know what they a searching but they were instructed
       "you will know when you find it". To hasten the search they have captured people to work for them. Jurva and Osmo
-      Halla have been taken to the labor camp in the middle of the marsh. \end{DndComment} \DndArea{Hallasuo Base Camp}
+      Halla have been taken to the labor camp in the middle of the marsh. \end{DndComment}
+      <sub-area-title name='Hallasuo Base Camp' />
       Another path leads from the camp deeper into the marsh. The further the party travels, the denser the air gets
       with the smell of rotting vegetation and vision is blocked by dense mist. If Jutikka survives, she is found stuck
       in a marsh pool and calls for help. She promises to tell what she knows about the Hallas. The party may use her to
@@ -299,8 +310,10 @@
       low dark structure. Group of 8 kobolds are cooking and resting by the fire and can be surprised. They will attack
       if they notice the party. Looting the kobolds yields 20gp. The structure in the middle of the camp is a rectangle
       shaped platform made of stone blocks. On the fire side, there are stairs leading down underground. It is possible
-      to sneak in past the kobolds with a DC 15 stealth check. \DndArea{Monastery of Ukko} \DndSubArea{Entry Hall} The
-      party descends down torch lit stairs into a hall with two lines of pillars. In the end of the hall is a wall size
+      to sneak in past the kobolds with a DC 15 stealth check.
+      <area-title name='Monastery of Ukko' />
+      <sub-area-title name='Entry Hall' />
+      The party descends down torch lit stairs into a hall with two lines of pillars. In the end of the hall is a wall size
       symbol of Ukko called Ukonvasara (Hammer of Ukko) made of iron and covered in rust. The place is clearly hundreds
       of years old. On the sides are five doorways on each side. Two first on the right have collapsed and cannot be
       accessed. Next two have closed doors but the last one is open. On the left first two have been barred shut with
@@ -314,17 +327,23 @@
       are commanded to let none pass unless accompanied with a high ranking leader. The soldiers are clad in simple
       leather cloths. Kobolds are not allowed down in the monastery (except for scouting dangerous areas). The soldiers
       will attack and one tries to run to warn others in the bed chamber. If the soldiers are examined closely the party
-      finds a small bird foot sown to their shirts, right above heart. \DndSubArea{Bed Chamber} This chamber is used by
+      finds a small bird foot sown to their shirts, right above heart.
+      <sub-area-title name='Bed Champer' />
+      This chamber is used by
       the cult to rest. There are three soldiers sleeping on the beds and one is tending to his gear with his back
-      turned towards the door. \DndSubArea{Library} An old library with plenty of old books and scrolls written with old
+      turned towards the door.
+      <sub-area-title name='Library' />
+      An old library with plenty of old books and scrolls written with old
       runes. Two \pagelink{npc:metsalainenCleric}{clerics} are studying the documents intently. There is a secret door
       that leads to a room with a chest. DC 10 Perception check finds a lever behind a bookshelf that opens the secret
       door, but if the roll is below 15 PC misses the more worn lever that also disables the arrow trap inside. Two
       arrows fly out of the room and PC has to succeed DC 10 Acrobatics check to avoid them. Inside the chest is one
-      Potion of Healing, Scroll of Unseen Servant, and a garnet. \DndSubArea{Kitchen} A soldier is preparing food next
+      Potion of Healing, Scroll of Unseen Servant, and a garnet.
+      <sub-area-title name='Kitchen' /> A soldier is preparing food next
       to a large pot. A large \pagelink{monster:mastiff}{Mastiff} rests on the floor drooling after a meal. When the
       door is opened it starts barking which alerts the cook and the \pagelink{npc:metsalainenCleric}{cleric} in the
-      corridor north-east of kitchen. The cleric will attack the party from behind. \DndSubArea{Study} A large room once
+      corridor north-east of kitchen. The cleric will attack the party from behind.
+      <sub-area-title name='Study' /> A large room once
       full of desks and some bookshelves. This room was used to study large amount of information that was gathered
       studying Ukko's prophecies. Now the desks have been replaced with sturdier tables but the purpose of the room
       still stands. There are 3 \pagelink{npc:metsalainenCleric}{clerics} reading through books and making notes. 4
@@ -334,7 +353,9 @@
       stories. Two more slaves are carefully cleaning the walls of dirt to reveal the paintings. Two soldiers stand
       behind them. There are various paintings painted with different styles. Detailed images of a white swan in a black
       river and a lady in the middle of a sea with a bird on her leg, but also crude depictions of bears, squirrels and
-      other animals. \DndSubArea{Rain Hall} Rain Hall is a high hall with 6 pillars in two rows. The ceiling is sphere
+      other animals.
+      <sub-area-title name='Rain Hall' />
+       Rain Hall is a high hall with 6 pillars in two rows. The ceiling is sphere
       shaped and 60ft tall. In the middle of the ceiling is a stalactite like smooth pole which descends down for 20
       feet. The ceiling is full of small holes that shine faint light and drizzle down water. Down on the floor the
       water drops create a rain like effect. At the end of the hall is a large round pool with live vegetation around
@@ -346,25 +367,26 @@
       Osmo Halla, Tapio Halla's nephew and Jurva Halla's son. The slaves may warn the Cult Fanatic or help the party in
       the fight or not, I let you decide. Ahto Piki has 100gp, and an order letter from their leader which has the same
       black seal as seen in previous letters. Now it can be seen that the bird in question is an eagle.
-      \begin{DndReadAloud} The letter says: Finally some true progress! Patience was again key to success just as we
+      <read-aloud> Letter says: Finally some true progress! Patience was again key to success just as we
       anticipated. Finding the monastery may give us the answers we need but the small amount of documents is indeed
       disheartening. It seems the ancestors were clever enough to try taking their secrets into their graves. Keep on
-      looking, they must have missed something. May the trees shade your path. \end{DndReadAloud} After the fight, Osmo
+      looking, they must have missed something. May the trees shade your path. </read-aloud> After the fight, Osmo
       Halla reveals that his father was commanded to the marshes to show the abductors some other possibly interesting
       location in exchange for his son's freedom. He left his son behind because the journey is dangerous. Osmo has been
       cleaning the paintings for two days and hasn't eavesdropped anything significant. Osmo also knows the location his
       father spoke of. It is another structure few kilometers to north and almost completely submerged under water.
-      \clearpage \begin{figure}[h!] \caption{Monastery of Ukko} \includegraphics[scale=0.20]{img/ukko_monastery.png}
-      \end{figure} \clearpage \DndArea{Hallasuo Cache} The party should follow Osmo to Hallasuo Cache, which is a secret
+      <captioned-figure :path="ukkoMonastery" caption='Monastery of Ukko' width='30rem' />
+      <area-title name='Hallasuo Cache' />
+      The party should follow Osmo to Hallasuo Cache, which is a secret
       storage that Ukko worshippers left behind. There they will find 15 kobolds carrying supplies and tools, Jurva
       Halla and a tall elder bearded human male with black robes and a bird claw on his shirt. He is
       \pagelink{npc:joukahainen}{Joukahainen} but let's keep that as a secret for now. The area around the structure is
       almost dry in a rippling 90ft circle of magic. The man seems to be preparing for something and kobolds stand
       around him anxiously waiting. The man is placing various objects on the ground but the party can't see them well.
       Jurva Halla stays still a numb look on his face, with eyes like glass. The party most likely waits to see what
-      happens. After a few minutes the man starts to speak: \begin{DndReadAloud} Säkei'en säilö, sammio salain
+      happens. After a few minutes the man starts to speak: <read-aloud> Säkei'en säilö, sammio salain
       saarretun, salas saranoi narauta, laverra lukkoi lorun, vaivoin valokses vierrä, kives koverra, Perkeleen piirun
-      painomana. \end{DndReadAloud} The party hears a faint rumble which starts to grow. First thin cracks form on the
+      painomana. </read-aloud> The party hears a faint rumble which starts to grow. First thin cracks form on the
       structure's surface and then pieces of stone blocks start to fall off to ground. At times block pieces jump back
       on their places forced by a counter-acting spell, but the man's power seems to be too much. The structure is near
       collapsing when one of its walls breaks outwards with great force and two kobolds get crushed to death by flying
@@ -379,15 +401,16 @@
       cultists called them as Woodeners (Metsäläiset). They know the marshes well so that is why they knew the location
       of the cache, although they had no idea of its purpose. They didn't know about the monastery as it was completely
       submerged. They propose that they continue to their farm in the south-east corner of Hallasuo to rest.
-      \DndArea{Hallaneva Farm} Here are Jurmo Halla's wife Mielitty and sick daughter Liekko. They will tell that Jurmo
+      <area-title name='Hallaneva Farm' />
+      Here are Jurmo Halla's wife Mielitty and sick daughter Liekko. They will tell that Jurmo
       and Osmo left to the wedding but haven't returned yet. If the party arrives with the men, the wife is shocked of
       their condition and Jurmo will explain the situation. The daughter lies sick in bed with Horkka disease, commonly
       believed to be caused by similarly named Demon. Horkka causes high fever and convulsions and can be deadly for
       children and elder. If the party cures the child's disease, Jurmo happily requests to pray for Tellervo, the
       daughter of god Tapio, to bless the party. He leads them through a dense patch of forest to a Tapio's table, which
-      is a short juniper tree which has grown horizontally to a table like form. He speaks a spell: \begin{DndReadAloud}
+      is a short juniper tree which has grown horizontally to a table like form. He speaks a spell: <read-aloud>
       Honkien haltija, korpikantoin kaihtija, Tyttäres Tellervoinen, impi iän ikuinen, taivu ainoinen Tapio, päästä
-      neito pöytähän, hopiat luovun halustani, pöydän korean kannelle. \end{DndReadAloud} During the last verse, he
+      neito pöytähän, hopiat luovun halustani, pöydän korean kannelle. </read-aloud> During the last verse, he
       carves few slices of silver onto the table. He leaves and beckons the party to follow. Back at the farm he thanks
       the party again and wishes them Tapio's and Tellervo's guidance. He also requests the party to take his
       congratulations to Halla farm and to explain the situation. The party does not feel any different. DC 10 religion
@@ -401,15 +424,17 @@
       divinely light quarterstaff."
       />
       <chapter-title name="The Only Shade of Gray" />
-
-      \DndArea{The Gray Bridge} The Gray Bridge crosses across the ferocious current of Viper's Rend east of
+      <area-title name='The Gray Bridge' />
+      The Gray Bridge crosses across the ferocious current of Viper's Rend east of
       \DndAreaRef{Gray keep} and west of \DndAreaRef{Halla Farm}. It is an important supply route providing seafood and
       minerals to the settlements of Pohjola. At the start of this adventure, metsäläiset have destroyed the bridge to
       harass kalevans. The bridge will be repaired during first few days. Crossing the river is very hard due to its
       strong current. A group of \pagelink{npc:soldierOfTheSword}{Soldiers of the Sword} guards the bridge. Another
       group of \pagelink{npc:commoner}{Commoners} is fixing the bridge while pressured by the soldiers. Soldiers should
       question the party and try to sort out what is the meaning of their trip. A decent bribe might help to get the
-      party out of this situation. \DndArea{The Gray Keep} A great keep on the shore of western Pohjola. It is built on
+      party out of this situation.
+      <area-title name='The Gray Keep' />
+      A great keep on the shore of western Pohjola. It is built on
       barren rocky land that continues all the way to the border of the north along the sea. This area has very little
       life but the sea offers plenty of fish, crabs, and mussels. Terrain is rocky and barren and deep crevasses divide
       the shore to long platforms that reach to the sea. The keep was built by metsäläiset but after they were banished,
@@ -446,8 +471,9 @@
       the first inspection of the tank in a long time. Earlier Kaino Kalpa had taken the solid responsibility of it
       without really doing his job. Pulkkinen doesn't trust Kaino and always suspected that there was something fishy
       about him. He spent most of his time dreaming about becoming the half-king. Kaino allowed metsäläiset to install
-      the portal to the bottom for a promise that the would become the half-king one day. \DndSubArea{The Tank} A half
-      ball shaped pond carved into the rocky shore. It is covered with a leathery cover that keeps the birds and other
+      the portal to the bottom for a promise that the would become the half-king one day.
+      <sub-area-title name='The Tank' />
+      A half ball shaped pond carved into the rocky shore. It is covered with a leathery cover that keeps the birds and other
       animals away. There are lids that can be opened to look inside. Hand nets with long shafts lie next to the lids. A
       member of \pagelink{npc:grayKeepMilitia}{Gray Keep Militia} circles around the pond. The guard claims they have
       seen nothing unusual except the amount of fish has been reducing. On the bottom of the tank is a 2ft wide portal
@@ -457,15 +483,18 @@
       through a dark tunnel into an underground lake. Closer to the bank, on the other side of the lake, party sees a
       \pagelink{monster:northernGiant}{Northern Giant} standing waist deep in water. It swings a large net, catching
       fish and emptying the catch into a cart. When the cart is full, the giant pushes it out of the cave to the next
-      chamber. It has to crawl on its knees to fit through the exit tunnel. \DndSubArea{Salting Chamber} From the
+      chamber. It has to crawl on its knees to fit through the exit tunnel.
+      <sub-area-title name='Salting Chamber' />
+      From the
       underground lake a tunnel leads to a large chamber with six \pagelink{npc:commoner}{metsäläinens} cleaning and
       salting fish. Fish are finally packed to wagons that are dragged away. In addition, there is a man in wooden hand
       carved armour that is supervising the workers called \pagelink{npc:montaja}{Montaja}. He is sitting on a stool
       working on another piece of wood with puukko (a simple knife). He has a letter sealed with a black bird seal that
-      says: \begin{DndReadAloud} You are doing well but that is not enough. Get rid of the abomination, it is slowing us
+      says: <read-aloud> You are doing well but that is not enough. Get rid of the abomination, it is slowing us
       down right now. We need more provisions to keep the people going. Exploration at the marshes has been fruitful and
-      I believe we will soon find the second fragment. May the forest guard your dreams. \end{DndReadAloud}
-      \DndSubArea{Fish Thieves' Crevasse} One of the rock crevasses on the west Pohjola shoreline. At the far back edge
+      I believe we will soon find the second fragment. May the forest guard your dreams. </read-aloud>
+      <sub-area-title name="Fish Thieve's Crevasse" />
+      One of the rock crevasses on the west Pohjola shoreline. At the far back edge
       of the crevasse is a cave and 3 \pagelink{npc:metsalainenSoldier}{Metsäläinen Soldiers} guarding the entrance and
       two fish wagons outside of it. There are also four glass jars full of fish oil on the ground. Few times a day a
       \pagelink{npc:commoner}{courier} comes and takes one wagon away with the help of two horses.
@@ -482,7 +511,9 @@
       time after farming and training duties. He also started selling majority of their produced barley to a forestry
       group and rumours tell that the price was lower than what the Sword cities were paying. He is being mind
       controlled by Joukahainen with a gem on his golden ring which he fiddles with when he is being forced to a
-      decision. He received the ring as an anonymous gift. \DndSubArea{Keep} The keep in the center of the settlement is
+      decision. He received the ring as an anonymous gift.
+      <sub-area-title name='Keep' />
+      The keep in the center of the settlement is
       the home of Chief Ikäheimo and his wife \pagelink{npc:commoner}{Tarjanne}. The keep has two floors above the
       ground and a dungeon floor for prisoners. On the ground floor there are the main hall, kitchen, arms storage and
       two smaller bedrooms for guests or house staff. On the top floor, there are the main bed room, a reading room and
@@ -518,8 +549,9 @@
       that, so bringing the seer to the dungeon works fine. If successful, he will let the party to fake an intrusion
       somehow. Another way to enter the dungeon is through a chimney that goes through the whole keep. On upper floors,
       it can be accessed through kitchen or the main bed room. Finding the vent requires a DC 15 Perception check in one
-      of the rooms when searching for a way into the dungeon. \DndSubArea{Heaven's Inn (Taivain Majatalo)} A small inn
-      next to the settlement entrance. The seer has a room upstairs. There are five men sharing a table downstairs. The
+      of the rooms when searching for a way into the dungeon.
+      <sub-area-title name="Heaven's Inn (Taivain Majatalo)" />
+      A small inn next to the settlement entrance. The seer has a room upstairs. There are five men sharing a table downstairs. The
       innkeeper is not around. When the party goes upstairs there are four doors of which one is open. When they
       approach any of the doors, they hear a voice from the open room: "Come in.".
       \paragraph{\pagelink{npc:kaukovalta}{Seer Kaukovalta}} Seer Kaukovalta is an old male human with bald head and a
@@ -546,18 +578,26 @@
       These tunnels need to be describe as vast and completely dark but only some of them are made explorable in this
       adventure. You should let the Deep Gnomes guide the party e.g. to \DndSubAreaRef{Dark Chamber} and describe how
       deep you are going. Don't take the map too literally. \clearpage \begin{figure}[h!] \caption{Underdark}
-      \includegraphics[scale=0.20]{img/underdark.png} \end{figure} \clearpage \DndSubArea{Entrance} A low room with a
+      \includegraphics[scale=0.20]{img/underdark.png} \end{figure} \clearpage
+      <sub-area-title name='Entrance' />
+      A low room with a
       12ft pit on the other side. Narrow ledges go around it and can be used to go around the pit with DC 10 dexterity
       for larger than small creatures. If the party causes noise, \pagelink{monster:deepGnome}{Deep Gnomes} from
-      \DndSubAreaRef{Guard Chamber} will come investigate. \DndSubArea{River Chamber} An underground river goes through
-      this room and can take the party next to \DndSubAreaRef{Living Chamber}. \DndSubArea{Guard Chamber} A room Deep
-      Gnomes use as a guarding spot ensuring no-one unexpected wanders into their tunnels. Has two guarding Deep Gnomes.
-      \DndSubArea{Animal Chamber} Two Deep Gnomes are taking care of their pet, a \pagelink{monster:rustMonster}{Rust
+      \DndSubAreaRef{Guard Chamber} will come investigate.
+      <sub-area-title name='River Chamber' />
+      An underground river goes through
+      this room and can take the party next to \DndSubAreaRef{Living Chamber}.
+      <sub-area-title name='Guard Chamber' />
+      A room Deep Gnomes use as a guarding spot ensuring no-one unexpected wanders into their tunnels. Has two guarding Deep Gnomes.
+      <sub-area-title name='Animal Chamber' />
+      Two Deep Gnomes are taking care of their pet, a \pagelink{monster:rustMonster}{Rust
       Monster} called Haisu. They use it to find iron, but sometimes it tends to escape to the outside world. It has
       confronted Leino in the wild and dragged him into the tunnels as prey. Deep Gnomes were not happy about it and
-      have been trying to nurse Leino back to health. Two Deep Gnomes and Haisu are in this chamber. \DndSubArea{Living
-      Chamber} Here Deep Gnomes spend their time crafting and maintaining tools. Three Deep Gnomes stay there.
-      \DndSubArea{Resting Chamber} Five Deep Gnomes are examining Leino and trying to help him medically. One of the
+      have been trying to nurse Leino back to health. Two Deep Gnomes and Haisu are in this chamber.
+      <sub-area-title name='Living Chamber' />
+      Here Deep Gnomes spend their time crafting and maintaining tools. Three Deep Gnomes stay there.
+      <sub-area-title name='Resting Chamber' />
+      Five Deep Gnomes are examining Leino and trying to help him medically. One of the
       Deep Gnomes is their healer and expects Leino to survive. He can give the party a quest to retrieve the remains of
       their fellow Deep Gnomes that dug too deep and are likely killed by the beasts of the depths in
       \DndSubAreaRef{Dark Chamber}. He promises 100gp and a fine obsidian Dagger they found from the depths. The dagger
@@ -597,7 +637,9 @@
       of the party. A \pagelink{monster:northernDruid}{Northern Druid} and 3 \pagelink{monster:deathDog}{Death Dogs} are
       hiding next to the road. When the party arrives the Druid starts to speak and the dogs start to circle around the
       party. He requests to know who the party members are and asks why they interfered with the operation at the
-      marshes. A fight may ensue. \DndArea{Refugee Camp} Refugees of the Sword cities have built a camp to the south
+      marshes. A fight may ensue.
+      <area-title name='Refugee Camp' />
+      Refugees of the Sword cities have built a camp to the south
       side of Fuller river. They have their own village of shacks and some have even built small log cabins. More
       refugees are coming in constantly and there is shortage of food. There is also a problem with northern barbarians
       regularly attacking the camp. The refugees can tell about the political turmoil and the spoilt river water. They
@@ -644,9 +686,9 @@
       thorough search of the hall reveals a letter that orders the barbarians to keep on raiding. "Metsäläiset will
       honour the contract". The letter is sealed with the same black eagle as the letters before. The party also finds a
       blue painting of a woman's face behind the layer of grime on the back wall. Seeing the lady brings a sentence into
-      the party member's minds: \begin{DndReadAloud} I am an eye set in a blue face. My gaze feeds the world. If I go
+      the party member's minds: <read-aloud> I am an eye set in a blue face. My gaze feeds the world. If I go
       blind so does the world. (Silmä kasvoin sinisten, ravitsija maailmankaiken, näköni jos veisi, veisi näön maan,
-      sokeaksi kaiken tekisi.) \end{DndReadAloud} This is a riddle and the correct answer is the sun. Even thinking of
+      sokeaksi kaiken tekisi.) </read-aloud> This is a riddle and the correct answer is the sun. Even thinking of
       the correct answer with any language causes a secret door to open and reveal another hall.
       <sub-area-title name="Päivätär Shrine" />
       This hall is slightly smaller than the first one. A grand statue of the sun, although dusty, stands at the back of
@@ -702,6 +744,7 @@
 <script>
 import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
+import ukkoMonastery from './img/ukko_monastery.png'
 import campaignJson from '../campaign'
 import { sortByKey } from './utils'
 import { parseCampaign } from './parser'
@@ -713,6 +756,7 @@ export default {
   data() {
     return {
       tursaansydan,
+      ukkoMonastery,
       monsters: sortByKey(campaign.monsters, 'name'),
     }
   },
