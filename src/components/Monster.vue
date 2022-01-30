@@ -1,7 +1,6 @@
 <template>
   <div :id="containerId" class="monster">
     <span class="monster-name">{{ name }}</span>
-    <div class="monster-left">
       <span class="monster-properties">{{ propertiesStr }}</span>
       <p class="monster-description">{{ description }}</p>
       <monster-divider />
@@ -28,8 +27,6 @@
       <monster-action v-for="action in actions" :key="action.name" :name="action.name" :descriptiom="action.description" />
       <monster-section-header name="Reactions" v-if="reactions.length > 0" />
       <monster-action v-for="reaction in reactions" :key="reaction.name" :name="reaction.name" :descriptiom="reaction.description" />
-    </div>
-    <div class="monster-right"></div>
   </div>
 </template>
 
@@ -178,19 +175,17 @@ export default {
 
 <style scoped>
 .monster {
-  display: flex;
-  flex-flow: column nowrap;
   margin: 1rem 0;
   background-color: #fdf1dc;
   padding: 0.5rem;
   border-top: 4px double #59190d;
   border-bottom: 4px double #59190d;
   font-size: 0.75rem;
-}
-.monster-left,.monster-right {
-  width: 50%;
+  column-count: 2;
+  column-fill: auto;
 }
 .monster-name {
+  display: block;
   font-weight: bold;
   font-size: 1.25rem;
   color: #58180d;
