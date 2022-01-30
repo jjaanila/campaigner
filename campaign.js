@@ -1,5 +1,4 @@
-import Dice from './src/Dice'
-export default {
+module.exports = {
   monsters: [
     {
       name: 'Thug 3',
@@ -8,7 +7,7 @@ export default {
       alignment: 'any alignment',
       armorClass: 11,
       armor: 'Leather Armor',
-      hitPoints: new Dice(2, 8, 10),
+      hitPoints: { throws: 2, sides: 8, constant: 10 },
       speedFt: 30,
       strength: 15,
       dexterity: 11,
@@ -37,7 +36,7 @@ export default {
           toHit: 4,
           reachFt: 5,
           damageType: 'bludgeoning',
-          damage: new Dice(1, 6, 2),
+          damage: { throws: 1, sides: 6, constant: 2 },
         },
       ],
     },
@@ -48,7 +47,7 @@ export default {
       alignment: 'any alignment',
       armorClass: 11,
       armor: 'Leather Armor',
-      hitPoints: new Dice(2, 8, 10),
+      hitPoints: { throws: 2, sides: 8, constant: 10 },
       speedFt: 30,
       strength: 15,
       dexterity: 11,
@@ -80,7 +79,7 @@ export default {
           rangeFt: 10,
           disadvantageRangeFt: 50,
           damageType: 'bludgeoning',
-          damage: new Dice(1, 6, 2),
+          damage: { throws: 1, sides: 6, constant: 2 },
         },
       ],
     },

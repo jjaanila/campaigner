@@ -1,0 +1,202 @@
+{
+  "$id": "monster.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSON schema for Campaigner Monsters",
+  "definitions": {
+    "monster": {
+      "description": "A DnD Monster",
+      "type": "object",
+      "required": ["name", "size"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "enum": ["tiny", "small", "medium", "large", "huge", "gargantuan"]
+        },
+        "type": {
+          "type": "string"
+        },
+        "alignment": {
+          "type": "string"
+        },
+        "armorClass": {
+          "type": "integer"
+        },
+        "armor": {
+          "type": "string"
+        },
+        "hitPoints": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "throws": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sides": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "constant": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "speedFt": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "dexterity": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "constitution": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "intelligence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "wisdom": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "charisma": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "challengeRating": {
+          "type": "number",
+          "minimum": 0
+        },
+        "senses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "damageResistances": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "damageImmunities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "passives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": ["name", "description"],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "required": ["name", "damage"],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "enum": ["melee", "ranged"]
+                  },
+                  "toHit": {
+                    "type": "integer"
+                  },
+                  "reachFt": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "rangeFt": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "disadvantageRangeFt": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "damageType": {
+                    "enum": ["bludgeoning", "piercing", "slashing", "cold", "fire", "necrotic", "arcane"]
+                  },
+                  "damage": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "throws": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "sides": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "constant": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["monsters"],
+  "properties": {
+    "monsters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/monster"
+      }
+    }
+  }
+}

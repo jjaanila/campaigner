@@ -38,7 +38,7 @@ export default {
       type: String,
     },
     damage: {
-      type: [Number, Dice],
+      type: Dice,
     },
     extra: {
       type: String

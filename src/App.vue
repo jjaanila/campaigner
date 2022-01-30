@@ -702,9 +702,11 @@
 <script>
 import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
-import campaign from '../campaign'
-import Dice from './Dice'
+import campaignJson from '../campaign'
 import { sortByKey } from './utils'
+import { parseCampaign } from './parser'
+
+const campaign = parseCampaign(campaignJson)
 
 export default {
   name: 'app',
@@ -713,11 +715,6 @@ export default {
       tursaansydan,
       monsters: sortByKey(campaign.monsters, 'name'),
     }
-  },
-  computed: {
-    hitPointsDice() {
-      return new Dice(2, 12, 20)
-    },
   },
 }
 </script>
