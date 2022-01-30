@@ -77,6 +77,12 @@
           "type": "number",
           "minimum": 0
         },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "senses": {
           "type": "array",
           "items": {
@@ -180,6 +186,9 @@
                         "minimum": 0
                       }
                     }
+                  },
+                  "extra": {
+                    "type": "string"
                   }
                 }
               }

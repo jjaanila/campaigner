@@ -6,6 +6,12 @@ export const generateId = (input, prefix) => {
 }
 
 export const capitalize = string => {
+  if (typeof string !== 'string') {
+    return string
+  }
+  if (string.length <= 1) {
+    return string.toUpperCase()
+  }
   return string[0].toUpperCase() + string.substring(1)
 }
 
