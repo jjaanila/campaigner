@@ -17,8 +17,8 @@ export default {
 <style scoped>
 .monster-section-header {
   display: block;
-  border-bottom: 1px solid #58180d;
-  color: #58180d;
+  border-bottom: 1px solid #65291d;
+  color: #65291d;
   font-size: 1rem;
   margin: 0.5rem 0 0.5rem 0;
 }

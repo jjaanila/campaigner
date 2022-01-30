@@ -32,9 +32,13 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  color: #65291d;
 }
 .ability-score-name {
   font-weight: bold;
-  color: #58180d;
+  color: inherit;
+}
+.ability-score-value {
+  color: inherit;
 }
 </style>

@@ -25,12 +25,14 @@ export default {
 .monster-stat-row {
   display: flex;
   flex-flow: row nowrap;
+  color: #65291d;
 }
 .monster-stat-row-label {
-  color: #65291d;
+  color: inherit;
   font-weight: bold;
 }
 .monster-stat-row-value {
+  color: inherit;
   margin-left: 0.25rem;
 }
 </style>
