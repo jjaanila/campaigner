@@ -18,7 +18,7 @@ export default class Dice {
     if (!this.throws && !this.sides && this.constant) {
       return String(this.constant)
     }
-    return `${this.averageHitPoints} (${this.throws}d${this.sides} + ${this.constant})`
+    return `${this.averageHitPoints} (${this.throws}d${this.sides}${this.constant ? ` + ${this.constant}` : ''})`
   }
 
   static deserialize(serializedDice) {
