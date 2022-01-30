@@ -694,30 +694,6 @@
       <part-title name="NPCs" />
       <part-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
-      <monster
-        name="Saltwater Scrag"
-        description="Louhi's interests and tries to take Pohjola with the help of Perkele. For that, she needs to first find
-      four pieces of Tursaansydän"
-        size="large"
-        type="giant"
-        alignment="chaotic evil"
-        :armorClass="14"
-        :hitPoints="hitPointsDice"
-        :speedFt="30"
-        :strength="18"
-        :dexterity="13"
-        :constitution="20"
-        :intelligence="7"
-        :wisdom="9"
-        :charisma="7"
-        :challengeRating="1/2"
-        :skills="[{name: 'perception', modifier: 2}, {name: 'nature', modifier: -4}]"
-        :senses="['darkvision 60 ft.']"
-        :languages="['aquan', 'giant']"
-        :actions="[{name: 'Claw', description: 'Asd'}]"
-        :reactions="[{name: 'Parry', description: 'Asd'}]"
-        :passives="[{name: 'Shy', description: 'Asd'}]"
-      />
       <part-title name="Help" />
     </page>
   </main>
@@ -728,13 +704,14 @@ import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
 import campaign from '../campaign'
 import Dice from './Dice'
-console.log(campaign)
+import { sortByKey } from './utils'
+
 export default {
   name: 'app',
   data() {
     return {
       tursaansydan,
-      monsters: campaign.monsters,
+      monsters: sortByKey(campaign.monsters, 'name'),
     }
   },
   computed: {
