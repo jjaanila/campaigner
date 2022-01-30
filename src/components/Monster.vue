@@ -22,11 +22,11 @@
       <monster-stat-row class="monster-languages" label="Languages" :value="languagesStr" />
       <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
       <monster-divider />
-      <monster-action v-for="passive in passives" :key="passive.name" :name="passive.name" :descriptiom="passive.description" />
+      <monster-action v-for="passive in passives" :key="passive.name" v-bind="passive" />
       <monster-section-header name="Actions" v-if="actions.length > 0" />
-      <monster-action v-for="action in actions" :key="action.name" :name="action.name" :descriptiom="action.description" />
+      <monster-action v-for="action in actions" :key="action.name" v-bind="action" />
       <monster-section-header name="Reactions" v-if="reactions.length > 0" />
-      <monster-action v-for="reaction in reactions" :key="reaction.name" :name="reaction.name" :descriptiom="reaction.description" />
+      <monster-action v-for="reaction in reactions" :key="reaction.name" v-bind="reaction" />
   </div>
 </template>
 

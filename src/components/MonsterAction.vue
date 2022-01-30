@@ -1,6 +1,9 @@
 <template>
   <div class="monster-action">
-    <span class="monster-action-description"><span class="monster-action-name">{{ name }}.</span>{{ descriptiom }}</span>
+    <span class="monster-action-description">
+      <span class="monster-action-name">{{ name }}.</span>
+      {{ descriptionStr }}
+    </span>
   </div>
 </template>
 
@@ -13,8 +16,8 @@ export default {
       type: String,
       required: true,
     },
-    descriptiom: {
-      type: [String, Number],
+    description: {
+      type: [String],
     },
     type: {
       type: String,
@@ -25,15 +28,35 @@ export default {
     reachFt: {
       type: Number,
     },
+    rangeFt: {
+      type: Number,
+    },
+    disadvantageRangeFt: {
+      type: Number,
+    },
     damageType: {
       type: String,
     },
     damage: {
       type: [Number, Dice],
+    },
+    extra: {
+      type: String
     }
   },
   computed: {
-
+    descriptionStr() {
+      if (this.description) {
+        return this.description
+      }
+      const attackTypeStr = `${this.type === 'melee' ? 'Melee Attack: ' : this.type === 'ranged' ? 'Ranged Attack: ' : 'Melee or Ranged Attack: '}`
+      const toHitStr = this.toHit ? `${this.toHit > 0 ? '+' : ''}${this.toHit} to hit` : ''
+      const reachStr = this.reachFt ? `reach ${this.reachFt} ft.` : ''
+      const rangeStr = this.normalRangeFt || this.disadvantageRangeFt ? `range ${this.rangeFt ?? 0}/${this.disadvantageRangeFt ?? 0} ft.` : ''
+      const reachRangeStr = reachStr || rangeStr ? `, ${reachStr}${reachStr && rangeStr ? ' or ' : ''}${rangeStr}` : ''
+      const hitStr = ` Hit: ${this.damage.toString()} ${this.damageType} damage`
+      return `${attackTypeStr}${toHitStr}${reachRangeStr}${hitStr}. ${this.extra ?? ''}`
+    }
   }
 }
 </script>
@@ -47,7 +70,6 @@ export default {
   font-weight: bold;
   font-style: italic;
   white-space: nowrap;
-  margin-right: 0.25rem;
 }
 .monster-action-description {
 }
