@@ -4,7 +4,7 @@
       <span class="monster-properties">{{ propertiesStr }}</span>
       <p class="monster-description">{{ description }}</p>
       <monster-divider />
-      <monster-stat-row label="Armor Class" :value="armorClass" />
+      <monster-stat-row label="Armor Class" :value="armorClassStr" />
       <monster-stat-row label="Hit Points" :value="hitPointsStr" />
       <monster-stat-row label="Speed" :value="speed" />
       <monster-divider />
@@ -55,7 +55,6 @@ export default {
     },
     description: {
       type: String,
-      required: true,
     },
     size: {
       type: String,
@@ -73,6 +72,9 @@ export default {
     armorClass: {
       type: Number,
       required: true,
+    },
+    armor: {
+      type: String,
     },
     hitPoints: {
       type: [Number, Dice],
@@ -112,29 +114,38 @@ export default {
     },
     skills: {
       type: Array,
+      default: () => []
     },
     senses: {
       type: Array,
+      default: () => []
     },
     languages: {
       type: Array,
+      default: () => []
     },
     id: {
       type: String,
     },
     passives: {
-      type: Array
+      type: Array,
+      default: () => []
     },
     actions: {
-      type: Array
+      type: Array,
+      default: () => []
     },
     reactions: {
-      type: Array
+      type: Array,
+      default: () => []
     }
   },
   computed: {
     containerId() {
       return this.id ?? generateId(this.name, 'monster')
+    },
+    armorClassStr() {
+      return `${this.armorClass}${this.armor ? ` (${this.armor})` : ''}`
     },
     speed() {
       return `${this.speedFt} ft.`

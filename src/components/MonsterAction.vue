@@ -1,11 +1,11 @@
 <template>
   <div class="monster-action">
-    <span class="monster-action-name">{{ name }}.</span>
-    <span class="monster-action-descriptiom">{{ descriptiom }}</span>
+    <span class="monster-action-description"><span class="monster-action-name">{{ name }}.</span>{{ descriptiom }}</span>
   </div>
 </template>
 
 <script>
+import Dice from '../Dice'
 export default {
   name: 'MonsterAction',
   props: {
@@ -15,9 +15,26 @@ export default {
     },
     descriptiom: {
       type: [String, Number],
-      required: true,
     },
+    type: {
+      type: String,
+    },
+    toHit: {
+      type: Number,
+    },
+    reachFt: {
+      type: Number,
+    },
+    damageType: {
+      type: String,
+    },
+    damage: {
+      type: [Number, Dice],
+    }
   },
+  computed: {
+
+  }
 }
 </script>
 
@@ -29,8 +46,9 @@ export default {
 .monster-action-name {
   font-weight: bold;
   font-style: italic;
+  white-space: nowrap;
+  margin-right: 0.25rem;
 }
-.monster-action-descriptiom {
-  margin-left: 0.25rem;
+.monster-action-description {
 }
 </style>

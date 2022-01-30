@@ -693,6 +693,7 @@
       station costs 100gp without any load.
       <part-title name="NPCs" />
       <part-title name="Monsters" />
+      <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
       <monster
         name="Saltwater Scrag"
         description="Louhi's interests and tries to take Pohjola with the help of Perkele. For that, she needs to first find
@@ -725,12 +726,15 @@
 <script>
 import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
+import campaign from '../campaign'
 import Dice from './Dice'
+console.log(campaign)
 export default {
   name: 'app',
   data() {
     return {
       tursaansydan,
+      monsters: campaign.monsters,
     }
   },
   computed: {
