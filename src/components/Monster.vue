@@ -18,6 +18,8 @@
       </div>
       <monster-divider />
       <monster-stat-row class="monster-skills" label="Skills" :value="skillsStr" />
+      <monster-stat-row class="monster-resistances" label="Damage Resistances" :value="damageResistancesStr" />
+      <monster-stat-row class="monster-immunities" label="Damage Immunities" :value="damageImmunitiesStr" />
       <monster-stat-row class="monster-senses" label="Senses" :value="sensesStr" />
       <monster-stat-row class="monster-languages" label="Languages" :value="languagesStr" />
       <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
@@ -120,6 +122,14 @@ export default {
       type: Array,
       default: () => []
     },
+    damageResistances: {
+      type: Array,
+      default: () => []
+    },
+    damageImmunities: {
+      type: Array,
+      default: () => []
+    },
     languages: {
       type: Array,
       default: () => []
@@ -160,6 +170,12 @@ export default {
     },
     skillsStr() {
       return this.skills.map(skillObject => `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`).join(', ')
+    },
+    damageResistancesStr() {
+      return this.damageResistances.map(str => str.toLowerCase()).join(', ')
+    },
+    damageImmunitiesStr() {
+      return this.damageImmunities.map(str => str.toLowerCase()).join(', ')
     },
     sensesStr() {
       return this.senses.join(', ')

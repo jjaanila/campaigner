@@ -58,6 +58,8 @@ export default {
       charisma: 11,
       senses: ['passive Perception 10'],
       languages: ['common'],
+      damageResistances: ['piercing'],
+      damageImmunities: ['cold'],
       challengeRating: 0.5,
       passives: [
         {
