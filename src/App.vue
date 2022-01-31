@@ -280,9 +280,11 @@
       into the forest. After some walking, a hemp web is dropped from trees high above and the party is ambushed. DC 15
       Wisdom saving throw allows them to notice the web. DC 10 Acrobatics saving throw to get out of the way. Characters
       tangled in the web become Restrained and need DC 10 Athletics check if they want to start moving.
-      \begin{DndComment}{Restrained} \item A restrained creature's speed becomes 0, and it can't benefit from any bonus
+      <comment title='Restrained'> \item A restrained creature's speed becomes 0, and it can't benefit from any bonus
       to its speed. \item Attack rolls against the creature have advantage, and the creature's Attack rolls have
-      disadvantage. \item The creature has disadvantage on Dexterity Saving Throws. \end{DndComment} 10
+      disadvantage. \item The creature has disadvantage on Dexterity Saving Throws.
+      </comment>
+      10
       <id-link name='Kobold' type='monster' /> emerge from the forest and try to swarm the party. The dwarf woman curses of
       the inefficacy and escapes through the forest into the marshes. If the party searches, they find a trail to a
       kobold camp outpost. From the outpost another path leads to the marshes and soon to the camp which is currently
@@ -295,11 +297,13 @@
       "the operation" ongoing and keep on delivering "searchers". One of the letters has a broken black seal with some
       kind of wings on it. It is hard to see properly. The dates of letters span for a period of half a year. The dates
       just aren't the same as what the party has experienced before. According to them, it is now year 470. At their own
-      plane, the year is 1356. \begin{DndComment}{What kobolds and Jutikka know?} DC 15 Intimidation check is enough
+      plane, the year is 1356.
+      <comment title='What kobolds and Jutikka know?'> DC 15 Intimidation check is enough
       that either tells about the search operation in the marshes. A secret group has hired kobolds to search for some
       kind structure or artifact at the marshes. They don't really know what they a searching but they were instructed
       "you will know when you find it". To hasten the search they have captured people to work for them. Jurva and Osmo
-      Halla have been taken to the labor camp in the middle of the marsh. \end{DndComment}
+      Halla have been taken to the labor camp in the middle of the marsh.
+      </comment>
       <sub-area-title name='Hallasuo Base Camp' />
       Another path leads from the camp deeper into the marsh. The further the party travels, the denser the air gets
       with the smell of rotting vegetation and vision is blocked by dense mist. If Jutikka survives, she is found stuck
