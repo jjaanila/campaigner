@@ -153,11 +153,11 @@
       <sub-area-title name='Courtyard' />
       <read-aloud>
         The dirt courtyard is in the center of the line of houses. On its edge is a well but otherwise the yard doesn't
-        seem to get much use. However, now there are four \pagelink{npc:soldierOfTheSword}{guards} cleaning their boots
+        seem to get much use. However, now there are four <id-link id='monster-soldier-of-the-sword' name='guards' type='monster' /> cleaning their boots
         and chatting. A fancy looking wagon stands next to the road and a young human man steps around anxiously. The man
         has fine clothing, brown long hair, and a sword on his hip.
       </read-aloud>
-      \paragraph{\pagelink{npc:kainoKalpa}{Kaino Kalpa}} The man is Kaino Kalpa, a bastard of half-king Untamo
+      <id-link name='Kaino Kalpa' type='monster' /> The man is Kaino Kalpa, a bastard of half-king Untamo
       Eteläterä. He is a proud man and doesn't appreciate that people remind him of his bastardiness. He thinks of
       himself as a prince and plans to travel to the court of Eteläterä to gain influence. He has been assigned to the
       Gray Keep since teenage and now that he has reached adulthood, it is his time. He has no time for mere peasants
@@ -169,7 +169,7 @@
       the two cities has changed color, tastes foul and reportedly causes sickness of children and weak of health.
       Pohjanterä court rumours that Eteläterä poisoned the water as revenge and the southern half-king has a secret
       source of clean water or a way to purify it. Secretly he thinks that the death of the heir is his chance to become
-      the new heir. \paragraph{\pagelink{npc:commoner}{Kala-Kosti}} An old man sitting on his porch repairing fishing
+      the new heir. <id-link id='monster-commoner' name='Kala-Kosti' type='monster' /> An old man sitting on his porch repairing fishing
       nets. Can tell about refugees upriver that are coming from the Sword cities escaping restlessness. If asked, he
       tends to fish along the rivers because lake Iänlampi is not the best fishing spot. It actually doesn't have fish
       at all, but let's not reveal that yet.
@@ -177,13 +177,13 @@
       The inn is a small two-story log building and
       has tavern downstairs. On the left is a wooden counter and the kitchen. Next to it are stairs that take to
       upstairs where are 3 two bed rooms up for rent. There are 5 tables downstairs.
-      \paragraph{\pagelink{npc:commoner}{Tuomikki}} A female dwarf with a strong attitude. Is not happy about her
+      <id-link id='monster-commoner' name='Tuomikki' type='monster' /> A female dwarf with a strong attitude. Is not happy about her
       husband's tendency to disappear to drink. "That's where he always goes. Too keen on the liquid barley! The milk of
-      Pekko!" The husband is gone again so she has got drunk as well. The husband, \pagelink{npc:commoner}{Rautia}, the
+      Pekko!" The husband is gone again so she has got drunk as well. The husband, <id-link id='monster-commoner' name='Rautia' type='monster' />, the
       village smith, has really been taken by the bandits in a camp up north. He got drinking with them and they needed
       his services to fix their equipment. Rautia and Tuomikki live in the village in their own house. Can tell about
       the wedding in Halla Farm. She requests the party to look for her lousy husband and promises to pay 20gp.
-      \paragraph{\pagelink{npc:veliHopea}{Veli Hopea}} A human male with a bag full of tales. He has killed a werewolf,
+      <id-link name='Veli Hopea' type='monster' /> A human male with a bag full of tales. He has killed a werewolf,
       flirted with Tellervo, the daughter of Tapio, the god of forests. He also has been taught by shaman's of the north
       and has shared a meal with the half-king of the North Edge (Pohjanterän hovi). He is bragging about everything and
       is quite loud and tries actively to find new listeners. He want's to be viewed as a prosperous man, but the times
@@ -192,7 +192,7 @@
       south, to the Gray Keep. Now he is trying to make enough money here to continue by selling made-up stories to the
       gullible. There is a price for him in the Sword cities, so the party may catch him at some point. No-one in the
       village knows about the price though. Veli has rented a room upstairs. Is interested to visit the wedding in the
-      hopes of income and the party could be a good escort there. \paragraph{\pagelink{npc:commoner}{Toiva}} A shy human
+      hopes of income and the party could be a good escort there. <id-link id='monster-commoner' name='Toiva' type='monster' /> A shy human
       male who inherited the Inn from relatives. He hasn't married and takes care if the inn alone. He doesn't speak
       unnecessarily and is really bad at small talk. Not the ideal innkeeper, but you do with what has been given to
       you. His wife Ano is sick with a disease of the mind which turned her into unresponsive state a year ago. Toiva
@@ -202,7 +202,7 @@
       secret". Toiva doesn't speak much his life and uses short sentences. Just answer quickly and shortly and aim for
       awkward silences! A DC 10 Insight check tells the party that Toiva has something to hide. Toiva saw Rautia
       drinking with the bandits and has heard stories of bandit activity in north, on the road near Ukko's fist
-      (Ukonnyrkki) settlement. \paragraph{\pagelink{npc:commoner}{Ilmari}} The son of Toiva and Ano. A bright 12 year
+      (Ukonnyrkki) settlement. <id-link id='monster-commoner' name='Ilmari' type='monster' /> The son of Toiva and Ano. A bright 12 year
       old boy with a curious mind and a lot of time in his hands. He spends the time exploring nearby areas. He arrives
       to the inn when the party is there the first time to tell his father that he is afraid of the rats he was told to
       get rid of in their house basement. "They are so big and hairy!" The party can take the task of getting rid of the
@@ -214,15 +214,15 @@
       rooms and a cellar. It is a log house with simple wooden furniture. Dried food has been stored to the first room
       and it also has a fireplace. Second room two beds, where in the larger one lies a woman, Ano. The only sign of
       consciousness are the open eyes and occasional swallowing. This disease cannot be cured. In the cellar the party
-      finds huge amount of rats, i.e. 6 \pagelink{monster:swarmOfRats}{Swarms of Rats},
-      and\pagelink{monster:korri}{Körri}. The rats are Körri's little "army" he has been recruiting to take over the
+      finds huge amount of rats, i.e. 6 <id-link name='Swarm of Rats' type='monster' />,
+      and <id-link name='Körri' type='monster' />. The rats are Körri's little "army" he has been recruiting to take over the
       village house by house. Körri hisses and the rats turn around and attack immediately. Körri has sold his soul to a
       cat demon to get the command over his little minions. You can play this out a bit with Körri's behaviour but this
       is just a weird side quest. Don't expect it to continue.
       <section-title name="Bandit Camp" />
       <area-title name='Bandit Camp' />
-      A party of 1 \pagelink{monster:banditCaptain}{Bandit Captain} 4
-      \pagelink{monster:bandit}{Bandits} have camped close to the road. One of them is keeping watch nearby close to the
+      A party of 1 <id-link name='Bandit Captain' type='monster' /> 4
+      <id-link name='Bandit' type='monster' /> have camped close to the road. One of them is keeping watch nearby close to the
       road, others are maintaining their gear but have put Rautia to do the blacksmithing. Their plan is to take Rautia
       with them, but he doesn't actually mind. He is enjoying the perks of his new environment, contents of a captured
       beer delivery, and has decided to leave Bluebill's Nest to seek easier life of a drunk. He doesn't fight of fear.
@@ -263,7 +263,7 @@
       To east leads a little traversed path. It goes through grassy lands and
       sparse woods. To north the party sees denser forests with no visible paths. After few kilometers they meet a
       stranger, a tough looking dwarf woman next to a wagon, which leans heavily on its side. The woman
-      \pagelink{npc:commoner}{Jutikka Äyräs}, a merchant, sits against its side and examines a broken wagon wheel in her
+      <id-link id='monster-commoner' name='Jutikka Äyräs' type='monster' />, a merchant, sits against its side and examines a broken wagon wheel in her
       hands. She is seemingly tired as she doesn't notice the party at first. She explains that her wagon wheel fell off
       the path and broke with the wagon axle. She was going to Hallasuo encampment to trade fur and silver. Her
       mercenary guards left to get help back to the farm west yesterday morning but she hasn't seen them since. They
@@ -283,7 +283,7 @@
       \begin{DndComment}{Restrained} \item A restrained creature's speed becomes 0, and it can't benefit from any bonus
       to its speed. \item Attack rolls against the creature have advantage, and the creature's Attack rolls have
       disadvantage. \item The creature has disadvantage on Dexterity Saving Throws. \end{DndComment} 10
-      \pagelink{monster:kobold}{Kobolds} emerge from the forest and try to swarm the party. The dwarf woman curses of
+      <id-link name='Kobold' type='monster' /> emerge from the forest and try to swarm the party. The dwarf woman curses of
       the inefficacy and escapes through the forest into the marshes. If the party searches, they find a trail to a
       kobold camp outpost. From the outpost another path leads to the marshes and soon to the camp which is currently
       empty but contains a chest with 10g in a lean to shelter covered with moss. The chest has a trap that strikes out
@@ -318,12 +318,12 @@
       of years old. On the sides are five doorways on each side. Two first on the right have collapsed and cannot be
       accessed. Next two have closed doors but the last one is open. On the left first two have been barred shut with
       heavy latches. If the party makes noise, they can hear something banging against the first door. Behind is a
-      \pageLink{monster:rustMonster}{Rust Monster} that attacks if the door is opened. If the second door is opened, a
+      <id-link name='Rust Monster' type='monster' /> that attacks if the door is opened. If the second door is opened, a
       Swarm of Insects attacks. Third and fourth doors are sealed with a magical seal can be opened with Knock. Inside
       is a unfortunate kobold corpse that got trapped in when the monastery was discovered. Behind the last door is a
       badly burned corpse and the door has also mostly burned away. The party should finally continue through the last
       door on the right. \begin{figure}[h!] \caption{Ukonvasara} \includegraphics[scale=1]{img/ukonvasara.png}
-      \end{figure} Two \pagelink{npc:metsalainenSoldier}{Metsäläinen Soldiers} guard the hall in the middle of it and
+      \end{figure} Two <id-link name='Metsäläinen Soldier' type='monster' /> guard the hall in the middle of it and
       are commanded to let none pass unless accompanied with a high ranking leader. The soldiers are clad in simple
       leather cloths. Kobolds are not allowed down in the monastery (except for scouting dangerous areas). The soldiers
       will attack and one tries to run to warn others in the bed chamber. If the soldiers are examined closely the party
@@ -334,20 +334,20 @@
       turned towards the door.
       <sub-area-title name='Library' />
       An old library with plenty of old books and scrolls written with old
-      runes. Two \pagelink{npc:metsalainenCleric}{clerics} are studying the documents intently. There is a secret door
+      runes. Two <id-link name='Metsäläinen Cleric' type='monster' /> are studying the documents intently. There is a secret door
       that leads to a room with a chest. DC 10 Perception check finds a lever behind a bookshelf that opens the secret
       door, but if the roll is below 15 PC misses the more worn lever that also disables the arrow trap inside. Two
       arrows fly out of the room and PC has to succeed DC 10 Acrobatics check to avoid them. Inside the chest is one
       Potion of Healing, Scroll of Unseen Servant, and a garnet.
       <sub-area-title name='Kitchen' /> A soldier is preparing food next
-      to a large pot. A large \pagelink{monster:mastiff}{Mastiff} rests on the floor drooling after a meal. When the
-      door is opened it starts barking which alerts the cook and the \pagelink{npc:metsalainenCleric}{cleric} in the
+      to a large pot. A large <id-link name='Mastiff' type='monster' /> rests on the floor drooling after a meal. When the
+      door is opened it starts barking which alerts the cook and the cleric in the
       corridor north-east of kitchen. The cleric will attack the party from behind.
       <sub-area-title name='Study' /> A large room once
       full of desks and some bookshelves. This room was used to study large amount of information that was gathered
       studying Ukko's prophecies. Now the desks have been replaced with sturdier tables but the purpose of the room
-      still stands. There are 3 \pagelink{npc:metsalainenCleric}{clerics} reading through books and making notes. 4
-      human \pagelink{npc:commoner}{slaves} are organizing the place and helping the clerics. One soldier stands in
+      still stands. There are 3 <id-link name='Metsäläinen Cleric' type='monster' /> reading through books and making notes. 4
+      human <id-link id='monster-commoner' name='slaves' type='monster' /> are organizing the place and helping the clerics. One soldier stands in
       watch and makes sure the slaves are doing their job. The clerics will attack when they notice the party. Slaves
       may help the party if needed. From the study starts a long corridor full of wall inscriptions of past events and
       stories. Two more slaves are carefully cleaning the walls of dirt to reveal the paintings. Two soldiers stand
@@ -362,8 +362,7 @@
       it, some stunted shrubs and grass that has only faintly green color. Otherwise the hall floor has only rubble
       where the ceiling has lost its strength during the centuries. With closer inspection and added lighting it can be
       seen that the paintings cover the walls of the hall. The ceiling is depiction of the night sky but the walls are
-      still so dirty that the images cannot be inspected. At the pool sits metsäläinen \pagelink{npc:ahtoPiki}{Ahto
-      Piki} examining the vegetation. Two slaves are cleaning the pillars at the same end of the hall. One of them is
+      still so dirty that the images cannot be inspected. At the pool sits metsäläinen <id-link name='Ahto Piki' type='monster' /> examining the vegetation. Two slaves are cleaning the pillars at the same end of the hall. One of them is
       Osmo Halla, Tapio Halla's nephew and Jurva Halla's son. The slaves may warn the Cult Fanatic or help the party in
       the fight or not, I let you decide. Ahto Piki has 100gp, and an order letter from their leader which has the same
       black seal as seen in previous letters. Now it can be seen that the bird in question is an eagle.
@@ -380,7 +379,7 @@
       The party should follow Osmo to Hallasuo Cache, which is a secret
       storage that Ukko worshippers left behind. There they will find 15 kobolds carrying supplies and tools, Jurva
       Halla and a tall elder bearded human male with black robes and a bird claw on his shirt. He is
-      \pagelink{npc:joukahainen}{Joukahainen} but let's keep that as a secret for now. The area around the structure is
+      <id-link name='Joukahainen' type='monster' /> but let's keep that as a secret for now. The area around the structure is
       almost dry in a rippling 90ft circle of magic. The man seems to be preparing for something and kobolds stand
       around him anxiously waiting. The man is placing various objects on the ground but the party can't see them well.
       Jurva Halla stays still a numb look on his face, with eyes like glass. The party most likely waits to see what
@@ -390,7 +389,7 @@
       structure's surface and then pieces of stone blocks start to fall off to ground. At times block pieces jump back
       on their places forced by a counter-acting spell, but the man's power seems to be too much. The structure is near
       collapsing when one of its walls breaks outwards with great force and two kobolds get crushed to death by flying
-      stone blocks. A \pagelink{monster:golemGuardian}{Golem Guardian} shrieks and steps out attacking nearby kobolds
+      stone blocks. A <id-link name='Golem Guardian' type='monster' /> shrieks and steps out attacking nearby kobolds
       crushing two with just one swing. The man stops channeling the spell surprised. Simultaneously Jurmo Halla seems
       to gain his wits and looks around confused and in increasing horror. The golem continues to ravage the kobolds
       while the man sneaks inside the structure. Soon he comes out with a brown sack in his hand, takes a look at the
@@ -429,8 +428,8 @@
       and west of <id-link name='Halla Farm' type='area' />. It is an important supply route providing seafood and
       minerals to the settlements of Pohjola. At the start of this adventure, metsäläiset have destroyed the bridge to
       harass kalevans. The bridge will be repaired during first few days. Crossing the river is very hard due to its
-      strong current. A group of \pagelink{npc:soldierOfTheSword}{Soldiers of the Sword} guards the bridge. Another
-      group of \pagelink{npc:commoner}{Commoners} is fixing the bridge while pressured by the soldiers. Soldiers should
+      strong current. A group of <id-link name='Soldier of the Sword' type='monster' /> guards the bridge. Another
+      group of <id-link id='monster-commoner' name='commoners' type='monster' /> is fixing the bridge while pressured by the soldiers. Soldiers should
       question the party and try to sort out what is the meaning of their trip. A decent bribe might help to get the
       party out of this situation.
       <area-title name='The Gray Keep' />
@@ -440,19 +439,19 @@
       the shore to long platforms that reach to the sea. The keep was built by metsäläiset but after they were banished,
       kalevan fishermen made it their home. Catch was great so little by little they kept on spreading and extending
       their fortress. The keep is crudely built stony building but sometimes receives prestigious residents, although
-      often royally disliked characters. \pagelink{npc:kainoKalpa}{Kaino Kalpa} spent five years there managing the keep
+      often royally disliked characters. <id-link name='Kaino Kalpa' type='monster' /> spent five years there managing the keep
       but leaving most of the accounting and decision making to his advisors. Sometimes he preferred to make arbitrary
       decisions about things he knew nothing about, just to feel himself important and needed. He has now left the keep
       to the relief of locals.
       <section-title name="Missing Boats" />
-      \paragraph{\pagelink{npc:commoner}{Ikitiera}} A young elf male Ikitera now administrates the economics of the
+      <id-link id='monster-commoner' name='Ikitiera' type='monster' /> A young elf male Ikitera now administrates the economics of the
       keep. He keeps track of fishing quotas and sends the seafood deliveries towards the inner land. He is a meticulous
       man who loves numbers, tables, and accounting in general. He just doesn't understand why his fishermen keep going
       missing. Five boats have disappeared during four weeks and the scouts haven't found a sign of the boats. They have
       mostly searched further away from the shore so he suggests that the party should stay closer to the shoreline,
       especially if they don't have sailing experience. He also recommends talking to
-      \pagelink{npc:grayKeepMilitia}{Commander Pulkkinen} as he is investigating another issue. The boats have been sunk
-      by a \pagelink{monster:saltwaterScrag}{Saltwater Scrag}. It has anchored some boats to the ocean floor and eaten
+      <id-link id='monster-gray-keep-militia' name='Commander Pulkkinen' type='monster' /> as he is investigating another issue. The boats have been sunk
+      by a <id-link name='Saltwater Scrag' type='monster' />. It has anchored some boats to the ocean floor and eaten
       the fishermen and their catch. The party has to take a boat to lure the scrag out of the sea. Killing the scrag
       may reveal its nest on the sea floor that contains a 2 carat diamond and the Cap of Water Breathing. Ikitiera
       offers a reward of 10 50gp gemstones.
@@ -461,7 +460,7 @@
       around your head. It allows you to breathe normally underwater. This bubble stays with you until you speak the
       command word again, the cap is removed, or you are no longer underwater.' />
       <section-title name="Fishy Business" />
-      \paragraph{\pagelink{npc:grayKeepMilitia}{Commander Pulkkinen}} A military officer turned ex-fisherman Pulkkinen
+      <id-link id='monster-gray-keep-militia' name='Commander Pulkkinen' type='monster' /> A military officer turned ex-fisherman Pulkkinen
       is a burly dwarf male with rugged worker hands and a face oldened by sea weather. He is not the most traditional
       commander but so isn't Gray Keep militia either. All have some kind of background in fishing so they understand
       Pulkkinen's peculiar commands, like "Sharpen your hooks!" to do equipment maintenance. He should also use all
@@ -476,29 +475,29 @@
       <sub-area-title name='The Tank' />
       A half ball shaped pond carved into the rocky shore. It is covered with a leathery cover that keeps the birds and other
       animals away. There are lids that can be opened to look inside. Hand nets with long shafts lie next to the lids. A
-      member of \pagelink{npc:grayKeepMilitia}{Gray Keep Militia} circles around the pond. The guard claims they have
+      member of <id-link name='Gray Keep Militia' type='monster' /> circles around the pond. The guard claims they have
       seen nothing unusual except the amount of fish has been reducing. On the bottom of the tank is a 2ft wide portal
       that leads to a cave river in a cave at the north end of the shoreline. The fish are able to escape through it. If
       the party dives and goes through the portal they find themselves in an underground river and start to drift with
       the current. Only DC 18 athletics check allows a party member to swim back to the portal. The river takes them
       through a dark tunnel into an underground lake. Closer to the bank, on the other side of the lake, party sees a
-      \pagelink{monster:northernGiant}{Northern Giant} standing waist deep in water. It swings a large net, catching
+      <id-link name='Norhern Giant' type='monster' /> standing waist deep in water. It swings a large net, catching
       fish and emptying the catch into a cart. When the cart is full, the giant pushes it out of the cave to the next
       chamber. It has to crawl on its knees to fit through the exit tunnel.
       <sub-area-title name='Salting Chamber' />
       From the
-      underground lake a tunnel leads to a large chamber with six \pagelink{npc:commoner}{metsäläinens} cleaning and
+      underground lake a tunnel leads to a large chamber with six <id-link id='monster-commoner' name='metsäläinens' type='monster' /> cleaning and
       salting fish. Fish are finally packed to wagons that are dragged away. In addition, there is a man in wooden hand
-      carved armour that is supervising the workers called \pagelink{npc:montaja}{Montaja}. He is sitting on a stool
+      carved armour that is supervising the workers called <id-link name='Montaja' type='monster' />. He is sitting on a stool
       working on another piece of wood with puukko (a simple knife). He has a letter sealed with a black bird seal that
       says: <read-aloud> You are doing well but that is not enough. Get rid of the abomination, it is slowing us
       down right now. We need more provisions to keep the people going. Exploration at the marshes has been fruitful and
       I believe we will soon find the second fragment. May the forest guard your dreams. </read-aloud>
       <sub-area-title name="Fish Thieve's Crevasse" />
       One of the rock crevasses on the west Pohjola shoreline. At the far back edge
-      of the crevasse is a cave and 3 \pagelink{npc:metsalainenSoldier}{Metsäläinen Soldiers} guarding the entrance and
+      of the crevasse is a cave and 3 <id-link name='Metsäläinen Soldier' type='monster' /> guarding the entrance and
       two fish wagons outside of it. There are also four glass jars full of fish oil on the ground. Few times a day a
-      \pagelink{npc:commoner}{courier} comes and takes one wagon away with the help of two horses.
+      <id-link id='monster-commoner' name='courier' type='monster' /> comes and takes one wagon away with the help of two horses.
 
       <chapter-title name="Ukko's Fingers" />
       <section-title name="The Mad Chief" />
@@ -506,8 +505,7 @@
       Ukko's Fist is a settlement north of Bluebill's Nest. A small castle and few tens of log houses are surrounded by
       a crude wooden wall. Fields surround the keep and most of the citizens have housing in the safety of settlement
       walls. Majority of the citizens are farmers but few crafts, like weaving and woodcrafting are also practiced.
-      Farming of barley is however the main source of income. Ukko's Fist is led by \pagelink{npc:chiefIkaheimo}{Chief
-      Ikäheimo}, who has ruled the settlement well in the past. During the last months his actions have seemed
+      Farming of barley is however the main source of income. Ukko's Fist is led by <id-link name='Chief Ikäheimo' type='monster' />, who has ruled the settlement well in the past. During the last months his actions have seemed
       unpredictable. He has increased the amount of combat training of citizens significantly so they have very little
       time after farming and training duties. He also started selling majority of their produced barley to a forestry
       group and rumours tell that the price was lower than what the Sword cities were paying. He is being mind
@@ -515,11 +513,11 @@
       decision. He received the ring as an anonymous gift.
       <sub-area-title name='Keep' />
       The keep in the center of the settlement is
-      the home of Chief Ikäheimo and his wife \pagelink{npc:commoner}{Tarjanne}. The keep has two floors above the
+      the home of Chief Ikäheimo and his wife <id-link id='monster-commoner' name='Tarjanne' type='monster' />. The keep has two floors above the
       ground and a dungeon floor for prisoners. On the ground floor there are the main hall, kitchen, arms storage and
       two smaller bedrooms for guests or house staff. On the top floor, there are the main bed room, a reading room and
       two more bed rooms for house staff. In the dungeon are few cells with just one prisoner witch Autere.
-      \paragraph{\pagelink{npc:autere}{Witch Autere}} She is an old black haired elf lady who lived in Ukko's Fist. She
+      <id-link name='Witch Autere' type='monster' /> She is an old black haired elf lady who lived in Ukko's Fist. She
       was publicly accepted healer whose "experiments" with old magics got the blind eye of the village. However, a half
       a year ago she was thrown into jail for "crossing the line" but the reason wasn't publicly announced. In her
       words, she didn't do anything, which is true. Chief Ikäheimo threw her into jail because she would have noticed
@@ -539,10 +537,10 @@
       murder. Truly, he has just been working as a fortuneteller and may be able to identify the ring. He can be found
       in the local inn. The reward will be 10gp each and his trust. The party is able to notice his fiddling with a DC
       18 Perception check. When they face more an more lies, the check should become easier. The check can be tried
-      again each time they meet him. \paragraph{\pagelink{npc:commoner}{Tarjanne}} Wife of Chief Ikäheimo. Calm and
+      again each time they meet him. <id-link id='monster-commoner' name='Tarjanne' type='monster' /> Wife of Chief Ikäheimo. Calm and
       rational dwarf lady who has been worried about her husband because he hasn't been the same for a while. She
       suspects sickness and asks the party to heal her husband. She would have asked Autere but she is in the dungeon.
-      \paragraph{\pagelink{npc:soldierOfTheSword}{Dog (Koira)}} The dungeon guard Dog is a thoughtful dwarf male. Not
+      <id-link id='monster-soldier-of-the-sword' name='Dog' type='monster' /> The dungeon guard Dog is a thoughtful dwarf male. Not
       very strong, so he isn't the best soldier but guarding cells doesn't usually require much physically and he likes
       the solidarity. He has been thinking about why the witch has been jailed because she seemed like a good person.
       She even healed his syphilis (huovintauti). Dog can be assured of his theory by finding some information to back
@@ -555,16 +553,16 @@
       A small inn next to the settlement entrance. The seer has a room upstairs. There are five men sharing a table downstairs. The
       innkeeper is not around. When the party goes upstairs there are four doors of which one is open. When they
       approach any of the doors, they hear a voice from the open room: "Come in.".
-      \paragraph{\pagelink{npc:kaukovalta}{Seer Kaukovalta}} Seer Kaukovalta is an old male human with bald head and a
+      <id-link name='Seer Kaukovalta' type='monster' /> is an old male human with bald head and a
       long fake beard. It can be noticed with DC 10 perception check. The beard is just for the looks, it, in his words,
       is more convincing in seer work than his completely bald face. He has been hairless since born. He sits on his bed
       and demands to know why they have come to get him, although calmly. He is an actual seer, but can't see very far
       into the future. His visions are usually hard to interpret. When the party talks with him, the five men from
       downstairs walk behind them calmly with hands on their wooden clubs. Seer hired the men to cover for him and told
-      the innkeeper to hide. The party can fight the \pagelink{monster:thug}{men} and capture the seer or convince him
+      the innkeeper to hide. The party can fight the <id-link id='monster-thug' name='men' type='monster' /> and capture the seer or convince him
       to join a plot to infiltrate the dungeon. Seer will be reluctant to join the plot. He sees a reward in his future
       but he suspects that he could get it also from his regular customers. After the encounter, the innkeeper raises
-      his head above the counter. If asked about rumours, he tells that \pagelink{npc:commoner}{Leino} has been missing
+      his head above the counter. If asked about rumours, he tells that <id-link id='monster-commoner' name='Leino' type='monster' /> has been missing
       for days after he went bear hunting. His dog Myy ran back one day ago and arrived to the inn. The dog is behind
       the inn. The dog can be captured and leashed with DC 10 animal handling check. If the dog escapes they can try to
       run after it with a DC 10 athletics check. The dog returns to the inn after a while and then the party may try
@@ -583,7 +581,7 @@
       <sub-area-title name='Entrance' />
       A low room with a
       12 ft. pit on the other side. Narrow ledges go around it and can be used to go around the pit with DC 10 dexterity
-      for larger than small creatures. If the party causes noise, \pagelink{monster:deepGnome}{Deep Gnomes} from
+      for larger than small creatures. If the party causes noise, <id-link name='Deep Gnome' type='monster' /> from
       <id-link name='Guard Chamber' type='subarea' /> will come investigate.
       <sub-area-title name='River Chamber' />
       An underground river goes through
@@ -591,8 +589,7 @@
       <sub-area-title name='Guard Chamber' />
       A room Deep Gnomes use as a guarding spot ensuring no-one unexpected wanders into their tunnels. Has two guarding Deep Gnomes.
       <sub-area-title name='Animal Chamber' />
-      Two Deep Gnomes are taking care of their pet, a \pagelink{monster:rustMonster}{Rust
-      Monster} called Haisu. They use it to find iron, but sometimes it tends to escape to the outside world. It has
+      Two Deep Gnomes are taking care of their pet, a <id-link name='Rust Monster' type='monster' /> called Haisu. They use it to find iron, but sometimes it tends to escape to the outside world. It has
       confronted Leino in the wild and dragged him into the tunnels as prey. Deep Gnomes were not happy about it and
       have been trying to nurse Leino back to health. Two Deep Gnomes and Haisu are in this chamber.
       <sub-area-title name='Living Chamber' />
@@ -626,7 +623,7 @@
       rations from the kitchen. One human male is handling the cooking by stirring a large pot of stew. There may be
       plenty of logger Commoners around depending the time of day. There is also another log house for the camp officer.
       Two guards stand outside and the officer is inside keeping accounts and calculating paychecks. He has a bird's
-      feet on his shirt. The officer, \pagelink{npc:commoner}{Kauko}, is quite unpleasantly blunt man and cannot be
+      feet on his shirt. The officer, <id-link id='monster-commoner' name='Kauko' type='monster' />, is quite unpleasantly blunt man and cannot be
       intimidated easily. He lies that they know nothing about the bridge collapse but suspects the rebels of the
       refugee camp up river of framing them. Workers may be more easily intimidated but there may be a large number of
       them, so things may turn ugly! The workers can admit that they did it but they were just commanded to do so. If
@@ -635,7 +632,7 @@
       <area-title name="Ambushed by metsäläiset" />
       An ambush that is supposed to happen after the party has disrupted metsäläiset for the first time, or the second
       time, your call. Metsäläiset want to know who they are dealing with so they try to interrogate at least one member
-      of the party. A \pagelink{monster:northernDruid}{Northern Druid} and 3 \pagelink{monster:deathDog}{Death Dogs} are
+      of the party. A <id-link name='Northern Druid' type='monster' /> and 3 <id-link name='Death Dog' type='monster' /> are
       hiding next to the road. When the party arrives the Druid starts to speak and the dogs start to circle around the
       party. He requests to know who the party members are and asks why they interfered with the operation at the
       marshes. A fight may ensue.
@@ -647,11 +644,11 @@
       all have their own beliefs of the causes behind the issues. They have heard about the collapsed bridge and are
       worried about their supply delivery. Most of the people around seem starved and desperate. Refugee leader tells
       that the barbarians have a safe place up north in an old ruin. They must have food stored there since they have
-      been robbing a lot lately. Refugee camp leader \pagelink{npc:soldierOfTheSword}{Kyösti} try to assure the party
+      been robbing a lot lately. Refugee camp leader <id-link id='monster-soldier-of-the-sword' name='Kyösti' type='monster' /> try to assure the party
       that they had nothing to do with the bridge collapse. He requests the party to take care of the barbarians. They
       have nothing to offer as reward in addition to a warm meal but they suspect that the ancient barbarian stronghold
       may hold valuables treasures. There are also rumours of a ghost in the camp. A small ghost of a
-      \pagelink{monster:myling}{child} has reportedly appeared two times at night. It cries and tries to attack people.
+      <id-link id='monster-myling' name='child' type='monster' /> has reportedly appeared two times at night. It cries and tries to attack people.
       Kyösti thinks people are hallucinating because of hunger. If the party kills the ghost, it will vanish and
       reappear the next night. A desperate refugee woman killed her newborn child, because she wasn't able to nourish
       him, and buried him under their shack due to shame. The child's soul has been trapped into this plane and can be
@@ -673,7 +670,7 @@
       ripped down all ancient symbols and replaced them with their own, crude wall paintings of animals, animal skulls
       and spruce branches. In the tent are also some of the food they have stolen or hunted, mainly meat in a sled. The
       party can just steal the sled or delve into the temple. There are no barbarians around except the three
-      \pagelink{monster:barbarian}{barbarian} guards on top. When the party comes back up from the temple they will face
+      <id-link name='Barbarian' type='monster' /> guards on top. When the party comes back up from the temple they will face
       a barbarian raiding party and are forced to escape into the temple.
       <sub-area-title name="The Entrance Top" />
       A leather tent that conceals a sled full of meat and dairy products and a stone platform that has a heavy iron
@@ -696,7 +693,7 @@
       it, and a red carpet leads to it. A ray of light shines through the ceiling at it. It comes from a magical one-way
       window that works also as an escape hatch. A dark figure lays in front of it covered in dust. It is hard to see
       what it is. When the party enters the room the figure starts to move. It is a
-      \pagelink{monster:youngGoldDragon}{Young Gold Dragon} that has been hibernating under a spell and commanded to
+      <id-link name='Young Gold Dragon' type='monster' /> that has been hibernating under a spell and commanded to
       guard the temple. It shakes off the dust and reveals the golden scales in all their glory. It queries the party of
       their purpose with a low voice. If the party is meaning good, the dragon can explain that this is Päivätär's
       shrine and he is commanded to guard it until the sun is eaten and all hope is lost. The dragon can be convinced to
@@ -753,7 +750,6 @@ import paivatarShrine from './img/paivatar_shrine.png'
 import campaignJson from '../campaign'
 import { sortByKey } from './utils'
 import { parseCampaign } from './parser'
-
 const campaign = parseCampaign(campaignJson)
 
 export default {
