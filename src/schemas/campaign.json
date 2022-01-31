@@ -18,6 +18,9 @@
         "type": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
         "alignment": {
           "type": "string"
         },
@@ -33,15 +36,14 @@
           "properties": {
             "throws": {
               "type": "integer",
-              "minimum": 1
+              "minimum": 0
             },
             "sides": {
               "type": "integer",
-              "minimum": 1
+              "minimum": 0
             },
             "constant": {
-              "type": "integer",
-              "minimum": 0
+              "type": "integer"
             }
           }
         },
@@ -77,10 +79,25 @@
           "type": "number",
           "minimum": 0
         },
-        "skills": {
+        "savingThrows": {
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "modifier"],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "modifier": {
+                "type": "integer"
+              }
+            }
           }
         },
         "senses": {
@@ -107,7 +124,29 @@
             "type": "string"
           }
         },
+        "conditionImmunities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "passives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "reactions": {
           "type": "array",
           "items": {
             "type": "object",
@@ -175,15 +214,14 @@
                     "properties": {
                       "throws": {
                         "type": "integer",
-                        "minimum": 1
+                        "minimum": 0
                       },
                       "sides": {
                         "type": "integer",
-                        "minimum": 1
+                        "minimum": 0
                       },
                       "constant": {
-                        "type": "integer",
-                        "minimum": 0
+                        "type": "integer"
                       }
                     }
                   },
