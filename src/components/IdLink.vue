@@ -30,7 +30,4 @@ export default {
 </script>
 
 <style scoped>
-.id-link {
-
-}
 </style>

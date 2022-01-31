@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .part-title {
   text-align: center;
   counter-increment: h2counter;

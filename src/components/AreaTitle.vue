@@ -24,6 +24,4 @@ export default {
 </script>
 
 <style scoped>
-.area-title {
-}
 </style>

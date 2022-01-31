@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .monster-divider {
   width: 100%;
   display: block;

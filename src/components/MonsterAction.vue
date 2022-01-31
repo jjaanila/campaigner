@@ -71,6 +71,4 @@ export default {
   font-style: italic;
   white-space: nowrap;
 }
-.monster-action-description {
-}
 </style>
