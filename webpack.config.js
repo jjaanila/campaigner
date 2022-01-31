@@ -58,7 +58,6 @@ module.exports = function (env, argv) {
         cache: false,
         template: './templates/index.pug',
         filename: 'index.html',
-        title: 'inline',
       }),
     ],
     optimization: isProduction
