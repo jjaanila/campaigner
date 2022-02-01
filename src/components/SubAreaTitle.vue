@@ -23,8 +23,18 @@ export default {
 }
 </script>
 
-<style scoped>
-h6 {
-  font-size: 1.25srem;
+<style>
+.sub-area-title {
+  font-size: 0.85rem;
+  color: #65291d;
+  margin: 1rem 0 0.1rem 0;
+  counter-increment: subareacounter;
+}
+.sub-area-title:before {
+  content: counter(areacounter) '.' counter(subareacounter) '\0000a0\0000a0';
+}
+.sub-area-title.nocount:before {
+  content: none;
+  counter-increment: none;
 }
 </style>

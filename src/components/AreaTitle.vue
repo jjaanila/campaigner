@@ -23,8 +23,19 @@ export default {
 }
 </script>
 
-<style scoped>
-h5 {
-  font-size: 0.75rem;
+<style>
+.area-title {
+  font-size: 1rem;
+  color: #65291d;
+  border-bottom: 1px solid #c9ad6a;
+  counter-reset: subareacounter;
+  counter-increment: areacounter;
+}
+.area-title:before {
+  content: counter(areacounter) '.\0000a0\0000a0';
+}
+.area-title.nocount:before {
+  content: none;
+  counter-increment: none;
 }
 </style>

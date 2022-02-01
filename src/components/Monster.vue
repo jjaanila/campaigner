@@ -1,36 +1,40 @@
 <template>
   <div :id="containerId" class="monster">
     <span class="monster-name">{{ name }}</span>
-      <span class="monster-properties">{{ propertiesStr }}</span>
-      <p class="monster-description">{{ description }}</p>
-      <monster-divider />
-      <monster-stat-row label="Armor Class" :value="armorClassStr" />
-      <monster-stat-row label="Hit Points" :value="hitPointsStr" />
-      <monster-stat-row label="Speed" :value="speed" />
-      <monster-divider />
-      <div class="monster-ability-scores">
-        <ability-score name="STR" :value="strength" />
-        <ability-score name="DEX" :value="dexterity" />
-        <ability-score name="CON" :value="constitution" />
-        <ability-score name="INT" :value="intelligence" />
-        <ability-score name="WIS" :value="wisdom" />
-        <ability-score name="CHA" :value="charisma" />
-      </div>
-      <monster-divider />
-      <monster-stat-row class="monster-saving-throws" label="Saving Throws" :value="savingThrowsStr" />
-      <monster-stat-row class="monster-skills" label="Skills" :value="skillsStr" />
-      <monster-stat-row class="monster-damage-resistances" label="Damage Resistances" :value="damageResistancesStr" />
-      <monster-stat-row class="monster-damage-immunities" label="Damage Immunities" :value="damageImmunitiesStr" />
-      <monster-stat-row class="monster-condition-immunities" label="Condition Immunities" :value="conditionImmunitiesStr" />
-      <monster-stat-row class="monster-senses" label="Senses" :value="sensesStr" />
-      <monster-stat-row class="monster-languages" label="Languages" :value="languagesStr" />
-      <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
-      <monster-divider />
-      <monster-action v-for="passive in passives" :key="passive.name" v-bind="passive" />
-      <monster-section-header name="Actions" v-if="actions.length > 0" />
-      <monster-action v-for="action in actions" :key="action.name" v-bind="action" />
-      <monster-section-header name="Reactions" v-if="reactions.length > 0" />
-      <monster-action v-for="reaction in reactions" :key="reaction.name" v-bind="reaction" />
+    <span class="monster-properties">{{ propertiesStr }}</span>
+    <p class="monster-description">{{ description }}</p>
+    <monster-divider />
+    <monster-stat-row label="Armor Class" :value="armorClassStr" />
+    <monster-stat-row label="Hit Points" :value="hitPointsStr" />
+    <monster-stat-row label="Speed" :value="speed" />
+    <monster-divider />
+    <div class="monster-ability-scores">
+      <ability-score name="STR" :value="strength" />
+      <ability-score name="DEX" :value="dexterity" />
+      <ability-score name="CON" :value="constitution" />
+      <ability-score name="INT" :value="intelligence" />
+      <ability-score name="WIS" :value="wisdom" />
+      <ability-score name="CHA" :value="charisma" />
+    </div>
+    <monster-divider />
+    <monster-stat-row class="monster-saving-throws" label="Saving Throws" :value="savingThrowsStr" />
+    <monster-stat-row class="monster-skills" label="Skills" :value="skillsStr" />
+    <monster-stat-row class="monster-damage-resistances" label="Damage Resistances" :value="damageResistancesStr" />
+    <monster-stat-row class="monster-damage-immunities" label="Damage Immunities" :value="damageImmunitiesStr" />
+    <monster-stat-row
+      class="monster-condition-immunities"
+      label="Condition Immunities"
+      :value="conditionImmunitiesStr"
+    />
+    <monster-stat-row class="monster-senses" label="Senses" :value="sensesStr" />
+    <monster-stat-row class="monster-languages" label="Languages" :value="languagesStr" />
+    <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
+    <monster-divider />
+    <monster-action v-for="passive in passives" :key="passive.name" v-bind="passive" />
+    <monster-section-header name="Actions" v-if="actions.length > 0" />
+    <monster-action v-for="action in actions" :key="action.name" v-bind="action" />
+    <monster-section-header name="Reactions" v-if="reactions.length > 0" />
+    <monster-action v-for="reaction in reactions" :key="reaction.name" v-bind="reaction" />
   </div>
 </template>
 
@@ -114,51 +118,51 @@ export default {
     },
     challengeRating: {
       type: Number,
-      required: true
+      required: true,
     },
     savingThrows: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     skills: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     senses: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     damageResistances: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     damageImmunities: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     conditionImmunities: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     languages: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     id: {
       type: String,
     },
     passives: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     actions: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     reactions: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   computed: {
     containerId() {
@@ -171,9 +175,9 @@ export default {
       return `${this.speedFt} ft.`
     },
     propertiesStr() {
-      return `${capitalize(this.size)} ${this.type ? ' ' + this.type : ''}${
-        this.race ? ', ' + this.race : ''
-      }${this.alignment ? ', ' + this.alignment : ''}`
+      return `${capitalize(this.size)} ${this.type ? ' ' + this.type : ''}${this.race ? ', ' + this.race : ''}${
+        this.alignment ? ', ' + this.alignment : ''
+      }`
     },
     hitPointsStr() {
       return this.hitPoints.toString()
@@ -182,7 +186,11 @@ export default {
       return this.savingThrows.map(capitalize).join(', ')
     },
     skillsStr() {
-      return this.skills.map(skillObject => `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`).join(', ')
+      return this.skills
+        .map(
+          skillObject => `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`
+        )
+        .join(', ')
     },
     damageResistancesStr() {
       return this.damageResistances.map(str => str.toLowerCase()).join(', ')
@@ -190,7 +198,7 @@ export default {
     damageImmunitiesStr() {
       return this.damageImmunities.map(str => str.toLowerCase()).join(', ')
     },
-    damageImmunitiesStr() {
+    conditionImmunitiesStr() {
       return this.conditionImmunities.map(str => str.toLowerCase()).join(', ')
     },
     sensesStr() {
@@ -200,18 +208,18 @@ export default {
       return this.languages.map(capitalize).join(', ')
     },
     challengeRatingStr() {
-      switch (this.challengeRating){
+      switch (this.challengeRating) {
         case 0.125:
           return '1/8'
         case 0.25:
           return '1/4'
-        case 0.50:
+        case 0.5:
           return '1/2'
         default:
           isInteger(this.challengeRating)
           return this.challengeRating
       }
-    }
+    },
   },
 }
 </script>
