@@ -866,9 +866,9 @@
       not been resolved. He was still unmarried even though being middle aged. He was still in love with Hellä
       Pohjanterä but for Hellä their relationship wasn't that important. He avoided marriage and hoped that he would win
       Hellä's heart back. When the party arrives, they are taken into the castle lobby to wait for the half-king. After
-      they have had some time to discuss and prepare, the butler opens <id-link name="Throne Room" type="area" /> door
-      and invites them in.
-      <sub-area-title name="Throne Room" type="subarea" />
+      they have had some time to discuss and prepare, the butler opens
+      <id-link name="Throne Room" type="subarea" /> door and invites them in.
+      <sub-area-title name="Throne Room" />
       The main working room of the half-king. Has purple carpets and curtains, large windows and a stone throne with the
       bottom half of split Kingsblade on top of it. Untamo will receive the intelligence from the party with great
       eagerness and pays 100gp each as a reward. He also requests the party to investigate his son's death and the
@@ -880,7 +880,7 @@
       party can also visit him. There is also Kaino Kalpa who has a strong motive to kill Armas, but he has been
       confirmed to been out of town during the death.
 
-      <sub-area-title name="Castle Tower" type="subarea" />
+      <sub-area-title name="Castle Tower" />
       Armas' living quarters. A spacey room on top of the tower with windows to all directions. A large balcony from
       which the prince fell down. There are no signs of struggle and everything seems to be in neat order. There are
       many small paintings of people on the wall. DC15 Perception check reveals that there is a feint square on the wall
@@ -889,7 +889,7 @@
       the prince in <id-link name="Throne Room" type="subarea" /> that includes a small version of the missing painting
       as well. It depicts a red haired woman and then Osma remembers that it is Hellä Pohjanterä. If the party asks for
       an image of the room, Osma or Untamo remember the portrait.
-      <sub-area-title name="Common Room" type="subarea" />
+      <sub-area-title name="Common Room" />
       A spacious hall with bookshelves and comfortable sofas and divans for the royals the chat and spend time.
       <id-link name="Kaino Kalpa" type="monster" />
       The bastard son of Untamo Eteläterä the party maybe met already in Bluebill's Nest. He has been very active lately
@@ -902,7 +902,7 @@
       discusses about problems of the kingdom with Kalervo but they often enjoy more light-hearted conversations e.g.
       about their youth. He accompanied the king during the death of Armas so Untamo is trusting him. He is also the
       bodyguard of the king and a monk.
-      <sub-area-title name="Dungeon" type="subarea" />
+      <sub-area-title name="Dungeon" />
       A dungeon that contains two larger holding cells and ten smaller ones for longtime prisoners.
       <id-link id="monster-commoner" name="Osma" type="monster" /> Male gnome Osma is one of the cleaners who is now
       suspected of Armas' death. He is small and skinny gnome that seems exceptionally tidy even after spending almost a
@@ -913,36 +913,35 @@
       clothes, emptied ashes from the fireplace and organized the desk. He didn't notice anything unusual. After that,
       he went to the laundry room to dump the dirty bed clothes and continued to the kitchen to mop the floors there.
       After that he went to his quarters but no one saw him there. He was there at the time of the death.
-      <sub-area-title name="Royal Archive" type="subarea" />
+      <sub-area-title name="Royal Archive" />
       A large library full of old books an scrolls. Has also a librarian that the party can ask questions from. He is a
       dwarf male with long beard and robe that has been repaired many times. He does not know how to get out from
       Pohjola. He has heard about a person that came to Pohjola but never left and tried to get away, but he can't quite
       remember the story. "Something about madness... Did he cut off his nose? Or was this the candle story? Mumble
       mumble..." Suggests to try the other archive in North Edge, they might have something more.
-      <sub-area-title name="Fencer's Inn (Miekkailijain Maja)" type="subarea" /> The most popular inn of South Edge.
-      Massively long wooden house full of small rooms for renting. There is also a large tavern included. Nowadays the
-      inn and the tavern doesn't really have customers due to poverty and unsafe streets. The few inn residents mostly
-      stay in their rooms. <id-link id="monster-commoner" name="Auvo Alku" type="monster" /> The innkeeper in Fencer's
-      Inn. Complains about the lack of customers and supplies. There isn't even beer anymore because all the pure water
-      goes for drinking. If asked about the death and Veli Hopea, he tells about the events. Veli Hopea got very drunk
-      after the night of Armas' death and proclaimed loudly that he would make a better half-king than Untamo. He had
-      ideas how to clean the river and went from table to table asking people's opinions. This all started when he
-      talked to a man called Heimo Hallava, a local man who lives in a large house in the trade district. The innkeeper
-      doesn't know much about him except that he is quite... eccentric. He often sits in the tavern and just observes
-      people, drinking hot water. <sub-area-title name="House of Heimo Hallava" type="subarea" /> A glorious house in
-      South Edge trade district. A large double door some exotic wood has an iron doorknocker on it. If the party knocks
-      with it, the door opens by itself and the party can enter a hallway. After the whole party is in, the main door
-      closes and locks shut. In the other end of the hallway is another double door and a lever next to it. Ten red
-      rubies start to glow on top of the door. Each second one of them turns dark starting from one side, like a
-      counter. If the party turns the lever next to the door, the counter starts again from ten glowing rubies. If the
-      party lets the counter to reach zero, the second door opens and they see laughing Heimo standing in front of them.
-      "Hahaha, that is always so entertaining. Welcome to my home. May I offer you some snacks?" He offers the party
-      cookies and hot water. Heimo is an inventor that spends most of his time with inventing and building new gadgets.
-      If questioned about the death, he explains that he may have triggered Veli's anger on purpose... Just to amuse
-      himself. "It is a pity what it led to, but I wouldn't consider it my fault." If the party is interested in the
-      gadgets, he may offer giving them one to try it out in the wild world, but he wants feedback. How was it useful?
-      Did it work correctly? Would you use it again? Depending on the feedback, he may consider giving them a reward.
-      Maybe the item itself?
+      <sub-area-title name="Fencer's Inn (Miekkailijain Maja)" /> The most popular inn of South Edge. Massively long
+      wooden house full of small rooms for renting. There is also a large tavern included. Nowadays the inn and the
+      tavern doesn't really have customers due to poverty and unsafe streets. The few inn residents mostly stay in their
+      rooms. <id-link id="monster-commoner" name="Auvo Alku" type="monster" /> The innkeeper in Fencer's Inn. Complains
+      about the lack of customers and supplies. There isn't even beer anymore because all the pure water goes for
+      drinking. If asked about the death and Veli Hopea, he tells about the events. Veli Hopea got very drunk after the
+      night of Armas' death and proclaimed loudly that he would make a better half-king than Untamo. He had ideas how to
+      clean the river and went from table to table asking people's opinions. This all started when he talked to a man
+      called Heimo Hallava, a local man who lives in a large house in the trade district. The innkeeper doesn't know
+      much about him except that he is quite... eccentric. He often sits in the tavern and just observes people,
+      drinking hot water. <sub-area-title name="House of Heimo Hallava" /> A glorious house in South Edge trade
+      district. A large double door some exotic wood has an iron doorknocker on it. If the party knocks with it, the
+      door opens by itself and the party can enter a hallway. After the whole party is in, the main door closes and
+      locks shut. In the other end of the hallway is another double door and a lever next to it. Ten red rubies start to
+      glow on top of the door. Each second one of them turns dark starting from one side, like a counter. If the party
+      turns the lever next to the door, the counter starts again from ten glowing rubies. If the party lets the counter
+      to reach zero, the second door opens and they see laughing Heimo standing in front of them. "Hahaha, that is
+      always so entertaining. Welcome to my home. May I offer you some snacks?" He offers the party cookies and hot
+      water. Heimo is an inventor that spends most of his time with inventing and building new gadgets. If questioned
+      about the death, he explains that he may have triggered Veli's anger on purpose... Just to amuse himself. "It is a
+      pity what it led to, but I wouldn't consider it my fault." If the party is interested in the gadgets, he may offer
+      giving them one to try it out in the wild world, but he wants feedback. How was it useful? Did it work correctly?
+      Would you use it again? Depending on the feedback, he may consider giving them a reward. Maybe the item itself?
       <item
         name="Wind Fan (Tuuliviuhka)"
         properties="Wondrous Item, uncommon"
@@ -951,16 +950,20 @@
       until the next dawn. Each time it is used again before then, it has a cumulative 20 percent chance of not working
       and tearing into useless, nonmagical tatters."
       />
-      <item name="Decanter of Endless Water (Pullotettu Lähde)" properties="Wondrous Item, uncommon" description="This
+      <item
+        name="Decanter of Endless Water (Pullotettu Lähde)"
+        properties="Wondrous Item, uncommon"
+        description="This
       stoppered flask sloshes when shaken, as if it contains water. The decanter weighs 2 pounds. You can use an action
       to remove the stopper and speak one of three Command words, whereupon an amount of fresh water or salt water (your
       choice) pours out of the flask. The Water stops pouring out at the start of your next turn. Choose from the
-      following options: • "Stream" produces 1 gallon of water. • "Fountain" produces 5 gallons of water. • "Geyser"
-      produces 30 gallons of water that gushes forth in a geyser 30 feet long and 1 foot wide. As a Bonus Action while
-      holding the decanter, you can aim the geyser at a creature you can see within 30 feet of you. The target must
-      succeed on a DC 13 Strength saving throw or take 1d4 bludgeoning damage and fall prone. Instead of a creature, you
-      can target an object that isn't being worn or carried and that weighs no more than 200 pounds. The object is
-      either knocked over or pushed up to 15 feet away from you." />
+      following options: • 'Stream' produces 1 gallon of water. • 'Fountain' produces 5 gallons of water. •
+      'Geyser' produces 30 gallons of water that gushes forth in a geyser 30 feet long and 1 foot wide. As a Bonus
+      Action while holding the decanter, you can aim the geyser at a creature you can see within 30 feet of you. The
+      target must succeed on a DC 13 Strength saving throw or take 1d4 bludgeoning damage and fall prone. Instead of a
+      creature, you can target an object that isn't being worn or carried and that weighs no more than 200 pounds. The
+      object is either knocked over or pushed up to 15 feet away from you."
+      />
 
       <section-title name="Northern Hostility" />
       <area-title name="Twin Settlement of North Edge" /> A settlement at the coast of the North Sea (Pohjanmeri) ruled
