@@ -1,4 +1,8 @@
 module.exports = Object.freeze({
+  title: 'Pohjola',
+  author: 'Janne Jaanila',
+  authorUrl: 'https://github.com/jjaanila',
+  publishDate: '2022-02-01',
   monsters: [
     {
       name: 'Thug',
@@ -1536,46 +1540,3 @@ module.exports = Object.freeze({
     },
   ],
 })
-
-/*
-{
-      name: '',
-      size: '',
-      type: '',
-      alignment: '',
-      armorClass: 1,
-      armor: '',
-      hitPoints: { throws: 1, sides: 1, constant: 1 },
-      speedFt: 1,
-      strength: 1,
-      dexterity: 1,
-      constitution: 1,
-      intelligence: 1,
-      wisdom: 1,
-      charisma: 1,
-      senses: [],
-      languages: [],
-      challengeRating: 1,
-      passives: [
-        {
-          name: 'Pack Tactics',
-          description:
-            'The thug has advantage on an attack roll against a creature if at least one of the thug’s allies is within 5 ft. of the creature and the ally isn’t incapacitated.',
-        },
-      ],
-      actions: [
-        {
-          name: 'Multiattack',
-          description: 'The thug makes two melee attacks.',
-        },
-        {
-          name: 'Mace',
-          type: 'melee',
-          toHit: 4,
-          reachFt: 5,
-          damageType: 'bludgeoning',
-          damage: { throws: 1, sides: 6, constant: 2 },
-        },
-      ],
-    },
-*/

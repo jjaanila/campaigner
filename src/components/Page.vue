@@ -11,7 +11,7 @@ export default {
 <style>
 .page {
   width: 60%;
-  margin: 8rem;
+  margin: 0 8rem 4rem 8rem;
 }
 @media only screen and (max-width: 600px) {
   .page {

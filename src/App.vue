@@ -1,7 +1,11 @@
 <template>
-  <main :style="{ background: `url(${require('./img/paper.jpg')}) repeat` }">
+  <main
+    :style="{
+      background: `url(${require('./img/paper.jpg')})`,
+    }"
+  >
     <page>
-      <campaign-title name="Pohjola" />
+      <campaign-title :name="title" :author="author" :authorUrl="authorUrl" :publishDate="publishDate" />
       <part-title name="Background" />
       <chapter-title name="Prologue" />
       This campaign takes your party to Pohjola, a barren northern region based on Finnish mythology and folk lore. The
@@ -1136,6 +1140,7 @@ export default {
       paivatarShrine,
       ukonvasara,
       underdark,
+      ...campaign,
       monsters: sortByKey(campaign.monsters, 'name'),
     }
   },
@@ -1154,6 +1159,11 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+address,
+time {
+  display: block;
+  text-align: center;
 }
 main {
   position: absolute;
