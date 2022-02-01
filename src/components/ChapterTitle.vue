@@ -24,6 +24,11 @@ export default {
 </script>
 
 <style scoped>
+.chapter-title {
+  color: #58180d;
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+}
 .chapter-title:before {
   content: 'Chapter ' counter(h3counter) ':\0000a0\0000a0';
   counter-increment: h3counter;

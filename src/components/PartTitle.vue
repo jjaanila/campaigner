@@ -1,5 +1,5 @@
 <template>
-  <h2 :id="h2Id" class="part-title">{{ name }}</h2>
+  <h2 :id="h2Id" class="part-title"><br /><br />{{ name }}</h2>
 </template>
 
 <script>
@@ -26,11 +26,14 @@ export default {
 <style scoped>
 .part-title {
   text-align: center;
+  color: #58180d;
+  font-size: 2rem;
+  margin: 10rem 0 10rem 0;
   counter-increment: h2counter;
   counter-reset: h3counter;
 }
 .part-title:before {
-  content: 'Part ' counter(h2counter) ':\0000a0\0000a0';
+  content: 'Part ' counter(h2counter);
 }
 .part-title.nocount:before {
   content: none;

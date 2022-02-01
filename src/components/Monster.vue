@@ -253,6 +253,8 @@ export default {
   flex-flow: row wrap;
   justify-content: space-evenly;
   margin: 0.25rem 0;
+  break-inside: avoid-column;
+  -webkit-column-break-inside: avoid;
 }
 .monster-challenge-rating {
   margin-bottom: 0.25rem;

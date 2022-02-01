@@ -28,6 +28,7 @@ export default {
   font-size: 1rem;
   color: #65291d;
   border-bottom: 1px solid #c9ad6a;
+  margin: 1rem 0 0.2rem 0;
   counter-reset: subareacounter;
   counter-increment: areacounter;
 }

@@ -26,7 +26,7 @@ export default {
 <style>
 .section-title {
   font-size: 2rem;
-  color: #58180d;
+  color: #65291d;
   margin: 1rem 0 0.5rem 0;
 }
 </style>

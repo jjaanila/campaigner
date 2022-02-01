@@ -24,10 +24,13 @@ export default {
     },
     aClass() {
       return `id-link ${this.type}-id-link`
-    }
+    },
   },
 }
 </script>
 
-<style scoped>
+<style>
+.id-link {
+  color: #65291d;
+}
 </style>

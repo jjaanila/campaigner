@@ -1105,6 +1105,12 @@
       <part-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
       <part-title name="Help" />
+      <section-title name="Finnish Names" />
+      Some authentic ancient Finnish names if you need to build a new NPC: Aikamieli, Ano, Arpia, Ikitiera, Ikäheimo,
+      Joutsimies, Jutikka, Jurva, Kaukovalta, Kekko, Kokko, Kostia, Kotarikko, Lalli, Leino, Lemmäs, Lempiä, Meripäivä,
+      Mielikki, Mielo, Neuvo, Nousia, Osma (Wolverine), Osmo (Young man), Paasia, Päivälapsi, Rahikka, Rautio
+      (Blacksmith), Sarijoutsi, Sotijalo, Talvikki, Tapatora, Toivelempi, Toivikki, Unaja, Unti, Utujoutsi, Valta,
+      Valtari, Vihas, Vihavaino, Viljakka, Äijö, Äiniö.
     </page>
   </main>
 </template>
