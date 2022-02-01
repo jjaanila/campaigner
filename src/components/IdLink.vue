@@ -1,7 +1,7 @@
 <template>
-  <span>
-    <a :class="aClass" :href="aHref">{{ name }}</a>
-    <span class="id-link-tooltip"> </span>
+  <span :class="containerClass">
+    <a :href="aHref">{{ name }}</a>
+    <span v-if="!!monster" class="id-link-tooltip"> <monster v-bind="monster" /> </span>
   </span>
 </template>
 
@@ -9,6 +9,7 @@
 import { generateId } from '../utils'
 export default {
   name: 'IdLink',
+  inject: ['campaignStore'],
   props: {
     name: {
       type: String,
@@ -25,8 +26,14 @@ export default {
     aHref() {
       return `#${this.id ?? generateId(this.name, this.type)}`
     },
-    aClass() {
+    containerClass() {
       return `id-link ${this.type}-id-link`
+    },
+    monster() {
+      if (this.type !== 'monster') {
+        return
+      }
+      return this.campaignStore.state.monsters.find(monster => monster.name === this.name)
     },
   },
 }
@@ -37,9 +44,10 @@ export default {
   color: #65291d;
 }
 .id-link-tooltip {
-  visibility: hidden;
+  display: none;
+  z-index: 1;
 }
 .id-link:hover .id-link-tooltip {
-  visibility: visible;
+  display: inline-block;
 }
 </style>
