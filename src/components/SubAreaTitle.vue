@@ -24,4 +24,7 @@ export default {
 </script>
 
 <style scoped>
+h6 {
+  font-size: 1.25srem;
+}
 </style>

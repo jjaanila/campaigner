@@ -128,7 +128,7 @@
         purevan tuulen vuoksi, mutta niin on myös sieltä poistuminen, mikä tekee siitä käytännöllisen
         rangaistuslaitoksen. Gundbargin kaupungin länsipuolella, jäätikön peittämän vuoren rinteellä sijaitsee kaivos ja
         yhdessä sen syvimmälle ulottuvista haaroista tunneli A-704. Hakkujen tasainen kilkatus poukkoilee kapean
-        tunnelin reunasta reunaan äänien vaeltaessa pimeyteen. \{Ryhmän jäsenluku\} olentoa heilauttaa ensin työkalunsa
+        tunnelin reunasta reunaan äänien vaeltaessa pimeyteen. {Ryhmän jäsenluku} olentoa heilauttaa ensin työkalunsa
         ylös, sitten kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Ainoa kytkös hakkujen välillä on
         työläisten jalkoja yhdistävät teräskahleet. Ei kuulu laulua, ei naurua, vain murahtelua ja satunnaisia
         niiskahduksia. Joukko etenee hitaasti mutta varmasti kohti vuoren tutkimattomia syvyyksiä yhden lepattavan
@@ -144,7 +144,7 @@
 
       <read-aloud>
         Kuuden päivän kaivamisen jälkeen muista poikkeava hakun kalahdus ja sitä seuraava hämmästynyt huokaus herättää
-        teidät monotonisen työn transsista. \{ Player name \} on lyönyt hakkunsa kiviseinästä läpi ja seinään on jäänyt
+        teidät monotonisen työn transsista. { Player name } on lyönyt hakkunsa kiviseinästä läpi ja seinään on jäänyt
         pieni aukko. Aukosta näkyy vain pimeyttä.
       </read-aloud>
 
@@ -347,9 +347,11 @@
       Acrobatics saving throw to get out of the way. Characters tangled in the web become Restrained and need DC 10
       Athletics check if they want to start moving.
       <comment title="Restrained">
-        \item A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed. \item Attack
-        rolls against the creature have advantage, and the creature's Attack rolls have disadvantage. \item The creature
-        has disadvantage on Dexterity Saving Throws.
+        <ul>
+          <li>A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
+          <li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
+          <li>The creature has disadvantage on Dexterity Saving Throws.</li>
+        </ul>
       </comment>
       10
       <id-link name="Kobold" type="monster" /> emerge from the forest and try to swarm the party. The dwarf woman curses
@@ -394,12 +396,14 @@
       Swarm of Insects attacks. Third and fourth doors are sealed with a magical seal can be opened with Knock. Inside
       is a unfortunate kobold corpse that got trapped in when the monastery was discovered. Behind the last door is a
       badly burned corpse and the door has also mostly burned away. The party should finally continue through the last
-      door on the right. \begin{figure}[h!] \caption{Ukonvasara} \includegraphics[scale=1]{img/ukonvasara.png}
-      \end{figure} Two <id-link name="Metsäläinen Soldier" type="monster" /> guard the hall in the middle of it and are
-      commanded to let none pass unless accompanied with a high ranking leader. The soldiers are clad in simple leather
-      cloths. Kobolds are not allowed down in the monastery (except for scouting dangerous areas). The soldiers will
-      attack and one tries to run to warn others in the bed chamber. If the soldiers are examined closely the party
-      finds a small bird foot sown to their shirts, right above heart.
+      door on the right.
+      <captioned-figure :path="ukonvasara" caption="Ukonvasara" width="15rem" />
+
+      Two <id-link name="Metsäläinen Soldier" type="monster" /> guard the hall in the middle of it and are commanded to
+      let none pass unless accompanied with a high ranking leader. The soldiers are clad in simple leather cloths.
+      Kobolds are not allowed down in the monastery (except for scouting dangerous areas). The soldiers will attack and
+      one tries to run to warn others in the bed chamber. If the soldiers are examined closely the party finds a small
+      bird foot sown to their shirts, right above heart.
       <sub-area-title name="Bed Champer" />
       This chamber is used by the cult to rest. There are three soldiers sleeping on the beds and one is tending to his
       gear with his back turned towards the door.
@@ -614,21 +618,23 @@
       archives in the Sword cities could contain the answer. If the party requests her to inspect Chief Ikäheimo for a
       disease one last time, she complies. They just have to figure out how to do that with the wife. If they succeed,
       Autere realizes the ring's significance and tells the party to destroy it. After all of this, Autere leaves the
-      town. For curing the chief, chief gives them a 1 carat Diamond as a reward. \paragraph{Chief Ikäheimo} A strong
-      middle-aged dwarf male who is the son of late smith Ikäheimo. Rose to chiefdom through his skill of inspiring and
-      natural charm by a public vote. Has become overconfident over the years and easily irritable after he received the
-      ring. The ring works with a bit of delay, so he may start answering truthfully, but then switch to a lie. After
-      this he fiddles his ring. Has a task for the party which requires them to fetch a travelling seer and throw him
-      into his dungeon. He claims that the seer is actually a known necromancer who is suspected of Armas Eteläterä's
-      murder. Truly, he has just been working as a fortuneteller and may be able to identify the ring. He can be found
-      in the local inn. The reward will be 10gp each and his trust. The party is able to notice his fiddling with a DC
-      18 Perception check. When they face more an more lies, the check should become easier. The check can be tried
-      again each time they meet him. <id-link id="monster-commoner" name="Tarjanne" type="monster" /> Wife of Chief
-      Ikäheimo. Calm and rational dwarf lady who has been worried about her husband because he hasn't been the same for
-      a while. She suspects sickness and asks the party to heal her husband. She would have asked Autere but she is in
-      the dungeon. <id-link id="monster-soldier-of-the-sword" name="Dog" type="monster" /> The dungeon guard Dog is a
-      thoughtful dwarf male. Not very strong, so he isn't the best soldier but guarding cells doesn't usually require
-      much physically and he likes the solidarity. He has been thinking about why the witch has been jailed because she
+      town. For curing the chief, chief gives them a 1 carat Diamond as a reward.
+      <id-link name="Chief Ikäheimo" type="monster" />
+      A strong middle-aged dwarf male who is the son of late smith Ikäheimo. Rose to chiefdom through his skill of
+      inspiring and natural charm by a public vote. Has become overconfident over the years and easily irritable after
+      he received the ring. The ring works with a bit of delay, so he may start answering truthfully, but then switch to
+      a lie. After this he fiddles his ring. Has a task for the party which requires them to fetch a travelling seer and
+      throw him into his dungeon. He claims that the seer is actually a known necromancer who is suspected of Armas
+      Eteläterä's murder. Truly, he has just been working as a fortuneteller and may be able to identify the ring. He
+      can be found in the local inn. The reward will be 10gp each and his trust. The party is able to notice his
+      fiddling with a DC 18 Perception check. When they face more an more lies, the check should become easier. The
+      check can be tried again each time they meet him.
+      <id-link id="monster-commoner" name="Tarjanne" type="monster" /> Wife of Chief Ikäheimo. Calm and rational dwarf
+      lady who has been worried about her husband because he hasn't been the same for a while. She suspects sickness and
+      asks the party to heal her husband. She would have asked Autere but she is in the dungeon.
+      <id-link id="monster-soldier-of-the-sword" name="Dog" type="monster" /> The dungeon guard Dog is a thoughtful
+      dwarf male. Not very strong, so he isn't the best soldier but guarding cells doesn't usually require much
+      physically and he likes the solidarity. He has been thinking about why the witch has been jailed because she
       seemed like a good person. She even healed his syphilis (huovintauti). Dog can be assured of his theory by finding
       some information to back it up and with DC 10 persuasion check. They can also lie about the information. They just
       need the credibility for that, so bringing the seer to the dungeon works fine. If successful, he will let the
@@ -664,8 +670,8 @@
       These tunnels need to be describe as vast and completely dark but only some of them are made explorable in this
       adventure. You should let the Deep Gnomes guide the party e.g. to
       <id-link name="Dark Chamber" type="subarea" /> and describe how deep you are going. Don't take the map too
-      literally. \clearpage \begin{figure}[h!] \caption{Underdark} \includegraphics[scale=0.20]{img/underdark.png}
-      \end{figure} \clearpage
+      literally.
+      <captioned-figure :path="underdark" caption="Underdark" width="40rem" />
       <sub-area-title name="Entrance" />
       A low room with a 12 ft. pit on the other side. Narrow ledges go around it and can be used to go around the pit
       with DC 10 dexterity for larger than small creatures. If the party causes noise,
@@ -837,14 +843,15 @@
       <area-title name="Kuurankaru" />
       The capital of metsäläiset. A village built of stone and ice up north at the bank of northern part of Viper's Rend
       on the side of Winter's Teeth (Talvenhampaat) mountains. The area between the mountains is called Winter's Throat
-      (Talvenkurkku). \paragraph{Mistress Loviatar} The queen of metsäläiset, the mistress of north. She is descendant
-      of Louhi, the evil witch queen from the beginning of time and the one who created Pohjola demiplane. Loviatar
-      shares Louhi's interests and tries to take Pohjola with the help of Perkele. For that, she needs to first find
-      four pieces of Tursaansydän (Heart of Tursas), the key to Perkele's prison. She has ordered her people metsäläiset
-      to search for ancient places for information. She already holds one piece of Tursaansydän and carries it
-      everywhere. This piece was given to Louhi for safekeeping and has been passed on for generations. Loviatar has
-      skin of pure white, black long hair and is as beautiful as every Louhi's kin has been (very). She commands her
-      people with the help of Joukahainen, her advisor.
+      (Talvenkurkku).
+      <id-link name="Loviatar" type="monster" />
+      The queen of metsäläiset, the mistress of north. She is descendant of Louhi, the evil witch queen from the
+      beginning of time and the one who created Pohjola demiplane. Loviatar shares Louhi's interests and tries to take
+      Pohjola with the help of Perkele. For that, she needs to first find four pieces of Tursaansydän (Heart of Tursas),
+      the key to Perkele's prison. She has ordered her people metsäläiset to search for ancient places for information.
+      She already holds one piece of Tursaansydän and carries it everywhere. This piece was given to Louhi for
+      safekeeping and has been passed on for generations. Loviatar has skin of pure white, black long hair and is as
+      beautiful as every Louhi's kin has been (very). She commands her people with the help of Joukahainen, her advisor.
       <sub-area-title name="Viper's Rend Toll Station" />
       Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend. They
       collect tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the
@@ -861,6 +868,8 @@ import 'normalize.css'
 import tursaansydan from './img/tursaansydan.png'
 import ukkoMonastery from './img/ukko_monastery.png'
 import paivatarShrine from './img/paivatar_shrine.png'
+import ukonvasara from './img/ukonvasara.png'
+import underdark from './img/underdark.png'
 import campaignJson from '../campaign'
 import { sortByKey } from './utils'
 import { parseCampaign } from './parser'
@@ -873,6 +882,8 @@ export default {
       tursaansydan,
       ukkoMonastery,
       paivatarShrine,
+      ukonvasara,
+      underdark,
       monsters: sortByKey(campaign.monsters, 'name'),
     }
   },
