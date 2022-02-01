@@ -5,7 +5,7 @@
     }"
   >
     <page>
-      <campaign-title :name="title" :author="author" :authorUrl="authorUrl" :publishDate="publishDate" />
+      <campaign-title />
       <part-title name="Background" />
       <chapter-title name="Prologue" />
       This campaign takes your party to Pohjola, a barren northern region based on Finnish mythology and folk lore. The
@@ -1107,7 +1107,7 @@
       collect tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the
       station costs 100gp without any load.
       <part-title name="Monsters" />
-      <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
+      <monster v-for="monster in campaignStore.state.monsters" v-bind="monster" :key="monster.name" />
       <part-title name="Help" />
       <section-title name="Finnish Names" />
       Some authentic ancient Finnish names if you need to build a new NPC: Aikamieli, Ano, Arpia, Ikitiera, Ikäheimo,
@@ -1126,13 +1126,10 @@ import ukkoMonastery from './img/ukko_monastery.png'
 import paivatarShrine from './img/paivatar_shrine.png'
 import ukonvasara from './img/ukonvasara.png'
 import underdark from './img/underdark.png'
-import campaignJson from '../campaign'
-import { sortByKey } from './utils'
-import { parseCampaign } from './parser'
-const campaign = parseCampaign(campaignJson)
 
 export default {
   name: 'app',
+  inject: ['campaignStore'],
   data() {
     return {
       tursaansydan,
@@ -1140,8 +1137,6 @@ export default {
       paivatarShrine,
       ukonvasara,
       underdark,
-      ...campaign,
-      monsters: sortByKey(campaign.monsters, 'name'),
     }
   },
 }

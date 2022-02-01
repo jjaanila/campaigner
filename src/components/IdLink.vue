@@ -1,5 +1,8 @@
 <template>
-  <a :class="aClass" :href="aHref">{{ name }}</a>
+  <span>
+    <a :class="aClass" :href="aHref">{{ name }}</a>
+    <span class="id-link-tooltip"> </span>
+  </span>
 </template>
 
 <script>
@@ -29,8 +32,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .id-link {
   color: #65291d;
+}
+.id-link-tooltip {
+  visibility: hidden;
+}
+.id-link:hover .id-link-tooltip {
+  visibility: visible;
 }
 </style>
