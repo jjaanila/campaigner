@@ -747,26 +747,32 @@
       food. There is also a problem with northern barbarians regularly attacking the camp. The refugees can tell about
       the political turmoil and the spoilt river water. They all have their own beliefs of the causes behind the issues.
       They have heard about the collapsed bridge and are worried about their supply delivery. Most of the people around
-      seem starved and desperate. Refugee leader tells that the barbarians have a safe place up north in an old ruin.
-      They must have food stored there since they have been robbing a lot lately. Refugee camp leader
-      <id-link id="monster-soldier-of-the-sword" name="Kyösti" type="monster" /> try to assure the party that they had
-      nothing to do with the bridge collapse. He requests the party to take care of the barbarians. They have nothing to
-      offer as reward in addition to a warm meal but they suspect that the ancient barbarian stronghold may hold
-      valuables treasures. There are also rumours of a ghost in the camp. A small ghost of a
-      <id-link id="monster-myling" name="child" type="monster" /> has reportedly appeared two times at night. It cries
-      and tries to attack people. Kyösti thinks people are hallucinating because of hunger. If the party kills the
-      ghost, it will vanish and reappear the next night. A desperate refugee woman killed her newborn child, because she
-      wasn't able to nourish him, and buried him under their shack due to shame. The child's soul has been trapped into
-      this plane and can be freed only with proper burial, i.e. a Myling (Ihtiriekko). The woman committed suicide
-      afterwards which caused a great shock in the camp. She had told others that she sent the child away with the
-      father. In truth, the father hasn't been involved in a long time and has left the camp. After the party resolves
-      the case, Kyösti writes them a letter to be delivered to the court of Eteläterä. A reward waits for the party
-      there. The letter is sealed with a purple seal of a horizontal sword with the top half removed. If read, It
-      contains also intelligence information of the area. This isn't just a refugee camp after all but an intelligence
-      unit has been hidden here. The letter writes that they suspect the loggers of sabotage at the bridge. Kyösti
-      proposes that the party takes care of the barbarians before leaving to the Sword. If the party does so, Kyösti
-      confesses his part in Eteläterä's intelligence operation and asks if the party found anything about metsäläiset.
-      He includes the information to the letter and hands it over to the party.
+      seem starved and desperate.
+      <p>
+        Refugee leader tells that the barbarians have a safe place up north in an old ruin. They must have food stored
+        there since they have been robbing a lot lately. Refugee camp leader
+        <id-link id="monster-soldier-of-the-sword" name="Kyösti" type="monster" /> tries to assure the party that they
+        had nothing to do with the bridge collapse. He requests the party to take care of the barbarians. They have
+        nothing to offer as reward in addition to a warm meal but they suspect that the ancient barbarian stronghold may
+        hold valuables treasures.
+      </p>
+      <p>
+        There are also rumours of a ghost in the camp. A small ghost of a
+        <id-link id="monster-myling" name="child" type="monster" /> has reportedly appeared two times at night. It cries
+        and tries to attack people. Kyösti thinks people are hallucinating because of hunger. If the party kills the
+        ghost, it will vanish and reappear the next night. A desperate refugee woman killed her newborn child, because
+        she wasn't able to nourish him, and buried him under their shack due to shame. The child's soul has been trapped
+        into this plane and can be freed only with proper burial, i.e. a Myling (Ihtiriekko). The woman committed
+        suicide afterwards which caused a great shock in the camp. She had told others that she sent the child away with
+        the father. In truth, the father hasn't been involved in a long time and has left the camp.
+      </p>
+      After the party resolves the case, Kyösti writes them a letter to be delivered to the court of Eteläterä. A reward
+      waits for the party there. The letter is sealed with a purple seal of a horizontal sword with the top half
+      removed. If read, It contains also intelligence information of the area. This isn't just a refugee camp after all
+      but an intelligence unit has been hidden here. The letter writes that they suspect the loggers of sabotage at the
+      bridge. Kyösti proposes that the party takes care of the barbarians before leaving to the Sword. If the party does
+      so, Kyösti confesses his part in Eteläterä's intelligence operation and asks if the party found anything about
+      metsäläiset. He includes the information to the letter and hands it over to the party.
       <section-title name="Temple of Päivätär" />
       <area-title name="Holy of The Valley (Alangon Pyhä)" />
       This is an ancient temple that is used by northern barbarians as a shelter. The temple is located in the middle of
@@ -799,21 +805,28 @@
       <sub-area-title name="Päivätär Shrine" />
       This hall is slightly smaller than the first one. A grand statue of the sun, although dusty, stands at the back of
       it, and a red carpet leads to it. A ray of light shines through the ceiling at it. It comes from a magical one-way
-      window that works also as an escape hatch. A dark figure lays in front of it covered in dust. It is hard to see
-      what it is. When the party enters the room the figure starts to move. It is a
-      <id-link name="Young Gold Dragon" type="monster" /> that has been hibernating under a spell and commanded to guard
-      the temple. It shakes off the dust and reveals the golden scales in all their glory. It queries the party of their
-      purpose with a low voice. If the party is meaning good, the dragon can explain that this is Päivätär's shrine and
-      he is commanded to guard it until the sun is eaten and all hope is lost. The dragon can be convinced to help kill
-      the barbarians or fly the party up to the window. Päivätär is the goddess of day and sun, a beautiful lady who
-      "owns the gold of the sun" just like Kuutar, the goddess of the moon, owns "the silver of the moon".
-      Unfortunately, there is not much more information of these goddesses in Finnish folk lore. Praying at the shrine
-      and gifting the goddess a decent amount of gp will yield a magical item. E.g. giving min. 10gp with a decent
-      prayer will give some potion, e.g. Potion of Healing (Greater), min. 50gp yields some magical item e.g. Lantern of
-      Revealing. Min. 200gp yields an uncommon weapon and min. 500gp a rare armor. These limits are not set in stone so
-      you should consider the PC's sacrifice. One item per PC! Extra prayers give nothing and won't take the money
-      either! If the party don't know how to pray maybe the dragon can give them a hint to offer some "gold of the sun"
-      to the goddess.
+      window that works also as an escape hatch.
+      <p>
+        A dark figure lays in front of it covered in dust. It is hard to see what it is. When the party enters the room
+        the figure starts to move. It is a <id-link name="Young Gold Dragon" type="monster" /> that has been hibernating
+        under a spell and commanded to guard the temple. It shakes off the dust and reveals the golden scales in all
+        their glory. It queries the party of their purpose with a low voice. If the party is meaning good, the dragon
+        can explain that this is Päivätär's shrine and he is commanded to guard it until the sun is eaten and all hope
+        is lost. The dragon can be convinced to help kill the barbarians or fly the party up to the window.
+      </p>
+      <p>
+        Päivätär is the goddess of day and sun, a beautiful lady who "owns the gold of the sun" just like Kuutar, the
+        goddess of the moon, owns "the silver of the moon". Unfortunately, there is not much more information of these
+        goddesses in Finnish folk lore.
+      </p>
+      <p>
+        Praying at the shrine and gifting the goddess a decent amount of gp will yield a magical item. E.g. giving min.
+        10gp with a decent prayer will give some potion, e.g. Potion of Healing (Greater), min. 50gp yields some magical
+        item e.g. Lantern of Revealing. Min. 200gp yields an uncommon weapon and min. 500gp a rare armor. These limits
+        are not set in stone so you should consider the PC's sacrifice. One item per PC! Extra prayers give nothing and
+        won't take the money either! If the party don't know how to pray maybe the dragon can give them a hint to offer
+        some "gold of the sun" to the goddess.
+      </p>
       <item
         name="Sunstroke (Auringonpistos)"
         properties="Sword, uncommon"
@@ -840,38 +853,43 @@
       />
       <captioned-figure :path="paivatarShrine" caption="Temple of Päivätär" width="30rem" />
       <chapter-title name="Kingdom In Twain" />
-      Twin settlements of the Sword, the North Edge and the South Edge, are the most prosperous settlements in Pohjola,
-      or at least they once were. Untamo Eteläterä's heir Armas Eteläterä died by falling from a castle tower and
-      everybody blames the court of Pohjanterä, the previously friendly rival settlement. Then the river water turned
-      gray and started causing sickness to the elderly and children. Everyone in Pohjanterä court blamed Eteläterä for a
-      horrifying petty revenge for a crime they didn't do. Pohjanterä court believes Eteläterä has a secret reserve or a
-      source of water. This has caused unprecedented tension in the Sword and scuffles at the border posts are common.
-      More and more people flee the settlements looking for a more peaceful place to live and, more importantly, for
-      food. There is shortage of water and food. Crime is nowadays common as desperation drives people to desperate
-      actions. The last "full" king, Kaukovalta of the Sword (Miekan Kaukovalta), ordered to split the kingdom two
-      generations ago before the current rulers. He was afraid of the power he had and decided to split it into two. A
-      new title half-king was given to his son and his brother's son. Until today the half-kings ruled without wars and
-      other major conflicts.
+      <p>
+        Twin settlements of the Sword, the North Edge and the South Edge, are the most prosperous settlements in
+        Pohjola, or at least they once were. Untamo Eteläterä's heir Armas Eteläterä died by falling from a castle tower
+        and everybody blames the court of Pohjanterä, the previously friendly rival settlement. Then the river water
+        turned gray and started causing sickness to the elderly and children. Everyone in Pohjanterä court blamed
+        Eteläterä for a horrifying petty revenge for a crime they didn't do. Pohjanterä court believes Eteläterä has a
+        secret reserve or a source of water. This has caused unprecedented tension in the Sword and scuffles at the
+        border posts are common. More and more people flee the settlements looking for a more peaceful place to live
+        and, more importantly, for food. There is shortage of water and food. Crime is nowadays common as desperation
+        drives people to desperate actions. The last "full" king, Kaukovalta of the Sword (Miekan Kaukovalta), ordered
+        to split the kingdom two generations ago before the current rulers. He was afraid of the power he had and
+        decided to split it into two. A new title half-king was given to his son and his brother's son. Until today the
+        half-kings ruled without wars and other major conflicts.
+      </p>
       <section-title name="Southern Hospitality" />
-      <area-title name="Twin Settlement of South Edge" /> A castle at the coast of the North Sea (Pohjanmeri) ruled by
-      half-king Untamo Eteläterä. The kingdom consists of all the land south of Fuller river excluding the independent
-      state Buckler. The land is more fertile than the north, but large portion of it is marshland.
-
-      <id-link name="Untamo Eteläterä" type="monster" /> The king of South Edge. He is a very old human male, but he
-      still has his wit. He just can't understand why would Kekko Pohjanterä, the half-king of Pohjanterä, kill his son.
-      He hasn't ruled out the possibility of suicide, even though that seems even more unlikely. There was no trace of
-      an intruder and the castle is well guarded. He is also puzzled of the river's condition and has arranged water
-      deliveries from further away. The river water just turns foul at one point upriver. Investigating is hard because
-      the current is so strong in that part of the river. He has also sent an intelligence unit to the large refugee on
-      the bank of river Fuller, which observers the situation there. Their latest mission is also to investigate the
-      collapsing of the Gray Bridge (Harmaasilta).
-
-      <em>Armas Eteläterä</em> The late heir of South Edge Kingdom. Was pushed down from castle tower but the murder has
-      not been resolved. He was still unmarried even though being middle aged. He was still in love with Hellä
-      Pohjanterä but for Hellä their relationship wasn't that important. He avoided marriage and hoped that he would win
-      Hellä's heart back. When the party arrives, they are taken into the castle lobby to wait for the half-king. After
-      they have had some time to discuss and prepare, the butler opens
-      <id-link name="Throne Room" type="subarea" /> door and invites them in.
+      <area-title name="Twin Settlement of South Edge" />
+      A castle at the coast of the North Sea (Pohjanmeri) ruled by half-king Untamo Eteläterä. The kingdom consists of
+      all the land south of Fuller river excluding the independent state Buckler. The land is more fertile than the
+      north, but large portion of it is marshland.
+      <p>
+        <id-link name="Untamo Eteläterä" type="monster" /> The king of South Edge. He is a very old human male, but he
+        still has his wit. He just can't understand why would Kekko Pohjanterä, the half-king of Pohjanterä, kill his
+        son. He hasn't ruled out the possibility of suicide, even though that seems even more unlikely. There was no
+        trace of an intruder and the castle is well guarded. He is also puzzled of the river's condition and has
+        arranged water deliveries from further away. The river water just turns foul at one point upriver. Investigating
+        is hard because the current is so strong in that part of the river. He has also sent an intelligence unit to the
+        large refugee on the bank of river Fuller, which observers the situation there. Their latest mission is also to
+        investigate the collapsing of the Gray Bridge (Harmaasilta).
+      </p>
+      <p>
+        <em>Armas Eteläterä</em> The late heir of South Edge Kingdom. Was pushed down from castle tower but the murder
+        has not been resolved. He was still unmarried even though being middle aged. He was still in love with Hellä
+        Pohjanterä but for Hellä their relationship wasn't that important. He avoided marriage and hoped that he would
+        win Hellä's heart back. When the party arrives, they are taken into the castle lobby to wait for the half-king.
+        After they have had some time to discuss and prepare, the butler opens
+        <id-link name="Throne Room" type="subarea" /> door and invites them in.
+      </p>
       <sub-area-title name="Throne Room" />
       The main working room of the half-king. Has purple carpets and curtains, large windows and a stone throne with the
       bottom half of split Kingsblade on top of it. Untamo will receive the intelligence from the party with great
@@ -895,28 +913,34 @@
       an image of the room, Osma or Untamo remember the portrait.
       <sub-area-title name="Common Room" />
       A spacious hall with bookshelves and comfortable sofas and divans for the royals the chat and spend time.
-      <id-link name="Kaino Kalpa" type="monster" />
-      The bastard son of Untamo Eteläterä the party maybe met already in Bluebill's Nest. He has been very active lately
-      refreshing the old relationships with the court and is secretly exited about the latest events. He is now the heir
-      due to the bastard-rule since there the king has no other royal sons. However, he is quite scared that he could be
-      suspected about the death so he may act a bit nervously. If the party met him at Bluebill's Nest, they can be
-      quite sure of his alibi, unless he has hired someone to do the deed...
-      <id-link name="Butler Kalervo" type="monster" /> The head of staff, a gnome male Kalervo is a sturdy man with gray
-      mustache and bald head. He is overly friendly man to others but he is a good friend of king Untamo. Untamo
-      discusses about problems of the kingdom with Kalervo but they often enjoy more light-hearted conversations e.g.
-      about their youth. He accompanied the king during the death of Armas so Untamo is trusting him. He is also the
-      bodyguard of the king and a monk.
+      <p>
+        <id-link name="Kaino Kalpa" type="monster" />
+        The bastard son of Untamo Eteläterä the party maybe met already in Bluebill's Nest. He has been very active
+        lately refreshing the old relationships with the court and is secretly exited about the latest events. He is now
+        the heir due to the bastard-rule since there the king has no other royal sons. However, he is quite scared that
+        he could be suspected about the death so he may act a bit nervously. If the party met him at Bluebill's Nest,
+        they can be quite sure of his alibi, unless he has hired someone to do the deed...
+      </p>
+      <p>
+        <id-link name="Butler Kalervo" type="monster" /> The head of staff, a gnome male Kalervo is a sturdy man with
+        gray mustache and bald head. He is overly friendly man to others but he is a good friend of king Untamo. Untamo
+        discusses about problems of the kingdom with Kalervo but they often enjoy more light-hearted conversations e.g.
+        about their youth. He accompanied the king during the death of Armas so Untamo is trusting him. He is also the
+        bodyguard of the king and a monk.
+      </p>
       <sub-area-title name="Dungeon" />
       A dungeon that contains two larger holding cells and ten smaller ones for longtime prisoners.
-      <id-link id="monster-commoner" name="Osma" type="monster" /> Male gnome Osma is one of the cleaners who is now
-      suspected of Armas' death. He is small and skinny gnome that seems exceptionally tidy even after spending almost a
-      tenday in dungeon. He is sobbing by himself in a cell that holds also two sleeping drunkards. If questioned, Osma
-      eagerly explains how he entered the room earlier that evening by opening the door that wasn't locked "What a
-      surprise...". He starts to continue the story, but if questioned about the surprise, he explains that the prince
-      always forgot to do that. He was quite careless. After entering the room, Osma swiped the floors, changed bed
-      clothes, emptied ashes from the fireplace and organized the desk. He didn't notice anything unusual. After that,
-      he went to the laundry room to dump the dirty bed clothes and continued to the kitchen to mop the floors there.
-      After that he went to his quarters but no one saw him there. He was there at the time of the death.
+      <p>
+        <id-link id="monster-commoner" name="Osma" type="monster" /> Male gnome Osma is one of the cleaners who is now
+        suspected of Armas' death. He is small and skinny gnome that seems exceptionally tidy even after spending almost
+        a tenday in dungeon. He is sobbing by himself in a cell that holds also two sleeping drunkards. If questioned,
+        Osma eagerly explains how he entered the room earlier that evening by opening the door that wasn't locked "What
+        a surprise...". He starts to continue the story, but if questioned about the surprise, he explains that the
+        prince always forgot to do that. He was quite careless. After entering the room, Osma swiped the floors, changed
+        bed clothes, emptied ashes from the fireplace and organized the desk. He didn't notice anything unusual. After
+        that, he went to the laundry room to dump the dirty bed clothes and continued to the kitchen to mop the floors
+        there. After that he went to his quarters but no one saw him there. He was there at the time of the death.
+      </p>
       <sub-area-title name="Royal Archive" />
       A large library full of old books an scrolls. Has also a librarian that the party can ask questions from. He is a
       dwarf male with long beard and robe that has been repaired many times. He does not know how to get out from
@@ -926,26 +950,30 @@
       <sub-area-title name="Fencer's Inn (Miekkailijain Maja)" /> The most popular inn of South Edge. Massively long
       wooden house full of small rooms for renting. There is also a large tavern included. Nowadays the inn and the
       tavern doesn't really have customers due to poverty and unsafe streets. The few inn residents mostly stay in their
-      rooms. <id-link id="monster-commoner" name="Auvo Alku" type="monster" /> The innkeeper in Fencer's Inn. Complains
-      about the lack of customers and supplies. There isn't even beer anymore because all the pure water goes for
-      drinking. If asked about the death and Veli Hopea, he tells about the events. Veli Hopea got very drunk after the
-      night of Armas' death and proclaimed loudly that he would make a better half-king than Untamo. He had ideas how to
-      clean the river and went from table to table asking people's opinions. This all started when he talked to a man
-      called Heimo Hallava, a local man who lives in a large house in the trade district. The innkeeper doesn't know
-      much about him except that he is quite... eccentric. He often sits in the tavern and just observes people,
-      drinking hot water. <sub-area-title name="House of Heimo Hallava" /> A glorious house in South Edge trade
-      district. A large double door some exotic wood has an iron doorknocker on it. If the party knocks with it, the
-      door opens by itself and the party can enter a hallway. After the whole party is in, the main door closes and
-      locks shut. In the other end of the hallway is another double door and a lever next to it. Ten red rubies start to
-      glow on top of the door. Each second one of them turns dark starting from one side, like a counter. If the party
-      turns the lever next to the door, the counter starts again from ten glowing rubies. If the party lets the counter
-      to reach zero, the second door opens and they see laughing Heimo standing in front of them. "Hahaha, that is
-      always so entertaining. Welcome to my home. May I offer you some snacks?" He offers the party cookies and hot
-      water. Heimo is an inventor that spends most of his time with inventing and building new gadgets. If questioned
-      about the death, he explains that he may have triggered Veli's anger on purpose... Just to amuse himself. "It is a
-      pity what it led to, but I wouldn't consider it my fault." If the party is interested in the gadgets, he may offer
-      giving them one to try it out in the wild world, but he wants feedback. How was it useful? Did it work correctly?
-      Would you use it again? Depending on the feedback, he may consider giving them a reward. Maybe the item itself?
+      rooms.
+      <p>
+        <id-link id="monster-commoner" name="Auvo Alku" type="monster" /> The innkeeper in Fencer's Inn. Complains about
+        the lack of customers and supplies. There isn't even beer anymore because all the pure water goes for drinking.
+        If asked about the death and Veli Hopea, he tells about the events. Veli Hopea got very drunk after the night of
+        Armas' death and proclaimed loudly that he would make a better half-king than Untamo. He had ideas how to clean
+        the river and went from table to table asking people's opinions. This all started when he talked to a man called
+        Heimo Hallava, a local man who lives in a large house in the trade district. The innkeeper doesn't know much
+        about him except that he is quite... eccentric. He often sits in the tavern and just observes people, drinking
+        hot water.
+      </p>
+      <sub-area-title name="House of Heimo Hallava" /> A glorious house in South Edge trade district. A large double
+      door some exotic wood has an iron doorknocker on it. If the party knocks with it, the door opens by itself and the
+      party can enter a hallway. After the whole party is in, the main door closes and locks shut. In the other end of
+      the hallway is another double door and a lever next to it. Ten red rubies start to glow on top of the door. Each
+      second one of them turns dark starting from one side, like a counter. If the party turns the lever next to the
+      door, the counter starts again from ten glowing rubies. If the party lets the counter to reach zero, the second
+      door opens and they see laughing Heimo standing in front of them. "Hahaha, that is always so entertaining. Welcome
+      to my home. May I offer you some snacks?" He offers the party cookies and hot water. Heimo is an inventor that
+      spends most of his time with inventing and building new gadgets. If questioned about the death, he explains that
+      he may have triggered Veli's anger on purpose... Just to amuse himself. "It is a pity what it led to, but I
+      wouldn't consider it my fault." If the party is interested in the gadgets, he may offer giving them one to try it
+      out in the wild world, but he wants feedback. How was it useful? Did it work correctly? Would you use it again?
+      Depending on the feedback, he may consider giving them a reward. Maybe the item itself?
       <item
         name="Wind Fan (Tuuliviuhka)"
         properties="Wondrous Item, uncommon"
@@ -973,30 +1001,35 @@
       <area-title name="Twin Settlement of North Edge" /> A settlement at the coast of the North Sea (Pohjanmeri) ruled
       by half-king Kekko Pohjanterä. The kingdom of North Edge consists of all the land north of Fuller river. The
       climate is colder than in south but the mountains have valuable minerals and gemstones.
-      <id-link name="Kekko Pohjanterä" type="monster" />
-      Young and kind human male half-king of the North Edge. Thoughtful and sensible man but slightly too gullible. He
-      is being played by his mother Hellä Pohjanterä. She has recommended Kekko to start buying wood from metsäläiset
-      and so funding their operation in exchange for help when they demand the throne of South Edge. Kekko is really the
-      son of Hellä and Armas, the heir of Untamo Eteläterä so he is eligible heir of both thrones. The supposed father
-      of Kekko, Neuvo Pohjanterä, had only daughters with Hellä. Kekko believes he is doing the right thing and can't
-      see her mother's devious plans. However, he is worried of the state his settlement currently is in, and is trying
-      to make peace with the south.
-      <id-link name="Hellä Pohjanterä" type="monster" />
-      A cunning middle-aged human female who is using her son to achieve her own goals. She had an affair with Armas
-      Eteläterä when they were young. They would be both middle-aged now, in case you are wondering... The product of
-      that affair was Kekko, the heir of both Sword half-kingdom thrones. Hellä's plan is to unite the two kingdoms to
-      its former glory under Kekko's rule, in which Hellä plays a large part. She plays her role as a caring mother well
-      but is not afraid to sacrifice people for her own good. She has allied with metsäläiset who promised to help her
-      to usurp the power in South Edge when the time comes. She just had to get rid of Armas first and then catalyse her
-      own court's anger by poisoning the river water. She didn't exactly request poisoning the whole river and not for
-      this whole time, but metsäläiset did what they agreed on with the least possible effort. She is not happy about
-      it, but the current situation is sufficient for her needs.
+      <p>
+        <id-link name="Kekko Pohjanterä" type="monster" />Young and kind human male half-king of the North Edge.
+        Thoughtful and sensible man but slightly too gullible. He is being played by his mother Hellä Pohjanterä. She
+        has recommended Kekko to start buying wood from metsäläiset and so funding their operation in exchange for help
+        when they demand the throne of South Edge. Kekko is really the son of Hellä and Armas, the heir of Untamo
+        Eteläterä so he is eligible heir of both thrones. The supposed father of Kekko, Neuvo Pohjanterä, had only
+        daughters with Hellä. Kekko believes he is doing the right thing and can't see her mother's devious plans.
+        However, he is worried of the state his settlement currently is in, and is trying to make peace with the south.
+      </p>
+      <p>
+        <id-link name="Hellä Pohjanterä" type="monster" />A cunning middle-aged human female who is using her son to
+        achieve her own goals. She had an affair with Armas Eteläterä when they were young. They would be both
+        middle-aged now, in case you are wondering... The product of that affair was Kekko, the heir of both Sword
+        half-kingdom thrones. Hellä's plan is to unite the two kingdoms to its former glory under Kekko's rule, in which
+        Hellä plays a large part. She plays her role as a caring mother well but is not afraid to sacrifice people for
+        her own good. She has allied with metsäläiset who promised to help her to usurp the power in South Edge when the
+        time comes. She just had to get rid of Armas first and then catalyse her own court's anger by poisoning the
+        river water. She didn't exactly request poisoning the whole river and not for this whole time, but metsäläiset
+        did what they agreed on with the least possible effort. She is not happy about it, but the current situation is
+        sufficient for her needs.
+      </p>
       <sub-area-title name="King's Quarters" />
-      A large room clad in red carpets and curtains. There is a double bed with a decorated wood framing and a wood
-      powered heater in the corner. Kekko prefers working here instead of the Throne Room without people watching after
-      him. The only people that visit him here regularly are his mother Hellä and the half-king's closest advisors. The
-      room has only one visible door but there is a secret passage to
-      <id-link name="Secret Tunnel" type="subarea" /> connecting the two castles.
+      <p>
+        A large room clad in red carpets and curtains. There is a double bed with a decorated wood framing and a wood
+        powered heater in the corner. Kekko prefers working here instead of the Throne Room without people watching
+        after him. The only people that visit him here regularly are his mother Hellä and the half-king's closest
+        advisors. The room has only one visible door but there is a secret passage to
+        <id-link name="Secret Tunnel" type="subarea" /> connecting the two castles.
+      </p>
       <sub-area-title name="Secret Tunnel" />
       A tunnel that runs below the Fuller river and only the half-kings should be aware of its existence. It was
       designed to allow secret communication for the half-kings and could also be used as an evacuation route. Tunnel's
@@ -1011,34 +1044,42 @@
       surfaces. This creates an effect of coziness in otherwise cold room. A throne of dark hard wood with red cushion
       stands next to the back wall. Half-king Kekko is rarely here unless he has is receiving visitors. This space is
       mostly used by the court for secret talks as there are plenty of shady corners and covering pillars.
-      <id-link name="Valtari Sinuhe" type="monster" /> A stoic elf male guard captain with lean features and no sense of
-      humour. Loyal to the king and king only. Doesn't take orders from Hellä or anyone else. Is responsible of castle's
-      security. Most of his time goes into supervising other guards and inspecting the premises for possible threats. He
-      is been tenser than normal during the last months of unrest. He doesn't agree with the half-king about everything,
-      but follows orders without questioning. He thinks that the half-king shows as weak and needs to show his military
-      more. Valtari believes in discipline through force. Failing DC 18 Intimidation check against him will lead to a
-      fight that is interrupted by the king before anyone dies. You can use e.g. Knight to model him in the fight.
-      Charming him causes him to admit his disagreements with the king. He likes to read about the old days and knows
-      quite a bit of old tales, e.g. about plane switching witches. He even knows a legend of man called Otava Maaton
-      who stayed in Pohjola and never returned. Otava told his story to everyone he met but no-one believed him and
-      thought him to be a madman. In the end, he became one after trying to return for years. Finally, he drowned
-      himself. Of course, this actually happened and Otava was trying to find Väinämöinen who is one of the few capable
-      of such magic. He believed Väinämöinen lived in Iänlampi and Otava tried to find him by diving into the lake.
-      Väinämöinen stayed hidden and Otava unfortunately drowned. Valtari is sure that South Edge ruined the river water.
-      <id-link id="monster-commoner" name="Priest Tiera" type="monster" /> Priest Tiera is a pleasant human female but
-      loses her temper immediately if she sees blasphemy. She preserves relations to the major gods Ukko (god of
-      thunder), Äkräs (god of farming), Tapio (god of the forest), Ahti (god of the waters), and Osmotar (god of beer).
-      A true all-round pleaser of gods. She is displeased that the current environment does not leave the common people
-      enough resources for worshipping and believes that they are being tested and they aren't passing the test. She is
-      even less impressed by people in South Edge and talks about them with disgust in his voice. "Maybe they didn't
-      poison the river by themselves but Ahti did because of their heresy."
-      <sub-area-title name="Throne Room" />
+      <p>
+        <id-link name="Valtari Sinuhe" type="monster" /> A stoic elf male guard captain with lean features and no sense
+        of humour. Loyal to the king and king only. Doesn't take orders from Hellä or anyone else. Is responsible of
+        castle's security. Most of his time goes into supervising other guards and inspecting the premises for possible
+        threats. He is been tenser than normal during the last months of unrest. He doesn't agree with the half-king
+        about everything, but follows orders without questioning. He thinks that the half-king shows as weak and needs
+        to show his military more. Valtari believes in discipline through force. Failing DC 18 Intimidation check
+        against him will lead to a fight that is interrupted by the king before anyone dies. You can use e.g. Knight to
+        model him in the fight. Charming him causes him to admit his disagreements with the king. He likes to read about
+        the old days and knows quite a bit of old tales, e.g. about plane switching witches. He even knows a legend of
+        man called Otava Maaton who stayed in Pohjola and never returned. Otava told his story to everyone he met but
+        no-one believed him and thought him to be a madman. In the end, he became one after trying to return for years.
+        Finally, he drowned himself. Of course, this actually happened and Otava was trying to find Väinämöinen who is
+        one of the few capable of such magic. He believed Väinämöinen lived in Iänlampi and Otava tried to find him by
+        diving into the lake. Väinämöinen stayed hidden and Otava unfortunately drowned. Valtari is sure that South Edge
+        ruined the river water.
+      </p>
+      <p>
+        <id-link id="monster-commoner" name="Priest Tiera" type="monster" /> Priest Tiera is a pleasant human female but
+        loses her temper immediately if she sees blasphemy. She preserves relations to the major gods Ukko (god of
+        thunder), Äkräs (god of farming), Tapio (god of the forest), Ahti (god of the waters), and Osmotar (god of
+        beer). A true all-round pleaser of gods. She is displeased that the current environment does not leave the
+        common people enough resources for worshipping and believes that they are being tested and they aren't passing
+        the test. She is even less impressed by people in South Edge and talks about them with disgust in his voice.
+        "Maybe they didn't poison the river by themselves but Ahti did because of their heresy."
+      </p>
+      <sub-area-title name="Dungeon" />
       Two drunks in one cell, two muggers in separate cells, and one skinny lunatic male halfling called Mielipäivä also
       in own cell.
-      <id-link id="monster-commoner" name="Mielipäivä" type="monster" /> He is hysteric and utters incoherently about
-      the return of "metsäläiset", "barbarians", and "giants". He has seen horrific things and horrific things were done
-      to him. He has scars on his body that are covered with skimpy rags. He was found floating in the Fuller river on a
-      log. A guard can explain the party where he was found from and what is his name but he doesn't know anything else.
+      <p>
+        <id-link id="monster-commoner" name="Mielipäivä" type="monster" /> He is hysteric and utters incoherently about
+        the return of "metsäläiset", "barbarians", and "giants". He has seen horrific things and horrific things were
+        done to him. He has scars on his body that are covered with skimpy rags. He was found floating in the Fuller
+        river on a log. A guard can explain the party where he was found from and what is his name but he doesn't know
+        anything else.
+      </p>
       <read-aloud>
         If the party has an orc or other exceptionally large PC, Mielipäivä could scream "GIANT!" and fall down in fear.
         He could refuse to speak until that PC moves further away. Utter e.g. in this order. The point is to act
@@ -1056,52 +1097,65 @@
       library with a human female librarian that sleeps also there during the night in a small bunk between two shelves.
       The bunk is not visible to the entrance so if the party is loud they might wake her up. Royal Archive has been
       closed from visitors excluding priests, high ranking staff and the king. Knowledge is not for everyone. The party
-      can break in if they can open the door lock. (See https://blackcitadelrpg.com/picking-locks-5e/ for more
-      interesting lockpicking) If the party stays silent they might find a book called Master's Long Gone (Mestarit
-      Menneet), which contains the legend of Otava Maaton. The party can also try persuading the librarian to help them
-      with a DC 15 Persuasion check.
+      can break in if they can open the door lock. (See
+      <a href="https://blackcitadelrpg.com/picking-locks-5e/" target="_blank">this</a> for more interesting lockpicking)
+      If the party stays silent they might find a book called Masters Long Gone (Mestarit Menneet), which contains the
+      legend of Otava Maaton. The party can also try persuading the librarian to help them with a DC 15 Persuasion
+      check.
       <section-title name="Endgame" />
-      If the party gets stuck investigating the death of Armas, <id-link name="Untamo Eteläterä" type="monster" /> will
-      be found dead one morning. He has been poisoned with a poison called Midnight Tears, made from fallen meteors, by
-      <id-link name="Kaino Kalpa" type="monster" />, Untamo's bastard son. He has been in contact also with North Edge
-      court and declared his goals very openly. Hellä saw an opportunity in him and delivered a bottle of poison to his
-      quarters with a note: "With this you remove half of what is on your way". Kaino mixed the poison into Untamo's
-      meal. This poison activates at next midnight so that was when the half-king died and was discovered next morning.
-      A medicine check will confirm that he was poisoned, DC 10 is needed to find out the used poison. The news will
-      spread soon in the twin settlements and during the same day Hellä and Kekko will arrive to give the court their
-      regards, but after the initial ceremonies Hellä tells the truth about her son and demands the throne to be given
-      to him. Simultaneously she proposes that the two half-kingdoms would united into one. Kaino is of course first
-      enthralled to become the half-king but Hellä's declaration will drive him into angry disbelieving shouting. I
-      suggest Hellä finds some well selected words to put Kaino under suspicion, or maybe the party? If Kaino is
-      detained, he should confess to the party in the dungeon what he did, but it surely wasn't his idea. The party can
-      devise a plan how to return justice into the court. If the party manages to convince the South Edge court that
-      North Edge court is behind their issues, North Edge soldiers will attack by the command of their half-king if he
-      repeats his mother's command. If they lose the fight, <id-link name="Hellä Pohjanterä" type="monster" /> may try
-      to escape. <id-link name="Kekko Pohjanterä" type="monster" /> may die. A lot of people may die. I leave this up to
-      you. Hellä and Kekko are accompanied by 6 <id-link name="Soldier of the Sword" type="monster" /> and
-      <id-link name="Valtari Sinuhe" type="monster" /> and the South Edge court has 2
-      <id-link name="Soldier of the Sword" type="monster" /> and <id-link name="Butler Kalervo" type="monster" />.
-      Remember that Kaino has a strong motive to try to get Kekko killed. If the party solves Armas' death, they may
-      want to revenge his death. If the evidence is presented to Kekko, he will eventually do what is right and imprison
-      his mother. Untamo could present the evidence to Kekko in the tunnel. Kekko remembers that Hellä placed a new
-      painting of herself on the corridor wall after Armas' death. He decides to give his mother to South Edge for
-      imprisonment. Untamo will tell the party to visit Kuurankaru and see what is going on there. The next morning,
-      Untamo will be found dead poisoned by Kaino. Kekko will never know about his true father and Kaino will become the
-      next half-king of South Edge. Where from here? If the party doesn't know the location of
-      <id-link name="Kuurankaru" type="area" />, they will get their answer from any member of South Edge court.
+      If the party gets stuck investigating the death of Armas,
+      <id-link name="Untamo Eteläterä" type="monster" /> will be found dead one morning. He has been poisoned with a
+      poison called Midnight Tears, made from fallen meteors, by <id-link name="Kaino Kalpa" type="monster" />, Untamo's
+      bastard son. He has been in contact also with North Edge court and declared his goals very openly. Hellä saw an
+      opportunity in him and delivered a bottle of poison to his quarters with a note: "With this you remove half of
+      what is on your way". Kaino mixed the poison into Untamo's meal. This poison activates at next midnight so that
+      was when the half-king died and was discovered next morning. A medicine check will confirm that he was poisoned,
+      DC 10 is needed to find out the used poison.
+      <p>
+        The news will spread soon in the twin settlements and during the same day Hellä and Kekko will arrive to give
+        the court their regards, but after the initial ceremonies Hellä tells the truth about her son and demands the
+        throne to be given to him. Simultaneously she proposes that the two half-kingdoms would united into one. Kaino
+        is of course first enthralled to become the half-king but Hellä's declaration will drive him into angry
+        disbelieving shouting. I suggest Hellä finds some well selected words to put Kaino under suspicion, or maybe the
+        party? If Kaino is detained, he should confess to the party in the dungeon what he did, but it surely wasn't his
+        idea. The party can devise a plan how to return justice into the court.
+      </p>
+      <p>
+        If the party manages to convince the South Edge court that North Edge court is behind their issues, North Edge
+        soldiers will attack by the command of their half-king if he repeats his mother's command. If they lose the
+        fight, <id-link name="Hellä Pohjanterä" type="monster" /> may try to escape.
+        <id-link name="Kekko Pohjanterä" type="monster" /> may die. A lot of people may die. I leave this up to you.
+        Hellä and Kekko are accompanied by 6 <id-link name="Soldier of the Sword" type="monster" /> and
+        <id-link name="Valtari Sinuhe" type="monster" /> and the South Edge court has 2
+        <id-link name="Soldier of the Sword" type="monster" /> and <id-link name="Butler Kalervo" type="monster" />.
+        Remember that Kaino has a strong motive to try to get Kekko killed. If the party solves Armas' death, they may
+        want to revenge his death. If the evidence is presented to Kekko, he will eventually do what is right and
+        imprison his mother. Untamo could present the evidence to Kekko in the tunnel. Kekko remembers that Hellä placed
+        a new painting of herself on the corridor wall after Armas' death. He decides to give his mother to South Edge
+        for imprisonment. Untamo will tell the party to visit Kuurankaru and see what is going on there. The next
+        morning, Untamo will be found dead poisoned by Kaino. Kekko will never know about his true father and Kaino will
+        become the next half-king of South Edge.
+      </p>
+      <p>
+        Where from here? If the party doesn't know the location of <id-link name="Kuurankaru" type="area" />, they will
+        get their answer from any member of South Edge court.
+      </p>
       <chapter-title name="Home of Darkness" />
       <area-title name="Kuurankaru" />
       The capital of metsäläiset. A village built of stone and ice up north at the bank of northern part of Viper's Rend
       on the side of Winter's Teeth (Talvenhampaat) mountains. The area between the mountains is called Winter's Throat
       (Talvenkurkku).
-      <id-link name="Loviatar" type="monster" />
-      The queen of metsäläiset, the mistress of north. She is descendant of Louhi, the evil witch queen from the
-      beginning of time and the one who created Pohjola demiplane. Loviatar shares Louhi's interests and tries to take
-      Pohjola with the help of Perkele. For that, she needs to first find four pieces of Tursaansydän (Heart of Tursas),
-      the key to Perkele's prison. She has ordered her people metsäläiset to search for ancient places for information.
-      She already holds one piece of Tursaansydän and carries it everywhere. This piece was given to Louhi for
-      safekeeping and has been passed on for generations. Loviatar has skin of pure white, black long hair and is as
-      beautiful as every Louhi's kin has been (very). She commands her people with the help of Joukahainen, her advisor.
+      <p>
+        <id-link name="Loviatar" type="monster" />
+        The queen of metsäläiset, the mistress of north. She is descendant of Louhi, the evil witch queen from the
+        beginning of time and the one who created Pohjola demiplane. Loviatar shares Louhi's interests and tries to take
+        Pohjola with the help of Perkele. For that, she needs to first find four pieces of Tursaansydän (Heart of
+        Tursas), the key to Perkele's prison. She has ordered her people metsäläiset to search for ancient places for
+        information. She already holds one piece of Tursaansydän and carries it everywhere. This piece was given to
+        Louhi for safekeeping and has been passed on for generations. Loviatar has skin of pure white, black long hair
+        and is as beautiful as every Louhi's kin has been (very). She commands her people with the help of Joukahainen,
+        her advisor.
+      </p>
       <sub-area-title name="Viper's Rend Toll Station" />
       Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend. They
       collect tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the
@@ -1161,10 +1215,15 @@ time {
   text-align: center;
 }
 main {
+  font-family: 'Merriweather';
   position: absolute;
   width: 100%;
   display: flex;
   flex-flow: column;
   align-items: center;
+}
+p {
+  text-indent: 1rem;
+  margin: 0;
 }
 </style>
