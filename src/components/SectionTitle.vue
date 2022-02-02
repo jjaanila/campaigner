@@ -25,8 +25,9 @@ export default {
 
 <style>
 .section-title {
+  font-family: 'Cinzel', sans-serif;
   font-size: 2rem;
   color: #65291d;
-  margin: 1rem 0 0.5rem 0;
+  margin: 4rem 0 0.5rem 0;
 }
 </style>

@@ -19,6 +19,7 @@ export default {
 
 <style scoped>
 .campaign-title {
+  font-family: 'Cinzel', sans-serif;
   text-align: center;
   counter-reset: h2counter;
 }

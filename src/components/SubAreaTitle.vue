@@ -25,6 +25,7 @@ export default {
 
 <style>
 .sub-area-title {
+  font-family: 'Cinzel', sans-serif;
   font-size: 0.85rem;
   color: #65291d;
   margin: 1rem 0 0.1rem 0;

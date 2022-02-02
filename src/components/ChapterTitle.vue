@@ -25,9 +25,10 @@ export default {
 
 <style scoped>
 .chapter-title {
+  font-family: 'Cinzel', sans-serif;
   color: #58180d;
-  font-size: 2rem;
-  margin: 2rem 0 1rem 0;
+  font-size: 3rem;
+  margin: 3rem 0 1rem 0;
 }
 .chapter-title:before {
   content: 'Chapter ' counter(h3counter) ':\0000a0\0000a0';

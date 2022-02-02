@@ -25,6 +25,7 @@ export default {
 
 <style scoped>
 .part-title {
+  font-family: 'Cinzel', sans-serif;
   text-align: center;
   color: #58180d;
   font-size: 2rem;

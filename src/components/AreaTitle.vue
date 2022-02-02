@@ -25,6 +25,7 @@ export default {
 
 <style>
 .area-title {
+  font-family: 'Cinzel', sans-serif;
   font-size: 1rem;
   color: #65291d;
   border-bottom: 1px solid #c9ad6a;
