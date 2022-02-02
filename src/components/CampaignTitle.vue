@@ -21,7 +21,7 @@ export default {
 .campaign-title {
   font-family: 'Cinzel', sans-serif;
   text-align: center;
-  counter-reset: h2counter;
+  counter-reset: partcounter chaptercounter;
 }
 .campaign-title-container {
   margin: 40vh 0 50vh 0;

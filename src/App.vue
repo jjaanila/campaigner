@@ -1202,7 +1202,7 @@ html {
   height: 100%;
 }
 .page {
-  counter-reset: h2counter;
+  counter-reset: partcounter;
 }
 body {
   width: 100%;

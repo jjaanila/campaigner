@@ -29,10 +29,10 @@ export default {
   color: #58180d;
   font-size: 3rem;
   margin: 3rem 0 1rem 0;
+  counter-increment: chaptercounter;
 }
 .chapter-title:before {
-  content: 'Chapter ' counter(h3counter) ':\0000a0\0000a0';
-  counter-increment: h3counter;
+  content: 'Chapter ' counter(chaptercounter) ':\0000a0\0000a0';
 }
 .chapter-title.nocount:before {
   content: none;
