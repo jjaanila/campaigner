@@ -571,7 +571,7 @@
       through it. If the party dives and goes through the portal they find themselves in an underground river and start
       to drift with the current. Only DC 18 athletics check allows a party member to swim back to the portal. The river
       takes them through a dark tunnel into an underground lake. Closer to the bank, on the other side of the lake,
-      party sees a <id-link name="Norhern Giant" type="monster" /> standing waist deep in water. It swings a large net,
+      party sees a <id-link name="Northern Giant" type="monster" /> standing waist deep in water. It swings a large net,
       catching fish and emptying the catch into a cart. When the cart is full, the giant pushes it out of the cave to
       the next chamber. It has to crawl on its knees to fit through the exit tunnel.
       <sub-area-title name="Salting Chamber" />

@@ -23,8 +23,11 @@ export default {
     },
   },
   computed: {
+    finalId() {
+      return this.id ?? generateId(this.name, this.type)
+    },
     aHref() {
-      return `#${this.id ?? generateId(this.name, this.type)}`
+      return `#${this.finalId}`
     },
     containerClass() {
       return `id-link ${this.type}-id-link`
@@ -33,7 +36,7 @@ export default {
       if (this.type !== 'monster') {
         return
       }
-      return this.campaignStore.state.monsters.find(monster => monster.name === this.name)
+      return this.campaignStore.state.monsters.find(monster => monster.id === this.finalId)
     },
   },
 }

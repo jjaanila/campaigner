@@ -880,7 +880,7 @@ module.exports = Object.freeze({
       actions: [],
     },
     {
-      name: 'Swoldier of the Sword',
+      name: 'Soldier of the Sword',
       size: 'medium',
       type: 'humanoid',
       alignment: 'lawful good',
