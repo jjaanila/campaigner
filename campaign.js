@@ -953,7 +953,7 @@ module.exports = Object.freeze({
       ],
     },
     {
-      name: 'Gray Keep',
+      name: 'Gray Keep Militia',
       size: 'medium',
       type: 'humanoid (any race)',
       alignment: 'lawful good',
