@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style scoped>
-.id-link {
+.id-link > a {
   color: #65291d;
 }
 .id-link-tooltip {
