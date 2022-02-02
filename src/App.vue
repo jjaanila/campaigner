@@ -4,6 +4,7 @@
       background: `url(${require('./img/paper.jpg')})`,
     }"
   >
+    <table-of-contents />
     <page>
       <campaign-title />
       <part-title name="Background" />

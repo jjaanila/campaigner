@@ -12,6 +12,7 @@ import Item from './Item.vue'
 import Monster from './Monster.vue'
 import IdLink from './IdLink.vue'
 import Comment from './Comment.vue'
+import TableOfContents from './TableOfContents.vue'
 
 export default {
   CampaignTitle,
@@ -28,4 +29,5 @@ export default {
   Monster,
   IdLink,
   Comment,
+  TableOfContents,
 }

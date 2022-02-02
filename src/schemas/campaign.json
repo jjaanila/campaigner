@@ -234,10 +234,69 @@
           }
         }
       }
+    },
+    "document": {
+      "description": "A structural definition of a campaign document",
+      "type": "object",
+      "required": ["parts"],
+      "additionalProperties": false,
+      "properties": {
+        "parts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/part"
+          }
+        }
+      }
+    },
+    "part": {
+      "description": "A part of campaign",
+      "type": "object",
+      "required": ["name", "chapters"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "chapters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/chapter"
+          }
+        }
+      }
+    },
+    "chapter": {
+      "description": "A chapter of campaign",
+      "type": "object",
+      "required": ["name", "sections"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/section"
+          }
+        }
+      }
+    },
+    "section": {
+      "description": "A section of campaign",
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
     }
   },
   "type": "object",
-  "required": ["monsters"],
+  "required": ["monsters", "title", "author", "authorUrl", "publishDate"],
   "properties": {
     "title": {
       "type": "string"
@@ -248,6 +307,15 @@
     "authorUrl": {
       "type": "string",
       "format": "url"
+    },
+    "publishDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "document": {
+      "type": {
+        "$ref": "#/definitions/document"
+      }
     },
     "monsters": {
       "type": "array",

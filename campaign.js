@@ -3,6 +3,58 @@ module.exports = Object.freeze({
   author: 'Janne Jaanila',
   authorUrl: 'https://github.com/jjaanila',
   publishDate: '2022-02-01',
+  document: {
+    parts: [
+      {
+        name: 'Background',
+        chapters: [
+          {
+            name: 'Prologue',
+            sections: [],
+          },
+          {
+            name: 'Creation of the World',
+            sections: [],
+          },
+          {
+            name: 'Pohjola',
+            sections: [{ name: 'In Dungeons & Dragons context' }, { name: 'More history' }, { name: 'Today' }],
+          },
+        ],
+      },
+      {
+        name: 'The Story Begins',
+        chapters: [
+          {
+            name: 'Prisoners of Gundarlun',
+            sections: [],
+          },
+          {
+            name: 'Welcome to Pohjola',
+            sections: [],
+          },
+          {
+            name: 'The Only Shade of Gray',
+            sections: [],
+          },
+          {
+            name: "Ukko's Fingers",
+            sections: [],
+          },
+          {
+            name: 'Kingdom in Twain',
+            sections: [],
+          },
+          {
+            name: 'Home of Darkness',
+            sections: [],
+          },
+        ],
+      },
+      { name: 'Monsters', chapters: [] },
+      { name: 'Help', chapters: [] },
+    ],
+  },
   monsters: [
     {
       name: 'Thug',
