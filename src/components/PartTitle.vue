@@ -30,11 +30,10 @@ export default {
   color: #58180d;
   font-size: 2rem;
   margin: 10rem 0 10rem 0;
-  counter-increment: h2counter;
-  counter-reset: h3counter;
+  counter-increment: partcounter;
 }
 .part-title:before {
-  content: 'Part ' counter(h2counter);
+  content: 'Part ' counter(partcounter);
 }
 .part-title.nocount:before {
   content: none;
