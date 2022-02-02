@@ -120,6 +120,10 @@ export default {
       type: Number,
       required: true,
     },
+    xp: {
+      type: Number,
+      required: true,
+    },
     savingThrows: {
       type: Array,
       default: () => [],
@@ -208,17 +212,23 @@ export default {
       return this.languages.map(capitalize).join(', ')
     },
     challengeRatingStr() {
+      let cr = 'N/A'
       switch (this.challengeRating) {
         case 0.125:
-          return '1/8'
+          cr = '1/8'
+          break
         case 0.25:
-          return '1/4'
+          cr = '1/4'
+          break
         case 0.5:
-          return '1/2'
+          cr = '1/2'
+          break
         default:
           isInteger(this.challengeRating)
-          return this.challengeRating
+          cr = String(this.challengeRating)
+          break
       }
+      return `${cr} (${this.xp} XP)`
     },
   },
 }
