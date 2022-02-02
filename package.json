@@ -10,9 +10,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress",
     "validate": "node ./scripts/validate.js"
   },
-  "husky": {
-    "pre-commit": "npm run validate"
-  },
   "dependencies": {
     "jsonschema": "^1.4.0",
     "vue": "^2.5.11",
