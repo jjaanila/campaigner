@@ -1224,7 +1224,7 @@ main {
   align-items: center;
 }
 p {
-  text-indent: 1rem;
+  text-indent: 2rem;
   margin: 0;
 }
 </style>
