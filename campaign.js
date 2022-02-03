@@ -31,19 +31,29 @@ module.exports = Object.freeze({
           },
           {
             name: 'Welcome to Pohjola',
-            sections: [],
+            sections: [
+              { name: "In Bluebill's Nest" },
+              { name: 'Bandit Camp' },
+              { name: 'Wedding' },
+              { name: 'Forgotten Marshes' },
+            ],
           },
           {
             name: 'The Only Shade of Gray',
-            sections: [],
+            sections: [{ name: 'Missing Boats' }, { name: 'Fishy Business' }],
           },
           {
             name: "Ukko's Fingers",
-            sections: [],
+            sections: [
+              { name: 'The Mad Chief' },
+              { name: 'Down Below' },
+              { name: 'To the Sword' },
+              { name: 'Temple of Päivätär' },
+            ],
           },
           {
             name: 'Kingdom in Twain',
-            sections: [],
+            sections: [{ name: 'Southern Hospitality' }, { name: 'Northern Hostility' }, { name: 'Endgame' }],
           },
           {
             name: 'Home of Darkness',
