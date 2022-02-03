@@ -1,14 +1,15 @@
 <template>
-  <nav class="toc">
-    <ol>
+  <nav class="toc" v-on:click="uiStore.toggleToC()">
+    <span>Table of Contents</span>
+    <ol v-if="uiStore.state.isToCOpen">
       <li v-for="part in campaignStore.state.document.parts" :key="part.name">
-        <a class="toc-part" :href="`#${part.id}`">{{ part.name }}</a>
+        <a class="toc-part" v-on:click.stop :href="`#${part.id}`">{{ part.name }}</a>
         <ol>
           <li v-for="chapter in part.chapters" :key="chapter.name">
-            <a class="toc-chapter" :href="`#${chapter.id}`">{{ chapter.name }}</a>
+            <a class="toc-chapter" v-on:click.stop :href="`#${chapter.id}`">{{ chapter.name }}</a>
             <ol>
               <li v-for="section in chapter.sections" :key="section.name">
-                <a class="toc-section" :href="`#${section.id}`">{{ section.name }}</a>
+                <a class="toc-section" v-on:click.stop :href="`#${section.id}`">{{ section.name }}</a>
               </li>
             </ol>
           </li>
@@ -21,7 +22,7 @@
 <script>
 export default {
   name: 'TableOfContents',
-  inject: ['campaignStore'],
+  inject: ['campaignStore', 'uiStore'],
 }
 </script>
 
@@ -31,7 +32,7 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  width: 200px;
+  max-width: 250px;
   font-family: 'Cinzel', sans-serif;
   text-indent: 0;
   background-color: #f2ead6;
@@ -39,6 +40,7 @@ export default {
   border-bottom-right-radius: 10px;
   border-bottom: 1px solid #c9ad6a;
   border-right: 1px solid #c9ad6a;
+  box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 .toc ol {
   list-style-type: none;
