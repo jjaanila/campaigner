@@ -8,7 +8,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress",
-    "validate": "node ./scripts/validate.js"
+    "validate": "node ./scripts/validate.js",
+    "package": "npm run build && rm dist/*.js && mv dist/ pohjola && zip -r pohjola-v$npm_package_version.zip pohjola && rm -rf pohjola/"
   },
   "dependencies": {
     "jsonschema": "^1.4.0",
