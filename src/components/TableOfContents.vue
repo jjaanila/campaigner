@@ -1,14 +1,14 @@
 <template>
   <nav class="toc">
     <ol>
-      <li class="toc-part" v-for="part in campaignStore.state.document.parts" :key="part.name">
-        {{ part.name }}
+      <li v-for="part in campaignStore.state.document.parts" :key="part.name">
+        <a class="toc-part" :href="`#${part.id}`">{{ part.name }}</a>
         <ol>
-          <li class="toc-chapter" v-for="chapter in part.chapters" :key="chapter.name">
-            {{ chapter.name }}
+          <li v-for="chapter in part.chapters" :key="chapter.name">
+            <a class="toc-chapter" :href="`#${chapter.id}`">{{ chapter.name }}</a>
             <ol>
-              <li class="toc-section" v-for="section in chapter.sections" :key="section.name">
-                {{ section.name }}
+              <li v-for="section in chapter.sections" :key="section.name">
+                <a class="toc-section" :href="`#${section.id}`">{{ section.name }}</a>
               </li>
             </ol>
           </li>
@@ -28,9 +28,21 @@ export default {
 <style scoped>
 .toc {
   counter-reset: tocpartcounter tocchaptercounter;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  font-family: 'Cinzel', sans-serif;
+  text-indent: 0;
+  background-color: #f2ead6;
+  padding: 1rem;
+  border-bottom-right-radius: 10px;
+  border-bottom: 1px solid #c9ad6a;
+  border-right: 1px solid #c9ad6a;
 }
 .toc ol {
   list-style-type: none;
+  padding: 0;
 }
 .toc-part:before {
   counter-increment: tocpartcounter;
@@ -39,5 +51,24 @@ export default {
 .toc-chapter:before {
   counter-increment: tocchaptercounter;
   content: 'Ch. ' counter(tocchaptercounter) ': ';
+}
+.toc a {
+  color: #58180d;
+  text-decoration: none;
+}
+.toc a:hover {
+  color: #581000;
+  font-weight: 700;
+  cursor: pointer;
+}
+.toc-part {
+  border-bottom: 2px solid #c9ad6a;
+  display: block;
+  line-height: 0.8rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.toc-section {
+  font-size: 0.75rem;
 }
 </style>

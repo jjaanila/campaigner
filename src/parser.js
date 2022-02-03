@@ -15,5 +15,19 @@ export const parseCampaign = campaignJson => {
         damage: action.damage && Dice.deserialize(action.damage),
       })),
     })),
+    document: {
+      parts: campaignJson.document.parts.map(part => ({
+        ...part,
+        id: generateId(part.name, 'part'),
+        chapters: part.chapters.map(chapter => ({
+          ...chapter,
+          id: generateId(chapter.name, 'chapter'),
+          sections: chapter.sections.map(section => ({
+            ...section,
+            id: generateId(section.name, 'section'),
+          })),
+        })),
+      })),
+    },
   }
 }
