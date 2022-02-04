@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = function (env, argv) {
@@ -32,9 +34,21 @@ module.exports = function (env, argv) {
           test: /\.css$/,
           use: ['vue-style-loader', 'css-loader'],
         },
+        ...(isProduction
+          ? [
+              {
+                test: /\.(jpg|png|gif|svg)$/,
+                loader: 'image-webpack-loader',
+                // Specify enforce: 'pre' to apply the loader
+                // before url-loader/svg-url-loader
+                // and not duplicate it in rules with them
+                enforce: 'pre',
+              },
+            ]
+          : []),
         {
           test: /\.(png|jpg|gif|svg)$/,
-          loader: 'file-loader',
+          loader: isProduction ? 'url-loader' : 'file-loader',
           options: {
             name: '[path][name].[ext]',
             esModule: false,
