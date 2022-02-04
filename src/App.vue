@@ -9,40 +9,60 @@
       <campaign-title />
       <part-title name="Background" />
       <chapter-title name="Prologue" />
-      This campaign takes your party to Pohjola, a barren northern region based on Finnish mythology and folk lore. The
-      campaign plays on DnD 5th Edition rules, and it introduces some new enemies, spells and items. The main
-      inspiration for this work comes from the Finnish national epic Kalevala, composed by Elias Lönnrot, and Martti
-      Haavio's studies of Finnish mythology. The story lines are partly or completely fictional and do not depict the
-      original stories of Finnish folk lore. Some of the ideas have been loaned from the old stories, poems and songs
-      philologists have recorded from singers and sages of the past. My intent was to paint a picture of this long gone
-      world while stretching its stories and contexts a bit, just to make things more interesting. I'm not an expert of
-      Finnish mythology, but just an engineer who recently started DnD and enjoyed it so much that decided to write his
-      own story. This document contains real charms and spell poems that have been passed on through generations. Use
-      them with great care and caution. Please also note that some of the symbols in this story are used by Finnish
-      neo-nazis and other hate groups as "their" symbols. I don't want anything to do with these groups and I respect
-      all people despite their religion, gender, color, or any other property. Hateful people also, because I believe
-      they will come to their senses some day.
+      <p>
+        This campaign takes your party to Pohjola, a barren northern region based on Finnish mythology and folk lore.
+        The campaign plays on DnD 5th Edition rules, and it introduces some new enemies, spells and items. The main
+        inspiration for this work comes from the Finnish national epic Kalevala, composed by Elias Lönnrot, and Martti
+        Haavio's studies of Finnish mythology. The story lines are partly or completely fictional and do not depict the
+        original stories of Finnish folk lore. Some of the ideas have been loaned from the old stories, poems and songs
+        philologists have recorded from singers and sages of the past. My intent was to paint a picture of this long
+        gone world while stretching its stories and contexts a bit, just to make things more interesting. I'm not an
+        expert of Finnish mythology, but just an engineer who recently started DnD and enjoyed it so much that decided
+        to write his own story.
+      </p>
+
+      <p>
+        This document contains real charms and spell poems that have been passed on through generations. Use them with
+        great care and caution.
+      </p>
+      <p>
+        Please also note that some of the symbols in this story are used by Finnish neo-nazis and other hate groups as
+        "their" symbols. I don't want anything to do with these groups and I respect all people despite their religion,
+        gender, color, or any other property. Hateful people also, because I believe they will come to their senses some
+        day.
+      </p>
       <chapter-title name="Creation of the World" />
-      In the beginning there were only gods. Among them, was goddess Ilmatar, the goddess of air. In her loneliness, she
-      became bored and descended from the skies on to the waves of the sea. She was pregnant and in pain. The birthing
-      would not proceed as expected and she was starting to become desperate. Meanwhile, a bluebill was circling the
-      skies looking for a place to nest and lay her eggs. She was also in a hurry and had been looking for a suitable
-      place a while. The bluebill spots the knee of Ilmatar above the sea waves and sees it as a suitable (or at least
-      passable) place for a nest. The nest was built and eggs laid, 6 golden ones and one made of iron. After three days
-      of hatching, also Ilmatar started to feel the bluebill. Ilmatar felt increasing heat that first was comfortable,
-      but after a while it became stinging and soon her knee felt like burning. Like any creature, even a god, would do,
-      she moved her knee under the sea waves to cool it off. The bluebill took off and her eggs broke down into tiny
-      pieces which rolled into the sea. The small egg shell pieces did not get far. After touching the sea water they
-      started to transform: the bottom halves of shells turned to clay, dirt, and stone, the building blocks of ground,
-      and top halves built up the first sky. The brown parts of the shell became the day and sunlight, when white
-      transformed into night and the moon. The night also received its stars of colored crumbs, and the blackest crumbs
-      turned into clouds. After nive years, Ilmatar, still pregnant, started to mold the crude first world. She placed
-      continents, islands and shores, formed the sea bottom and coasts. However, all this work still did not trigger the
-      birth of her child. Thirty more years did the child spend in her mother's womb. Finally, the offspring decided it
-      was time go and step into the world. So it did, but little did it expect the cold sea that was her mother's new
-      home. The child of goddess fell into the raging sea and spent eight years in the waves until they threw him on a
-      deserted cape. There he rose and finally looked at the world in peace. So was born the world, and Väinämöinen, the
-      eternal sage.
+      <p>
+        In the beginning there were only gods. Among them, was goddess Ilmatar, the goddess of air. In her loneliness,
+        she became bored and descended from the skies on to the waves of the sea. She was pregnant and in pain. The
+        birthing would not proceed as expected and she was starting to become desperate. Meanwhile, a bluebill was
+        circling the skies looking for a place to nest and lay her eggs. She was also in a hurry and had been looking
+        for a suitable place a while. The bluebill spots the knee of Ilmatar above the sea waves and sees it as a
+        suitable (or at least passable) place for a nest. The nest was built and eggs laid, 6 golden ones and one made
+        of iron.
+      </p>
+      <p>
+        After three days of hatching, also Ilmatar started to feel the bluebill. Ilmatar felt increasing heat that first
+        was comfortable, but after a while it became stinging and soon her knee felt like burning. Like any creature,
+        even a god, would do, she moved her knee under the sea waves to cool it off. The bluebill took off and her eggs
+        broke down into tiny pieces which rolled into the sea. The small egg shell pieces did not get far. After
+        touching the sea water they started to transform: the bottom halves of shells turned to clay, dirt, and stone,
+        the building blocks of ground, and top halves built up the first sky. The brown parts of the shell became the
+        day and sunlight, when white transformed into night and the moon. The night also received its stars of colored
+        crumbs, and the blackest crumbs turned into clouds.
+      </p>
+      <p>
+        After nive years, Ilmatar, still pregnant, started to mold the crude first world. She placed continents, islands
+        and shores, formed the sea bottom and coasts. However, all this work still did not trigger the birth of her
+        child.
+      </p>
+      <p>
+        Thirty more years did the child spend in her mother's womb. Finally, the offspring decided it was time go and
+        step into the world. So it did, but little did it expect the cold sea that was her mother's new home. The child
+        of goddess fell into the raging sea and spent eight years in the waves until they threw him on a deserted cape.
+        There he rose and finally looked at the world in peace. So was born the world, and Väinämöinen, the eternal
+        sage.
+      </p>
 
       <chapter-title name="Pohjola" />
       Pohjola ("northern place") is a large island far north and is home to the mistress of Pohjola and a powerful witch
@@ -134,42 +154,45 @@
         rangaistuslaitoksen. Gundbargin kaupungin länsipuolella, jäätikön peittämän vuoren rinteellä sijaitsee kaivos ja
         yhdessä sen syvimmälle ulottuvista haaroista tunneli A-704. Hakkujen tasainen kilkatus poukkoilee kapean
         tunnelin reunasta reunaan äänien vaeltaessa pimeyteen. {Ryhmän jäsenluku} olentoa heilauttaa ensin työkalunsa
-        ylös, sitten kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Ainoa kytkös hakkujen välillä on
-        työläisten jalkoja yhdistävät teräskahleet. Ei kuulu laulua, ei naurua, vain murahtelua ja satunnaisia
-        niiskahduksia. Joukko etenee hitaasti mutta varmasti kohti vuoren tutkimattomia syvyyksiä yhden lepattavan
-        soihdun valossa.
+        ylös, sitten kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Hakkujen lisäksi voi kuulla vain jalkakahleiden kolinaa ja satunnaisia murahduksia.
+        Joukko etenee hitaasti mutta varmasti kohti vuoren syvyyksiä yhden lepattavan soihdun valossa.
+      </read-aloud>
+
+      <read-aloud>
+        This is Gundarlun. An island in the middle of Trackless Sea ruled by wind and ice. You are prisoners of Neverwinter Guard and ended up to this remote location due to a trade agreement between Neverwinter and Gundarlun northmen.
+        As your punishment, you are now searching for copper of which most will be sold to Neverwinter in exchange for workforce.
+        This island is in the middle of a sea and is protected by strong winds and biting cold. Travelling here is challenging but so is leaving, which make Gundarlun an excellent penitentiary.
+        West of the city of Gundbarg, on the slope of an icy mountain is a mine, and in one of its deepest branches, tunnel A-704. At the end of this tunnel a party of X creatures swings their pickaxes in a steady rythm.
+        In addition clangs of pickaxes, one can only hear the clatter of prisoners' chains and occasional grunts and sniffle. The party advances slowly but steadily towards the heart of the mountain.
       </read-aloud>
 
       Explain your players that they are a new unit that has just been chained together and formed a new prospecting
       group whose task is exploring new valuable areas. Newcomers are usually sent to the deepest tunnels but some of
-      them may have ended there e.g. due to bad behaviour. Encourage the players to introduce themselves, tell about
-      their background and why they are imprisoned. Days pass and the party digs on. Nights they spend on sleeping under
-      jute blankets, and twice a day they eat dried meat and crackers. Every few days a group of supervisors arrives to
-      see the progress, document any new signs of copper deposits and to bring new supplies.
+      them may have ended there e.g. due to crimes or maybe they are framed of one. Encourage the players to introduce
+      themselves, tell about their background and why they are imprisoned. Days pass and the party digs on. Nights they
+      spend on sleeping under jute blankets, and twice a day they eat dried meat and crackers. Every few days a group of
+      supervisors arrives to see the progress, document any new signs of copper deposits and to bring new supplies.
 
       <read-aloud>
-        Kuuden päivän kaivamisen jälkeen muista poikkeava hakun kalahdus ja sitä seuraava hämmästynyt huokaus herättää
-        teidät monotonisen työn transsista. { Player name } on lyönyt hakkunsa kiviseinästä läpi ja seinään on jäänyt
-        pieni aukko. Aukosta näkyy vain pimeyttä.
+        After six days of digging, a new kind pick sound alerts the party. One of the players has hit their pickaxe
+        through the cave wall. A small hole has appeared to the wall and behind it is a large and dark cavern.
       </read-aloud>
-
-      If the party steps through:
-
-      <read-aloud>
-        Astutte aukosta luonnon muovaamaan korkeaan käytävään jonka seinämät muodostuvat laattamaista kivenlohkareista
-        joiden välit ovat täyttyneet jäällä. Lattialla on pienempiä seinistä ja katosta irronneita jäänkappaleita sekä
-        tasainen kerros jäähilettä ja pölyä. Näyttää siltä kuin huone olisi ollut koskematon hyvin pitkään.
-      </read-aloud>
-
+      <p
+      If the party steps through the hole, they are arrive to a high corridor. Its walls are large stone blocks and
+      their gaps have filled with ice. All the surfaces are covered in dust and pieces of ice have fallen from the walls
+      and ceiling onto the floor.
+      </p>
+      <p>
       They can also wait or fetch supervisors but then the supervisors will tell them to lead the way into the hallway.
       DC10 Perception check for markings on the walls. On success hey find a drawn eye that watches towards the deeper
       end of the hallway. Another way used to lead outside but has since collapsed shut.
+      </p>
 
-      <read-aloud>
-        Kuljette käytävää syvemmälle pimeyteen ja pian saavutte suureen tilaan. Samalla jostain soihdun valon
-        ulkopuolelta kuuluu vaimeita tasaisin välein toistuvia kumahduksia.
-      </read-aloud>
+      <p>
+        Walking towards the open end of the corridor, the party is greeted by a large, dark, and gloomy cave. Outside of the torch light they can hear faint rythmic thumps.
+      </p>
 
+      <p>
       If the party proceeds, they will see a stone altar on the other side of the room. Alter on some items on it, like
       a bear skull and ash but they cannot be recognized from afar because everything is covered in dust and ice. In
       front of the altar is a drum, with a ring of wood and head of leather. It has black drawings of animals and people
@@ -177,13 +200,17 @@
       without a cover of dust. Next to the drum is a longish lump but the party can't see what it is. On further
       inspection they find a skeleton clad in a robe that has another hand below its head as in a sleeping position. The
       party has found a deceased witch who once cast a spell to enter the world of the dead but did not wake up from the
-      spell. Ancient witches were able to visit the dead with spells that make the witch to lose her consciousness and
-      enter the mind of another creature like an animal to enter the realm of the dead. They often visited the dead to
+      spell. Ancient witches were able to visit other planes with spells that make the witch to lose her consciousness and
+      enter the mind of another creature like an animal to enter the realm of the dead. They often visited wiser beings to
       seek answers to questions living had represented to the witch. Witches usually had an assistant that made sure
-      that the witch would wake up and return back to the material world. In this case the assistant failed or betrayed
+      that the witch would wake up and return back to their own world.
+      </p>
+      <p>
+      In this case the assistant failed or betrayed
       the witch, or maybe the witch never intended to return. If the party touches the hand or the drum, the hand grasps
       them. The same spell the witch had used activates and transfers the whole party to Pohjola, the material plane of
       the underworld (because they are chained together!). In real world the characters fall unconscious one by one.
+      </p>
       <chapter-title name="Welcome to Pohjola" />
       <section-title name="In Bluebill's Nest" />
       <read-aloud>
@@ -192,13 +219,6 @@
         jumping from dream to dream, unable to wake up. Suddenly, dream ends and you open your eyes. You all are laying
         on mossy ground of a spruce forest. The sun peeks between the tree branches and the only voice you hear is the
         soft wind in the trees.
-      </read-aloud>
-      <read-aloud>
-        Näette levottomia unia. Juoksette metsän läpi susi kannoillanne. Kiidätte ilman halki lumimyrskyssä. Rämmitte
-        itseänne korkeammassa lumihangessa. Kipitätte kaupungien kaduilla väistellen ihmisten jalkola. Aivan kuin
-        hyppisitte unesta toiseen, ette vain saa itseänne hereille. Pian unet päättyvät kuin seinään ja avaatte
-        silmänne. Makaatte vanhan kuusimetsän siimeksessä sammalmatolla. Aurinko pilkottaa puiden oksien välistä ja
-        ainoa ääni minkä kuulette on tuulen vaimea humina.
       </read-aloud>
       The party has woken up in Pohjola. They are few kilometers from Bluebill's Nest where they should find themselves
       soon enough, one way or another. The party is still in shackles. Pohjola has their own gods, habits and culture.
