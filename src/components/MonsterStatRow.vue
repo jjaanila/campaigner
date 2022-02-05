@@ -23,6 +23,7 @@ export default {
 
 <style scoped>
 .monster-stat-row {
+  text-indent: 0;
   display: flex;
   flex-flow: row nowrap;
   color: #65291d;

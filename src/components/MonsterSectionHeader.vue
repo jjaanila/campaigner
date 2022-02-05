@@ -16,6 +16,7 @@ export default {
 
 <style scoped>
 .monster-section-header {
+  text-indent: 0;
   display: block;
   border-bottom: 1px solid #65291d;
   color: #65291d;

@@ -246,6 +246,7 @@ export default {
   column-fill: auto;
 }
 .monster-name {
+  text-indent: 0;
   display: block;
   font-weight: bold;
   font-size: 1.25rem;
@@ -255,6 +256,7 @@ export default {
   font-style: italic;
 }
 .monster-description {
+  text-indent: 0;
   margin: 0.25rem 0 0.25rem 0;
   font-style: italic;
 }

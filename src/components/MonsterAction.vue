@@ -41,28 +41,38 @@ export default {
       type: Dice,
     },
     extra: {
-      type: String
-    }
+      type: String,
+    },
   },
   computed: {
     descriptionStr() {
       if (this.description) {
         return this.description
       }
-      const attackTypeStr = `${this.type === 'melee' ? 'Melee Attack: ' : this.type === 'ranged' ? 'Ranged Attack: ' : 'Melee or Ranged Attack: '}`
+      const attackTypeStr = `${
+        this.type === 'melee'
+          ? 'Melee Attack: '
+          : this.type === 'ranged'
+          ? 'Ranged Attack: '
+          : 'Melee or Ranged Attack: '
+      }`
       const toHitStr = this.toHit ? `${this.toHit > 0 ? '+' : ''}${this.toHit} to hit` : ''
       const reachStr = this.reachFt ? `reach ${this.reachFt} ft.` : ''
-      const rangeStr = this.normalRangeFt || this.disadvantageRangeFt ? `range ${this.rangeFt ?? 0}/${this.disadvantageRangeFt ?? 0} ft.` : ''
+      const rangeStr =
+        this.normalRangeFt || this.disadvantageRangeFt
+          ? `range ${this.rangeFt ?? 0}/${this.disadvantageRangeFt ?? 0} ft.`
+          : ''
       const reachRangeStr = reachStr || rangeStr ? `, ${reachStr}${reachStr && rangeStr ? ' or ' : ''}${rangeStr}` : ''
       const hitStr = ` Hit: ${this.damage.toString()} ${this.damageType} damage`
       return `${attackTypeStr}${toHitStr}${reachRangeStr}${hitStr}. ${this.extra ?? ''}`
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
 .monster-action {
+  text-indent: 0;
   display: flex;
   flex-flow: row nowrap;
 }
