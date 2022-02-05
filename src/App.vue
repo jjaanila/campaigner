@@ -1184,7 +1184,16 @@
         is to dive underwater through the fresh water creek or the sewer creek.
       </p>
       <sub-area-title name="Dungeon" />
-      <p>An underground dungeon with stone walls and one large cell.</p>
+      <p>
+        An underground dungeon with stone walls and one large cell. If the party ends up here, Juva should try to free
+        them. He could e.g. bring them food and have a key baked into a bread.
+      </p>
+      <p>
+        <id-link id="monster-commoner" name="Juva" /> is a human male undercover spy of South Edge court. He has been
+        part of Kuurankaru for years now and become very devoted to his mission. He should visit the party and request
+        them to investigate the Tooth. He also thinks sabotaging the operation could give the Sword more time to
+        interfere with metsäläinen plans, but they should focus on finding their true goal.
+      </p>
       <p>
         <id-link name="Loviatar" type="monster" />
         The queen of metsäläiset, the mistress of north. She is descendant of Louhi, the evil witch queen from the
@@ -1211,20 +1220,43 @@
         questions from them, although they rarely give clear answers.
       </p>
       <p>
-        Inside the hut the party finds sketches of Tursaansydän and Loviatar's notes of her research. An old translated
-        text reads:
+        Inside the hut the party finds sketches of Tursaansydän and Loviatar's notes of her research. On a table is a
+        translation of an old text that reads:
         <read-aloud>
           <ul>
-            <li>One was for to the enemy, to remind of their kinship.</li>
+            <li>One was for the enemy, to remind of their kinship.</li>
             <li>One was for the dead, to remind of what cannot be reversed.</li>
             <li>One was for the gods, to be guarded with tireless eyes.</li>
             <li>And the last one for the one, who started it all.</li>
           </ul>
         </read-aloud>
-        The text describes the owners of the four Tursaansydän pieces. One was for the enemy, Louhi and metsäläiset. One
-        was for the dead, and is hidden to the burial site of Antero Vipunen an ancient giant. One was for the gods, and
-        is hidden in a shrine of Tapio. The last piece is held by Väinämöinen who guards the prison.
       </p>
+      <p>
+        The text describes the holders of the four Tursaansydän pieces. One was for the enemy, Louhi and metsäläiset.
+        One was for the dead, and is hidden to the burial site of Antero Vipunen, an ancient giant. One was for the
+        gods, and is hidden in a shrine of Tapio. The last piece is held by Väinämöinen who guards the prison.
+      </p>
+
+      <p>
+        After a while, the party hears a faint noise that gets louder. It is the sound of thousands of ravens that are
+        closing in to protect the home of their mistress. 17 <id-link name="Swarm of Ravens" type="monster" /> dive
+        towards the house through the protective sphere.
+      </p>
+
+      <sub-area-title name="Barracks complex" />
+      <p>
+        A village of barracks buildings and training fields where metsäläiset practice their fighting and maintain their
+        weapons. Ore is delivered from the mountains to smelters and blacksmiths who produce new gear. It seems that
+        they are preparing for something. If a metsäläinen is questioned, they have been ordered to use half of the
+        mined ore to produce armor and weapons. The gear is not sold but stored in the barrackses. The party may find a
+        pile of oversized armor and weapons in one barracks which is intended for giants.
+      </p>
+
+      <p>
+        <id-link name="Joukahainen" type="monster" /> observes the area and visits the training fields often. The party
+        should be able to spot him there. If they go too close to him, he may recognize them and try to capture them.
+      </p>
+
       <sub-area-title name="Viper's Rend Toll Station" />
       Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend, south of
       Kuurankaru. The guards there collect tolls from passing ships, usually ones delivering ores from the mountains in
@@ -1233,6 +1265,7 @@
       <id-link name="Metsäläinen Soldier" type="monster" />. They can attach to the other ship by throwing iron hooks
       with ropes attached. If the party is caught, they are suspected of spying and will be taken prisoners and
       delivered to the dungeon of Kuurankaru.
+
       <part-title name="Monsters" />
       <monster v-for="monster in campaignStore.state.monsters" v-bind="monster" :key="monster.name" />
       <part-title name="Help" />

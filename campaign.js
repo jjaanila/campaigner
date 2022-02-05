@@ -904,21 +904,59 @@ module.exports = Object.freeze({
       size: 'medium',
       type: 'humanoid (human)',
       alignment: 'neutral evil',
-      armorClass: 18,
-      armor: '',
-      hitPoints: { throws: 10, sides: 20, constant: 0 },
-      speedFt: 25,
-      strength: 9,
-      dexterity: 8,
-      constitution: 13,
-      intelligence: 15,
-      wisdom: 17,
+      armorClass: 12,
+      armor: '(15 with mage armor)',
+      hitPoints: { throws: 80, sides: 8, constant: 18 },
+      speedFt: 30,
+      strength: 10,
+      dexterity: 14,
+      constitution: 12,
+      intelligence: 20,
+      wisdom: 16,
       charisma: 15,
-      senses: [],
-      languages: [],
-      challengeRating: 15,
-      passives: [],
-      actions: [],
+      senses: ['passive Percetion 12'],
+      languages: ['common', 'giant', 'draconic', 'elvish', 'undercommon', 'infernal'],
+      challengeRating: 12,
+      passives: [
+        {
+          name: 'Magic Resistance',
+          description: 'Joukahainen has advantage on saving throws against spells and other magical effects.',
+        },
+        {
+          name: 'Spellcasting',
+          description:
+            'Joukahainen is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17,\
+ +9 to hit with spell attacks). Joukahainen can cast disguise self and invisibility at will and has the following wizard spells prepared: • \
+ Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp \
+ • 1st level (4 slots): detect magic, identify, mage armor*, magic missile \
+ • 2nd level (3 slots): detect thoughts, mirror image, misty step \
+ • 3rd level (3 slots): counterspell,fly, lightning bolt \
+ • 4th level (3 slots): banishment, fire shield, stoneskin* \
+ • 5th level (3 slots): cone of cold, scrying, wall of force \
+ • 6th level (1 slot): globe of invulnerability \
+ • 7th level (1 slot): teleport • 8th level (1 slot): mind blank* \
+ • 9th level (1 slot): time stop * Joukahainen casts these spells on itself before combat.',
+        },
+      ],
+      actions: [
+        {
+          name: 'Dagger',
+          type: 'melee',
+          toHit: 6,
+          reachFt: 5,
+          damageType: 'piercing',
+          damage: { throws: 1, sides: 4, constant: 2 },
+        },
+        {
+          name: 'Throwing Dagger',
+          type: 'ranged',
+          toHit: 6,
+          rangeFt: 20,
+          disadvantageRangeFt: 60,
+          damageType: 'piercing',
+          damage: { throws: 1, sides: 4, constant: 2 },
+        },
+      ],
     },
     {
       name: 'Perkele',
@@ -1634,6 +1672,61 @@ module.exports = Object.freeze({
           reachFt: 5,
           damageType: 'slashing',
           damage: { throws: 2, sides: 6, constant: 5 },
+        },
+      ],
+    },
+    {
+      name: 'Swarm of Ravens',
+      size: 'medium',
+      type: 'swarm of tiny beasts',
+      alignment: 'unaligned',
+      armorClass: 12,
+      armor: '',
+      hitPoints: { throws: 7, sides: 8, constant: 0 },
+      speedFt: 50,
+      strength: 6,
+      dexterity: 14,
+      constitution: 8,
+      intelligence: 3,
+      wisdom: 12,
+      charisma: 6,
+      damageResistances: ['bludgeoning', 'piercing', 'slashing'],
+      conditionImmunities: [
+        'charmed',
+        'frightened',
+        'grappled',
+        'paralyzed',
+        'petrified',
+        'prone',
+        'restrained',
+        'stunned',
+      ],
+      senses: ['passive Perception 15'],
+      languages: ['common', 'elvish'],
+      challengeRating: 1 / 4,
+      passives: [
+        {
+          name: 'Swarm',
+          description:
+            "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can't regain hit points or gain temporary hit points.",
+        },
+      ],
+      actions: [
+        {
+          name: 'Beaks (swarm has more than half HP)',
+          type: 'melee',
+          toHit: 4,
+          reachFt: 5,
+          damageType: 'piercing',
+          damage: { throws: 2, sides: 6, constant: 0 },
+        },
+        {
+          name: 'Beaks (swarm has half HP or less)',
+          type: 'melee',
+          toHit: 4,
+          reachFt: 5,
+          damageType: 'piercing',
+          damage: { throws: 1, sides: 6, constant: 0 },
         },
       ],
     },
