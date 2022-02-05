@@ -1,6 +1,16 @@
 <template>
   <nav class="toc" v-on:click="uiStore.toggleToC()">
     <span>Table of Contents</span>
+    <div v-if="uiStore.state.isToCOpen">
+      <input
+        type="checkbox"
+        id="show-toc-always"
+        name="show-toc-always"
+        v-on:click.stop
+        v-model="uiStore.state.showTocAlways"
+      />
+      <label for="show-toc-always">Keep open</label>
+    </div>
     <ol v-if="uiStore.state.isToCOpen">
       <li v-for="part in campaignStore.state.document.parts" :key="part.name">
         <a class="toc-part" v-on:click.stop :href="`#${part.id}`">{{ part.name }}</a>
@@ -69,7 +79,10 @@ export default {
   line-height: 0.8rem;
   margin: 0.5rem 0 0.5rem 0;
 }
-
+.toc #show-toc-always {
+  text-align: left;
+  margin-top: 1rem;
+}
 .toc-section {
   font-size: 0.75rem;
 }

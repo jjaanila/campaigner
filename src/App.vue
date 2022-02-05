@@ -1183,7 +1183,7 @@
         Ore deliveries from the mountains happen daily, which may offer a suitable way to slip in unnoticed. Another way
         is to dive underwater through the fresh water creek or the sewer creek.
       </p>
-      <subarea-title name="Dungeon" />
+      <sub-area-title name="Dungeon" />
       <p>An underground dungeon with stone walls and one large cell.</p>
       <p>
         <id-link name="Loviatar" type="monster" />
