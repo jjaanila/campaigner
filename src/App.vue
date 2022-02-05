@@ -154,16 +154,21 @@
         rangaistuslaitoksen. Gundbargin kaupungin länsipuolella, jäätikön peittämän vuoren rinteellä sijaitsee kaivos ja
         yhdessä sen syvimmälle ulottuvista haaroista tunneli A-704. Hakkujen tasainen kilkatus poukkoilee kapean
         tunnelin reunasta reunaan äänien vaeltaessa pimeyteen. {Ryhmän jäsenluku} olentoa heilauttaa ensin työkalunsa
-        ylös, sitten kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Hakkujen lisäksi voi kuulla vain jalkakahleiden kolinaa ja satunnaisia murahduksia.
-        Joukko etenee hitaasti mutta varmasti kohti vuoren syvyyksiä yhden lepattavan soihdun valossa.
+        ylös, sitten kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Hakkujen lisäksi voi kuulla vain
+        jalkakahleiden kolinaa ja satunnaisia murahduksia. Joukko etenee hitaasti mutta varmasti kohti vuoren syvyyksiä
+        yhden lepattavan soihdun valossa.
       </read-aloud>
 
       <read-aloud>
-        This is Gundarlun. An island in the middle of Trackless Sea ruled by wind and ice. You are prisoners of Neverwinter Guard and ended up to this remote location due to a trade agreement between Neverwinter and Gundarlun northmen.
-        As your punishment, you are now searching for copper of which most will be sold to Neverwinter in exchange for workforce.
-        This island is in the middle of a sea and is protected by strong winds and biting cold. Travelling here is challenging but so is leaving, which make Gundarlun an excellent penitentiary.
-        West of the city of Gundbarg, on the slope of an icy mountain is a mine, and in one of its deepest branches, tunnel A-704. At the end of this tunnel a party of X creatures swings their pickaxes in a steady rythm.
-        In addition clangs of pickaxes, one can only hear the clatter of prisoners' chains and occasional grunts and sniffle. The party advances slowly but steadily towards the heart of the mountain.
+        This is Gundarlun. An island in the middle of Trackless Sea ruled by wind and ice. You are prisoners of
+        Neverwinter Guard and ended up to this remote location due to a trade agreement between Neverwinter and
+        Gundarlun northmen. As your punishment, you are now searching for copper of which most will be sold to
+        Neverwinter in exchange for workforce. This island is in the middle of a sea and is protected by strong winds
+        and biting cold. Travelling here is challenging but so is leaving, which make Gundarlun an excellent
+        penitentiary. West of the city of Gundbarg, on the slope of an icy mountain is a mine, and in one of its deepest
+        branches, tunnel A-704. At the end of this tunnel a party of X creatures swings their pickaxes in a steady
+        rythm. In addition clangs of pickaxes, one can only hear the clatter of prisoners' chains and occasional grunts
+        and sniffle. The party advances slowly but steadily towards the heart of the mountain.
       </read-aloud>
 
       Explain your players that they are a new unit that has just been chained together and formed a new prospecting
@@ -174,42 +179,43 @@
       supervisors arrives to see the progress, document any new signs of copper deposits and to bring new supplies.
 
       <read-aloud>
-        After six days of digging, a new kind pick sound alerts the party. One of the players has hit their pickaxe
+        After six days of digging, a new kind pickaxe sound alerts the party. One of the players has hit their pickaxe
         through the cave wall. A small hole has appeared to the wall and behind it is a large and dark cavern.
       </read-aloud>
-      <p
-      If the party steps through the hole, they are arrive to a high corridor. Its walls are large stone blocks and
-      their gaps have filled with ice. All the surfaces are covered in dust and pieces of ice have fallen from the walls
-      and ceiling onto the floor.
+      <p>
+        If the party steps through the hole, they are arrive to a high corridor. Its walls are large stone blocks and
+        their gaps have filled with ice. All the surfaces are covered in dust and pieces of ice have fallen from the
+        walls and ceiling onto the floor.
       </p>
       <p>
-      They can also wait or fetch supervisors but then the supervisors will tell them to lead the way into the hallway.
-      DC10 Perception check for markings on the walls. On success hey find a drawn eye that watches towards the deeper
-      end of the hallway. Another way used to lead outside but has since collapsed shut.
-      </p>
-
-      <p>
-        Walking towards the open end of the corridor, the party is greeted by a large, dark, and gloomy cave. Outside of the torch light they can hear faint rythmic thumps.
+        They can also wait or fetch supervisors but then the supervisors will tell them to lead the way into the
+        hallway. DC10 Perception check for markings on the walls. On success hey find a drawn eye that watches towards
+        the deeper end of the hallway. Another way used to lead outside but has since collapsed shut.
       </p>
 
       <p>
-      If the party proceeds, they will see a stone altar on the other side of the room. Alter on some items on it, like
-      a bear skull and ash but they cannot be recognized from afar because everything is covered in dust and ice. In
-      front of the altar is a drum, with a ring of wood and head of leather. It has black drawings of animals and people
-      on the leathery head. The drum plays by itself with heartbeat like rhythm. The drum is the only thing in the room
-      without a cover of dust. Next to the drum is a longish lump but the party can't see what it is. On further
-      inspection they find a skeleton clad in a robe that has another hand below its head as in a sleeping position. The
-      party has found a deceased witch who once cast a spell to enter the world of the dead but did not wake up from the
-      spell. Ancient witches were able to visit other planes with spells that make the witch to lose her consciousness and
-      enter the mind of another creature like an animal to enter the realm of the dead. They often visited wiser beings to
-      seek answers to questions living had represented to the witch. Witches usually had an assistant that made sure
-      that the witch would wake up and return back to their own world.
+        Walking towards the open end of the corridor, the party is greeted by a large, dark, and gloomy cave. Outside of
+        the torch light they can hear faint rythmic thumps.
+      </p>
+
+      <p>
+        If the party proceeds, they will see a stone altar on the other side of the room. Alter on some items on it,
+        like a bear skull and ash but they cannot be recognized from afar because everything is covered in dust and ice.
+        In front of the altar is a drum, with a ring of wood and head of leather. It has black drawings of animals and
+        people on the leathery head. The drum plays by itself with heartbeat like rhythm. The drum is the only thing in
+        the room without a cover of dust. Next to the drum is a longish lump but the party can't see what it is. On
+        further inspection they find a skeleton clad in a robe that has another hand below its head as in a sleeping
+        position. The party has found a deceased witch who once cast a spell to enter the world of the dead but did not
+        wake up from the spell. Ancient witches were able to visit other planes with spells that make the witch to lose
+        her consciousness and enter the mind of another creature like an animal to enter the realm of the dead. They
+        often visited wiser beings to seek answers to questions living had represented to the witch. Witches usually had
+        an assistant that made sure that the witch would wake up and return back to their own world.
       </p>
       <p>
-      In this case the assistant failed or betrayed
-      the witch, or maybe the witch never intended to return. If the party touches the hand or the drum, the hand grasps
-      them. The same spell the witch had used activates and transfers the whole party to Pohjola, the material plane of
-      the underworld (because they are chained together!). In real world the characters fall unconscious one by one.
+        In this case the assistant failed or betrayed the witch, or maybe the witch never intended to return. If the
+        party touches the hand or the drum, the hand grasps them. The same spell the witch had used activates and
+        transfers the whole party to Pohjola, the material plane of the underworld (because they are chained together!).
+        In real world the characters fall unconscious one by one.
       </p>
       <chapter-title name="Welcome to Pohjola" />
       <section-title name="In Bluebill's Nest" />
@@ -1159,13 +1165,26 @@
       </p>
       <p>
         Where from here? If the party doesn't know the location of <id-link name="Kuurankaru" type="area" />, they will
-        get their answer from any member of South Edge court.
+        get their answer from any member of South Edge court. The court should offer them a boat to sail via Fuller to
+        Kuurankaru.
       </p>
       <chapter-title name="Home of Darkness" />
       <area-title name="Kuurankaru" />
-      The capital of metsäläiset. A village built of stone and ice up north at the bank of northern part of Viper's Rend
-      on the side of Winter's Teeth (Talvenhampaat) mountains. The area between the mountains is called Winter's Throat
-      (Talvenkurkku).
+      <p>
+        The capital of metsäläiset. A village built of stone and ice up north at the bank of northern part of Viper's
+        Rend on the side of Winter's Teeth (Talvenhampaat) mountains. The area between the mountains is called Winter's
+        Throat (Talvenkurkku). It is known for its ore veins which provide metsäläiset a steady source of income. Mining
+        camps spread from the village along the mountain slopes towards north. Snow covers most the area and evergreen
+        forests cover the valleys between the mountains.
+      </p>
+      <p>
+        Kuurankaru is crude but strongly fortified village, with stone walls and palisades. Fur-clad guards patrol the
+        walls with javelins on their back. A stone keep stands on the back of the village next to the mountain slope.
+        Ore deliveries from the mountains happen daily, which may offer a suitable way to slip in unnoticed. Another way
+        is to dive underwater through the fresh water creek or the sewer creek.
+      </p>
+      <subarea-title name="Dungeon" />
+      <p>An underground dungeon with stone walls and one large cell.</p>
       <p>
         <id-link name="Loviatar" type="monster" />
         The queen of metsäläiset, the mistress of north. She is descendant of Louhi, the evil witch queen from the
@@ -1177,10 +1196,43 @@
         and is as beautiful as every Louhi's kin has been (very). She commands her people with the help of Joukahainen,
         her advisor.
       </p>
+      <p>
+        According to stories, Loviatar lives on top of the Tooth, an unnaturally steep sloped mountain next to the
+        Kuurankaru village. She hasn't confirmed this to common metsäläiset and she comes and goes by transforming to a
+        large eagle. An eagle has been reportedly seen soaring over the Tooth many times. Usually she visits the Keep of
+        Kuurankaru to give commands to village leaders but she may appear also to other places.
+      </p>
+      <sub-area-title name="The Tooth" />
+      <p>
+        A steep sloped mountain next to Kuurankaru village. Icy slopes are impossible to climb without suitable
+        equipment. On top is a protective sphere that isolates it from the cold and wind. On the mountain top is a green
+        grass field with an old wooden hut. In front of the hut grows an aspen tree with human skulls hanging on its
+        branches. They are skulls of Loviatar's ancestors, including Louhi. Loviatar can cast Speak with Dead and ask
+        questions from them, although they rarely give clear answers.
+      </p>
+      <p>
+        Inside the hut the party finds sketches of Tursaansydän and Loviatar's notes of her research. An old translated
+        text reads:
+        <read-aloud>
+          <ul>
+            <li>One was for to the enemy, to remind of their kinship.</li>
+            <li>One was for the dead, to remind of what cannot be reversed.</li>
+            <li>One was for the gods, to be guarded with tireless eyes.</li>
+            <li>And the last one for the one, who started it all.</li>
+          </ul>
+        </read-aloud>
+        The text describes the owners of the four Tursaansydän pieces. One was for the enemy, Louhi and metsäläiset. One
+        was for the dead, and is hidden to the burial site of Antero Vipunen an ancient giant. One was for the gods, and
+        is hidden in a shrine of Tapio. The last piece is held by Väinämöinen who guards the prison.
+      </p>
       <sub-area-title name="Viper's Rend Toll Station" />
-      Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend. They
-      collect tolls from passing ships, usually ones delivering ores from the mountains in the north. Just passing the
-      station costs 100gp without any load.
+      Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend, south of
+      Kuurankaru. The guards there collect tolls from passing ships, usually ones delivering ores from the mountains in
+      the north. Just passing the station costs 100gp without any load. Trying to pass the station without paying and
+      alerting the guards causes them to start pursuit with a rowing ship and X
+      <id-link name="Metsäläinen Soldier" type="monster" />. They can attach to the other ship by throwing iron hooks
+      with ropes attached. If the party is caught, they are suspected of spying and will be taken prisoners and
+      delivered to the dungeon of Kuurankaru.
       <part-title name="Monsters" />
       <monster v-for="monster in campaignStore.state.monsters" v-bind="monster" :key="monster.name" />
       <part-title name="Help" />
