@@ -1,7 +1,7 @@
 <template>
   <span :class="containerClass">
     <a :href="aHref">{{ name }}</a>
-    <span v-if="!!monster" class="id-link-tooltip"> <monster v-bind="monster" /> </span>
+    <span v-if="!!monster" class="id-link-tooltip"> <monster id="" v-bind="monster" /> </span>
   </span>
 </template>
 

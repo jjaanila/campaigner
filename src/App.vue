@@ -320,13 +320,19 @@
       expect it to continue.
       <section-title name="Bandit Camp" />
       <area-title name="Bandit Camp" />
-      A party of 1 <id-link name="Bandit Captain" type="monster" /> 4 <id-link name="Bandit" type="monster" /> have
-      camped close to the road. One of them is keeping watch nearby close to the road, others are maintaining their gear
-      but have put Rautia to do the blacksmithing. Their plan is to take Rautia with them, but he doesn't actually mind.
-      He is enjoying the perks of his new environment, contents of a captured beer delivery, and has decided to leave
-      Bluebill's Nest to seek easier life of a drunk. He doesn't fight of fear. If the party kills the bandits, Rautia
-      is miserable due to the lost opportunity. He needs something stronger than beer and tells that he is heading
-      towards Ukonnyrkki settlement which is nearby. A chest in the camp contains 50gp.
+      A party of
+      <encounter
+        :enemies="[
+          { name: 'Bandit Captain', quantity: 1 },
+          { name: 'Bandit', quantity: 4 },
+        ]"
+      />
+      have camped close to the road. One of them is keeping watch nearby close to the road, others are maintaining their
+      gear but have put Rautia to do the blacksmithing. Their plan is to take Rautia with them, but he doesn't actually
+      mind. He is enjoying the perks of his new environment, contents of a captured beer delivery, and has decided to
+      leave Bluebill's Nest to seek easier life of a drunk. He doesn't fight of fear. If the party kills the bandits,
+      Rautia is miserable due to the lost opportunity. He needs something stronger than beer and tells that he is
+      heading towards Ukonnyrkki settlement which is nearby. A chest in the camp contains 50gp.
       <section-title name="Wedding" />
       <area-title name="Halla Farm" />
       This is a large farm south of Sotkala, next to a huge marshland Hallasuo. The marshland has been owned by Halla
@@ -379,9 +385,9 @@
       <sub-area-title name="Hallasuo encampment" />
       The party can try to fix the wagon they will need Carpenter's Tools and a DC 18 check. If they succeed, the woman
       will request them to escort her with even higher fee. If the party helps to escort the lady, she leads them to a
-      hidden path covered with branches and takes them into the forest. After some walking, a hemp web is dropped from
-      trees high above and the party is ambushed. DC 15 Wisdom saving throw allows them to notice the web. DC 10
-      Acrobatics saving throw to get out of the way. Characters tangled in the web become Restrained and need DC 10
+      hidden path covered with branches and takes them into the forest. After some walking, a hemp net is dropped from
+      trees high above and the party is ambushed. DC 15 Wisdom saving throw allows them to notice the net. DC 10
+      Acrobatics saving throw to get out of the way. Characters tangled in the net become Restrained and need DC 10
       Athletics check if they want to start moving.
       <comment title="Restrained">
         <ul>
@@ -390,20 +396,19 @@
           <li>The creature has disadvantage on Dexterity Saving Throws.</li>
         </ul>
       </comment>
-      10
-      <id-link name="Kobold" type="monster" /> emerge from the forest and try to swarm the party. The dwarf woman curses
-      of the inefficacy and escapes through the forest into the marshes. If the party searches, they find a trail to a
-      kobold camp outpost. From the outpost another path leads to the marshes and soon to the camp which is currently
-      empty but contains a chest with 10g in a lean to shelter covered with moss. The chest has a trap that strikes out
-      sharp stick and requires a DC 10 Perception check to notice if searching for traps. Otherwise a DC 15 Acrobatics
-      check to dodge the trap. The trap affects only the person opening the chest with 1d6+2 damage. When the chest is
-      opened and the trap goes off two Kobolds attack. If the trap is disarmed or doesn't hit, the kobolds run and can
-      be pursued. The chest contains five letters. The earliest dated letter describes the plot that the party just
-      became a victim of and orders to deliver the captured "searchers" to the main camp. Later letters order to keep
-      "the operation" ongoing and keep on delivering "searchers". One of the letters has a broken black seal with some
-      kind of wings on it. It is hard to see properly. The dates of letters span for a period of half a year. The dates
-      just aren't the same as what the party has experienced before. According to them, it is now year 470. At their own
-      plane, the year is 1356.
+      <encounter :enemies="[{ name: 'Kobold', quantity: 8 }]" /> emerge from the forest and try to swarm the party. The
+      dwarf woman curses of the inefficacy and escapes through the forest into the marshes. If the party searches, they
+      find a trail to a kobold camp outpost. From the outpost another path leads to the marshes and soon to the camp
+      which is currently empty but contains a chest with 10g in a lean to shelter covered with moss. The chest has a
+      trap that strikes out sharp stick and requires a DC 10 Perception check to notice if searching for traps.
+      Otherwise a DC 15 Acrobatics check to dodge the trap. The trap affects only the person opening the chest with
+      1d6+2 damage. When the chest is opened and the trap goes off two Kobolds attack. If the trap is disarmed or
+      doesn't hit, the kobolds run and can be pursued. The chest contains five letters. The earliest dated letter
+      describes the plot that the party just became a victim of and orders to deliver the captured "searchers" to the
+      main camp. Later letters order to keep "the operation" ongoing and keep on delivering "searchers". One of the
+      letters has a broken black seal with some kind of wings on it. It is hard to see properly. The dates of letters
+      span for a period of half a year. The dates just aren't the same as what the party has experienced before.
+      According to them, it is now year 470. At their own plane, the year is 1356.
       <comment title="What kobolds and Jutikka know?">
         DC 15 Intimidation check is enough that either tells about the search operation in the marshes. A secret group
         has hired kobolds to search for some kind structure or artifact at the marshes. They don't really know what they
@@ -417,53 +422,70 @@
       get into the dungeon without a fight. After walking blindly just staring at their feet, they arrive to a small
       plank bridge which crosses a ditch full of water and soon after the terrain turns drier. The mist is not as severe
       here. Soon they see fires ahead and hear talking in Draconic. It is a camp of three large tents which surround a
-      low dark structure. Group of 8 kobolds are cooking and resting by the fire and can be surprised. They will attack
-      if they notice the party. Looting the kobolds yields 20gp. The structure in the middle of the camp is a rectangle
-      shaped platform made of stone blocks. On the fire side, there are stairs leading down underground. It is possible
-      to sneak in past the kobolds with a DC 15 stealth check.
+      low dark structure. Group of <encounter :enemies="[{ name: 'Kobold', quantity: 20 }]" /> are cooking and resting
+      by the fire and can be surprised. They will attack if they notice the party. Looting the kobolds yields 20gp. The
+      structure in the middle of the camp is a rectangle shaped platform made of stone blocks. On the fire side, there
+      are stairs leading down underground. It is possible to sneak in past the kobolds with a DC 15 stealth check.
       <area-title name="Monastery of Ukko" />
       <sub-area-title name="Entry Hall" />
       The party descends down torch lit stairs into a hall with two lines of pillars. In the end of the hall is a wall
       size symbol of Ukko called Ukonvasara (Hammer of Ukko) made of iron and covered in rust. The place is clearly
-      hundreds of years old. On the sides are five doorways on each side. Two first on the right have collapsed and
-      cannot be accessed. Next two have closed doors but the last one is open. On the left first two have been barred
-      shut with heavy latches. If the party makes noise, they can hear something banging against the first door. Behind
-      is a
-      <id-link name="Rust Monster" type="monster" /> that attacks if the door is opened. If the second door is opened, a
-      Swarm of Insects attacks. Third and fourth doors are sealed with a magical seal can be opened with Knock. Inside
-      is a unfortunate kobold corpse that got trapped in when the monastery was discovered. Behind the last door is a
-      badly burned corpse and the door has also mostly burned away. The party should finally continue through the last
-      door on the right.
+      hundreds of years old.<encounter :enemies="[{ name: 'Metsäläinen Soldier', quantity: 2 }]" /> guard the hall in
+      the middle of it and are commanded to let none pass unless accompanied with a high ranking leader. The soldiers
+      are clad in simple leather cloths. Kobolds are not allowed down in the monastery (except for scouting dangerous
+      areas). The soldiers will attack and one tries to run to warn others in the bed chamber. If the soldiers are
+      examined closely the party finds a small bird foot sown to their shirts, right above heart. On the sides are five
+      doorways on each side. Two first on the right have collapsed and cannot be accessed. Next two have closed doors
+      but the last one is open. On the left first two have been barred shut with heavy latches. If the party makes
+      noise, they can hear something moving behind the first door. Behind are
+      <encounter :enemies="[{ name: 'Black Pudding', quantity: 2 }]" /> which attack if the door is opened. If the
+      second door is opened, the party finds a room full of dry flying insect corpses and a nest at the back wall. Third
+      and fourth doors are sealed with a magical seal that can be opened with Knock. Inside is a unfortunate kobold
+      corpse that got trapped in when the monastery was discovered. Behind the last door is a badly burned corpse and
+      the door has also mostly burned away. The party should finally continue through the last door on the right.
       <captioned-figure :path="ukonvasara" caption="Ukonvasara" width="15rem" />
 
-      Two <id-link name="Metsäläinen Soldier" type="monster" /> guard the hall in the middle of it and are commanded to
-      let none pass unless accompanied with a high ranking leader. The soldiers are clad in simple leather cloths.
-      Kobolds are not allowed down in the monastery (except for scouting dangerous areas). The soldiers will attack and
-      one tries to run to warn others in the bed chamber. If the soldiers are examined closely the party finds a small
-      bird foot sown to their shirts, right above heart.
       <sub-area-title name="Bed Champer" />
       This chamber is used by the cult to rest. There are three soldiers sleeping on the beds and one is tending to his
       gear with his back turned towards the door.
       <sub-area-title name="Library" />
-      An old library with plenty of old books and scrolls written with old runes. Two
-      <id-link name="Metsäläinen Cleric" type="monster" /> are studying the documents intently. There is a secret door
-      that leads to a room with a chest. DC 10 Perception check finds a lever behind a bookshelf that opens the secret
-      door, but if the roll is below 15 PC misses the more worn lever that also disables the arrow trap inside. Two
-      arrows fly out of the room and PC has to succeed DC 10 Acrobatics check to avoid them. Inside the chest is one
-      Potion of Healing, Scroll of Unseen Servant, and a garnet. <sub-area-title name="Kitchen" /> A soldier is
-      preparing food next to a large pot. A large <id-link name="Mastiff" type="monster" /> rests on the floor drooling
-      after a meal. When the door is opened it starts barking which alerts the cook and the cleric in the corridor
-      north-east of kitchen. The cleric will attack the party from behind. <sub-area-title name="Study" /> A large room
-      once full of desks and some bookshelves. This room was used to study large amount of information that was gathered
-      studying Ukko's prophecies. Now the desks have been replaced with sturdier tables but the purpose of the room
-      still stands. There are 3 <id-link name="Metsäläinen Cleric" type="monster" /> reading through books and making
-      notes. 4 human <id-link id="monster-commoner" name="slaves" type="monster" /> are organizing the place and helping
-      the clerics. One soldier stands in watch and makes sure the slaves are doing their job. The clerics will attack
-      when they notice the party. Slaves may help the party if needed. From the study starts a long corridor full of
-      wall inscriptions of past events and stories. Two more slaves are carefully cleaning the walls of dirt to reveal
-      the paintings. Two soldiers stand behind them. There are various paintings painted with different styles. Detailed
-      images of a white swan in a black river and a lady in the middle of a sea with a bird on her leg, but also crude
-      depictions of bears, squirrels and other animals.
+      An old library with plenty of old books and scrolls written with old runes.
+      <encounter :enemies="[{ name: 'Metsäläinen Cleric', quantity: 2 }]" />
+      are studying the documents intently. There is a secret door that leads to a room with a chest. DC 10 Perception
+      check finds a lever behind a bookshelf that opens the secret door, but if the roll is below 15 PC misses the more
+      worn lever that also disables the arrow trap inside. Two arrows fly out of the room and PC has to succeed DC 10
+      Acrobatics check to avoid them. Inside the chest is one Potion of Healing, Scroll of Unseen Servant, and a garnet.
+      <sub-area-title name="Kitchen" /> A soldier is preparing food next to a large pot. A large
+      <id-link name="Mastiff" type="monster" /> rests on the floor drooling after a meal. When the door is opened it
+      starts barking which alerts the cook and the cleric in the corridor north-east of kitchen. The cleric will attack
+      the party from behind.
+      <encounter
+        :enemies="[
+          { name: 'Metsäläinen Soldier', quantity: 1 },
+          { name: 'Metsäläinen Cleric', quantity: 1 },
+          { name: 'Mastiff', quantity: 1 },
+        ]"
+      />
+      <sub-area-title name="Study" /> A large room once full of desks and some bookshelves. This room was used to study
+      large amount of information that was gathered studying Ukko's prophecies. Now the desks have been replaced with
+      sturdier tables but the purpose of the room still stands. There are 3
+      <id-link name="Metsäläinen Cleric" type="monster" /> reading through books and making notes. 4 human
+      <id-link id="monster-commoner" name="slaves" type="monster" /> are organizing the place and helping the clerics.
+      One soldier stands in watch and makes sure the slaves are doing their job. The clerics will attack when they
+      notice the party. Slaves may help the party if needed.
+
+      <encounter
+        :enemies="[{ name: 'Metsäläinen Cleric', quantity: 2 }]"
+        :allies="[{ name: 'commoner', quantity: 4 }]"
+      />
+
+      <p>
+        From the study starts a long corridor full of wall inscriptions of past events and stories. Two more slaves are
+        carefully cleaning the walls of dirt to reveal the paintings. Two soldiers stand behind them. There are various
+        paintings painted with different styles. Detailed images of a white swan in a black river and a lady in the
+        middle of a sea with a bird on her leg, but also crude depictions of bears, squirrels and other animals.
+      </p>
+
       <sub-area-title name="Rain Hall" />
       Rain Hall is a high hall with 6 pillars in two rows. The ceiling is sphere shaped and 60ft tall. In the middle of
       the ceiling is a stalactite like smooth pole which descends down for 20 feet. The ceiling is full of small holes
@@ -477,6 +499,13 @@
       Jurva Halla's son. The slaves may warn the Cult Fanatic or help the party in the fight or not, I let you decide.
       Ahto Piki has 100gp, and an order letter from their leader which has the same black seal as seen in previous
       letters. Now it can be seen that the bird in question is an eagle.
+      <encounter
+        :enemies="[
+          { name: 'Ahto Piki', quantity: 1 },
+          { name: 'Metsäläinen Soldier', quantity: 1 },
+        ]"
+        :allies="[{ name: 'commoner', quantity: 2 }]"
+      />
       <read-aloud>
         Letter says: Finally some true progress! Patience was again key to success just as we anticipated. Finding the
         monastery may give us the answers we need but the small amount of documents is indeed disheartening. It seems
@@ -510,13 +539,13 @@
       just one swing. The man stops channeling the spell surprised. Simultaneously Jurmo Halla seems to gain his wits
       and looks around confused and in increasing horror. The golem continues to ravage the kobolds while the man sneaks
       inside the structure. Soon he comes out with a brown sack in his hand, takes a look at the party one last time and
-      vanishes into air. The main thing here is to describe Stone Golem's immense power clearly. The party should
+      vanishes into air. The main thing here is to describe Golem Guardian's immense power clearly. The party should
       ideally get Jurmo, Osmo and themselves to safety because the golem will likely be too much for the party. Jurmo
       and/or Osmo may die here, your call. After the event, Jurmo or Osmo cannot tell much about the abductors other
       than they were searching for some ancient information. Osmo finally remembers that one of the cultists called them
-      as Woodeners (Metsäläiset). They know the marshes well so that is why they knew the location of the cache,
-      although they had no idea of its purpose. They didn't know about the monastery as it was completely submerged.
-      They propose that they continue to their farm in the south-east corner of Hallasuo to rest.
+      as metsäläiset. They know the marshes well so that is why they knew the location of the cache, although they had
+      no idea of its purpose. They didn't know about the monastery as it was completely submerged. They propose that
+      they continue to their farm in the south-east corner of Hallasuo to rest.
       <area-title name="Hallaneva Farm" />
       Here are Jurmo Halla's wife Mielitty and sick daughter Liekko. They will tell that Jurmo and Osmo left to the
       wedding but haven't returned yet. If the party arrives with the men, the wife is shocked of their condition and
@@ -574,6 +603,7 @@
       some boats to the ocean floor and eaten the fishermen and their catch. The party has to take a boat to lure the
       scrag out of the sea. Killing the scrag may reveal its nest on the sea floor that contains a 2 carat diamond and
       the Cap of Water Breathing. Ikitiera offers a reward of 10 50gp gemstones.
+      <encounter :enemies="[{ name: 'Saltwater Scrag', quantity: 2 }]" />
       <item
         name="Cap of Water Breathing (Meren Myssy)"
         properties="Wondrous item,
@@ -614,14 +644,21 @@
       supervising the workers called <id-link name="Montaja" type="monster" />. He is sitting on a stool working on
       another piece of wood with puukko (a simple knife). He has a letter sealed with a black bird seal that says:
       <read-aloud>
-        You are doing well but that is not enough. Get rid of the abomination, it is slowing us down right now. We need
-        more provisions to keep the people going. Exploration at the marshes has been fruitful and I believe we will
-        soon find the second fragment. May the forest guard your dreams.
+        You are doing well but that is not enough. Get rid of the sea abominations, they are slowing us down right now.
+        We need more provisions to keep the people going. Exploration at the marshes has been fruitful and I believe we
+        will soon find the second fragment. May the forest guard your dreams.
       </read-aloud>
+      <encounter
+        :enemies="[
+          { name: 'Montaja', quantity: 1 },
+          { name: 'Northern Giant', quantity: 1 },
+          { name: 'Commoner', quantity: 6 },
+        ]"
+      />
       <sub-area-title name="Fish Thieve's Crevasse" />
-      One of the rock crevasses on the west Pohjola shoreline. At the far back edge of the crevasse is a cave and 3
-      <id-link name="Metsäläinen Soldier" type="monster" /> guarding the entrance and two fish wagons outside of it.
-      There are also four glass jars full of fish oil on the ground. Few times a day a
+      One of the rock crevasses on the west Pohjola shoreline. At the far back edge of the crevasse is a cave and
+      <encounter :enemies="[{ name: 'Metsäläinen Soldier', quantity: 2 }]" /> guarding the entrance and two fish wagons
+      outside of it. There are also four glass jars full of fish oil on the ground. Few times a day a
       <id-link id="monster-commoner" name="courier" type="monster" /> comes and takes one wagon away with the help of
       two horses.
 
@@ -665,7 +702,14 @@
       Eteläterä's murder. Truly, he has just been working as a fortuneteller and may be able to identify the ring. He
       can be found in the local inn. The reward will be 10gp each and his trust. The party is able to notice his
       fiddling with a DC 18 Perception check. When they face more an more lies, the check should become easier. The
-      check can be tried again each time they meet him.
+      check can be tried again each time they meet him. If they decide to fight him, few guards join in to defend their
+      chief.
+      <encounter
+        :enemies="[
+          { name: 'Chief Ikäheimo', quantity: 1 },
+          { name: 'Soldier of the Sword', quantity: 8 },
+        ]"
+      />
       <id-link id="monster-commoner" name="Tarjanne" type="monster" /> Wife of Chief Ikäheimo. Calm and rational dwarf
       lady who has been worried about her husband because he hasn't been the same for a while. She suspects sickness and
       asks the party to heal her husband. She would have asked Autere but she is in the dungeon.
@@ -688,10 +732,16 @@
       know why they have come to get him, although calmly. He is an actual seer, but can't see very far into the future.
       His visions are usually hard to interpret. When the party talks with him, the five men from downstairs walk behind
       them calmly with hands on their wooden clubs. Seer hired the men to cover for him and told the innkeeper to hide.
-      The party can fight the <id-link id="monster-thug" name="men" type="monster" /> and capture the seer or convince
-      him to join a plot to infiltrate the dungeon. Seer will be reluctant to join the plot. He sees a reward in his
-      future but he suspects that he could get it also from his regular customers. After the encounter, the innkeeper
-      raises his head above the counter. If asked about rumours, he tells that
+      The party can fight the
+      <encounter
+        :enemies="[
+          { name: 'Thug', quantity: 5 },
+          { name: 'Seer Kaukovalta', quantity: 1 },
+        ]"
+      />
+      and capture the seer or convince him to join a plot to infiltrate the dungeon. Seer will be reluctant to join the
+      plot. He sees a reward in his future but he suspects that he could get it also from his regular customers. After
+      the encounter, the innkeeper raises his head above the counter. If asked about rumours, he tells that
       <id-link id="monster-commoner" name="Leino" type="monster" /> has been missing for days after he went bear
       hunting. His dog Myy ran back one day ago and arrived to the inn. The dog is behind the inn. The dog can be
       captured and leashed with DC 10 animal handling check. If the dog escapes they can try to run after it with a DC

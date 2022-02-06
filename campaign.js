@@ -111,8 +111,8 @@ module.exports = Object.freeze({
       size: 'large',
       type: 'giant',
       alignment: 'chaotic evil',
-      armorClass: 14,
-      armor: '',
+      armorClass: 15,
+      armor: '(Natural armor)',
       hitPoints: { throws: 8, sides: 10, constant: 40 },
       speedFt: 30,
       strength: 18,
@@ -143,17 +143,25 @@ module.exports = Object.freeze({
       actions: [
         {
           name: 'Multiattack',
-          description: 'The Saltwater Scrag makes two melee attacks: one with is claws and one with its bite.',
+          description: 'The Saltwater Scrag makes three melee attacks: two with its claws and one with its bite.',
         },
         {
           name: 'Bite',
           type: 'melee',
-          toHit: 8,
+          toHit: 7,
           reachFt: 5,
           damageType: 'piercing',
-          damage: { throws: 1, sides: 10, constant: 5 },
+          damage: { throws: 1, sides: 6, constant: 4 },
           extra:
             'The target is grappled (escape DC 16). Until this grapple ends, the target is restrained, and The Saltwater Scrag cannot bite another target.',
+        },
+        {
+          name: 'Claw',
+          type: 'melee',
+          toHit: 7,
+          reachFt: 5,
+          damageType: 'slashing',
+          damage: { throws: 2, sides: 6, constant: 4 },
         },
       ],
     },
@@ -1727,6 +1735,62 @@ module.exports = Object.freeze({
           reachFt: 5,
           damageType: 'piercing',
           damage: { throws: 1, sides: 6, constant: 0 },
+        },
+      ],
+    },
+    {
+      name: 'Black Pudding',
+      size: 'large',
+      type: 'ooze',
+      alignment: 'unaligned',
+      armorClass: 7,
+      armor: '',
+      hitPoints: { throws: 10, sides: 10, constant: 30 },
+      speedFt: 20,
+      strength: 16,
+      dexterity: 5,
+      constitution: 16,
+      intelligence: 1,
+      wisdom: 6,
+      charisma: 1,
+      damageImmunities: ['acid', 'cold', 'lightning', 'slashing'],
+      conditionImmunities: ['blinded', 'charmed', 'deafened', 'exhaustion', 'frightened', 'prone'],
+      languages: [],
+      senses: ['Blindsight 60 Ft. (Blind Beyond This Radius)', 'passive Perception 8'],
+      challengeRating: 4,
+      passives: [
+        {
+          name: 'Amorphous',
+          description: 'The pudding can move through a space as narrow as 1 inch wide without squeezing.',
+        },
+        {
+          name: 'Corrosive Form',
+          description:
+            'A creature that touches the pudding or hits it with a melee attack while within 5 feet of it takes 4 (1d8) acid damage. Any nonmagical weapon made of metal or wood that hits the pudding corrodes. After dealing damage, the weapon takes a permanent and cumulative -1 penalty to damage rolls. If its penalty drops to -5, the weapon is destroyed. Nonmagical ammunition made of metal or wood that hits the pudding is destroyed after dealing damage. The pudding can eat through 2-inch-thick, nonmagical wood or metal in 1 round.',
+        },
+        {
+          name: 'Spider Climb',
+          description:
+            'The pudding can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.',
+        },
+      ],
+      actions: [
+        {
+          name: 'Pseudopod',
+          type: 'melee',
+          toHit: 5,
+          reachFt: 5,
+          damageType: 'bludgeoning',
+          damage: { throws: 1, sides: 6, constant: 3 },
+          extra:
+            'Plus (4d8) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative -1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10',
+        },
+      ],
+      reactions: [
+        {
+          name: 'Split',
+          description:
+            "When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding's, rounded down. New puddings are one size smaller than the original pudding.",
         },
       ],
     },

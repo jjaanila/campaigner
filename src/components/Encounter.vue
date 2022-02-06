@@ -1,15 +1,16 @@
 <template>
   <div class="encounter">
-    <strong>Encounter:</strong>
     <span v-for="enemy in richEnemies"
       >{{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster"
     /></span>
     <strong v-if="richAllies.length">Allies</strong>
     <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
-    <span
-      >({{ totalEnemyXP }} XP, challenge: {{ adjustedTotalEnemyXP }} XP)
-      <span :class="difficultyClass">{{ difficulty }}</span></span
-    >
+    <span>
+      {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP) <span :class="difficultyClass">{{ difficulty }}</span> ({{
+        adjustedTotalEnemyXP
+      }}
+      XP)
+    </span>
   </div>
 </template>
 
@@ -27,9 +28,9 @@ export default {
       default: () => [],
     },
   },
-  data() {
-    return {
-      richEnemies: [...this.enemies].map(enemy => {
+  computed: {
+    richEnemies() {
+      return [...this.enemies].map(enemy => {
         const monster = this.campaignStore.state.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
           throw new Error(`Monster ${enemy.name} not found!`)
@@ -38,14 +39,18 @@ export default {
           ...enemy,
           monster,
         }
-      }),
-      richAllies: [...this.allies],
-    }
-  },
-  computed: {
+      })
+    },
+    richAllies() {
+      return [...this.allies]
+    },
     totalEnemyXP() {
       return this.richEnemies.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
     },
+    XPPerCharacter() {
+      return Math.floor(this.totalEnemyXP / this.partyStore.state.characters.length)
+    },
+
     numberOfEnemies() {
       return this.richEnemies.reduce((total, enemy) => total + enemy.quantity, 0)
     },
@@ -53,11 +58,11 @@ export default {
       let multiplier = 1
       if (this.numberOfEnemies === 2) {
         multiplier = 1.5
-      } else if (3 <= this.numberOfEnemies <= 6) {
+      } else if (3 <= this.numberOfEnemies && this.numberOfEnemies <= 6) {
         multiplier = 2
-      } else if (7 <= this.numberOfEnemies <= 10) {
+      } else if (7 <= this.numberOfEnemies && this.numberOfEnemies <= 10) {
         multiplier = 2.5
-      } else if (11 <= this.numberOfEnemies <= 14) {
+      } else if (11 <= this.numberOfEnemies && this.numberOfEnemies <= 14) {
         multiplier = 3
       } else if (15 <= this.numberOfEnemies) {
         multiplier = 3
