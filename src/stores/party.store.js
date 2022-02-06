@@ -15,6 +15,18 @@ export default {
     this.state.characters = characters
     this.updateEncounterLimits()
   },
+  addCharacter() {
+    this.setCharacters([...this.state.characters, { name: '', level: 1 }])
+  },
+  removeCharacter(name) {
+    const characterIndex = this.state.characters.findIndex(character => character.name === name)
+    if (characterIndex === -1) {
+      throw new Error(`Character ${name} not found`)
+    }
+    const characters = [...this.state.characters]
+    characters.splice(characterIndex, 1)
+    this.setCharacters(characters)
+  },
   updateEncounterLimits() {
     this.state.encounterLimits = this.state.characters.reduce(
       (limits, character) => {

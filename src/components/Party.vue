@@ -1,6 +1,17 @@
 <template>
   <div class="party">
-    <input type="text" v-model="characterLevels" v-on:input="updatePartyStore" placeholder="Character levels" />
+    <div class="character" v-for="character in partyStore.state.characters">
+      <button v-on:click="partyStore.removeCharacter(character.name)" title="Remove party member">-</button>
+      <input class="character-name" type="text" v-model="character.name" placeholder="Name" />
+      <input
+        class="character-level"
+        type="number"
+        v-model.number="character.level"
+        min="1"
+        v-on.input="partyStore.updateEncounterLimits()"
+      />
+    </div>
+    <button v-on:click="partyStore.addCharacter()" title="New party member">+</button>
   </div>
 </template>
 
@@ -8,22 +19,6 @@
 export default {
   name: 'Encounter',
   inject: ['partyStore'],
-  data() {
-    return {
-      characterLevels: this.partyStore.state.characters.map(c => c.level).join(','),
-    }
-  },
-  methods: {
-    updatePartyStore() {
-      this.partyStore.setCharacters(
-        this.characterLevels
-          .split(',')
-          .map(str => str.trim())
-          .filter(Boolean)
-          .map(level => ({ level: parseInt(level, 10) }))
-      )
-    },
-  },
 }
 </script>
 
@@ -32,5 +27,14 @@ export default {
   position: fixed;
   top: 1rem;
   right: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+.character-name {
+  max-width: 10rem;
+}
+.character-level {
+  max-width: 2.5rem;
 }
 </style>
