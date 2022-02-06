@@ -1,18 +1,12 @@
 <template>
-  <nav class="toc" v-on:click="uiStore.toggleToC()">
+  <nav class="toc" v-on:click="toggleToC()">
     <span>Table of Contents</span>
-    <div v-if="uiStore.state.isToCOpen">
-      <input
-        type="checkbox"
-        id="show-toc-always"
-        name="show-toc-always"
-        v-on:click.stop
-        v-model="uiStore.state.showTocAlways"
-      />
+    <div v-if="isToCOpen">
+      <input type="checkbox" id="show-toc-always" name="show-toc-always" v-on:click.stop v-model="showToCAlways" />
       <label for="show-toc-always">Keep open</label>
     </div>
-    <ol v-if="uiStore.state.isToCOpen">
-      <li v-for="part in campaignStore.state.document.parts" :key="part.name">
+    <ol v-if="isToCOpen">
+      <li v-for="part in document.parts" :key="part.name">
         <a class="toc-part" v-on:click.stop :href="`#${part.id}`">{{ part.name }}</a>
         <ol>
           <li v-for="chapter in part.chapters" :key="chapter.name">
@@ -30,9 +24,24 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'TableOfContents',
-  inject: ['campaignStore', 'uiStore'],
+  computed: {
+    ...mapState('campaign', ['document']),
+    ...mapState('ui', ['isToCOpen']),
+    showToCAlways: {
+      get() {
+        return this.$store.state.ui.showToCAlways
+      },
+      set(value) {
+        this.$store.commit('ui/setShowToCAlways', value)
+      },
+    },
+  },
+  methods: {
+    ...mapActions('ui', ['toggleToC']),
+  },
 }
 </script>
 

@@ -1,11 +1,17 @@
 <template>
-  <div v-on:click="uiStore.closeToC()" :class="`page ${uiStore.state.isToCOpen ? 'toc-open' : ''}`"><slot /></div>
+  <div v-on:click="closeToC()" :class="`page ${isToCOpen ? 'toc-open' : ''}`"><slot /></div>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Page',
-  inject: ['uiStore'],
+  computed: {
+    ...mapState('ui', ['isToCOpen']),
+  },
+  methods: {
+    ...mapActions('ui', ['closeToC']),
+  },
 }
 </script>
 

@@ -1,19 +1,20 @@
 <template>
   <div class="campaign-title-container">
-    <h1 class="campaign-title">{{ campaignStore.state.title }}</h1>
+    <h1 class="campaign-title">{{ title }}</h1>
     <address class="author">
-      <a rel="author" class="url fn n" :href="campaignStore.state.authorUrl">{{ campaignStore.state.author }}</a>
+      <a rel="author" class="url fn n" :href="authorUrl">{{ author }}</a>
     </address>
-    <time pubdate :datetime="campaignStore.state.publishDate" :title="campaignStore.state.publishDate"
-      >on {{ campaignStore.state.publishDate }}</time
-    >
+    <time pubdate :datetime="publishDate" :title="publishDate">on {{ publishDate }}</time>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'CampaignTitle',
-  inject: ['campaignStore'],
+  computed: {
+    ...mapState('campaign', ['title', 'author', 'authorUrl', 'publishDate']),
+  },
 }
 </script>
 

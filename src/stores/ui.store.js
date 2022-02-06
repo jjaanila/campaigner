@@ -1,20 +1,32 @@
-import Vue from 'vue'
-
 export default {
-  state: Vue.observable({
-    isToCOpen: true,
-    showTocAlways: true,
-  }),
-  toggleToC() {
-    if (this.state.showTocAlways && this.state.isToCOpen) {
-      return
-    }
-    this.state.isToCOpen = !this.state.isToCOpen
+  namespaced: true,
+  state: { isToCOpen: true, showToCAlways: true },
+  mutations: {
+    toggleToC(state) {
+      if (state.showToCAlways && state.isToCOpen) {
+        return
+      }
+      state.isToCOpen = !state.isToCOpen
+    },
+    closeToC(state) {
+      if (state.showToCAlways) {
+        return
+      }
+      state.isToCOpen = false
+    },
+    setShowToCAlways(state, showToCAlways) {
+      state.showToCAlways = showToCAlways
+    },
   },
-  closeToC() {
-    if (this.state.showTocAlways) {
-      return
-    }
-    this.state.isToCOpen = false
+  actions: {
+    toggleToC({ commit }) {
+      commit('toggleToC')
+    },
+    closeToC({ commit }) {
+      commit('closeToC')
+    },
+    setShowToCAlways({ commit }, showToCAlways) {
+      commit('setShowToCAlways', showToCAlways)
+    },
   },
 }

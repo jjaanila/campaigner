@@ -1,24 +1,24 @@
 <template>
   <div class="party">
-    <div class="character" v-for="character in partyStore.state.characters">
-      <button v-on:click="partyStore.removeCharacter(character.name)" title="Remove party member">-</button>
+    <div class="character" v-for="character in characters">
+      <button v-on:click="removeCharacter(character.name)" title="Remove party member">-</button>
       <input class="character-name" type="text" v-model="character.name" placeholder="Name" />
-      <input
-        class="character-level"
-        type="number"
-        v-model.number="character.level"
-        min="1"
-        v-on.input="partyStore.updateEncounterLimits()"
-      />
+      <input class="character-level" type="number" v-model.number="character.level" min="1" placeholder="lvl" />
     </div>
-    <button v-on:click="partyStore.addCharacter()" title="New party member">+</button>
+    <button v-on:click="addCharacter()" title="New party member">+</button>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Encounter',
-  inject: ['partyStore'],
+  name: 'Party',
+  computed: {
+    ...mapState('party', ['characters']),
+  },
+  methods: {
+    ...mapActions('party', ['addCharacter', 'removeCharacter', 'setCharacterName', 'setCharacterLevel']),
+  },
 }
 </script>
 

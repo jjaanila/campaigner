@@ -1364,7 +1364,7 @@
       </p>
 
       <part-title name="Monsters" />
-      <monster v-for="monster in campaignStore.state.monsters" v-bind="monster" :key="monster.name" />
+      <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
       <part-title name="Help" />
       <section-title name="Finnish Names" />
       Some authentic ancient Finnish names if you need to build a new NPC: Aikamieli, Ano, Arpia, Ikitiera, Ikäheimo,
@@ -1386,7 +1386,6 @@ import underdark from './img/underdark.png'
 
 export default {
   name: 'app',
-  inject: ['campaignStore'],
   data() {
     return {
       tursaansydan,
@@ -1395,6 +1394,11 @@ export default {
       ukonvasara,
       underdark,
     }
+  },
+  computed: {
+    monsters() {
+      return this.$store.state.campaign.monsters
+    },
   },
 }
 </script>

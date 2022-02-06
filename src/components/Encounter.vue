@@ -15,9 +15,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'Encounter',
-  inject: ['campaignStore', 'partyStore'],
   props: {
     enemies: {
       type: Array,
@@ -29,9 +29,11 @@ export default {
     },
   },
   computed: {
+    ...mapState('campaign', ['monsters']),
+    ...mapState('party', ['characters', 'encounterLimits']),
     richEnemies() {
       return [...this.enemies].map(enemy => {
-        const monster = this.campaignStore.state.monsters.find(monster => monster.name === enemy.name)
+        const monster = this.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
           throw new Error(`Monster ${enemy.name} not found!`)
         }
@@ -48,7 +50,7 @@ export default {
       return this.richEnemies.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
     },
     XPPerCharacter() {
-      return Math.floor(this.totalEnemyXP / this.partyStore.state.characters.length)
+      return Math.floor(this.totalEnemyXP / this.characters.length)
     },
 
     numberOfEnemies() {
@@ -70,14 +72,14 @@ export default {
       return this.totalEnemyXP * multiplier
     },
     difficulty() {
-      if (this.partyStore.state.encounterLimits.easy === 0) {
+      if (this.encounterLimits.easy === 0) {
         return ''
       }
       const partyLimits = [
-        { xp: this.partyStore.state.encounterLimits.deadly, difficulty: 'deadly' },
-        { xp: this.partyStore.state.encounterLimits.hard, difficulty: 'hard' },
-        { xp: this.partyStore.state.encounterLimits.medium, difficulty: 'medium' },
-        { xp: this.partyStore.state.encounterLimits.easy, difficulty: 'easy' },
+        { xp: this.encounterLimits.deadly, difficulty: 'deadly' },
+        { xp: this.encounterLimits.hard, difficulty: 'hard' },
+        { xp: this.encounterLimits.medium, difficulty: 'medium' },
+        { xp: this.encounterLimits.easy, difficulty: 'easy' },
       ]
       for (let limit of partyLimits) {
         if (this.adjustedTotalEnemyXP >= limit.xp) {

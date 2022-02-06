@@ -7,9 +7,9 @@
 
 <script>
 import { generateId } from '../utils'
+import { mapState } from 'vuex'
 export default {
   name: 'IdLink',
-  inject: ['campaignStore'],
   props: {
     name: {
       type: String,
@@ -23,6 +23,7 @@ export default {
     },
   },
   computed: {
+    ...mapState('campaign', ['monsters']),
     finalId() {
       return this.id ?? generateId(this.name, this.type)
     },
@@ -36,7 +37,7 @@ export default {
       if (this.type !== 'monster') {
         return
       }
-      return this.campaignStore.state.monsters.find(monster => monster.id === this.finalId)
+      return this.monsters.find(monster => monster.id === this.finalId)
     },
   },
 }
