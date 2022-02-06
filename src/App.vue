@@ -147,15 +147,15 @@
       This is the first game play chapter of this campaign.
 
       <read-aloud>
-        Tämä on Gundarlun. Tuulen ja jään hallitsema saari keskellä Vanattoman valtamerta. Olette Ainkesän Vartion
-        vankeina päätyneet tähän syrjäiseen maailman kolkkaan Gundarlunin pohjanmiesten ja Ainkesän kauppasopimuksen
-        johdosta. Etsitte nyt rangaistuksena teoistanne kuparia mantereelle toimitettavaksi, josta Ainkesälle on
-        sopimuksen nojalla luvattu suurin osa työvoimaa vastaan. Saarelle saapuminen on vaikeaa jatkuvan pakkasen ja
-        purevan tuulen vuoksi, mutta niin on myös sieltä poistuminen, mikä tekee siitä käytännöllisen
+        Gundarlun. Tuulen ja jään hallitsema saari keskellä Vanattoman valtamerta. Olette Ainkesän Vartion vankeina
+        päätyneet tähän syrjäiseen unohdettujen valtakuntien kolkkaan Gundarlunin pohjanmiesten ja Ainkesän
+        kauppasopimuksen johdosta. Etsitte nyt rangaistuksena teoistanne kuparia mantereelle toimitettavaksi, josta
+        Ainkesälle on sopimuksen nojalla luvattu suurin osa työvoimaa vastaan. Saarelle saapuminen on vaikeaa jatkuvan
+        pakkasen ja purevan tuulen vuoksi, mutta niin on myös sieltä poistuminen, mikä tekee siitä käytännöllisen
         rangaistuslaitoksen. Gundbargin kaupungin länsipuolella, jäätikön peittämän vuoren rinteellä sijaitsee kaivos ja
         yhdessä sen syvimmälle ulottuvista haaroista tunneli A-704. Hakkujen tasainen kilkatus poukkoilee kapean
         tunnelin reunasta reunaan äänien vaeltaessa pimeyteen. {Ryhmän jäsenluku} olentoa heilauttaa ensin työkalunsa
-        ylös, sitten kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Hakkujen lisäksi voi kuulla vain
+        ylös, ja kuin toisiinsa kytkettyinä hakut heilahtavat kiveä vasten. Hakkujen lisäksi voi kuulla vain
         jalkakahleiden kolinaa ja satunnaisia murahduksia. Joukko etenee hitaasti mutta varmasti kohti vuoren syvyyksiä
         yhden lepattavan soihdun valossa.
       </read-aloud>
@@ -193,14 +193,12 @@
         hallway. DC10 Perception check for markings on the walls. On success hey find a drawn eye that watches towards
         the deeper end of the hallway. Another way used to lead outside but has since collapsed shut.
       </p>
-
       <p>
         Walking towards the open end of the corridor, the party is greeted by a large, dark, and gloomy cave. Outside of
         the torch light they can hear faint rythmic thumps.
       </p>
-
       <p>
-        If the party proceeds, they will see a stone altar on the other side of the room. Alter on some items on it,
+        If the party proceeds, they will see a stone altar on the other side of the room. Altar has some items on it,
         like a bear skull and ash but they cannot be recognized from afar because everything is covered in dust and ice.
         In front of the altar is a drum, with a ring of wood and head of leather. It has black drawings of animals and
         people on the leathery head. The drum plays by itself with heartbeat like rhythm. The drum is the only thing in
@@ -221,11 +219,11 @@
       <chapter-title name="Welcome to Pohjola" />
       <section-title name="In Bluebill's Nest" />
       <read-aloud>
-        You see restless dreams. You run through a forest with a wold pack. Soar through the skies in a snow storm.
-        Scramble through snow higher than you are. Skitter through city streets while dodging human feet. You keep on
-        jumping from dream to dream, unable to wake up. Suddenly, dream ends and you open your eyes. You all are laying
-        on mossy ground of a spruce forest. The sun peeks between the tree branches and the only voice you hear is the
-        soft wind in the trees.
+        You see restless dreams. You run through a forest with a wolf pack. Soar through the skies in a snow storm.
+        Scramble through shoulder-high snow. Skitter through city streets while dodging giant feet. You keep on jumping
+        from dream to dream, unable to wake up. Suddenly, dream ends and you open your eyes. You all are laying on mossy
+        ground of a spruce forest. The sun peeks between the tree branches and the only voice you hear is the soft wind
+        in the trees.
       </read-aloud>
       The party has woken up in Pohjola. They are few kilometers from Bluebill's Nest where they should find themselves
       soon enough, one way or another. The party is still in shackles. Pohjola has their own gods, habits and culture.
@@ -285,24 +283,24 @@
       now he is wanted by the Arm, the city guard. He plans to move towards south, to the Gray Keep. Now he is trying to
       make enough money here to continue by selling made-up stories to the gullible. There is a price for him in the
       Sword cities, so the party may catch him at some point. No-one in the village knows about the price though. Veli
-      has rented a room upstairs. Is interested to visit the wedding in the hopes of income and the party could be a
-      good escort there. <id-link id="monster-commoner" name="Toiva" type="monster" /> A shy human male who inherited
-      the Inn from relatives. He hasn't married and takes care if the inn alone. He doesn't speak unnecessarily and is
-      really bad at small talk. Not the ideal innkeeper, but you do with what has been given to you. His wife Ano is
-      sick with a disease of the mind which turned her into unresponsive state a year ago. Toiva doesn't have enough
-      time to keep the inn running, treat her wife and look after their ten year old son Ilmari who roams the woods
-      freely. He is not into innkeeping but more of an explorer. They live in a separate building next to the inn. If
-      asked about rumors, he doesn't mention his wife but others in the inn can tell about this "public secret". Toiva
-      doesn't speak much his life and uses short sentences. Just answer quickly and shortly and aim for awkward
-      silences! A DC 10 Insight check tells the party that Toiva has something to hide. Toiva saw Rautia drinking with
-      the bandits and has heard stories of bandit activity in north, on the road near Ukko's fist (Ukonnyrkki)
-      settlement. <id-link id="monster-commoner" name="Ilmari" type="monster" /> The son of Toiva and Ano. A bright 12
-      year old boy with a curious mind and a lot of time in his hands. He spends the time exploring nearby areas. He
-      arrives to the inn when the party is there the first time to tell his father that he is afraid of the rats he was
-      told to get rid of in their house basement. "They are so big and hairy!" The party can take the task of getting
-      rid of the rats. Ilmari can also tell the party about Körri, family's cat who has been missing for weeks. If the
-      party gets rid of the rats, Toiva will pay them 10gp and provide a free room for one night. Ilmari tells that he
-      will go see "the grandpa" and runs away.
+      has rented a room upstairs. He is interested in to visit the wedding in the hopes of income and the party could be
+      a good escort there. <id-link id="monster-commoner" name="Toiva" type="monster" /> A shy human male who inherited
+      the inn from relatives. He takes care of the inn alone. He doesn't speak unnecessarily and is really bad at small
+      talk. Not the ideal innkeeper, but you do with what has been given to you. His wife Ano is sick with a disease of
+      the mind which turned her into unresponsive state a year ago. Toiva doesn't have enough time to keep the inn
+      running, treat her wife and look after their ten year old son Ilmari who roams the woods freely. He is not into
+      innkeeping but more of an explorer. They live in a separate building next to the inn. If asked about rumors, he
+      doesn't mention his wife but others in the inn can tell about this "public secret". Toiva doesn't speak much his
+      life and uses short sentences. Just answer quickly and shortly and aim for awkward silences! A DC 10 Insight check
+      tells the party that Toiva has something to hide. Toiva saw Rautia drinking with the bandits and has heard stories
+      of bandit activity in north, on the road near Ukko's fist (Ukonnyrkki) settlement.
+      <id-link id="monster-commoner" name="Ilmari" type="monster" /> The son of Toiva and Ano. A bright 12 year old boy
+      with a curious mind and a lot of time in his hands. He spends the time exploring nearby areas. He arrives to the
+      inn when the party is there the first time to tell his father that he is afraid of the rats he was told to get rid
+      of in their house basement. "But there are so many of them!" The party can take the task of getting rid of the
+      rats. Ilmari can also tell the party about Körri, family's cat who has been missing for weeks. If the party gets
+      rid of the rats, Toiva will pay them 10gp and provide a free room for one night. Ilmari tells that he will go see
+      "the grandpa" and runs away.
       <sub-area-title name="Toiva's House" />
       The simple house of Toiva, Ano and Ilmari has two large rooms and a cellar. It is a log house with simple wooden
       furniture. Dried food has been stored to the first room and it also has a fireplace. Second room two beds, where
@@ -324,7 +322,7 @@
       <encounter
         :enemies="[
           { name: 'Bandit Captain', quantity: 1 },
-          { name: 'Bandit', quantity: 4 },
+          { name: 'Bandit', quantity: 10 },
         ]"
       />
       have camped close to the road. One of them is keeping watch nearby close to the road, others are maintaining their
@@ -362,11 +360,11 @@
       </read-aloud>
       At the farm the crowd returns to celebration. Here the party can find the Halla family, father Tapio, mother
       Vilja, and three girls Kylli, Lempo, and Mielo. Tapio or Vilja can explain that the ritual returns the bear back
-      to its mother who will send it back on earth to be hunted again. They can also tell about the marshes, about
-      temperature changes, the ownership but they don't speak about the tales and rumours eagerly. They will if they are
-      asked or if one of their children happens to mention about them. They have been wondering why Tapio's brother's
-      family didn't arrive to the bear celebration (karhunpeijaiset). Their farm is on the south east side of the
-      marshes. They cannot leave their kids right now so they request the party to investigate and promise to pay 20g.
+      to its mother who will send it back on earth to be hunted again. They can also tell about the marshes and the
+      ownership but they don't speak about the tales and rumours eagerly. They will if they are asked or if one of their
+      children happens to mention about them. They have been wondering why Tapio's brother's family didn't arrive to the
+      bear celebration (karhunpeijaiset). Their farm is on the south east side of the marshes. They cannot leave their
+      kids right now so they request the party to investigate and promise to pay 20g.
       <section-title name="Forgotten Marshes" />
       <sub-area-title name="Halla Farm -> Hallaneva Farm" />
       To east leads a little traversed path. It goes through grassy lands and sparse woods. To north the party sees
@@ -380,8 +378,8 @@
       they can to Hallasuo encampment, which she explains is a trader outpost on a shortcut through the marshes. From
       there she can get more help. She promises to pay 20gp each. In reality she wants to lure them into a trap, the
       same one she lured the Halla brother Jurva and his son Osmo. Luckily their mother and sick daughter stayed home.
-      DC 15 insight check allows the party to sense that something fishy is going on. DC 10 intimidation check will make
-      to reveal what she knows about the trap and the operation.
+      DC 15 insight check allows the party to sense that something fishy is going on. DC 15 intimidation check will make
+      her reveal what she knows about the trap and the operation.
       <sub-area-title name="Hallasuo encampment" />
       The party can try to fix the wagon they will need Carpenter's Tools and a DC 18 check. If they succeed, the woman
       will request them to escort her with even higher fee. If the party helps to escort the lady, she leads them to a
@@ -454,7 +452,8 @@
       are studying the documents intently. There is a secret door that leads to a room with a chest. DC 10 Perception
       check finds a lever behind a bookshelf that opens the secret door, but if the roll is below 15 PC misses the more
       worn lever that also disables the arrow trap inside. Two arrows fly out of the room and PC has to succeed DC 10
-      Acrobatics check to avoid them. Inside the chest is one Potion of Healing, Scroll of Unseen Servant, and a garnet.
+      Acrobatics check to avoid them. Inside the chest is one Potion of Greate Healing, Scroll of Unseen Servant, and a
+      garnet.
       <sub-area-title name="Kitchen" /> A soldier is preparing food next to a large pot. A large
       <id-link name="Mastiff" type="monster" /> rests on the floor drooling after a meal. When the door is opened it
       starts barking which alerts the cook and the cleric in the corridor north-east of kitchen. The cleric will attack
@@ -576,11 +575,16 @@
       <id-link name="The Gray Keep" type="area" /> and west of <id-link name="Halla Farm" type="area" />. It is an
       important supply route providing seafood and minerals to the settlements of Pohjola. At the start of this
       adventure, metsäläiset have destroyed the bridge to harass kalevans. The bridge will be repaired during first few
-      days. Crossing the river is very hard due to its strong current. A group of
-      <id-link name="Soldier of the Sword" type="monster" /> guards the bridge. Another group of
-      <id-link id="monster-commoner" name="commoners" type="monster" /> is fixing the bridge while pressured by the
-      soldiers. Soldiers should question the party and try to sort out what is the meaning of their trip. A decent bribe
-      might help to get the party out of this situation.
+      days. Crossing the river is very hard due to its strong current.
+      <encounter
+        :enemies="[
+          { name: 'Soldier of the Sword', quantity: 8 },
+          { name: 'Commoner', quantity: 5 },
+        ]"
+      />
+      guards the bridge. Another group of <id-link id="monster-commoner" name="commoners" type="monster" /> is fixing
+      the bridge while pressured by the soldiers. Soldiers should question the party and try to sort out what is the
+      meaning of their trip. A decent bribe might help to get the party out of this situation.
       <area-title name="The Gray Keep" />
       A great keep on the shore of western Pohjola. It is built on barren rocky land that continues all the way to the
       border of the north along the sea. This area has very little life but the sea offers plenty of fish, crabs, and
@@ -644,9 +648,9 @@
       supervising the workers called <id-link name="Montaja" type="monster" />. He is sitting on a stool working on
       another piece of wood with puukko (a simple knife). He has a letter sealed with a black bird seal that says:
       <read-aloud>
-        You are doing well but that is not enough. Get rid of the sea abominations, they are slowing us down right now.
-        We need more provisions to keep the people going. Exploration at the marshes has been fruitful and I believe we
-        will soon find the second fragment. May the forest guard your dreams.
+        Greetings Montaja, You are doing well but that is not enough. Get rid of the sea abominations, they are slowing
+        us down right now. We need more provisions to keep the people going. Exploration at the marshes has been
+        fruitful and I believe we will soon find the second fragment. May the leaves shade your rest.
       </read-aloud>
       <encounter
         :enemies="[
@@ -766,7 +770,9 @@
       investigate.
       <sub-area-title name="River Chamber" />
       An underground river goes through this room and can take the party next to
-      <id-link name="Living Chamber" type="subarea" />.
+      <id-link name="Living Chamber" type="subarea" />. There is one Deep Gnome, which will notice characters that are
+      not able to resist the flow. Resisting the river flow requires passing a DC 10 athletics check. Failed characters
+      arrive to the new chamber prone.
       <sub-area-title name="Guard Chamber" />
       A room Deep Gnomes use as a resitng room for guards and as the first line of defense ensuring no-one unexpected
       wanders into their tunnels.
@@ -883,12 +889,13 @@
       and spruce branches. In the tent are also some of the food they have stolen or hunted, mainly meat in a sled. The
       party can just steal the sled or delve into the temple. There are no barbarians around except
       <encounter :enemies="[{ name: 'Barbarian', quantity: 3 }]" /> guards on top. When the party comes back up from the
-      temple they will face a barbarian raiding party of 30 barbarians and are forced to escape into the temple.
+      temple they will face a barbarian raiding party of 40 barbarians and are forced to escape into the temple.
       <sub-area-title name="The Entrance Top" />
       A leather tent that conceals a sled full of meat and dairy products and a stone platform that has a heavy iron
       double door that can be locked from inside. Few guards are guarding. When the group returns from the temple they
-      notice a raid party of 30 barbarians close by riding towards them. Escaping is hard so they are forced to fight or
+      notice a raid party of 40 barbarians close by riding towards them. Escaping is hard so they are forced to fight or
       escape into the temple.
+      <encounter :enemies="[{ name: 'Barbarian', quantity: 40 }]" />
       <sub-area-title name="Entry Hall" />
       A stone stairway takes the party into a 60ft wide and 100ft long hall filled with animal hides, straw beds and
       food storage. Another large iron door separates the stairs from this hall but it is open now. It can also be

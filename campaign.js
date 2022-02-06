@@ -658,7 +658,7 @@ module.exports = Object.freeze({
     {
       name: 'Barbarian',
       size: 'medium',
-      type: 'humanoid (any race)',
+      type: 'humanoid (half-orc or orc)',
       alignment: 'lawful neutral',
       armorClass: 13,
       armor: '(Hide armor)',
@@ -671,7 +671,7 @@ module.exports = Object.freeze({
       wisdom: 11,
       charisma: 8,
       senses: ['passive Perception 10'],
-      languages: ['common'],
+      languages: ['common', 'orc'],
       challengeRating: 0.25,
       passives: [
         {
