@@ -5,6 +5,9 @@ export const LOCAL_STORAGE_STATE_KEY = 'campaigner-party'
 const updateEncounterLimits = state => {
   state.encounterLimits = state.characters.reduce(
     (limits, character) => {
+      if (typeof character.level !== 'number') {
+        return limits
+      }
       const characterLimits = encounterDifficulties.find(ed => ed.characterLevel === character.level)
       if (!characterLimits) {
         throw new Error('Did not find character limits for character level ' + character.level)
@@ -23,7 +26,7 @@ const updateEncounterLimits = state => {
 const initializeFromLocalStorage = () => {
   const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY))
   return state
-    ? state
+    ? updateEncounterLimits(state)
     : {
         characters: [],
         encounterLimits: {
@@ -45,20 +48,10 @@ const storeConfig = {
     updateEncounterLimits,
     setCharacters(state, characters) {
       state.characters = characters
+      updateEncounterLimits(state)
     },
   },
   actions: {
-    setCharacterName({ commit, state }, oldName, newName) {
-      const character = state.characters.find(character => character.name === oldName)
-      character.name = newName
-      commit('setCharacters', state.characters)
-    },
-    setCharacterLevel({ commit, state }, name, level) {
-      const character = state.characters.find(character => character.name === name)
-      character.level = level
-      commit('setCharacters', state.characters)
-      commit('updateEncounterLimits')
-    },
     addCharacter({ commit, state }) {
       commit('setCharacters', [...state.characters, { name: '', level: 1 }])
       commit('updateEncounterLimits')
@@ -70,6 +63,9 @@ const storeConfig = {
       }
       state.characters.splice(characterIndex, 1)
       commit('setCharacters', state.characters)
+      commit('updateEncounterLimits')
+    },
+    updateCharacters({ commit }) {
       commit('updateEncounterLimits')
     },
   },
