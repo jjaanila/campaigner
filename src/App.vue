@@ -306,12 +306,17 @@
       The simple house of Toiva, Ano and Ilmari has two large rooms and a cellar. It is a log house with simple wooden
       furniture. Dried food has been stored to the first room and it also has a fireplace. Second room two beds, where
       in the larger one lies a woman, Ano. The only sign of consciousness are the open eyes and occasional swallowing.
-      This disease cannot be cured. In the cellar the party finds huge amount of rats, i.e. 6
-      <id-link name="Swarm of Rats" type="monster" />, and <id-link name="Körri" type="monster" />. The rats are Körri's
-      little "army" he has been recruiting to take over the village house by house. Körri hisses and the rats turn
-      around and attack immediately. Körri has sold his soul to a cat demon to get the command over his little minions.
-      You can play this out a bit with Körri's behaviour but this is just a weird side quest. Don't expect it to
-      continue.
+      This disease cannot be cured. In the cellar the party finds huge amount of rats, i.e.
+      <encounter
+        :initialEnemies="[
+          { name: 'Swarm of Rats', quantity: 6 },
+          { name: 'Körri', quantity: 1 },
+        ]"
+      />
+      The rats are Körri's little "army" he has been recruiting to take over the village house by house. Körri hisses
+      and the rats turn around and attack immediately. Körri has sold his soul to a cat demon to get the command over
+      his little minions. You can play this out a bit with Körri's behaviour but this is just a weird side quest. Don't
+      expect it to continue.
       <section-title name="Bandit Camp" />
       <area-title name="Bandit Camp" />
       A party of 1 <id-link name="Bandit Captain" type="monster" /> 4 <id-link name="Bandit" type="monster" /> have
@@ -1183,6 +1188,16 @@
         Ore deliveries from the mountains happen daily, which may offer a suitable way to slip in unnoticed. Another way
         is to dive underwater through the fresh water creek or the sewer creek.
       </p>
+
+      <sub-area-title name="Viper's Rend Toll Station" />
+      Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend, south of
+      Kuurankaru. The guards there collect tolls from passing ships, usually ones delivering ores from the mountains in
+      the north. Just passing the station costs 100gp without any load. Trying to pass the station without paying and
+      alerting the guards causes them to start pursuit with a rowing ship and X
+      <id-link name="Metsäläinen Soldier" type="monster" />. They can attach to the other ship by throwing iron hooks
+      with ropes attached. If the party is caught, they are suspected of spying and will be taken prisoners and
+      delivered to the dungeon of Kuurankaru.
+
       <sub-area-title name="Dungeon" />
       <p>
         An underground dungeon with stone walls and one large cell. If the party ends up here, Juva should try to free
@@ -1211,6 +1226,7 @@
         large eagle. An eagle has been reportedly seen soaring over the Tooth many times. Usually she visits the Keep of
         Kuurankaru to give commands to village leaders but she may appear also to other places.
       </p>
+
       <sub-area-title name="The Tooth" />
       <p>
         A steep sloped mountain next to Kuurankaru village. Icy slopes are impossible to climb without suitable
@@ -1227,7 +1243,7 @@
             <li>One was for the enemy, to remind of their kinship.</li>
             <li>One was for the dead, to remind of what cannot be reversed.</li>
             <li>One was for the gods, to be guarded with tireless eyes.</li>
-            <li>And the last one for the one, who started it all.</li>
+            <li>And the last for the one, who started it all.</li>
           </ul>
         </read-aloud>
       </p>
@@ -1240,7 +1256,9 @@
       <p>
         After a while, the party hears a faint noise that gets louder. It is the sound of thousands of ravens that are
         closing in to protect the home of their mistress. 17 <id-link name="Swarm of Ravens" type="monster" /> dive
-        towards the house through the protective sphere.
+        towards the house through the protective sphere. If too easy, add some more! They crash through the windows,
+        chimney, and open doors and attack the party. The party may have ten seconds to prepare if they hear them in
+        advance.
       </p>
 
       <sub-area-title name="Barracks complex" />
@@ -1256,15 +1274,6 @@
         <id-link name="Joukahainen" type="monster" /> observes the area and visits the training fields often. The party
         should be able to spot him there. If they go too close to him, he may recognize them and try to capture them.
       </p>
-
-      <sub-area-title name="Viper's Rend Toll Station" />
-      Another source of income for metsäläiset is the river toll station in the northern part of Viper's Rend, south of
-      Kuurankaru. The guards there collect tolls from passing ships, usually ones delivering ores from the mountains in
-      the north. Just passing the station costs 100gp without any load. Trying to pass the station without paying and
-      alerting the guards causes them to start pursuit with a rowing ship and X
-      <id-link name="Metsäläinen Soldier" type="monster" />. They can attach to the other ship by throwing iron hooks
-      with ropes attached. If the party is caught, they are suspected of spying and will be taken prisoners and
-      delivered to the dungeon of Kuurankaru.
 
       <part-title name="Monsters" />
       <monster v-for="monster in campaignStore.state.monsters" v-bind="monster" :key="monster.name" />

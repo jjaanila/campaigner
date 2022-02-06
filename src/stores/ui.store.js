@@ -3,7 +3,7 @@ import Vue from 'vue'
 export default {
   state: Vue.observable({
     isToCOpen: true,
-    showTocAlways: false,
+    showTocAlways: true,
   }),
   toggleToC() {
     if (this.state.showTocAlways && this.state.isToCOpen) {

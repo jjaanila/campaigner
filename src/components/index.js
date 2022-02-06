@@ -13,6 +13,7 @@ import Monster from './Monster.vue'
 import IdLink from './IdLink.vue'
 import Comment from './Comment.vue'
 import TableOfContents from './TableOfContents.vue'
+import Encounter from './Encounter.vue'
 
 export default {
   CampaignTitle,
@@ -30,4 +31,5 @@ export default {
   IdLink,
   Comment,
   TableOfContents,
+  Encounter,
 }
