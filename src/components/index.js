@@ -14,6 +14,7 @@ import IdLink from './IdLink.vue'
 import Comment from './Comment.vue'
 import TableOfContents from './TableOfContents.vue'
 import Encounter from './Encounter.vue'
+import Party from './Party.vue'
 
 export default {
   CampaignTitle,
@@ -32,4 +33,5 @@ export default {
   Comment,
   TableOfContents,
   Encounter,
+  Party,
 }

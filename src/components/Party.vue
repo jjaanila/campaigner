@@ -15,14 +15,22 @@ export default {
   },
   methods: {
     updatePartyStore() {
-      this.partyStore.setCharacters(this.characterLevels.split(',').map(level => ({level: parseInt(level, 10)})))
+      this.partyStore.setCharacters(
+        this.characterLevels
+          .split(',')
+          .map(str => str.trim())
+          .filter(Boolean)
+          .map(level => ({ level: parseInt(level, 10) }))
+      )
     },
-    }
   },
 }
 </script>
 
 <style scoped>
 .party {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
 }
 </style>

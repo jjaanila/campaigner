@@ -13,11 +13,15 @@ export default {
   }),
   setCharacters(characters) {
     this.state.characters = characters
+    this.updateEncounterLimits()
   },
   updateEncounterLimits() {
-    this.state.characters.reduce(
+    this.state.encounterLimits = this.state.characters.reduce(
       (limits, character) => {
         const characterLimits = encounterDifficulties.find(ed => ed.characterLevel === character.level)
+        if (!characterLimits) {
+          throw new Error('Did not find character limits for character level ' + character.level)
+        }
         limits.easy += characterLimits.easy
         limits.medium += characterLimits.medium
         limits.hard += characterLimits.hard

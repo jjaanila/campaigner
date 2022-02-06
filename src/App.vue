@@ -5,6 +5,7 @@
     }"
   >
     <table-of-contents />
+    <party />
     <page>
       <campaign-title />
       <part-title name="Background" />
@@ -309,7 +310,7 @@
       This disease cannot be cured. In the cellar the party finds huge amount of rats, i.e.
       <encounter
         :initialEnemies="[
-          { name: 'Swarm of Rats', quantity: 6 },
+          { name: 'Swarm of Rats', quantity: 10 },
           { name: 'Körri', quantity: 1 },
         ]"
       />
