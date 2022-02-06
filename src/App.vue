@@ -309,7 +309,7 @@
       in the larger one lies a woman, Ano. The only sign of consciousness are the open eyes and occasional swallowing.
       This disease cannot be cured. In the cellar the party finds huge amount of rats, i.e.
       <encounter
-        :initialEnemies="[
+        :enemies="[
           { name: 'Swarm of Rats', quantity: 10 },
           { name: 'Körri', quantity: 1 },
         ]"

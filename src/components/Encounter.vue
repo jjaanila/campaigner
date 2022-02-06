@@ -1,11 +1,11 @@
 <template>
   <div class="encounter">
     <strong>Encounter:</strong>
-    <span v-for="enemy in enemies"
+    <span v-for="enemy in richEnemies"
       >{{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster"
     /></span>
-    <strong v-if="allies.length">Allies</strong>
-    <span v-for="ally in allies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
+    <strong v-if="richAllies.length">Allies</strong>
+    <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
     <span
       >({{ totalEnemyXP }} XP, challenge: {{ adjustedTotalEnemyXP }} XP)
       <span :class="difficultyClass">{{ difficulty }}</span></span
@@ -18,18 +18,18 @@ export default {
   name: 'Encounter',
   inject: ['campaignStore', 'partyStore'],
   props: {
-    initialEnemies: {
+    enemies: {
       type: Array,
       required: true,
     },
-    initialAllies: {
+    allies: {
       type: Array,
       default: () => [],
     },
   },
   data() {
     return {
-      enemies: [...this.initialEnemies].map(enemy => {
+      richEnemies: [...this.enemies].map(enemy => {
         const monster = this.campaignStore.state.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
           throw new Error(`Monster ${enemy.name} not found!`)
@@ -39,15 +39,15 @@ export default {
           monster,
         }
       }),
-      allies: [...this.initialAllies],
+      richAllies: [...this.allies],
     }
   },
   computed: {
     totalEnemyXP() {
-      return this.enemies.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
+      return this.richEnemies.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
     },
     numberOfEnemies() {
-      return this.enemies.reduce((total, enemy) => total + enemy.quantity, 0)
+      return this.richEnemies.reduce((total, enemy) => total + enemy.quantity, 0)
     },
     adjustedTotalEnemyXP() {
       let multiplier = 1
