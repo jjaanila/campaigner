@@ -768,15 +768,23 @@
       An underground river goes through this room and can take the party next to
       <id-link name="Living Chamber" type="subarea" />.
       <sub-area-title name="Guard Chamber" />
-      A room Deep Gnomes use as a guarding spot ensuring no-one unexpected wanders into their tunnels. Has two guarding
-      Deep Gnomes.
+      A room Deep Gnomes use as a resitng room for guards and as the first line of defense ensuring no-one unexpected
+      wanders into their tunnels.
+      <encounter :enemies="[{ name: 'Deep Gnome', quantity: 8 }]" />
       <sub-area-title name="Animal Chamber" />
-      Two Deep Gnomes are taking care of their pet, a <id-link name="Rust Monster" type="monster" /> called Haisu. They
-      use it to find iron, but sometimes it tends to escape to the outside world. It has confronted Leino in the wild
-      and dragged him into the tunnels as prey. Deep Gnomes were not happy about it and have been trying to nurse Leino
-      back to health. Two Deep Gnomes and Haisu are in this chamber.
+      Two Deep Gnomes are taking care of their pets, a pack of <id-link name="Rust Monster" type="monster" />. They are
+      used to find iron, but sometimes they tend to escape to the outside world. One of them, Haisu, did so recently. It
+      has confronted Leino in the wild and dragged him into the tunnels as prey. Deep Gnomes were not happy about it and
+      have been trying to nurse Leino back to health.
+      <encounter
+        :enemies="[
+          { name: 'Rust Monster', quantity: 4 },
+          { name: 'Deep Gnome', quantity: 6 },
+        ]"
+      />
       <sub-area-title name="Living Chamber" />
-      Here Deep Gnomes spend their time crafting and maintaining tools. Three Deep Gnomes stay there.
+      Here Deep Gnomes spend their time crafting and maintaining tools.
+      <encounter :enemies="[{ name: 'Deep Gnome', quantity: 10 }]" />
       <sub-area-title name="Resting Chamber" />
       Five Deep Gnomes are examining Leino and trying to help him medically. One of the Deep Gnomes is their healer and
       expects Leino to survive. He can give the party a quest to retrieve the remains of their fellow Deep Gnomes that
@@ -784,6 +792,7 @@
       <id-link name="Dark Chamber" type="subarea" />. He promises 100gp and a fine obsidian Dagger they found from the
       depths. The dagger has old runes on it that spell Light Carver (Valonvuolija). Old runes can be read only by few
       in Pohjola.
+      <encounter :enemies="[{ name: 'Deep Gnome', quantity: 5 }]" />
       <item
         name="Light Carver (Valonvuolija)"
         properties="Wondrous item, rare"
@@ -792,12 +801,13 @@
       wielder with dark sight can see in light."
       />
       <sub-area-title name="Dark Chamber" />
-      A chamber that was revealed by Deep Gnome miners. When they entered it, four Darkmantles attacked and killed them.
+      A chamber that was revealed by Deep Gnome miners. When they entered it, Darkmantles attacked and killed them.
       Their remains are still there. The hole they made is on the top of the chamber near the ceiling. The ceiling is
       weirdly black and cannot be brighten with light sources. Darkmantles are keeping it dark and waiting an attack
       opportunity.
+      <encounter :enemies="[{ name: 'Darkmantle', quantity: 15 }]" />
       <sub-area-title name="Treasury" />
-      contains the treasures of Deep Gnomes. In addition to Light Carver and 100gp, there are also two 1 carat diamonds,
+      Contains the treasures of Deep Gnomes. In addition to Light Carver and 100gp, there are also two 1 carat diamonds,
       five malachites and lots of iron.
       <section-title name="To the Sword" />
       <area-title name="Forestry Camp" />
@@ -820,10 +830,16 @@
       <area-title name="Ambushed by metsäläiset" />
       An ambush that is supposed to happen after the party has disrupted metsäläiset for the first time, or the second
       time, your call. Metsäläiset want to know who they are dealing with so they try to interrogate at least one member
-      of the party. A <id-link name="Northern Druid" type="monster" /> and 3
-      <id-link name="Death Dog" type="monster" /> are hiding next to the road. When the party arrives the Druid starts
-      to speak and the dogs start to circle around the party. He requests to know who the party members are and asks why
-      they interfered with the operation at the marshes. A fight may ensue.
+      of the party.
+      <encounter
+        :enemies="[
+          { name: 'Northern Druid', quantity: 1 },
+          { name: 'Death Dog', quantity: 5 },
+        ]"
+      />
+      are hiding next to the road. When the party arrives the Druid starts to speak and the dogs start to circle around
+      the party. He requests to know who the party members are and asks why they interfered with the operation at the
+      marshes. A fight may ensue.
       <area-title name="Refugee Camp" />
       Refugees of the Sword cities have built a camp to the south side of Fuller river. They have their own village of
       shacks and some have even built small log cabins. More refugees are coming in constantly and there is shortage of
@@ -841,7 +857,7 @@
       </p>
       <p>
         There are also rumours of a ghost in the camp. A small ghost of a
-        <id-link id="monster-myling" name="child" type="monster" /> has reportedly appeared two times at night. It cries
+        <encounter :enemies="[{ name: 'Myling', quantity: 1 }]" /> has reportedly appeared two times at night. It cries
         and tries to attack people. Kyösti thinks people are hallucinating because of hunger. If the party kills the
         ghost, it will vanish and reappear the next night. A desperate refugee woman killed her newborn child, because
         she wasn't able to nourish him, and buried him under their shack due to shame. The child's soul has been trapped
@@ -851,11 +867,13 @@
       </p>
       After the party resolves the case, Kyösti writes them a letter to be delivered to the court of Eteläterä. A reward
       waits for the party there. The letter is sealed with a purple seal of a horizontal sword with the top half
-      removed. If read, It contains also intelligence information of the area. This isn't just a refugee camp after all
-      but an intelligence unit has been hidden here. The letter writes that they suspect the loggers of sabotage at the
-      bridge. Kyösti proposes that the party takes care of the barbarians before leaving to the Sword. If the party does
-      so, Kyösti confesses his part in Eteläterä's intelligence operation and asks if the party found anything about
-      metsäläiset. He includes the information to the letter and hands it over to the party.
+      removed. If read, It contains intelligence information of the area. This isn't just a refugee camp after all but
+      an intelligence unit has been hidden here. The letter writes that they suspect the loggers of sabotage at the
+      bridge. They also suspect that someone is working with metsäläiset at the Sword. They propose an intelligence
+      mission to metsäläiset capital Kuurankaru. Kyösti proposes that the party takes care of the barbarians before
+      leaving to the Sword. If the party does so, Kyösti confesses his part in Eteläterä's intelligence operation and
+      asks if the party found anything about metsäläiset, he includes the information to the letter and hands it over to
+      the party.
       <section-title name="Temple of Päivätär" />
       <area-title name="Holy of The Valley (Alangon Pyhä)" />
       This is an ancient temple that is used by northern barbarians as a shelter. The temple is located in the middle of
@@ -863,22 +881,22 @@
       Barbarians have set up a leather tent on top of it to hide it and cover it from the elements. Inside, they have
       ripped down all ancient symbols and replaced them with their own, crude wall paintings of animals, animal skulls
       and spruce branches. In the tent are also some of the food they have stolen or hunted, mainly meat in a sled. The
-      party can just steal the sled or delve into the temple. There are no barbarians around except the three
-      <id-link name="Barbarian" type="monster" /> guards on top. When the party comes back up from the temple they will
-      face a barbarian raiding party and are forced to escape into the temple.
+      party can just steal the sled or delve into the temple. There are no barbarians around except
+      <encounter :enemies="[{ name: 'Barbarian', quantity: 3 }]" /> guards on top. When the party comes back up from the
+      temple they will face a barbarian raiding party of 30 barbarians and are forced to escape into the temple.
       <sub-area-title name="The Entrance Top" />
       A leather tent that conceals a sled full of meat and dairy products and a stone platform that has a heavy iron
       double door that can be locked from inside. Few guards are guarding. When the group returns from the temple they
-      notice a raid party of 15 barbarians close by riding towards them. Escaping is hard so they are forced to fight or
+      notice a raid party of 30 barbarians close by riding towards them. Escaping is hard so they are forced to fight or
       escape into the temple.
       <sub-area-title name="Entry Hall" />
       A stone stairway takes the party into a 60ft wide and 100ft long hall filled with animal hides, straw beds and
       food storage. Another large iron door separates the stairs from this hall but it is open now. It can also be
       locked with a latch. Not that many weapons around because the barbarians are out raiding. No-one is in sight. A
-      thorough search of the hall reveals a letter that orders the barbarians to keep on raiding. "Metsäläiset will
-      honour the contract". The letter is sealed with the same black eagle as the letters before. The party also finds a
-      blue painting of a woman's face behind the layer of grime on the back wall. Seeing the lady brings a sentence into
-      the party member's minds:
+      thorough search of the hall reveals a letter that orders the barbarians to keep on raiding. "Continue as planned.
+      We will honour the contract". The letter is sealed with the same black eagle as the letters before. The party also
+      finds a blue painting of a woman's face behind the layer of grime on the back wall. Seeing the lady brings a
+      sentence into the party member's minds:
       <read-aloud>
         I am an eye set in a blue face. My gaze feeds the world. If I go blind so does the world. (Silmä kasvoin
         sinisten, ravitsija maailmankaiken, näköni jos veisi, veisi näön maan, sokeaksi kaiken tekisi.)
@@ -1219,6 +1237,18 @@
         morning, Untamo will be found dead poisoned by Kaino. Kekko will never know about his true father and Kaino will
         become the next half-king of South Edge.
       </p>
+      <encounter
+        :enemies="[
+          { name: 'Hellä Pohjanterä', quantity: 1 },
+          { name: 'Kekko Pohjanterä', quantity: 1 },
+          { name: 'Soldier of the Sword', quantity: 6 },
+          { name: 'Valtari Sinuhe', quantity: 1 },
+        ]"
+        :allies="[
+          { name: 'Butler Kalervo', quantity: 1 },
+          { name: 'Soldier of the Sword', quantity: 2 },
+        ]"
+      />
       <p>
         Where from here? If the party doesn't know the location of <id-link name="Kuurankaru" type="area" />, they will
         get their answer from any member of South Edge court. The court should offer them a boat to sail via Fuller to

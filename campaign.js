@@ -833,13 +833,13 @@ module.exports = Object.freeze({
       size: 'tiny',
       type: 'undead',
       alignment: 'chaotic evil',
-      armorClass: 12,
+      armorClass: 14,
       armor: '',
-      hitPoints: { throws: 11, sides: 8, constant: 0 },
+      hitPoints: { throws: 11, sides: 10, constant: 10 },
       speedFt: 40,
       strength: 7,
       dexterity: 13,
-      constitution: 10,
+      constitution: 14,
       intelligence: 10,
       wisdom: 12,
       charisma: 17,
@@ -851,9 +851,14 @@ module.exports = Object.freeze({
       challengeRating: 5,
       passives: [
         {
-          name: 'Pack Tactics',
+          name: 'Ethereal Sight',
           description:
-            'The thug has advantage on an attack roll against a creature if at least one of the thug’s allies is within 5 ft. of the creature and the ally isn’t incapacitated.',
+            'The myling can see 60 ft. into the Ethereal Plane when it is on the Material Plane, and vice versa.',
+        },
+        {
+          name: 'Incorporeal Movement',
+          description:
+            'The ghost can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.',
         },
       ],
       actions: [
@@ -1791,6 +1796,54 @@ module.exports = Object.freeze({
           name: 'Split',
           description:
             "When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding's, rounded down. New puddings are one size smaller than the original pudding.",
+        },
+      ],
+    },
+    {
+      name: 'Darkmantle',
+      size: 'small',
+      type: 'monstrosity',
+      alignment: 'unaligned',
+      armorClass: 11,
+      armor: '',
+      hitPoints: { throws: 5, sides: 6, constant: 5 },
+      speedFt: 30,
+      strength: 16,
+      dexterity: 12,
+      constitution: 13,
+      intelligence: 2,
+      wisdom: 10,
+      charisma: 5,
+      skills: [{ name: 'stealth', modifier: 3 }],
+      senses: ['Blindsight 60 ft.', 'passive Perception 10'],
+      languages: ['giant'],
+      challengeRating: 1 / 2,
+      passives: [
+        {
+          name: 'Echolocation',
+          description: "The darkmantle can't use its blindsight while deafened.",
+        },
+        {
+          name: 'False Appearance',
+          description:
+            'While the darkmantle remains motionless, it is indistinguishable from a cave formation such as a stalactite or stalagmite.',
+        },
+      ],
+      actions: [
+        {
+          name: 'Crush',
+          type: 'melee',
+          toHit: 5,
+          reachFt: 5,
+          damageType: 'bludgeoning',
+          damage: { throws: 1, sides: 6, constant: 3 },
+          extra:
+            "The darkmantle attaches to the target If the target is Medium or smaller and the darkmantle has advantage on the attack roll, it attaches by engulfing the target's head, and the target is also blinded and unable to breathe while the darkmantle is attached in this way. While attached to the target, the darkmantle can attack no other creature except the target but has advantage on its attack rolls. The darkmantle's speed also becomes 0, it can't benefit from any bonus to its speed, and it moves with the target. A creature can detach the darkmantle by making a successful DC 13 Strength check as an action. On its turn, the darkmantle can detach itself from the target by using 5 feet of movement",
+        },
+        {
+          name: 'Darkness Aura (1/day)',
+          description:
+            "A 15-foot radius of magical darkness extends out from the darkmantle, moves with it, and spreads around corners. The darkness lasts as long as the darkmantle maintains concentration, up to 10 minutes (as if concentrating on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled.",
         },
       ],
     },

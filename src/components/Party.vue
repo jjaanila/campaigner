@@ -10,7 +10,7 @@ export default {
   inject: ['partyStore'],
   data() {
     return {
-      characterLevels: [],
+      characterLevels: this.partyStore.state.characters.map(c => c.level).join(','),
     }
   },
   methods: {
