@@ -53,7 +53,10 @@ const storeConfig = {
   },
   actions: {
     addCharacter({ commit, state }) {
-      commit('setCharacters', [...state.characters, { name: '', level: 1 }])
+      commit('setCharacters', [
+        ...state.characters,
+        { name: '', level: 1, hitPoints: 1, maxHitPoints: 1, armorClass: 1, passiveWisdom: 1, speed: 30 },
+      ])
       commit('updateEncounterLimits')
     },
     removeCharacter({ commit, state }, name) {
