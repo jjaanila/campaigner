@@ -2,6 +2,7 @@
   "$id": "monster.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "JSON schema for Campaigner Monsters",
+  "additionalProperties": false,
   "definitions": {
     "monster": {
       "description": "A DnD Monster",
@@ -293,6 +294,20 @@
           "type": "string"
         }
       }
+    },
+    "condition": {
+      "description": "A character condition",
+      "type": "object",
+      "required": ["name", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
     }
   },
   "type": "object",
@@ -321,6 +336,12 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/monster"
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/condition"
       }
     }
   }

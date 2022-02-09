@@ -88,7 +88,7 @@ module.exports = Object.freeze({
         {
           name: 'Pack Tactics',
           description:
-            'The thug has advantage on an attack roll against a creature if at least one of the thug’s allies is within 5 ft. of the creature and the ally isn’t incapacitated.',
+            "The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
         },
       ],
       actions: [
@@ -423,7 +423,7 @@ module.exports = Object.freeze({
         {
           name: 'Pack Tactics',
           description:
-            'The kobold has advantage on an attack roll against a creature if at least one of the kobold’s allies is within 5 ft. of the creature and the ally isn’t incapacitated.',
+            "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
         },
       ],
       actions: [
@@ -462,7 +462,7 @@ module.exports = Object.freeze({
       wisdom: 11,
       charisma: 1,
       senses: ['passive Perception 10'],
-      languages: ['understands the languages of its creator but can’t speak'],
+      languages: ["understands the languages of its creator but can't speak"],
       challengeRating: 10,
       passives: [
         {
@@ -475,7 +475,7 @@ module.exports = Object.freeze({
         },
         {
           name: 'Magic Weapons',
-          description: 'The golem’s weapon attacks are magical.',
+          description: "The golem's weapon attacks are magical.",
         },
       ],
       actions: [
@@ -523,9 +523,9 @@ module.exports = Object.freeze({
         {
           name: 'Innate Spellcasting',
           description:
-            'The gnome’s innate spellcasting ability is Intelligence (spell save DC 11). It can innately cast the following spells, requiring no material components:\
+            "The gnome's innate spellcasting ability is Intelligence (spell save DC 11). It can innately cast the following spells, requiring no material components:\
           \nCantrips (at will): nondetection (self only) \
-          1/day each: blindness, deafness, blur, disguise self',
+          1/day each: blindness, deafness, blur, disguise self",
         },
       ],
       actions: [
@@ -591,7 +591,7 @@ module.exports = Object.freeze({
         {
           name: 'Antennae',
           description:
-            'The rust monster corrodes a nonmagical ferrous metal object it can see within 5 feet of it. If the object isn’t being worn or carried, the touch destroys a 1-foot cube of it. If the object is being worn or carried by a creature, the creature can make a DC 11 Dexterity saving throw to avoid the rust monster’s touch. If the object touched is either metal armor or a metal shield being worn or carried, its takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed. If the object touched is a held metal weapon, it rusts as described in the Rust Metal trait.',
+            "The rust monster corrodes a nonmagical ferrous metal object it can see within 5 feet of it. If the object isn't being worn or carried, the touch destroys a 1-foot cube of it. If the object is being worn or carried by a creature, the creature can make a DC 11 Dexterity saving throw to avoid the rust monster's touch. If the object touched is either metal armor or a metal shield being worn or carried, its takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed. If the object touched is a held metal weapon, it rusts as described in the Rust Metal trait.",
         },
       ],
     },
@@ -677,7 +677,7 @@ module.exports = Object.freeze({
         {
           name: 'Pack Tactics',
           description:
-            "The barbarian has advantage on an attack roll against a creature if at least one of the barbarian's allies is within 5 ft. of the creature and the ally isn’t incapacitated.",
+            "The barbarian has advantage on an attack roll against a creature if at least one of the barbarian's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
         },
       ],
       actions: [
@@ -873,17 +873,17 @@ module.exports = Object.freeze({
         {
           name: 'Etherealness',
           description:
-            'The ghost enters the Ethereal Plane from the Material Plane, or vice versa. It is visible on the Material Plane while it is in the Border Ethereal, and vice versa, yet it can’t affect or be affected by anything on the other plane.',
+            "The ghost enters the Ethereal Plane from the Material Plane, or vice versa. It is visible on the Material Plane while it is in the Border Ethereal, and vice versa, yet it can't affect or be affected by anything on the other plane.",
         },
         {
           name: 'Horrifying Visage',
           description:
-            'Each non-undead creature within 60 ft. of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 x 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target’s saving throw is successful or the effect ends for it, the target is immune to this ghost’s Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring.',
+            "Each non-undead creature within 60 ft. of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 x 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target's saving throw is successful or the effect ends for it, the target is immune to this ghost's Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring.",
         },
         {
           name: 'Possession (Recharge 6)',
           description:
-            'One humanoid that the ghost can see within 5 ft. of it must succeed on a DC 13 Charisma saving throw or be possessed by the ghost; the ghost then disappears, and the target is incapacitated and loses control of its body. The ghost now controls the body but doesn’t deprive the target of awareness. The ghost can’t be targeted by any attack, spell, or other effect, except ones that turn undead, and it retains its alignment, Intelligence, Wisdom, Charisma, and immunity to being charmed and frightened. It otherwise uses the possessed target’s statistics, but doesn’t gain access to the target’s knowledge, class features, or proficiencies. The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the dispel evil and good spell. When the possession ends, the ghost reappears in an unoccupied space within 5 ft. of the body. The target is immune to this ghost’s Possession for 24 hours after succeeding on the saving throw or after the possession ends.',
+            "One humanoid that the ghost can see within 5 ft. of it must succeed on a DC 13 Charisma saving throw or be possessed by the ghost; the ghost then disappears, and the target is incapacitated and loses control of its body. The ghost now controls the body but doesn't deprive the target of awareness. The ghost can't be targeted by any attack, spell, or other effect, except ones that turn undead, and it retains its alignment, Intelligence, Wisdom, Charisma, and immunity to being charmed and frightened. It otherwise uses the possessed target's statistics, but doesn't gain access to the target's knowledge, class features, or proficiencies. The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the dispel evil and good spell. When the possession ends, the ghost reappears in an unoccupied space within 5 ft. of the body. The target is immune to this ghost's Possession for 24 hours after succeeding on the saving throw or after the possession ends.",
         },
       ],
     },
@@ -1644,7 +1644,7 @@ module.exports = Object.freeze({
         {
           name: 'Three Point Strike (Recharge 5-6)',
           description:
-            'Kalervo makes three Unarmed Strike attacks against one target. If two attacks hit, the target is incapacitated. If three attacks hit, the target is stunned. These conditions last until the end of Kalervo’s next turn.',
+            "Kalervo makes three Unarmed Strike attacks against one target. If two attacks hit, the target is incapacitated. If three attacks hit, the target is stunned. These conditions last until the end of Kalervo's next turn.",
         },
       ],
       reactions: [
@@ -1846,6 +1846,80 @@ module.exports = Object.freeze({
             "A 15-foot radius of magical darkness extends out from the darkmantle, moves with it, and spreads around corners. The darkness lasts as long as the darkmantle maintains concentration, up to 10 minutes (as if concentrating on a spell). Darkvision can't penetrate this darkness, and no natural light can illuminate it. If any of the darkness overlaps with an area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled.",
         },
       ],
+    },
+  ],
+  conditions: [
+    {
+      name: 'blinded',
+      description:
+        "A blinded creature can't see and automatically fails any ability check that requires sight. Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.",
+    },
+    {
+      name: 'charmed',
+      description:
+        "A charmed creature can't Attack the charmer or target the charmer with harmful Abilities or magical Effects. The charmer has advantage on any ability check to interact socially with the creature.",
+    },
+    {
+      name: 'deafened',
+      description: "A deafened creature can't hear and automatically fails any ability check that requires hearing.",
+    },
+    {
+      name: 'frightened',
+      description:
+        "A frightened creature has disadvantage on Ability Checks and Attack rolls while the source of its fear is within Line of Sight. The creature can't willingly move closer to the source of its fear.",
+    },
+    {
+      name: 'grappled',
+      description:
+        "A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed. The condition ends if the Grappler is incapacitated (see the condition). The condition also ends if an Effect removes the grappled creature from the reach of the Grappler or Grappling Effect, such as when a creature is hurled away by the Thunderwave spell.",
+    },
+    {
+      name: 'incapacitated',
+      description: "An incapacitated creature can't take Actions or reactions.",
+    },
+    {
+      name: 'invisible',
+      description:
+        "An invisible creature is impossible to see without the aid of magic or a Special sense. For the purpose of hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves. Attack rolls against the creature have disadvantage, and the creature's Attack rolls have advantage.",
+    },
+    {
+      name: 'paralyzed',
+      description:
+        "A paralyzed creature is incapacitated (see the condition) and can't move or speak. The creature automatically fails Strength and Dexterity Saving Throws. Attack rolls against the creature have advantage. Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+    },
+    {
+      name: 'petrified',
+      description:
+        "A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging. The creature is incapacitated (see the condition), can't move or speak, and is unaware of its surroundings. Attack rolls against the creature have advantage. The creature automatically fails Strength and Dexterity Saving Throws. The creature has Resistance to all damage. The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.",
+    },
+    {
+      name: 'poisoned',
+      description: 'A poisoned creature has disadvantage on Attack rolls and Ability Checks.',
+    },
+    {
+      name: 'prone',
+      description:
+        "A prone creature's only Movement option is to crawl, unless it stands up and thereby ends the condition. The creature has disadvantage on Attack rolls. An Attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the Attack roll has disadvantage.",
+    },
+    {
+      name: 'restrained',
+      description:
+        "A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed. Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage. The creature has disadvantage on Dexterity Saving Throws.",
+    },
+    {
+      name: 'stunned',
+      description:
+        "A stunned creature is incapacitated (see the condition), can't move, and can speak only falteringly. The creature automatically fails Strength and Dexterity Saving Throws. Attack rolls against the creature have advantage.",
+    },
+    {
+      name: 'unconscious',
+      description:
+        "An unconscious creature is incapacitated (see the condition), can't move or speak, and is unaware of its surroundings. The creature drops whatever it's holding and falls prone. The creature automatically fails Strength and Dexterity Saving Throws. Attack rolls against the creature have advantage. Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.",
+    },
+    {
+      name: 'exhaustion',
+      description:
+        '1. Disadvantage on Ability Checks 2. Speed halved 3. Disadvantage on Attack rolls and Saving Throws 4. Hit point maximum halved 5. Speed reduced to 0 6. Death',
     },
   ],
 })
