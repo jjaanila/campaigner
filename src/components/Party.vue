@@ -3,6 +3,7 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>Name</th>
           <th>AC</th>
           <th>HP</th>
@@ -13,7 +14,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="character" v-for="character in characters">
+        <tr class="character" v-for="character in characters" :key="character.name">
+          <td class="condition-menu-td">
+            <condition-menu :creature="character" />
+          </td>
           <td>
             <input class="character-name" type="text" v-model="character.name" placeholder="Name" />
           </td>
@@ -83,24 +87,32 @@
               value="30"
             />
           </td>
+          <td>
+            <button v-on:click="removeCharacter(character.name)" title="Remove party member">-</button>
+          </td>
         </tr>
       </tbody>
     </table>
-    <button v-on:click="addCharacter()" title="New party member">+</button>
+    <button v-on:click="addCharacter()" title="Add party member">+</button>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import ConditionMenu from './ConditionMenu.vue'
 export default {
   name: 'Party',
+  components: {
+    conditionMenu: ConditionMenu,
+  },
   computed: {
     ...mapState({
       characters: state => state.party.characters,
     }),
   },
   methods: {
-    ...mapActions('party', ['addCharacter', 'removeCharacter', 'updateCharacters']),
+    ...mapActions('party', ['addCharacter', 'removeCharacter', 'updateCharacters', 'addCondition', 'removeCondition']),
+    ...mapActions('ui', ['setIsConditionMenuOpen']),
   },
 }
 </script>
@@ -121,11 +133,16 @@ input[type='number'] {
   top: 1rem;
   right: 1rem;
   font-size: 0.75rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
 }
 .party > table {
   border-spacing: 0;
 }
-.character {
+.condition-menu-td {
+  display: flex;
+  justify-content: flex-end;
 }
 .character-hit-points,
 .character-max-hit-points,
