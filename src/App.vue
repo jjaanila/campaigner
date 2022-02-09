@@ -148,8 +148,8 @@
 
       <read-aloud>
         Gundarlun. Tuulen ja jään hallitsema saari keskellä Vanattoman valtamerta. Olette Ainkesän Vartion vankeina
-        päätyneet tähän syrjäiseen unohdettujen valtakuntien kolkkaan Gundarlunin pohjanmiesten ja Ainkesän
-        kauppasopimuksen johdosta. Etsitte nyt rangaistuksena teoistanne kuparia mantereelle toimitettavaksi, josta
+        päätyneet tähän syrjäiseen unohdettujen valtakuntien kolkkaan Gundarlunin pohjanmiesten ja Ainkesän kaupungin
+        kauppasopimuksen johdosta. Rangaistuksena teoistanne etsitte nyt kuparia mantereelle toimitettavaksi, josta
         Ainkesälle on sopimuksen nojalla luvattu suurin osa työvoimaa vastaan. Saarelle saapuminen on vaikeaa jatkuvan
         pakkasen ja purevan tuulen vuoksi, mutta niin on myös sieltä poistuminen, mikä tekee siitä käytännöllisen
         rangaistuslaitoksen. Gundbargin kaupungin länsipuolella, jäätikön peittämän vuoren rinteellä sijaitsee kaivos ja
