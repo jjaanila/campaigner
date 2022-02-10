@@ -4,10 +4,29 @@
   "title": "JSON schema for Campaigner Monsters",
   "additionalProperties": false,
   "definitions": {
+    "attributeScore": {
+      "type": "integer",
+      "minimum": 0
+    },
     "monster": {
       "description": "A DnD Monster",
       "type": "object",
-      "required": ["name", "size"],
+      "required": [
+        "name",
+        "size",
+        "type",
+        "alignment",
+        "armorClass",
+        "hitPoints",
+        "speedFt",
+        "strength",
+        "dexterity",
+        "constitution",
+        "intelligence",
+        "wisdom",
+        "charisma",
+        "challengeRating"
+      ],
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -26,7 +45,8 @@
           "type": "string"
         },
         "armorClass": {
-          "type": "integer"
+          "type": "integer",
+          "minimum": 0
         },
         "armor": {
           "type": "string"
@@ -53,28 +73,22 @@
           "minimum": 0
         },
         "strength": {
-          "type": "integer",
-          "minimum": 0
+          "!ref": "#/definitions/attributeScore"
         },
         "dexterity": {
-          "type": "integer",
-          "minimum": 0
+          "!ref": "#/definitions/attributeScore"
         },
         "constitution": {
-          "type": "integer",
-          "minimum": 0
+          "!ref": "#/definitions/attributeScore"
         },
         "intelligence": {
-          "type": "integer",
-          "minimum": 0
+          "!ref": "#/definitions/attributeScore"
         },
         "wisdom": {
-          "type": "integer",
-          "minimum": 0
+          "!ref": "#/definitions/attributeScore"
         },
         "charisma": {
-          "type": "integer",
-          "minimum": 0
+          "!ref": "#/definitions/attributeScore"
         },
         "challengeRating": {
           "type": "number",
@@ -104,7 +118,21 @@
         "senses": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "object",
+            "required": ["name", "value"],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "value": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "extra": {
+                "type": "string"
+              }
+            }
           }
         },
         "languages": {

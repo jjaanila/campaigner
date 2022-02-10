@@ -81,7 +81,7 @@ module.exports = Object.freeze({
       intelligence: 10,
       wisdom: 10,
       charisma: 11,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 0.5,
       passives: [
@@ -122,7 +122,7 @@ module.exports = Object.freeze({
       wisdom: 9,
       charisma: 7,
       skills: [{ name: 'perception', modifier: 2 }],
-      senses: ['darkvision 60ft.', 'passive Perception 12'],
+      senses: [{ name: 'darkvision', value: 60 }],
       languages: ['aquan', 'giant'],
       challengeRating: 5,
       passives: [
@@ -181,7 +181,7 @@ module.exports = Object.freeze({
       wisdom: 9,
       charisma: 6,
       skills: [{ name: 'perception', modifier: 2 }],
-      senses: ['passive Perception 12'],
+      senses: [],
       damageResistances: ['cold'],
       languages: ['giant'],
       challengeRating: 5,
@@ -225,7 +225,7 @@ module.exports = Object.freeze({
       intelligence: 2,
       wisdom: 10,
       charisma: 3,
-      senses: ['darkvision 30ft.', 'passive Perception 10'],
+      senses: [{ name: 'darkvision', value: 30 }],
       damageResistances: ['bludgeoning', 'piercing', 'slashing'],
       conditionImmunities: [
         'charmed',
@@ -277,7 +277,7 @@ module.exports = Object.freeze({
       intelligence: 3,
       wisdom: 12,
       charisma: 7,
-      senses: ['darkvision 30ft.', 'passive Perception 13'],
+      senses: [{ name: 'darkvision', value: 30 }],
       damageResistances: ['poison'],
       languages: [],
       challengeRating: 0.125,
@@ -313,7 +313,7 @@ module.exports = Object.freeze({
       intelligence: 14,
       wisdom: 11,
       charisma: 14,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'elvish'],
       challengeRating: 2,
       passives: [],
@@ -372,7 +372,7 @@ module.exports = Object.freeze({
       intelligence: 10,
       wisdom: 10,
       charisma: 10,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 0.125,
       passives: [],
@@ -411,7 +411,7 @@ module.exports = Object.freeze({
       intelligence: 8,
       wisdom: 7,
       charisma: 8,
-      senses: ['passive Perception 18'],
+      senses: [],
       languages: ['common', 'draconic'],
       challengeRating: 0.125,
       passives: [
@@ -461,7 +461,7 @@ module.exports = Object.freeze({
       intelligence: 3,
       wisdom: 11,
       charisma: 1,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ["understands the languages of its creator but can't speak"],
       challengeRating: 10,
       passives: [
@@ -508,7 +508,7 @@ module.exports = Object.freeze({
       intelligence: 12,
       wisdom: 10,
       charisma: 9,
-      senses: ['darkvision 120ft.', 'passive Perception 10'],
+      senses: [{ name: 'darkvision', value: 120 }],
       languages: ['gnomish', 'terran', 'undercommon'],
       challengeRating: 0.5,
       passives: [
@@ -565,7 +565,7 @@ module.exports = Object.freeze({
       intelligence: 2,
       wisdom: 13,
       charisma: 6,
-      senses: ['darkvision 60ft.', 'passive Perception 11'],
+      senses: [{ name: 'darkvision', value: 60 }],
       languages: [],
       challengeRating: 0.5,
       passives: [
@@ -617,7 +617,10 @@ module.exports = Object.freeze({
         { name: 'persuasion', modifier: 9 },
         { name: 'stealth', modifier: 6 },
       ],
-      senses: ['blindsight 30ft.', 'darkvision 120ft.', 'passive Perception 19'],
+      senses: [
+        { name: 'blindsight', value: 30 },
+        { name: 'darkvision', value: 120 },
+      ],
       damageImmunities: ['fire'],
       languages: ['common', 'draconic'],
       challengeRating: 10,
@@ -670,7 +673,7 @@ module.exports = Object.freeze({
       intelligence: 8,
       wisdom: 11,
       charisma: 8,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'orc'],
       challengeRating: 0.25,
       passives: [
@@ -723,7 +726,7 @@ module.exports = Object.freeze({
       intelligence: 12,
       wisdom: 16,
       charisma: 11,
-      senses: ['passive Perception 14'],
+      senses: [],
       languages: ['common', 'druidic', 'giant'],
       challengeRating: 2,
       passives: [
@@ -764,7 +767,7 @@ module.exports = Object.freeze({
         { name: 'Perception', modifier: 5 },
         { name: 'stealth', modifier: 4 },
       ],
-      senses: ['darkvision 120ft.', 'passive Perception 15'],
+      senses: [{ name: 'darkvision', value: 120 }],
       languages: [],
       challengeRating: 1,
       passives: [
@@ -807,7 +810,7 @@ module.exports = Object.freeze({
       wisdom: 12,
       charisma: 7,
       skills: [{ name: 'Perception', modifier: 3 }],
-      senses: ['passive Perception 13'],
+      senses: [],
       languages: [],
       challengeRating: 0.125,
       passives: [
@@ -843,7 +846,7 @@ module.exports = Object.freeze({
       intelligence: 10,
       wisdom: 12,
       charisma: 17,
-      senses: ['darkvision 60ft.', 'passive Perception 11'],
+      senses: [{ name: 'darkvision', value: 60 }],
       damageResistances: [
         'acid, fire, lightning, thunder, bludgeoning, piercing, and slashing from nonmagical attacks',
       ],
@@ -927,7 +930,7 @@ module.exports = Object.freeze({
       intelligence: 20,
       wisdom: 16,
       charisma: 15,
-      senses: ['passive Percetion 12'],
+      senses: [],
       languages: ['common', 'giant', 'draconic', 'elvish', 'undercommon', 'infernal'],
       challengeRating: 12,
       passives: [
@@ -1007,7 +1010,7 @@ module.exports = Object.freeze({
       intelligence: 8,
       wisdom: 10,
       charisma: 9,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 0.5,
       passives: [],
@@ -1051,7 +1054,7 @@ module.exports = Object.freeze({
       intelligence: 10,
       wisdom: 10,
       charisma: 10,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 0,
       actions: [
@@ -1081,7 +1084,7 @@ module.exports = Object.freeze({
       wisdom: 11,
       charisma: 10,
       skills: [{ name: 'Perception', modifier: 2 }],
-      senses: ['passive Perception 12'],
+      senses: [],
       languages: ['common'],
       challengeRating: 0.125,
       actions: [
@@ -1128,7 +1131,7 @@ module.exports = Object.freeze({
       wisdom: 11,
       charisma: 15,
       savingThrows: ['Con +4', 'Wis +2'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'elvish', 'giant'],
       challengeRating: 3,
       actions: [
@@ -1169,7 +1172,7 @@ module.exports = Object.freeze({
       wisdom: 11,
       charisma: 12,
       savingThrows: ['Con +4', 'Dex +2'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 3,
       actions: [
@@ -1227,7 +1230,7 @@ module.exports = Object.freeze({
       wisdom: 14,
       charisma: 12,
       savingThrows: ['Wis +2'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 3,
       actions: [
@@ -1262,7 +1265,7 @@ module.exports = Object.freeze({
       wisdom: 12,
       charisma: 11,
       savingThrows: ['Int +5', 'Wis +3'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'elvish', 'draconic', 'giant'],
       challengeRating: 5,
       actions: [
@@ -1300,7 +1303,7 @@ module.exports = Object.freeze({
       wisdom: 12,
       charisma: 15,
       savingThrows: ['Str +7', 'Dex +2', 'Con +6'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'dwarwish'],
       challengeRating: 4,
       passives: [
@@ -1357,7 +1360,7 @@ module.exports = Object.freeze({
       wisdom: 12,
       charisma: 11,
       savingThrows: ['Int +5', 'Wis +3'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'elvish'],
       challengeRating: 5,
       actions: [
@@ -1385,7 +1388,7 @@ module.exports = Object.freeze({
       wisdom: 14,
       charisma: 11,
       savingThrows: ['Wis +3'],
-      senses: ['passive Perception 15'],
+      senses: [],
       languages: ['common'],
       challengeRating: 2,
       actions: [
@@ -1424,7 +1427,7 @@ module.exports = Object.freeze({
       intelligence: 10,
       wisdom: 10,
       charisma: 3,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 2,
       actions: [
@@ -1460,7 +1463,7 @@ module.exports = Object.freeze({
       intelligence: 10,
       wisdom: 12,
       charisma: 16,
-      senses: ['passive Perception 12'],
+      senses: [],
       languages: ['common'],
       challengeRating: 0,
       passives: [
@@ -1486,7 +1489,7 @@ module.exports = Object.freeze({
       intelligence: 15,
       wisdom: 15,
       charisma: 16,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'elvish'],
       challengeRating: 0,
       passives: [
@@ -1511,7 +1514,7 @@ module.exports = Object.freeze({
       intelligence: 16,
       wisdom: 16,
       charisma: 18,
-      senses: ['passive Perception 14'],
+      senses: [],
       languages: ['common'],
       challengeRating: 3,
       passives: [
@@ -1546,7 +1549,7 @@ module.exports = Object.freeze({
       intelligence: 12,
       wisdom: 14,
       charisma: 14,
-      senses: ['passive Perception 9'],
+      senses: [],
       languages: ['common'],
       challengeRating: 2,
       actions: [
@@ -1582,7 +1585,7 @@ module.exports = Object.freeze({
       intelligence: 13,
       wisdom: 15,
       charisma: 12,
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common'],
       challengeRating: 2,
       actions: [
@@ -1611,7 +1614,7 @@ module.exports = Object.freeze({
       intelligence: 13,
       wisdom: 15,
       charisma: 12,
-      senses: ['passive Perception 12'],
+      senses: [],
       languages: ['common'],
       challengeRating: 3,
       passives: [
@@ -1670,7 +1673,7 @@ module.exports = Object.freeze({
       wisdom: 13,
       charisma: 15,
       savingThrows: ['Con +4', 'Wis +2'],
-      senses: ['passive Perception 10'],
+      senses: [],
       languages: ['common', 'elvish'],
       challengeRating: 4,
       actions: [
@@ -1714,7 +1717,7 @@ module.exports = Object.freeze({
         'restrained',
         'stunned',
       ],
-      senses: ['passive Perception 15'],
+      senses: [],
       languages: ['common', 'elvish'],
       challengeRating: 1 / 4,
       passives: [
@@ -1761,7 +1764,7 @@ module.exports = Object.freeze({
       damageImmunities: ['acid', 'cold', 'lightning', 'slashing'],
       conditionImmunities: ['blinded', 'charmed', 'deafened', 'exhaustion', 'frightened', 'prone'],
       languages: [],
-      senses: ['Blindsight 60 Ft. (Blind Beyond This Radius)', 'passive Perception 8'],
+      senses: [{ name: 'blindsight', value: 60, extra: '(blind beyond this radius)' }],
       challengeRating: 4,
       passives: [
         {
@@ -1815,7 +1818,7 @@ module.exports = Object.freeze({
       wisdom: 10,
       charisma: 5,
       skills: [{ name: 'stealth', modifier: 3 }],
-      senses: ['Blindsight 60 ft.', 'passive Perception 10'],
+      senses: [{ name: 'blindsight', value: 60 }],
       languages: ['giant'],
       challengeRating: 1 / 2,
       passives: [

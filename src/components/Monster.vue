@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { generateId, capitalize } from '../utils'
+import { generateId, capitalize, getAbilityScoreModifier } from '../utils'
 import MonsterStatRow from './MonsterStatRow.vue'
 import AbilityScore from './AbilityScore.vue'
 import MonsterSectionHeader from './MonsterSectionHeader.vue'
@@ -205,8 +205,15 @@ export default {
     conditionImmunitiesStr() {
       return this.conditionImmunities.map(str => str.toLowerCase()).join(', ')
     },
+    passivePerception() {
+      const skillModifier = this.skills.find(skill => skill.name === 'perception')?.modifier ?? 0
+      return 10 + getAbilityScoreModifier(this.wisdom) + skillModifier
+    },
     sensesStr() {
-      return this.senses.join(', ')
+      return [
+        `Passive Perception ${this.passivePerception}`,
+        ...this.senses.map(sense => `${capitalize(sense.name)} ${sense.value}ft. ${sense.extra}`),
+      ].join(', ')
     },
     languagesStr() {
       return this.languages.map(capitalize).join(', ')
