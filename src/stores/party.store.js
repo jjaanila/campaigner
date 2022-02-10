@@ -25,6 +25,7 @@ const updateEncounterLimits = state => {
 
 const migrateState = state => {
   state.characters.forEach(character => (character.conditions ??= []))
+  state.characters.forEach(character => (character.inventory ??= ''))
   return state
 }
 
@@ -66,6 +67,7 @@ const storeConfig = {
           passiveWisdom: 1,
           speed: 30,
           conditions: [],
+          inventory: '',
         },
       ])
       commit('updateEncounterLimits')
@@ -106,6 +108,14 @@ const storeConfig = {
         throw new Error(`Did not find character ${params.characterName}`)
       }
       character.conditions = character.conditions.filter(condition => condition.name !== params.conditionName)
+      commit('setCharacters', state.characters)
+    },
+    updateCharacterInventory({ commit, state }, params) {
+      const character = state.characters.find(character => character.name === params.characterName)
+      if (!character) {
+        throw new Error(`Did not find character ${params.characterName}`)
+      }
+      character.inventory = params.inventory
       commit('setCharacters', state.characters)
     },
   },

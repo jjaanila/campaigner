@@ -17,6 +17,7 @@
         <tr class="character" v-for="character in characters" :key="character.name">
           <td class="condition-menu-td">
             <condition-menu :creature="character" />
+            <inventory :character="character" />
           </td>
           <td>
             <input class="character-name" type="text" v-model="character.name" placeholder="Name" />
@@ -100,10 +101,12 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
+import Inventory from './Inventory.vue'
 export default {
   name: 'Party',
   components: {
     conditionMenu: ConditionMenu,
+    inventory: Inventory,
   },
   computed: {
     ...mapState({

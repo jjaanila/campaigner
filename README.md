@@ -46,3 +46,9 @@ npm run build
 # package a release of production build
 npm run release
 ```
+
+## Resources
+
+### Icons
+
+Delapouite, https://delapouite.com: backpack.svg

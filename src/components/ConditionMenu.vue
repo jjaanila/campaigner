@@ -46,6 +46,7 @@ export default {
   props: {
     creature: {
       type: Object,
+      required: true,
     },
   },
   data() {
