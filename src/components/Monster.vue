@@ -212,7 +212,7 @@ export default {
     sensesStr() {
       return [
         `Passive Perception ${this.passivePerception}`,
-        ...this.senses.map(sense => `${capitalize(sense.name)} ${sense.value}ft. ${sense.extra}`),
+        ...this.senses.map(sense => `${capitalize(sense.name)} ${sense.value}ft. ${sense.extra ?? ''}`),
       ].join(', ')
     },
     languagesStr() {
