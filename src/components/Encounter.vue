@@ -1,10 +1,12 @@
 <template>
   <div class="encounter">
-    <span v-for="enemy in richEnemies"
-      >{{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster"
-    /></span>
-    <strong v-if="richAllies.length">Allies</strong>
-    <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
+    <span v-for="enemy in richEnemies">
+      {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
+    </span>
+    <div v-if="richAllies.length">
+      <strong>Allies</strong>
+      <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
+    </div>
     <span>
       {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP) <span :class="difficultyClass">{{ difficulty }}</span> ({{
         adjustedTotalEnemyXP
