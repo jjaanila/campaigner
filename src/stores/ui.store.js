@@ -1,6 +1,6 @@
 export default {
   namespaced: true,
-  state: { isToCOpen: true, showToCAlways: true },
+  state: { isToCOpen: true, showToCAlways: true, isCombatOverlayOpen: false },
   mutations: {
     toggleToC(state) {
       if (state.showToCAlways && state.isToCOpen) {
@@ -17,6 +17,9 @@ export default {
     setShowToCAlways(state, showToCAlways) {
       state.showToCAlways = showToCAlways
     },
+    setIsCombatOverlayOpen(state, isCombatOverlayOpen) {
+      state.isCombatOverlayOpen = isCombatOverlayOpen
+    },
   },
   actions: {
     toggleToC({ commit }) {
@@ -27,6 +30,9 @@ export default {
     },
     setShowToCAlways({ commit }, showToCAlways) {
       commit('setShowToCAlways', showToCAlways)
+    },
+    setIsCombatOverlayOpen({ commit }, isCombatOverlayOpen) {
+      commit('setIsCombatOverlayOpen', isCombatOverlayOpen)
     },
   },
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="encounter">
-    <span v-for="enemy in richEnemies">
+    <span v-for="enemy in enemiesWithMonsters">
       {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
     </span>
     <div v-if="richAllies.length">
@@ -13,11 +13,12 @@
       }}
       XP)
     </span>
+    <button @click="startCombat">Start</button>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'Encounter',
   props: {
@@ -30,10 +31,29 @@ export default {
       default: () => [],
     },
   },
+  methods: {
+    ...mapActions('combat', ['initializeCombat', 'setIsInCombat']),
+    ...mapActions('ui', ['setIsCombatOverlayOpen']),
+    startCombat() {
+      this.initializeCombat({
+        enemies: this.enemiesWithMonsters.reduce(
+          (monsters, enemy) => monsters.concat(Array(enemy.quantity).fill(enemy.monster)),
+          []
+        ),
+        allies: this.allies,
+      })
+      this.setIsInCombat(true)
+      this.setIsCombatOverlayOpen(true)
+    },
+  },
   computed: {
-    ...mapState('campaign', ['monsters']),
-    ...mapState('party', ['characters', 'encounterLimits']),
-    richEnemies() {
+    ...mapState({
+      monsters: state => state.campaign.monsters,
+      characters: state => state.party.characters,
+      encounterLimits: state => state.party.encounterLimits,
+      isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
+    }),
+    enemiesWithMonsters() {
       return [...this.enemies].map(enemy => {
         const monster = this.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
@@ -49,14 +69,14 @@ export default {
       return [...this.allies]
     },
     totalEnemyXP() {
-      return this.richEnemies.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
+      return this.enemiesWithMonsters.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
     },
     XPPerCharacter() {
       return Math.floor(this.totalEnemyXP / this.characters.length)
     },
 
     numberOfEnemies() {
-      return this.richEnemies.reduce((total, enemy) => total + enemy.quantity, 0)
+      return this.enemiesWithMonsters.reduce((total, enemy) => total + enemy.quantity, 0)
     },
     adjustedTotalEnemyXP() {
       let multiplier = 1

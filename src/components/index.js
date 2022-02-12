@@ -15,6 +15,7 @@ import Comment from './Comment.vue'
 import TableOfContents from './TableOfContents.vue'
 import Encounter from './Encounter.vue'
 import Party from './Party.vue'
+import CombatOverlay from './CombatOverlay.vue'
 
 export default {
   CampaignTitle,
@@ -34,4 +35,5 @@ export default {
   TableOfContents,
   Encounter,
   Party,
+  CombatOverlay,
 }
