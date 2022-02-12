@@ -3,7 +3,13 @@
     <button class="inventory-button" @click.stop="toggleInventory()" title="Inventory">
       <img :src="backpackIcon" />
     </button>
-    <textarea v-if="isInventoryOpen" :value="inventory" @input="updateInventory" />
+    <textarea
+      v-click-outside="hideInventory"
+      ref="inventory"
+      v-show="isInventoryOpen"
+      :value="inventory"
+      @input="updateInventory"
+    />
   </div>
 </template>
 
@@ -11,6 +17,7 @@
 import { mapState, mapActions } from 'vuex'
 import { sortByKey } from '../utils'
 import BackpackIcon from '../img/backpack.svg'
+import ClickOutside from 'vue-click-outside'
 export default {
   name: 'Inventory',
   props: {
@@ -18,6 +25,9 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  directives: {
+    ClickOutside,
   },
   data() {
     return {
@@ -32,10 +42,21 @@ export default {
       },
     }),
   },
+  mounted() {
+    this.popupItem = this.$refs.inventory
+  },
   methods: {
     ...mapActions('party', ['updateCharacterInventory']),
     toggleInventory() {
       this.isInventoryOpen = !this.isInventoryOpen
+      if (this.isInventoryOpen) {
+        this.$nextTick(() => {
+          this.$refs.inventory.focus()
+        })
+      }
+    },
+    hideInventory() {
+      this.isInventoryOpen = false
     },
     updateInventory(e) {
       this.updateCharacterInventory({ characterName: this.character.name, inventory: e.target.value })
