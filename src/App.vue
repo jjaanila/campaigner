@@ -847,12 +847,14 @@
       the party. He requests to know who the party members are and asks why they interfered with the operation at the
       marshes. A fight may ensue.
       <area-title name="Refugee Camp" />
-      Refugees of the Sword cities have built a camp to the south side of Fuller river. They have their own village of
-      shacks and some have even built small log cabins. More refugees are coming in constantly and there is shortage of
-      food. There is also a problem with northern barbarians regularly attacking the camp. The refugees can tell about
-      the political turmoil and the spoilt river water. They all have their own beliefs of the causes behind the issues.
-      They have heard about the collapsed bridge and are worried about their supply delivery. Most of the people around
-      seem starved and desperate.
+      <p>
+        Refugees of the Sword cities have built a camp to the south side of Fuller river. They have their own village of
+        shacks and some have even built small log cabins. More refugees are coming in constantly and there is shortage
+        of food. There is also a problem with northern barbarians regularly attacking the camp. The refugees can tell
+        about the political turmoil and the spoilt river water. They all have their own beliefs of the causes behind the
+        issues. They have heard about the collapsed bridge and are worried about their supply delivery. Most of the
+        people around seem starved and desperate.
+      </p>
       <p>
         Refugee leader tells that the barbarians have a safe place up north in an old ruin. They must have food stored
         there since they have been robbing a lot lately. Refugee camp leader
@@ -871,25 +873,29 @@
         suicide afterwards which caused a great shock in the camp. She had told others that she sent the child away with
         the father. In truth, the father hasn't been involved in a long time and has left the camp.
       </p>
-      After the party resolves the case, Kyösti writes them a letter to be delivered to the court of Eteläterä. A reward
-      waits for the party there. The letter is sealed with a purple seal of a horizontal sword with the top half
-      removed. If read, It contains intelligence information of the area. This isn't just a refugee camp after all but
-      an intelligence unit has been hidden here. The letter writes that they suspect the loggers of sabotage at the
-      bridge. They also suspect that someone is working with metsäläiset at the Sword. They propose an intelligence
-      mission to metsäläiset capital Kuurankaru. Kyösti proposes that the party takes care of the barbarians before
-      leaving to the Sword. If the party does so, Kyösti confesses his part in Eteläterä's intelligence operation and
-      asks if the party found anything about metsäläiset, he includes the information to the letter and hands it over to
-      the party.
+      <p>
+        After the party resolves the case, Kyösti writes them a letter to be delivered to the court of Eteläterä. A
+        reward waits for the party there. The letter is sealed with a purple seal of a horizontal sword with the top
+        half removed. If read, It contains intelligence information of the area. This isn't just a refugee camp after
+        all but an intelligence unit has been hidden here. The letter writes that they suspect the loggers of sabotage
+        at the bridge. They also suspect that someone is working with metsäläiset at the Sword. They propose an
+        intelligence mission to metsäläiset capital Kuurankaru. Kyösti proposes that the party takes care of the
+        barbarians before leaving to the Sword. If the party does so, Kyösti confesses his part in Eteläterä's
+        intelligence operation and asks if the party found anything about metsäläiset, he includes the information to
+        the letter and hands it over to the party.
+      </p>
       <section-title name="Temple of Päivätär" />
       <area-title name="Holy of The Valley (Alangon Pyhä)" />
-      This is an ancient temple that is used by northern barbarians as a shelter. The temple is located in the middle of
-      a valley between two fjelds but on the ground there is only a stone platform and stairs down into the temple.
-      Barbarians have set up a leather tent on top of it to hide it and cover it from the elements. Inside, they have
-      ripped down all ancient symbols and replaced them with their own, crude wall paintings of animals, animal skulls
-      and spruce branches. In the tent are also some of the food they have stolen or hunted, mainly meat in a sled. The
-      party can just steal the sled or delve into the temple. There are no barbarians around except
-      <encounter :enemies="[{ name: 'Barbarian', quantity: 3 }]" /> guards on top. When the party comes back up from the
-      temple they will face a barbarian raiding party of 40 barbarians and are forced to escape into the temple.
+      <p>
+        This is an ancient temple that is used by northern barbarians as a shelter. The temple is located in the middle
+        of a valley between two fjelds but on the ground there is only a stone platform and stairs down into the temple.
+        Barbarians have set up a leather tent on top of it to hide it and cover it from the elements. Inside, they have
+        ripped down all ancient symbols and replaced them with their own, crude wall paintings of animals, animal skulls
+        and spruce branches. In the tent are also some of the food they have stolen or hunted, mainly meat in a sled.
+        The party can just steal the sled or delve into the temple. There are no barbarians around except
+        <encounter :enemies="[{ name: 'Barbarian', quantity: 3 }]" /> guards on top. When the party comes back up from
+        the temple they will face a barbarian raiding party of 40 barbarians and are forced to escape into the temple.
+      </p>
       <sub-area-title name="The Entrance Top" />
       A leather tent that conceals a sled full of meat and dairy products and a stone platform that has a heavy iron
       double door that can be locked from inside. Few guards are guarding. When the group returns from the temple they
@@ -897,23 +903,27 @@
       escape into the temple.
       <encounter :enemies="[{ name: 'Barbarian', quantity: 40 }]" />
       <sub-area-title name="Entry Hall" />
-      A stone stairway takes the party into a 60ft wide and 100ft long hall filled with animal hides, straw beds and
-      food storage. Another large iron door separates the stairs from this hall but it is open now. It can also be
-      locked with a latch. Not that many weapons around because the barbarians are out raiding. No-one is in sight. A
-      thorough search of the hall reveals a letter that orders the barbarians to keep on raiding. "Continue as planned.
-      We will honour the contract". The letter is sealed with the same black eagle as the letters before. The party also
-      finds a blue painting of a woman's face behind the layer of grime on the back wall. Seeing the lady brings a
-      sentence into the party member's minds:
-      <read-aloud>
-        I am an eye set in a blue face. My gaze feeds the world. If I go blind so does the world. (Silmä kasvoin
-        sinisten, ravitsija maailmankaiken, näköni jos veisi, veisi näön maan, sokeaksi kaiken tekisi.)
-      </read-aloud>
-      This is a riddle and the correct answer is the sun. Even thinking of the correct answer with any language causes a
-      secret door to open and reveal another hall.
+      <p>
+        A stone stairway takes the party into a 60ft wide and 100ft long hall filled with animal hides, straw beds and
+        food storage. Another large iron door separates the stairs from this hall but it is open now. It can also be
+        locked with a latch. Not that many weapons around because the barbarians are out raiding. No-one is in sight. A
+        thorough search of the hall reveals a letter that orders the barbarians to keep on raiding. "Continue as
+        planned. We will honour the contract". The letter is sealed with the same black eagle as the letters before. The
+        party also finds a blue painting of a woman's face behind the layer of grime on the back wall. Seeing the lady
+        brings a sentence into the party member's minds:
+        <read-aloud>
+          I am an eye set in a blue face. My gaze feeds the world. If I go blind so does the world. (Silmä kasvoin
+          sinisten, ravitsija maailmankaiken, näköni jos veisi, veisi näön maan, sokeaksi kaiken tekisi.)
+        </read-aloud>
+        This is a riddle and the correct answer is the sun. Even thinking of the correct answer with any language causes
+        a secret door to open and reveal another hall.
+      </p>
       <sub-area-title name="Päivätär Shrine" />
-      This hall is slightly smaller than the first one. A grand statue of the sun, although dusty, stands at the back of
-      it, and a red carpet leads to it. A ray of light shines through the ceiling at it. It comes from a magical one-way
-      window that works also as an escape hatch.
+      <p>
+        This hall is slightly smaller than the first one. A grand statue of the sun, although dusty, stands at the back
+        of it, and a red carpet leads to it. A ray of light shines through the ceiling at it. It comes from a magical
+        one-way window that works also as an escape hatch.
+      </p>
       <p>
         A dark figure lays in front of it covered in dust. It is hard to see what it is. When the party enters the room
         the figure starts to move. It is a <id-link name="Young Gold Dragon" type="monster" /> that has been hibernating
@@ -977,9 +987,11 @@
       </p>
       <section-title name="Southern Hospitality" />
       <area-title name="Twin Settlement of South Edge" />
-      A castle at the coast of the North Sea (Pohjanmeri) ruled by half-king Untamo Eteläterä. The kingdom consists of
-      all the land south of Fuller river excluding the independent state Buckler. The land is more fertile than the
-      north, but large portion of it is marshland.
+      <p>
+        A castle at the coast of the North Sea (Pohjanmeri) ruled by half-king Untamo Eteläterä. The kingdom consists of
+        all the land south of Fuller river excluding the independent state Buckler. The land is more fertile than the
+        north, but large portion of it is marshland.
+      </p>
       <p>
         <id-link name="Untamo Eteläterä" type="monster" /> The king of South Edge. He is a very old human male, but he
         still has his wit. He just can't understand why would Kekko Pohjanterä, the half-king of Pohjanterä, kill his
@@ -999,28 +1011,32 @@
         <id-link name="Throne Room" type="subarea" /> door and invites them in.
       </p>
       <sub-area-title name="Throne Room" />
-      The main working room of the half-king. Has purple carpets and curtains, large windows and a stone throne with the
-      bottom half of split Kingsblade on top of it. Untamo will receive the intelligence from the party with great
-      eagerness and pays 100gp each as a reward. He also requests the party to investigate his son's death and the
-      poisoned river. He allows the party to visit his son's room up in the tower. The place has not been touched after
-      the initial investigation. The castle guard hasn't had many suspects but one of them is Veli Hopea, an adventurer
-      who was loudly criticizing the king in a local Inn. He escaped soon after guards tried to apprehend him. Another
-      suspect was the cleaner, gnome male Osma, who was the last to enter prince's room before his death. They haven't
-      been able to get him to confess even after thorough interrogation. He is being held in the castle dungeon. The
-      party can also visit him. There is also Kaino Kalpa who has a strong motive to kill Armas, but he has been
-      confirmed to been out of town during the death.
+      <p>
+        The main working room of the half-king. Has purple carpets and curtains, large windows and a stone throne with
+        the bottom half of split Kingsblade on top of it. Untamo will receive the intelligence from the party with great
+        eagerness and pays 100gp each as a reward. He also requests the party to investigate his son's death and the
+        poisoned river. He allows the party to visit his son's room up in the tower. The place has not been touched
+        after the initial investigation. The castle guard hasn't had many suspects but one of them is Veli Hopea, an
+        adventurer who was loudly criticizing the king in a local Inn. He escaped soon after guards tried to apprehend
+        him. Another suspect was the cleaner, gnome male Osma, who was the last to enter prince's room before his death.
+        They haven't been able to get him to confess even after thorough interrogation. He is being held in the castle
+        dungeon. The party can also visit him. There is also Kaino Kalpa who has a strong motive to kill Armas, but he
+        has been confirmed to been out of town during the death.
+      </p>
 
       <sub-area-title name="Castle Tower" />
-      Armas' living quarters. A spacey room on top of the tower with windows to all directions. A large balcony from
-      which the prince fell down. There are no signs of struggle and everything seems to be in neat order. There are
-      many small paintings of people on the wall. DC15 Perception check reveals that there is a feint square on the wall
-      where years of sunlight has colored the wall around another painting. This was the painting of Hellä Pohjanterä,
-      right above the prince's bed. No one remembers who was depicted in the image. However, there is the portrait of
-      the prince in <id-link name="Throne Room" type="subarea" /> that includes a small version of the missing painting
-      as well. It depicts a red haired woman and then Osma remembers that it is Hellä Pohjanterä. If the party asks for
-      an image of the room, Osma or Untamo remember the portrait.
+      <p>
+        Armas' living quarters. A spacey room on top of the tower with windows to all directions. A large balcony from
+        which the prince fell down. There are no signs of struggle and everything seems to be in neat order. There are
+        many small paintings of people on the wall. DC15 Perception check reveals that there is a feint square on the
+        wall where years of sunlight has colored the wall around another painting. This was the painting of Hellä
+        Pohjanterä, right above the prince's bed. No one remembers who was depicted in the image. However, there is the
+        portrait of the prince in <id-link name="Throne Room" type="subarea" /> that includes a small version of the
+        missing painting as well. It depicts a red haired woman and then Osma remembers that it is Hellä Pohjanterä. If
+        the party asks for an image of the room, Osma or Untamo remember the portrait.
+      </p>
       <sub-area-title name="Common Room" />
-      A spacious hall with bookshelves and comfortable sofas and divans for the royals the chat and spend time.
+      <p>A spacious hall with bookshelves and comfortable sofas and divans for the royals the chat and spend time.</p>
       <p>
         <id-link name="Kaino Kalpa" type="monster" />
         The bastard son of Untamo Eteläterä the party maybe met already in Bluebill's Nest. He has been very active
@@ -1055,10 +1071,12 @@
       Pohjola. He has heard about a person that came to Pohjola but never left and tried to get away, but he can't quite
       remember the story. "Something about madness... Did he cut off his nose? Or was this the candle story? Mumble
       mumble..." Suggests to try the other archive in North Edge, they might have something more.
-      <sub-area-title name="Fencer's Inn (Miekkailijain Maja)" /> The most popular inn of South Edge. Massively long
-      wooden house full of small rooms for renting. There is also a large tavern included. Nowadays the inn and the
-      tavern doesn't really have customers due to poverty and unsafe streets. The few inn residents mostly stay in their
-      rooms.
+      <sub-area-title name="Fencer's Inn (Miekkailijain Maja)" />
+      <p>
+        The most popular inn of South Edge. Massively long wooden house full of small rooms for renting. There is also a
+        large tavern included. Nowadays the inn and the tavern doesn't really have customers due to poverty and unsafe
+        streets. The few inn residents mostly stay in their rooms.
+      </p>
       <p>
         <id-link id="monster-commoner" name="Auvo Alku" type="monster" /> The innkeeper in Fencer's Inn. Complains about
         the lack of customers and supplies. There isn't even beer anymore because all the pure water goes for drinking.
@@ -1069,19 +1087,22 @@
         about him except that he is quite... eccentric. He often sits in the tavern and just observes people, drinking
         hot water.
       </p>
-      <sub-area-title name="House of Heimo Hallava" /> A glorious house in South Edge trade district. A large double
-      door some exotic wood has an iron doorknocker on it. If the party knocks with it, the door opens by itself and the
-      party can enter a hallway. After the whole party is in, the main door closes and locks shut. In the other end of
-      the hallway is another double door and a lever next to it. Ten red rubies start to glow on top of the door. Each
-      second one of them turns dark starting from one side, like a counter. If the party turns the lever next to the
-      door, the counter starts again from ten glowing rubies. If the party lets the counter to reach zero, the second
-      door opens and they see laughing Heimo standing in front of them. "Hahaha, that is always so entertaining. Welcome
-      to my home. May I offer you some snacks?" He offers the party cookies and hot water. Heimo is an inventor that
-      spends most of his time with inventing and building new gadgets. If questioned about the death, he explains that
-      he may have triggered Veli's anger on purpose... Just to amuse himself. "It is a pity what it led to, but I
-      wouldn't consider it my fault." If the party is interested in the gadgets, he may offer giving them one to try it
-      out in the wild world, but he wants feedback. How was it useful? Did it work correctly? Would you use it again?
-      Depending on the feedback, he may consider giving them a reward. Maybe the item itself?
+      <sub-area-title name="House of Heimo Hallava" />
+      <p>
+        A glorious house in South Edge trade district. A large double door some exotic wood has an iron doorknocker on
+        it. If the party knocks with it, the door opens by itself and the party can enter a hallway. After the whole
+        party is in, the main door closes and locks shut. In the other end of the hallway is another double door and a
+        lever next to it. Ten red rubies start to glow on top of the door. Each second one of them turns dark starting
+        from one side, like a counter. If the party turns the lever next to the door, the counter starts again from ten
+        glowing rubies. If the party lets the counter to reach zero, the second door opens and they see laughing Heimo
+        standing in front of them. "Hahaha, that is always so entertaining. Welcome to my home. May I offer you some
+        snacks?" He offers the party cookies and hot water. Heimo is an inventor that spends most of his time with
+        inventing and building new gadgets. If questioned about the death, he explains that he may have triggered Veli's
+        anger on purpose... Just to amuse himself. "It is a pity what it led to, but I wouldn't consider it my fault."
+        If the party is interested in the gadgets, he may offer giving them one to try it out in the wild world, but he
+        wants feedback. How was it useful? Did it work correctly? Would you use it again? Depending on the feedback, he
+        may consider giving them a reward. Maybe the item itself?
+      </p>
       <item
         name="Wind Fan (Tuuliviuhka)"
         properties="Wondrous Item, uncommon"
@@ -1106,11 +1127,14 @@
       />
 
       <section-title name="Northern Hostility" />
-      <area-title name="Twin Settlement of North Edge" /> A settlement at the coast of the North Sea (Pohjanmeri) ruled
-      by half-king Kekko Pohjanterä. The kingdom of North Edge consists of all the land north of Fuller river. The
-      climate is colder than in south but the mountains have valuable minerals and gemstones.
+      <area-title name="Twin Settlement of North Edge" />
       <p>
-        <id-link name="Kekko Pohjanterä" type="monster" />Young and kind human male half-king of the North Edge.
+        A settlement at the coast of the North Sea (Pohjanmeri) ruled by half-king Kekko Pohjanterä. The kingdom of
+        North Edge consists of all the land north of Fuller river. The climate is colder than in south but the mountains
+        have valuable minerals and gemstones.
+      </p>
+      <p>
+        <id-link name="Kekko Pohjanterä" type="monster" /> Young and kind human male half-king of the North Edge.
         Thoughtful and sensible man but slightly too gullible. He is being played by his mother Hellä Pohjanterä. She
         has recommended Kekko to start buying wood from metsäläiset and so funding their operation in exchange for help
         when they demand the throne of South Edge. Kekko is really the son of Hellä and Armas, the heir of Untamo
@@ -1119,7 +1143,7 @@
         However, he is worried of the state his settlement currently is in, and is trying to make peace with the south.
       </p>
       <p>
-        <id-link name="Hellä Pohjanterä" type="monster" />A cunning middle-aged human female who is using her son to
+        <id-link name="Hellä Pohjanterä" type="monster" /> A cunning middle-aged human female who is using her son to
         achieve her own goals. She had an affair with Armas Eteläterä when they were young. They would be both
         middle-aged now, in case you are wondering... The product of that affair was Kekko, the heir of both Sword
         half-kingdom thrones. Hellä's plan is to unite the two kingdoms to its former glory under Kekko's rule, in which
@@ -1179,14 +1203,13 @@
         "Maybe they didn't poison the river by themselves but Ahti did because of their heresy."
       </p>
       <sub-area-title name="Dungeon" />
-      Two drunks in one cell, two muggers in separate cells, and one skinny lunatic male halfling called Mielipäivä also
-      in own cell.
       <p>
-        <id-link id="monster-commoner" name="Mielipäivä" type="monster" /> He is hysteric and utters incoherently about
-        the return of "metsäläiset", "barbarians", and "giants". He has seen horrific things and horrific things were
-        done to him. He has scars on his body that are covered with skimpy rags. He was found floating in the Fuller
-        river on a log. A guard can explain the party where he was found from and what is his name but he doesn't know
-        anything else.
+        Two drunks in one cell, two muggers in separate cells, and one skinny lunatic male halfling called
+        <id-link id="monster-commoner" name="Mielipäivä" type="monster" />
+        also in own cell. He is hysteric and utters incoherently about the return of "metsäläiset", "barbarians", and
+        "giants". He has seen horrific things and horrific things were done to him. He has scars on his body that are
+        covered with skimpy rags. He was found floating in the Fuller river on a log. A guard can explain the party
+        where he was found from and what is his name but he doesn't know anything else.
       </p>
       <read-aloud>
         If the party has an orc or other exceptionally large PC, Mielipäivä could scream "GIANT!" and fall down in fear.
@@ -1197,28 +1220,32 @@
         ahneet aitoistaan", "kottaraiset kovanokat", "viljan vievät, ehtoolle elämän", "jäljessä jättiläisten",
         "kurjetkin", "kotkain kainalossa", "piilosta pesään pimeän"
       </read-aloud>
-      Mielipäivä is repeating poems he heard while being tortured in Kuurankaru, the "capital" of metsäläiset up in
-      north. He was captured when fishing too far away in the north, at Viper's Rend river and was suspected to be a
-      spy. He managed to escape due to unobservant guards and his small size but he had to jump into the river. He
-      drifted on a log all the way to the Sword. Let's keep this as a secret for now, unless the party casts Alter
-      Memory to delete Mielipäivä's traumatizing memories. <sub-area-title name="Royal Archive" /> A large and quiet
-      library with a human female librarian that sleeps also there during the night in a small bunk between two shelves.
-      The bunk is not visible to the entrance so if the party is loud they might wake her up. Royal Archive has been
-      closed from visitors excluding priests, high ranking staff and the king. Knowledge is not for everyone. The party
-      can break in if they can open the door lock. (See
-      <a href="https://blackcitadelrpg.com/picking-locks-5e/" target="_blank">this</a> for more interesting lockpicking)
-      If the party stays silent they might find a book called Masters Long Gone (Mestarit Menneet), which contains the
-      legend of Otava Maaton. The party can also try persuading the librarian to help them with a DC 15 Persuasion
-      check.
+      <p>
+        Mielipäivä is repeating poems he heard while being tortured in Kuurankaru, the "capital" of metsäläiset up in
+        north. He was captured when fishing too far away in the north, at Viper's Rend river and was suspected to be a
+        spy. He managed to escape due to unobservant guards and his small size but he had to jump into the river. He
+        drifted on a log all the way to the Sword. Let's keep this as a secret for now, unless the party casts Alter
+        Memory to delete Mielipäivä's traumatizing memories. <sub-area-title name="Royal Archive" /> A large and quiet
+        library with a human female librarian that sleeps also there during the night in a small bunk between two
+        shelves. The bunk is not visible to the entrance so if the party is loud they might wake her up. Royal Archive
+        has been closed from visitors excluding priests, high ranking staff and the king. Knowledge is not for everyone.
+        The party can break in if they can open the door lock. (See
+        <a href="https://blackcitadelrpg.com/picking-locks-5e/" target="_blank">this</a> for more interesting
+        lockpicking) If the party stays silent they might find a book called Masters Long Gone (Mestarit Menneet), which
+        contains the legend of Otava Maaton. The party can also try persuading the librarian to help them with a DC 15
+        Persuasion check.
+      </p>
       <section-title name="Endgame" />
-      If the party gets stuck investigating the death of Armas,
-      <id-link name="Untamo Eteläterä" type="monster" /> will be found dead one morning. He has been poisoned with a
-      poison called Midnight Tears, made from fallen meteors, by <id-link name="Kaino Kalpa" type="monster" />, Untamo's
-      bastard son. He has been in contact also with North Edge court and declared his goals very openly. Hellä saw an
-      opportunity in him and delivered a bottle of poison to his quarters with a note: "With this you remove half of
-      what is on your way". Kaino mixed the poison into Untamo's meal. This poison activates at next midnight so that
-      was when the half-king died and was discovered next morning. A medicine check will confirm that he was poisoned,
-      DC 10 is needed to find out the used poison.
+      <p>
+        If the party gets stuck investigating the death of Armas,
+        <id-link name="Untamo Eteläterä" type="monster" /> will be found dead one morning. He has been poisoned with a
+        poison called Midnight Tears, made from fallen meteors, by <id-link name="Kaino Kalpa" type="monster" />,
+        Untamo's bastard son. He has been in contact also with North Edge court and declared his goals very openly.
+        Hellä saw an opportunity in him and delivered a bottle of poison to his quarters with a note: "With this you
+        remove half of what is on your way". Kaino mixed the poison into Untamo's meal. This poison activates at next
+        midnight so that was when the half-king died and was discovered next morning. A medicine check will confirm that
+        he was poisoned, DC 10 is needed to find out the used poison.
+      </p>
       <p>
         The news will spread soon in the twin settlements and during the same day Hellä and Kekko will arrive to give
         the court their regards, but after the initial ceremonies Hellä tells the truth about her son and demands the
@@ -1272,9 +1299,10 @@
       </p>
       <p>
         Kuurankaru is crude but strongly fortified village, with stone walls and palisades. Fur-clad guards patrol the
-        walls with javelins on their back. A stone keep stands on the back of the village next to the mountain slope.
-        Ore deliveries from the mountains happen daily, which may offer a suitable way to slip in unnoticed. Another way
-        is to dive underwater through the fresh water creek or the sewer creek.
+        walls with javelins on their back. An opening on the side of the mountain back of the camp leads into a cave
+        keep, a network of tunnels and chambers, that accomodates most of the residents in Kuurankaru. Ore deliveries
+        from the mountains happen daily, which may offer a suitable way to slip in unnoticed. Another way is to dive
+        underwater through the fresh water creek or the sewer creek.
       </p>
 
       <sub-area-title name="Viper's Rend Toll Station" />
@@ -1286,6 +1314,44 @@
       with ropes attached. If the party is caught, they are suspected of spying and will be taken prisoners and
       delivered to the dungeon of Kuurankaru.
 
+      <sub-area-title name="Barracks complex" />
+      <p>
+        A village of barracks buildings and training fields where metsäläiset practice their fighting and maintain their
+        weapons. Ore is delivered from the mountains to smelters and blacksmiths who produce new gear. It seems that
+        they are preparing for something. If a metsäläinen is questioned, they have been ordered to use half of the
+        mined ore to produce armor and weapons. The gear is not sold but stored in the barrackses. The party may find a
+        pile of oversized armor and weapons in one barracks which is intended for giants.
+      </p>
+
+      <p>
+        <id-link name="Joukahainen" type="monster" /> observes the area and visits the training fields often. The party
+        should be able to spot him there. If they go too close to him, he may recognize them and try to capture them.
+      </p>
+
+      <section-title name="Espionage" />
+      The party needs to find the information at the top of the Tooth in the hut. The may be able to fly there and skip
+      the cave keep.
+
+      <sub-area-title name="Housing Chambers" />
+      <p>
+        A network of little rooms along long corridors, each housing one family. During the days most of the adults are
+        out working or honing their fighting skills. Few work in child care taking care of the offspring. The kids and
+        the adults here shouldn't be a threat but they may alert few guards in secretly. If the party goes murdering
+        anyway, just consider all people as <id-link name="commoner" type="monster" />.
+      </p>
+      <sub-area-title name="War Room" />
+      <p>
+        A room full of maps, letters and documents. The door is locked and guarded by one
+        <id-link name="Metsäläinen Soldier" type="monster" />. Any noise will alert the people inside the War Room.
+        <encounter
+          :enemies="[
+            { name: 'Metsäläinen Officer', quantity: 1 },
+            { name: 'Metsäläinen Cleric', quantity: 2 },
+          ]"
+        />
+        The room also contains an arch made of tree roots. If a creature steps through it, the creature is teleported to
+        the top of The Tooth in front of the house.
+      </p>
       <sub-area-title name="Dungeon" />
       <p>
         An underground dungeon with stone walls and one large cell. If the party ends up here, Juva should try to free
@@ -1293,9 +1359,10 @@
       </p>
       <p>
         <id-link id="monster-commoner" name="Juva" /> is a human male undercover spy of South Edge court. He has been
-        part of Kuurankaru for years now and become very devoted to his mission. He should visit the party and request
-        them to investigate the Tooth. He also thinks sabotaging the operation could give the Sword more time to
-        interfere with metsäläinen plans, but they should focus on finding their true goal.
+        part of Kuurankaru for years now and become very devoted to his mission. He hasn't been able to connect the
+        court after his colleague got captured. He should visit the party and request them to investigate the Tooth. He
+        also thinks sabotaging the operation could give the Sword more time to interfere with metsäläinen plans, but
+        they should focus on finding their true goal.
       </p>
       <p>
         <id-link name="Loviatar" type="monster" />
@@ -1318,21 +1385,27 @@
       <sub-area-title name="The Tooth" />
       <p>
         A steep sloped mountain next to Kuurankaru village. Icy slopes are impossible to climb without suitable
-        equipment. On top is a protective sphere that isolates it from the cold and wind. On the mountain top is a green
-        grass field with an old wooden hut. In front of the hut grows an aspen tree with human skulls hanging on its
-        branches. They are skulls of Loviatar's ancestors, including Louhi. Loviatar can cast Speak with Dead and ask
-        questions from them, although they rarely give clear answers.
+        equipment. Inside the Cave Keep is a portal that takes to the top of The Tooth. On top is a protective sphere
+        that isolates it from the cold and wind. On the mountain top is a green grass field with an old wooden hut. In
+        front of the hut grows an aspen tree with human skulls hanging on its branches. They are skulls of Loviatar's
+        ancestors, including Louhi. Loviatar can cast Speak with Dead and ask questions from them, although they rarely
+        give clear answers. There is also an arch made of tree roots that is a portal connected to the one in
+        <id-link name="War Room" type="subarea" />.
       </p>
       <p>
         Inside the hut the party finds sketches of Tursaansydän and Loviatar's notes of her research. On a table is a
         translation of an old text that reads:
         <read-aloud>
-          <ul>
-            <li>One was for the enemy, to remind of their kinship.</li>
-            <li>One was for the dead, to remind of what cannot be reversed.</li>
-            <li>One was for the gods, to be guarded with tireless eyes.</li>
-            <li>And the last for the one, who started it all.</li>
-          </ul>
+          One was for the enemy, to remind of their kinship.<br />
+          One was for the dead, to remind of what cannot be reversed.<br />
+          One was for the gods, to be guarded with tireless eyes.<br />
+          And the last for the one, who started it all.<br />
+        </read-aloud>
+        <read-aloud>
+          Yks oli viholaiselle, pohjolan suvuille suen.<br />
+          Yks oli vainajille, jätille jälkehen, Vipusen viemisiksi.<br />
+          Yks oli jumalille, vartijoille väsymättömille.<br />
+          Ja viimeinen runojalle, ken kaiken alkoi.<br />
         </read-aloud>
       </p>
       <p>
@@ -1340,28 +1413,24 @@
         One was for the dead, and is hidden to the burial site of Antero Vipunen, an ancient giant. One was for the
         gods, and is hidden in a shrine of Tapio. The last piece is held by Väinämöinen who guards the prison.
       </p>
-
       <p>
         After a while, the party hears a faint noise that gets louder. It is the sound of thousands of ravens that are
-        closing in to protect the home of their mistress. 17 <id-link name="Swarm of Ravens" type="monster" /> dive
-        towards the house through the protective sphere. If too easy, add some more! They crash through the windows,
-        chimney, and open doors and attack the party. The party may have ten seconds to prepare if they hear them in
-        advance.
+        closing in to protect the home of their mistress.
+        <encounter :enemies="[{ name: 'Swarm of Ravens', quantity: 25 }]" />
+        dive towards the house through the protective sphere. If too easy, add some more! They crash through the
+        windows, chimney, and open doors and attack the party. The party may have ten seconds to prepare if they hear
+        them in advance.
       </p>
 
-      <sub-area-title name="Barracks complex" />
-      <p>
-        A village of barracks buildings and training fields where metsäläiset practice their fighting and maintain their
-        weapons. Ore is delivered from the mountains to smelters and blacksmiths who produce new gear. It seems that
-        they are preparing for something. If a metsäläinen is questioned, they have been ordered to use half of the
-        mined ore to produce armor and weapons. The gear is not sold but stored in the barrackses. The party may find a
-        pile of oversized armor and weapons in one barracks which is intended for giants.
-      </p>
-
-      <p>
-        <id-link name="Joukahainen" type="monster" /> observes the area and visits the training fields often. The party
-        should be able to spot him there. If they go too close to him, he may recognize them and try to capture them.
-      </p>
+      <section-title name="Escape" />
+      When returning from The Tooth, the party is confronted by <id-link name="Joukahainen" type="monster" /> in a
+      solitary location. He recognizes them and can't let them go as they know too much. He thinks he can't take the
+      risk in prisoning them so they have to die. When he starts casting a spell
+      <id-link id="monster-commoner" name="Juva" /> launches a crossbow bolt from a hiding spot into his shoulder and
+      tells the party to run. Two more crossbow bolts fly and strike Joukahainen who flinches but doesn't seem to be too
+      bothered. He casts a spell to heal his wounds. Feel free to make the escape as epic as possible. They could burst
+      out of the gates, steal horses and ride into sunset. Or they can fight their way to the river and hide underwater.
+      Or escape with the current. Your call.
 
       <part-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
@@ -1430,7 +1499,9 @@ main {
   align-items: center;
 }
 p {
-  text-indent: 2rem;
-  margin: 0;
+  text-align: justify;
+}
+p + p {
+  text-indent: 2em;
 }
 </style>

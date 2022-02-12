@@ -57,7 +57,7 @@ module.exports = Object.freeze({
           },
           {
             name: 'Home of Darkness',
-            sections: [],
+            sections: [{ name: 'Espionage' }, { name: 'Escape' }],
           },
         ],
       },
@@ -1157,6 +1157,48 @@ module.exports = Object.freeze({
       ],
     },
     {
+      name: 'Metsäläinen Officer',
+      size: 'medium',
+      type: 'humanoid (any race)',
+      alignment: 'lawful evil',
+      armorClass: 16,
+      armor: '',
+      hitPoints: { throws: 4, sides: 8, constant: 16 },
+      speedFt: 30,
+      strength: 12,
+      dexterity: 16,
+      constitution: 14,
+      intelligence: 14,
+      wisdom: 11,
+      charisma: 12,
+      savingThrows: ['Con +4', 'Dex +3'],
+      senses: [],
+      languages: ['common'],
+      challengeRating: 3,
+      actions: [
+        {
+          name: 'Longsword',
+          type: 'melee',
+          toHit: 5,
+          reachFt: 5,
+          damageType: 'slashing',
+          damage: { throws: 2, sides: 5, constant: 5 },
+        },
+        {
+          name: 'Leadership (Recharge Short or Long Rest)',
+          description:
+            'For 1 minute, the Metsäläinen Officer can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand. A creature can benefit from only one Leadership die at a time. This effect ends if the Metsäläinen Officer is incapacitated.',
+        },
+      ],
+      reactions: [
+        {
+          name: 'Parry',
+          description:
+            'Metsäläinen Officer adds 2 to its AC against one melee attack that would hit it. To do so, Metsäläinen Officer must see the attacker and be wielding a melee weapon.',
+        },
+      ],
+    },
+    {
       name: 'Metsäläinen Soldier',
       size: 'medium',
       type: 'humanoid (any race)',
@@ -1166,7 +1208,7 @@ module.exports = Object.freeze({
       hitPoints: { throws: 3, sides: 8, constant: 16 },
       speedFt: 30,
       strength: 17,
-      dexterity: 2,
+      dexterity: 12,
       constitution: 14,
       intelligence: 14,
       wisdom: 11,
