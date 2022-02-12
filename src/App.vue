@@ -1411,7 +1411,10 @@
       <p>
         The text describes the holders of the four Tursaansydän pieces. One was for the enemy, Louhi and metsäläiset.
         One was for the dead, and is hidden to the burial site of Antero Vipunen, an ancient giant. One was for the
-        gods, and is hidden in a shrine of Tapio. The last piece is held by Väinämöinen who guards the prison.
+        gods, and is hidden in a shrine of Tapio. The last piece is held by Väinämöinen who guards the prison. The party
+        also finds a pouch of ten Bloodstones, Potion of Superior Healing, Scroll of Speak with Dead, and a single
+        Sending Stone. The other stone belongs to Joukahainen who is not bearing it currently. When holding the stone, a
+        party member gets a feeling that another similar stone isn't held by anyone currently.
       </p>
       <p>
         After a while, the party hears a faint noise that gets louder. It is the sound of thousands of ravens that are
