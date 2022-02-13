@@ -17,7 +17,11 @@ export const capitalize = string => {
 
 export const sortByKey = (array, key) => {
   return array.sort((a, b) => {
-    return a[key].toLowerCase() < b[key].toLowerCase() ? -1 : a[key].toLowerCase() > b[key].toLowerCase() ? 1 : 0
+    return a[key].toLowerCase() < b[key].toLowerCase()
+      ? -1
+      : a[key].toLowerCase() > b[key].toLowerCase()
+      ? 1
+      : 0
   })
 }
 

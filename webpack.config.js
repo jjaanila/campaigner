@@ -1,21 +1,46 @@
 const path = require('path')
+const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
+const markerExists = directory => ['.git', '.hg'].some(mark => fs.existsSync(path.join(directory, mark)))
+
+/**
+ * Simple version of `find-project-root`
+ * https://github.com/kirstein/find-project-root/blob/master/index.js
+ */
+const findProjectRoot = directory => {
+  while (!markerExists(directory)) {
+    const parentDirectory = path.resolve(directory, '..')
+    if (parentDirectory === directory) {
+      break
+    }
+    directory = parentDirectory
+  }
+
+  return directory
+}
+
 module.exports = function (env, argv) {
   const { mode } = argv
+  const projectRoot = findProjectRoot(__dirname)
+  const campaign = require(path.join(projectRoot, 'campaign.js'))
+  if (typeof campaign.entry !== 'string' && !campaign.entry.length) {
+    throw new Error('campaign.entry is not defined')
+  }
   const isProduction = mode === 'production'
   return {
-    entry: './src/index.js',
+    entry: path.join(projectRoot, campaign.entry),
     output: {
-      path: path.resolve(__dirname, './dist'),
+      path: path.join(projectRoot, 'dist'),
       publicPath: '',
     },
     resolve: {
       alias: {
         vue: 'vue/dist/vue.js',
+        'project-root': projectRoot,
       },
     },
     module: {

@@ -1,17 +1,19 @@
 import Vue from 'vue'
-
-import App from './App.vue'
 import components from './components'
 import store from './stores/'
 
-Vue.config.productionTip = false
+export * from './components'
 
-Object.keys(components).forEach(key => {
-  Vue.component(key, components[key])
-})
+export const createCampaign = app => {
+  Vue.config.productionTip = false
 
-new Vue({
-  store,
-  el: '#app',
-  render: h => h(App),
-})
+  Object.keys(components).forEach(key => {
+    Vue.component(key, components[key])
+  })
+
+  return new Vue({
+    store,
+    el: '#app',
+    render: h => h(app),
+  })
+}

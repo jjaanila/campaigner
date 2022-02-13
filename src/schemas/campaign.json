@@ -339,7 +339,7 @@
     }
   },
   "type": "object",
-  "required": ["monsters", "title", "author", "authorUrl", "publishDate"],
+  "required": ["title", "author", "authorUrl", "publishDate", "entry", "document", "monsters", "conditions"],
   "properties": {
     "title": {
       "type": "string"
@@ -354,6 +354,9 @@
     "publishDate": {
       "type": "string",
       "format": "date"
+    },
+    "entry": {
+      "type": "string"
     },
     "document": {
       "type": {

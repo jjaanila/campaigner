@@ -1,4 +1,4 @@
-const campaignJson = require('../campaign')
+const campaignJson = require('../example/campaign')
 const validate = require('jsonschema').validate
 const CampaignSchema = require('../src/schemas/campaign.json')
 

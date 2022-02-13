@@ -4,26 +4,23 @@
   "version": "1.1.0",
   "author": "Janne Jaanila <janne.jaanila@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "main": "./src/index.js",
+  "bin": {
+    "campaigner": "./src/campaigner.js"
+  },
   "scripts": {
     "start": "cross-env webpack-dev-server --mode=development --open --hot",
     "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress",
     "validate": "node ./scripts/validate.js",
     "release": "npm run build && rm dist/*.js* && (cd dist; zip -r $npm_package_name-v$npm_package_version.zip .)"
   },
-  "dependencies": {
-    "jsonschema": "^1.4.0",
-    "normalize.css": "^8.0.1",
-    "vue": "^2.5.11",
-    "vue-click-outside": "^1.1.0",
-    "vuex": "^3.6.2"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
@@ -32,18 +29,24 @@
     "css-minimizer-webpack-plugin": "^3.4.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.4",
     "image-webpack-loader": "^8.1.0",
-    "prettier": "^2.5.1",
-    "pug": "^3.0.2",
+    "jsonschema": "^1.4.0",
+    "normalize.css": "^8.0.1",
     "pug-loader": "^2.4.0",
-    "sass-loader": "^12.4.0",
+    "pug": "^3.0.2",
     "terser-webpack-plugin": "^5.3.1",
     "url-loader": "^4.1.1",
+    "vue-click-outside": "^1.1.0",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^5.67.0",
+    "vue": "^2.5.11",
+    "vuex": "^3.6.2",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-dev-server": "^4.7.3",
+    "webpack": "^5.67.0"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1"
   }
 }
