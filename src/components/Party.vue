@@ -1,6 +1,6 @@
 <template>
   <div class="party">
-    <table>
+    <table v-show="characters.length">
       <thead>
         <tr>
           <th></th>
@@ -114,7 +114,13 @@ export default {
     }),
   },
   methods: {
-    ...mapActions('party', ['addCharacter', 'removeCharacter', 'updateCharacters', 'addCondition', 'removeCondition']),
+    ...mapActions('party', [
+      'addCharacter',
+      'removeCharacter',
+      'updateCharacters',
+      'addCondition',
+      'removeCondition',
+    ]),
     ...mapActions('ui', ['setIsConditionMenuOpen']),
   },
 }

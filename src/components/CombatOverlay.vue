@@ -6,7 +6,11 @@
         <div class="combat-overlay-content"></div>
       </div>
     </div>
-    <button v-if="!isCombatOverlayOpen" class="open-combat-overlay-button" @click="setIsCombatOverlayOpen(true)">
+    <button
+      v-if="!isCombatOverlayOpen && isInCombat"
+      class="open-combat-overlay-button"
+      @click="setIsCombatOverlayOpen(true)"
+    >
       Open Combat Overlay
     </button>
   </div>
