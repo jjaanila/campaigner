@@ -2,8 +2,20 @@
   <div>
     <div v-if="isCombatOverlayOpen" class="combat-overlay">
       <div class="combat-overlay-mask" @click="setIsCombatOverlayOpen(false)" />
-      <div class="combat-overlay-content-background">
-        <div class="combat-overlay-content"></div>
+      <div
+        class="combat-overlay-content"
+        :style="{
+          background: `url(${require('../img/paper.jpg')})`,
+        }"
+      >
+        <table>
+          <tr v-for="(row, i) in grid" :key="i">
+            <td v-for="(cell, j) in row" :key="j">
+              <combat-enemy v-if="cell.units.length" :monster="cell.units[0]" />
+              <div v-else class="combat-empty-cell" />
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
     <button
@@ -18,8 +30,12 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import CombatEnemy from './CombatEnemy.vue'
 export default {
   name: 'CombatOverlay',
+  components: {
+    CombatEnemy,
+  },
   computed: {
     ...mapState({
       isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
@@ -27,6 +43,7 @@ export default {
       isInCombat: state => state.combat.isInCombat,
       enemies: state => state.combat.enemies,
       allies: state => state.combat.allies,
+      grid: state => state.combat.grid,
     }),
   },
   methods: {
@@ -49,31 +66,41 @@ export default {
   height: 100%;
   z-index: 1;
 }
-.combat-overlay-content-background {
-  background: white;
+.combat-overlay-content {
   position: fixed;
   right: 5rem;
   top: 1rem;
   width: calc(100% - 10rem);
   height: calc(100% - 2rem);
-}
-.combat-overlay-content {
-  width: 100%;
-  height: 100%;
+  z-index: 1;
   display: flex;
-  flex-flow: row nowrap;
-  background-color: rgba(#fff, 0.5);
-  background-image: linear-gradient(transparent 1px, transparent 1px),
-    linear-gradient(90deg, transparent 1px, transparent 1px),
-    linear-gradient(rgba(150, 150, 150, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(150, 150, 150, 0.3) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
-  z-index: 2;
+  justify-content: center;
+  align-items: center;
 }
 .open-combat-overlay-button {
   position: fixed;
   bottom: 0.5rem;
   right: 0.5rem;
+}
+.combat-empty-cell {
+  width: 100%;
+  height: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+}
+tr,
+th,
+td {
+  border: 1px solid gray;
+  padding: 0;
+  margin: 0;
+}
+td {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 </style>

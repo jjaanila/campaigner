@@ -28,3 +28,7 @@ export const sortByKey = (array, key) => {
 export const getAbilityScoreModifier = abilityScore => {
   return Math.max(Math.floor((abilityScore - 10) / 2), 0)
 }
+
+export const getUniqueId = () => {
+  return Math.random().toString(36)
+}

@@ -8,9 +8,8 @@
       <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
     </div>
     <span>
-      {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP) <span :class="difficultyClass">{{ difficulty }}</span> ({{
-        adjustedTotalEnemyXP
-      }}
+      {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP)
+      <span :class="difficultyClass">{{ difficulty }}</span> ({{ adjustedTotalEnemyXP }}
       XP)
     </span>
     <button @click="startCombat">Start</button>
@@ -36,10 +35,7 @@ export default {
     ...mapActions('ui', ['setIsCombatOverlayOpen']),
     startCombat() {
       this.initializeCombat({
-        enemies: this.enemiesWithMonsters.reduce(
-          (monsters, enemy) => monsters.concat(Array(enemy.quantity).fill(enemy.monster)),
-          []
-        ),
+        enemies: this.enemies,
         allies: this.allies,
       })
       this.setIsInCombat(true)
