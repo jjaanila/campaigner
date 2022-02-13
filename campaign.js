@@ -1,5 +1,5 @@
 module.exports = Object.freeze({
-  title: 'Example',
+  title: 'Example Campaign',
   author: 'Janne Jaanila',
   authorUrl: 'https://github.com/jjaanila',
   publishDate: '2022-02-13',

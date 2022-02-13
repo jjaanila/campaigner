@@ -95,6 +95,7 @@ module.exports = function (env, argv) {
       new HtmlWebpackPlugin({
         inject: false,
         cache: false,
+        title: campaign.title,
         template: './templates/index.pug',
         filename: 'index.html',
       }),
