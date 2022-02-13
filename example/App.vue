@@ -44,14 +44,14 @@
           all the required JS, CSS, etc. files based on the dependencies, i.e. imports, between them so you
           shouldn't need to worry about that. The entry file should be a JS file that imports and calls
           createCampaign function with the Vue app as an argument. For example like this:
-          <pre>
-            import App from './App.vue'
-            import { createCampaign } from '../src/index'
-
-            createCampaign(App)
-          </pre>
-          In the example campaign, index.js is the entry file.
         </p>
+        <pre>
+          import App from './App.vue'
+          import { createCampaign } from '../src/index'
+
+          createCampaign(App)
+        </pre>
+        <p>In the example campaign, index.js is the entry file.</p>
         <area-title name="Vue application" />
         <p>
           Vue application file, like App.vue in the example campaign, is the main file of the Vue Web app. It
@@ -71,14 +71,22 @@
         <chapter-title name="Components" />
         <section-title name="read-aloud" />
         <read-aloud>
-          Once upon a time there was a <em>read-aloud</em> component. It was used in DnD campaigns when DMs wanted to reduce the amount of "uhms" in their story telling.
+          Once upon a time there was a <em>read-aloud</em> component. It was used in DnD campaigns when DMs
+          wanted to reduce the amount of "uhms" in their story telling.
         </read-aloud>
         <section-title name="encounter" />
-        <encounter :enemies="[{name: 'Thug', quantity: 3}, {name: 'Commoner', quantity:5}]" :allies="[{name: 'Commoner', quantity: 1}]" />
+        <encounter
+          :enemies="[
+            { name: 'Thug', quantity: 3 },
+            { name: 'Commoner', quantity: 5 },
+          ]"
+          :allies="[{ name: 'Commoner', quantity: 1 }]"
+        />
         <section-title name="table-of-contents" />
         <p>
           Table of contents is a component that displays a list of chapters and sections in the campaign. It
-          is shown on the left on top of everything and it follows the reader. Its content is rendered using "document" property of campaign.js file.
+          is shown on the left on top of everything and it follows the reader. Its content is rendered using
+          "document" property of campaign.js file.
         </p>
         <part-title name="Monsters" />
         <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
@@ -133,7 +141,8 @@ p {
 p + p {
   text-indent: 2em;
 }
-code,pre {
+code,
+pre {
   display: block;
   margin: 1rem 0;
 }

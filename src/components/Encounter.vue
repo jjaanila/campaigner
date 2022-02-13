@@ -8,9 +8,8 @@
       <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
     </div>
     <span>
-      {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP) <span :class="difficultyClass">{{ difficulty }}</span> ({{
-        adjustedTotalEnemyXP
-      }}
+      {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP)
+      <span :class="difficultyClass">{{ difficulty }}</span> ({{ adjustedTotalEnemyXP }}
       XP)
     </span>
     <button @click="startCombat">Start</button>

@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .comment {
-  background-color: #E0E5C1;
+  background-color: #e0e5c1;
   padding: 0.5rem 1rem;
   margin: 1rem 0;
 }

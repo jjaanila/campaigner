@@ -62,7 +62,8 @@ export default {
         this.normalRangeFt || this.disadvantageRangeFt
           ? `range ${this.rangeFt ?? 0}/${this.disadvantageRangeFt ?? 0} ft.`
           : ''
-      const reachRangeStr = reachStr || rangeStr ? `, ${reachStr}${reachStr && rangeStr ? ' or ' : ''}${rangeStr}` : ''
+      const reachRangeStr =
+        reachStr || rangeStr ? `, ${reachStr}${reachStr && rangeStr ? ' or ' : ''}${rangeStr}` : ''
       const hitStr = ` Hit: ${this.damage.toString()} ${this.damageType} damage`
       return `${attackTypeStr}${toHitStr}${reachRangeStr}${hitStr}. ${this.extra ?? ''}`
     },

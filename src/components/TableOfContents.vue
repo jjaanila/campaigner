@@ -2,7 +2,13 @@
   <nav class="toc" v-on:click="toggleToC()">
     <span>Table of Contents</span>
     <div v-if="isToCOpen">
-      <input type="checkbox" id="show-toc-always" name="show-toc-always" v-on:click.stop v-model="showToCAlways" />
+      <input
+        type="checkbox"
+        id="show-toc-always"
+        name="show-toc-always"
+        v-on:click.stop
+        v-model="showToCAlways"
+      />
       <label for="show-toc-always">Keep open</label>
     </div>
     <ol v-if="isToCOpen">
