@@ -66,7 +66,37 @@ const addEnemiesToGrid = (grid, enemies) => {
       x = closestX
       y = closestY
     }
-    grid[y][x].units.push(enemy)
+    grid[y][x].units.push({ enemy })
+  })
+  return grid
+}
+
+const addPartyToGrid = (grid, characters) => {
+  characters.forEach(character => {
+    let x = getRandomInteger(0, GRID_LAST_X)
+    let y = GRID_LAST_Y - 5
+
+    if (grid[y][x].units.length) {
+      const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+      x = closestX
+      y = closestY
+    }
+    grid[y][x].units.push({ character })
+  })
+  return grid
+}
+
+const addAlliesToGrid = (grid, allies) => {
+  allies.forEach(ally => {
+    let x = getRandomInteger(0, GRID_LAST_X)
+    let y = GRID_LAST_Y - 5
+
+    if (grid[y][x].units.length) {
+      const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+      x = closestX
+      y = closestY
+    }
+    grid[y][x].units.push({ ally })
   })
   return grid
 }
@@ -113,9 +143,18 @@ const storeConfig = {
         }
         return monsters.concat(Array(enemy.quantity).fill({ ...monster, id: getUniqueId() }))
       }, [])
+      const allyUnits = allies.reduce((monsters, ally) => {
+        const monster = rootState.campaign.monsters.find(monster => monster.name === ally.name)
+        if (!monster) {
+          throw new Error(`Monster ${ally.name} not found`)
+        }
+        return monsters.concat(Array(ally.quantity).fill({ ...monster, id: getUniqueId() }))
+      }, [])
       commit('setEnemies', enemyUnits)
       const grid = getEmptyGrid()
       addEnemiesToGrid(grid, enemyUnits)
+      addPartyToGrid(grid, rootState.party.characters)
+      addAlliesToGrid(grid, allyUnits)
       commit('setGrid', grid)
       commit('setAllies', allies)
     },

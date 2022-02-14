@@ -11,8 +11,22 @@
         <table>
           <tr v-for="(row, i) in grid" :key="i">
             <td v-for="(cell, j) in row" :key="j">
-              <combat-enemy v-if="cell.units.length" :monster="cell.units[0]" />
-              <div v-else class="combat-empty-cell" />
+              <combat-enemy
+                v-for="unit in cell.units.filter(u => u.enemy)"
+                :monster="unit.enemy"
+                :key="unit.enemy.id"
+              />
+              <combat-character
+                v-for="unit in cell.units.filter(u => u.character)"
+                :character="unit.character"
+                :key="unit.character.id"
+              />
+              <combat-ally
+                v-for="unit in cell.units.filter(u => u.ally)"
+                :monster="unit.ally"
+                :key="unit.ally.id"
+              />
+              <div v-if="!cell.units.length" class="combat-empty-cell" />
             </td>
           </tr>
         </table>
@@ -30,11 +44,15 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import CombatAlly from './CombatAlly.vue'
 import CombatEnemy from './CombatEnemy.vue'
+import CombatCharacter from './CombatCharacter.vue'
 export default {
   name: 'CombatOverlay',
   components: {
+    CombatAlly,
     CombatEnemy,
+    CombatCharacter,
   },
   computed: {
     ...mapState({
