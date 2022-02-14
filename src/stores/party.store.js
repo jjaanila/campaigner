@@ -95,7 +95,9 @@ const storeConfig = {
       if (character.conditions.find(condition => condition.name === params.conditionName)) {
         return
       }
-      const condition = rootState.campaign.conditions.find(condition => condition.name === params.conditionName)
+      const condition = rootState.campaign.conditions.find(
+        condition => condition.name === params.conditionName
+      )
       if (!condition) {
         throw new Error(`Did not find condition ${params.conditionName}`)
       }

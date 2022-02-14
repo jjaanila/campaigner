@@ -59,7 +59,10 @@ export default {
       conditions: state => state.campaign.conditions,
     }),
     availableConditions() {
-      return this.conditions.filter(condition => !this.creature.conditions.some(c => c.name === condition.name), 'name')
+      return this.conditions.filter(
+        condition => !this.creature.conditions.some(c => c.name === condition.name),
+        'name'
+      )
     },
   },
   methods: {

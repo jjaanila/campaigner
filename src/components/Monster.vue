@@ -19,8 +19,16 @@
     <monster-divider />
     <monster-stat-row class="monster-saving-throws" label="Saving Throws" :value="savingThrowsStr" />
     <monster-stat-row class="monster-skills" label="Skills" :value="skillsStr" />
-    <monster-stat-row class="monster-damage-resistances" label="Damage Resistances" :value="damageResistancesStr" />
-    <monster-stat-row class="monster-damage-immunities" label="Damage Immunities" :value="damageImmunitiesStr" />
+    <monster-stat-row
+      class="monster-damage-resistances"
+      label="Damage Resistances"
+      :value="damageResistancesStr"
+    />
+    <monster-stat-row
+      class="monster-damage-immunities"
+      label="Damage Immunities"
+      :value="damageImmunitiesStr"
+    />
     <monster-stat-row
       class="monster-condition-immunities"
       label="Condition Immunities"
@@ -179,9 +187,9 @@ export default {
       return `${this.speedFt} ft.`
     },
     propertiesStr() {
-      return `${capitalize(this.size)} ${this.type ? ' ' + this.type : ''}${this.race ? ', ' + this.race : ''}${
-        this.alignment ? ', ' + this.alignment : ''
-      }`
+      return `${capitalize(this.size)} ${this.type ? ' ' + this.type : ''}${
+        this.race ? ', ' + this.race : ''
+      }${this.alignment ? ', ' + this.alignment : ''}`
     },
     hitPointsStr() {
       return this.hitPoints.toString()
@@ -192,7 +200,8 @@ export default {
     skillsStr() {
       return this.skills
         .map(
-          skillObject => `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`
+          skillObject =>
+            `${capitalize(skillObject.name)} ${skillObject.modifier > 0 ? '+' : ''}${skillObject.modifier}`
         )
         .join(', ')
     },
