@@ -9,19 +9,25 @@
         }"
       >
         <table>
-          <tr v-for="(row, i) in grid" :key="i">
-            <td v-for="(cell, j) in row" :key="j">
+          <tr v-for="(row, y) in grid" :key="y">
+            <td v-for="(cell, x) in row" :key="x">
               <combat-enemy
+                draggable="true"
+                @dragstart="onDragStart($event, unit.enemy, { x, y })"
                 v-for="unit in cell.units.filter(u => u.enemy)"
                 :monster="unit.enemy"
                 :key="unit.enemy.id"
               />
               <combat-character
+                draggable="true"
+                @dragstart="onDragStart($event, unit.character, { x, y })"
                 v-for="unit in cell.units.filter(u => u.character)"
                 :character="unit.character"
                 :key="unit.character.id"
               />
               <combat-ally
+                draggable="true"
+                @dragstart="onDragStart($event, unit.ally, { x, y })"
                 v-for="unit in cell.units.filter(u => u.ally)"
                 :monster="unit.ally"
                 :key="unit.ally.id"
@@ -66,6 +72,9 @@ export default {
   },
   methods: {
     ...mapActions('ui', ['setIsCombatOverlayOpen']),
+    onDragStart(event, unit, oldPosition) {
+      event.dataTransfer.setData(JSON.stringify({ unit, oldPosition }))
+    },
   },
 }
 </script>

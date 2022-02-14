@@ -1,5 +1,7 @@
 <template>
-  <div class="combat-character" :title="character.name">{{ character.name[0] }}</div>
+  <div class="combat-character" :title="character.name">
+    {{ character.name[0] }}
+  </div>
 </template>
 
 <script>
@@ -11,7 +13,6 @@ export default {
       required: true,
     },
   },
-  computed: {},
 }
 </script>
 
