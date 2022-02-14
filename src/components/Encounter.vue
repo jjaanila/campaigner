@@ -35,10 +35,7 @@ export default {
     ...mapActions('ui', ['setIsCombatOverlayOpen']),
     startCombat() {
       this.initializeCombat({
-        enemies: this.enemiesWithMonsters.reduce(
-          (monsters, enemy) => monsters.concat(Array(enemy.quantity).fill(enemy.monster)),
-          []
-        ),
+        enemies: this.enemies,
         allies: this.allies,
       })
       this.setIsInCombat(true)
