@@ -1,4 +1,4 @@
 import App from './App.vue'
-import { createCampaign } from '../src/index'
+import { createCampaign } from '../index'
 
 createCampaign(App)

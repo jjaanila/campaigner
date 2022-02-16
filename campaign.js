@@ -3,7 +3,7 @@ module.exports = Object.freeze({
   author: 'Janne Jaanila',
   authorUrl: 'https://github.com/jjaanila',
   publishDate: '2022-02-13',
-  entry: './example/index.js',
+  entry: './src/example/index.js',
   document: {
     parts: [
       {

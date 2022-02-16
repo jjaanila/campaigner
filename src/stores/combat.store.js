@@ -10,10 +10,10 @@ const GRID_LAST_Y = GRID_HEIGHT - 1
 const getEmptyGrid = () =>
   Array(GRID_HEIGHT)
     .fill(null)
-    .map(y =>
+    .map(_y =>
       Array(GRID_WIDTH)
         .fill(null)
-        .map(x => ({ units: [] }))
+        .map(_x => ({ units: [] }))
     )
 
 const migrateState = state => {

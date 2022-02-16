@@ -2,7 +2,7 @@
   <div>
     <main
       :style="{
-        background: `url(${require('../src/img/paper.jpg')})`,
+        background: `url(${require('../img/paper.jpg')})`,
       }"
     >
       <table-of-contents />
@@ -100,7 +100,7 @@
 import 'normalize.css'
 
 export default {
-  name: 'app',
+  name: 'App',
   computed: {
     monsters() {
       return this.$store.state.campaign.monsters
