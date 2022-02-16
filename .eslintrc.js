@@ -10,8 +10,9 @@ module.exports = {
   ],
   rules: {
     'vue/no-unused-vars': 'error',
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'vue/multi-word-component-names': 'off',
+    'vue/require-default-prop': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
   },
   env: {
     browser: true,

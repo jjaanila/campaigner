@@ -1,15 +1,16 @@
 <template>
   <div class="condition-menu">
-    <button
-      v-for="condition in sortByKey([...availableConditions], 'name')"
-      v-if="isConditionMenuOpen"
-      :key="condition.name"
-      class="condition available-condition"
-      :title="condition.name"
-      @click="addConditionToCreature(condition)"
-    >
-      {{ condition.name.slice(0, 3) }}
-    </button>
+    <div v-if="isConditionMenuOpen" class="available-conditions">
+      <button
+        v-for="condition in sortByKey([...availableConditions], 'name')"
+        :key="condition.name"
+        class="condition available-condition"
+        :title="condition.name"
+        @click="addConditionToCreature(condition)"
+      >
+        {{ condition.name.slice(0, 3) }}
+      </button>
+    </div>
     <button
       v-for="condition in sortByKey([...creature.conditions], 'name')"
       :key="condition.name"
@@ -79,6 +80,9 @@ export default {
 .condition {
   width: 2rem;
   padding: 0 0.2rem;
+}
+.available-conditions {
+  display: flex;
 }
 .available-conditions {
   display: flex;

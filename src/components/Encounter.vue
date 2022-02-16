@@ -1,11 +1,13 @@
 <template>
   <div class="encounter">
-    <span v-for="enemy in enemiesWithMonsters">
+    <span v-for="enemy in enemiesWithMonsters" :key="enemy.id">
       {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
     </span>
     <div v-if="richAllies.length">
       <strong>Allies</strong>
-      <span v-for="ally in richAllies">{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name" /></span>
+      <span v-for="ally in richAllies" :key="ally.id"
+        >{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name"
+      /></span>
     </div>
     <span>
       {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP)
@@ -28,18 +30,6 @@ export default {
     allies: {
       type: Array,
       default: () => [],
-    },
-  },
-  methods: {
-    ...mapActions('combat', ['initializeCombat', 'setIsInCombat']),
-    ...mapActions('ui', ['setIsCombatOverlayOpen']),
-    startCombat() {
-      this.initializeCombat({
-        enemies: this.enemies,
-        allies: this.allies,
-      })
-      this.setIsInCombat(true)
-      this.setIsCombatOverlayOpen(true)
     },
   },
   computed: {
@@ -108,6 +98,18 @@ export default {
     },
     difficultyClass() {
       return `difficulty difficulty-${this.difficulty}`
+    },
+  },
+  methods: {
+    ...mapActions('combat', ['initializeCombat', 'setIsInCombat']),
+    ...mapActions('ui', ['setIsCombatOverlayOpen']),
+    startCombat() {
+      this.initializeCombat({
+        enemies: this.enemies,
+        allies: this.allies,
+      })
+      this.setIsInCombat(true)
+      this.setIsCombatOverlayOpen(true)
     },
   },
 }

@@ -32,10 +32,11 @@ export default {
         return this.id
       }
       // This isn't probably a good idea but let's try autogenerating the id
-      const matches = this.path.match(/[^\/\\]+?$/)
+      const matches = this.path.match(/[^/\\]+?$/)
       if (matches) {
         return matches[matches.length - 1].replaceAll(/\W/g, '-')
       }
+      throw new Error('Could not generate figure id')
     },
   },
 }

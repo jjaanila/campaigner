@@ -15,7 +15,6 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import { sortByKey } from '../utils'
 import BackpackIcon from '../img/backpack.svg'
 import ClickOutside from 'vue-click-outside'
 export default {
