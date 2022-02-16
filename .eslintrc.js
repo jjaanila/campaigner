@@ -6,10 +6,12 @@ module.exports = {
     'plugin:vue/base',
     'plugin:vue/strongly-recommended',
     'plugin:vue/recommended',
+    'plugin:prettier/recommended',
   ],
   rules: {
     'vue/no-unused-vars': 'error',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'vue/multi-word-component-names': 'off',
   },
   env: {
     browser: true,

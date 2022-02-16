@@ -12,25 +12,25 @@
           <tr v-for="(row, y) in grid" :key="y">
             <td v-for="(cell, x) in row" :key="x">
               <combat-enemy
-                draggable="true"
-                @dragstart="onDragStart($event, unit.enemy, { x, y })"
                 v-for="unit in cell.units.filter(u => u.enemy)"
-                :monster="unit.enemy"
                 :key="unit.enemy.id"
+                draggable="true"
+                :monster="unit.enemy"
+                @dragstart="onDragStart($event, unit.enemy, { x, y })"
               />
               <combat-character
-                draggable="true"
-                @dragstart="onDragStart($event, unit.character, { x, y })"
                 v-for="unit in cell.units.filter(u => u.character)"
-                :character="unit.character"
                 :key="unit.character.id"
+                draggable="true"
+                :character="unit.character"
+                @dragstart="onDragStart($event, unit.character, { x, y })"
               />
               <combat-ally
-                draggable="true"
-                @dragstart="onDragStart($event, unit.ally, { x, y })"
                 v-for="unit in cell.units.filter(u => u.ally)"
-                :monster="unit.ally"
                 :key="unit.ally.id"
+                draggable="true"
+                :monster="unit.ally"
+                @dragstart="onDragStart($event, unit.ally, { x, y })"
               />
               <div v-if="!cell.units.length" class="combat-empty-cell" />
             </td>

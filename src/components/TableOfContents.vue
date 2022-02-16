@@ -1,25 +1,25 @@
 <template>
-  <nav class="toc" v-on:click="toggleToC()">
+  <nav class="toc" @click="toggleToC()">
     <span>Table of Contents</span>
     <div v-if="isToCOpen">
       <input
-        type="checkbox"
         id="show-toc-always"
-        name="show-toc-always"
-        v-on:click.stop
         v-model="showToCAlways"
+        type="checkbox"
+        name="show-toc-always"
+        @click.stop
       />
       <label for="show-toc-always">Keep open</label>
     </div>
     <ol v-if="isToCOpen">
       <li v-for="part in document.parts" :key="part.name">
-        <a class="toc-part" v-on:click.stop :href="`#${part.id}`">{{ part.name }}</a>
+        <a class="toc-part" :href="`#${part.id}`" @click.stop>{{ part.name }}</a>
         <ol>
           <li v-for="chapter in part.chapters" :key="chapter.name">
-            <a class="toc-chapter" v-on:click.stop :href="`#${chapter.id}`">{{ chapter.name }}</a>
+            <a class="toc-chapter" :href="`#${chapter.id}`" @click.stop>{{ chapter.name }}</a>
             <ol>
               <li v-for="section in chapter.sections" :key="section.name">
-                <a class="toc-section" v-on:click.stop :href="`#${section.id}`">{{ section.name }}</a>
+                <a class="toc-section" :href="`#${section.id}`" @click.stop>{{ section.name }}</a>
               </li>
             </ol>
           </li>

@@ -1,6 +1,8 @@
 <template>
   <div class="campaign-title-container">
-    <h1 class="campaign-title">{{ title }}</h1>
+    <h1 class="campaign-title">
+      {{ title }}
+    </h1>
     <address class="author">
       <a rel="author" class="url fn n" :href="authorUrl">{{ author }}</a>
     </address>

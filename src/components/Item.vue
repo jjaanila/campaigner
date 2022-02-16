@@ -2,7 +2,9 @@
   <div :id="containerId" class="item">
     <span class="item-name">{{ name }}</span>
     <span class="item-properties">{{ properties }}</span>
-    <p class="item-description">{{ description }}</p>
+    <p class="item-description">
+      {{ description }}
+    </p>
   </div>
 </template>
 

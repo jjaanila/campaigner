@@ -1,5 +1,7 @@
 <template>
-  <h3 :id="h3Id" class="chapter-title">{{ name }}</h3>
+  <h3 :id="h3Id" class="chapter-title">
+    {{ name }}
+  </h3>
 </template>
 
 <script>

@@ -1,5 +1,7 @@
 <template>
-  <div v-on:click="closeToC()" :class="`page ${isToCOpen ? 'toc-open' : ''}`"><slot /></div>
+  <div :class="`page ${isToCOpen ? 'toc-open' : ''}`" @click="closeToC()">
+    <slot />
+  </div>
 </template>
 
 <script>

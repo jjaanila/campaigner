@@ -1,5 +1,7 @@
 <template>
-  <h5 :id="h5Id" class="area-title">{{ name }}</h5>
+  <h5 :id="h5Id" class="area-title">
+    {{ name }}
+  </h5>
 </template>
 
 <script>

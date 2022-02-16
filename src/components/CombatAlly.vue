@@ -1,5 +1,7 @@
 <template>
-  <div class="combat-ally" :title="monster.name">{{ monster.name[0] }}</div>
+  <div class="combat-ally" :title="monster.name">
+    {{ monster.name[0] }}
+  </div>
 </template>
 
 <script>

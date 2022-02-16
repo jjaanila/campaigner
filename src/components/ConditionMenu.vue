@@ -1,37 +1,37 @@
 <template>
   <div class="condition-menu">
     <button
-      class="condition available-condition"
-      v-on:click="addConditionToCreature(condition)"
-      v-if="isConditionMenuOpen"
       v-for="condition in sortByKey([...availableConditions], 'name')"
-      :key="condition.name"
-      :title="condition.name"
-    >
-      {{ condition.name.slice(0, 3) }}
-    </button>
-    <button
-      class="condition active-condition"
-      v-for="condition in sortByKey([...creature.conditions], 'name')"
-      v-on:click="removeCondition({ characterName: creature.name, conditionName: condition.name })"
-      :key="condition.name"
-      :title="condition.name"
-    >
-      {{ condition.name.slice(0, 3) }}
-    </button>
-    <button
-      class="condition-menu-close-button"
       v-if="isConditionMenuOpen"
-      v-on:click="isConditionMenuOpen = false"
+      :key="condition.name"
+      class="condition available-condition"
+      :title="condition.name"
+      @click="addConditionToCreature(condition)"
+    >
+      {{ condition.name.slice(0, 3) }}
+    </button>
+    <button
+      v-for="condition in sortByKey([...creature.conditions], 'name')"
+      :key="condition.name"
+      class="condition active-condition"
+      :title="condition.name"
+      @click="removeCondition({ characterName: creature.name, conditionName: condition.name })"
+    >
+      {{ condition.name.slice(0, 3) }}
+    </button>
+    <button
+      v-if="isConditionMenuOpen"
+      class="condition-menu-close-button"
       title="Close"
+      @click="isConditionMenuOpen = false"
     >
       -
     </button>
     <button
-      class="condition-menu-add-button"
       v-if="!isConditionMenuOpen"
-      v-on:click="isConditionMenuOpen = true"
+      class="condition-menu-add-button"
       title="Add condition"
+      @click="isConditionMenuOpen = true"
     >
       +
     </button>

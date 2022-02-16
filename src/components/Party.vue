@@ -3,7 +3,7 @@
     <table v-show="characters.length">
       <thead>
         <tr>
-          <th></th>
+          <th />
           <th>Name</th>
           <th>AC</th>
           <th>HP</th>
@@ -14,87 +14,87 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="character" v-for="character in characters" :key="character.name">
+        <tr v-for="character in characters" :key="character.name" class="character">
           <td class="condition-menu-td">
             <condition-menu :creature="character" />
             <inventory :character="character" />
           </td>
           <td>
-            <input class="character-name" type="text" v-model="character.name" placeholder="Name" />
+            <input v-model="character.name" class="character-name" type="text" placeholder="Name" />
           </td>
           <td>
             <input
+              v-model.number="character.armorClass"
               class="character-armor-class"
               type="number"
-              v-on:input="updateCharacters()"
-              v-model.number="character.armorClass"
               min="1"
               max="30"
               value="1"
+              @input="updateCharacters()"
             />
           </td>
           <td>
             <input
+              v-model.number="character.hitPoints"
               class="character-hit-points"
               type="number"
-              v-on:input="updateCharacters()"
-              v-model.number="character.hitPoints"
               min="0"
               :max="character.maxHitPoints"
               value="1"
+              @input="updateCharacters()"
             />
           </td>
           <td>
             <input
+              v-model.number="character.maxHitPoints"
               class="character-max-hit-points"
               type="number"
-              v-on:input="updateCharacters()"
-              v-model.number="character.maxHitPoints"
               :size="character.maxHitPoints && character.maxHitPoints.toString().length"
               min="1"
               value="1"
+              @input="updateCharacters()"
             />
           </td>
           <td>
             <input
+              v-model.number="character.level"
               class="character-level"
               type="number"
-              v-on:input="updateCharacters()"
-              v-model.number="character.level"
               min="1"
               max="20"
               value="1"
+              @input="updateCharacters()"
             />
           </td>
           <td>
             <input
+              v-model.number="character.passiveWisdom"
               class="character-passive-wisdom"
               type="number"
-              v-on:input="updateCharacters()"
-              v-model.number="character.passiveWisdom"
               min="1"
               max="30"
               value="1"
+              @input="updateCharacters()"
             />
           </td>
           <td>
             <input
+              v-model.number="character.speed"
               class="character-speed"
               type="number"
-              v-on:input="updateCharacters()"
-              v-model.number="character.speed"
               min="0"
               max="100"
               value="30"
+              @input="updateCharacters()"
             />
           </td>
           <td>
-            <button v-on:click="removeCharacter(character.name)" title="Remove party member">-</button>
+            <button title="Remove party member" @click="removeCharacter(character.name)">-</button>
           </td>
         </tr>
       </tbody>
     </table>
-    <button v-on:click="addCharacter()" title="Add party member">+</button>
+    <button title="Add party member" @click="addCharacter()">+</button>
   </div>
 </template>
 

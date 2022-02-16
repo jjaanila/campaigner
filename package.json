@@ -16,7 +16,7 @@
     "release": "npm run build && rm dist/*.js* && (cd dist; zip -r $npm_package_name-v$npm_package_version.zip .)",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "eslint": "eslint src/ scripts/ *.js",
+    "eslint": "eslint src scripts *.js --ext .vue,.js --max-warnings=0",
     "eslint:fix": "npm run eslint -- --fix"
   },
   "browserslist": [
@@ -51,6 +51,8 @@
   },
   "devDependencies": {
     "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.4.1",
     "husky": "^7.0.4",
     "prettier": "^2.5.1"

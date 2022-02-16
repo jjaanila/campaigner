@@ -1,5 +1,5 @@
 <template>
-  <div class="monster-stat-row" v-if="label && value">
+  <div v-if="label && value" class="monster-stat-row">
     <span class="monster-stat-row-label">{{ label }}</span>
     <span class="monster-stat-row-value">{{ value }}</span>
   </div>

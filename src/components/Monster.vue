@@ -2,7 +2,9 @@
   <div :id="containerId" class="monster">
     <span class="monster-name">{{ name }}</span>
     <span class="monster-properties">{{ propertiesStr }}</span>
-    <p class="monster-description">{{ description }}</p>
+    <p class="monster-description">
+      {{ description }}
+    </p>
     <monster-divider />
     <monster-stat-row label="Armor Class" :value="armorClassStr" />
     <monster-stat-row label="Hit Points" :value="hitPointsStr" />
@@ -39,9 +41,9 @@
     <monster-stat-row class="monster-challenge-rating" label="Challenge" :value="challengeRatingStr" />
     <monster-divider />
     <monster-action v-for="passive in passives" :key="passive.name" v-bind="passive" />
-    <monster-section-header name="Actions" v-if="actions.length > 0" />
+    <monster-section-header v-if="actions.length > 0" name="Actions" />
     <monster-action v-for="action in actions" :key="action.name" v-bind="action" />
-    <monster-section-header name="Reactions" v-if="reactions.length > 0" />
+    <monster-section-header v-if="reactions.length > 0" name="Reactions" />
     <monster-action v-for="reaction in reactions" :key="reaction.name" v-bind="reaction" />
   </div>
 </template>

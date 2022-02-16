@@ -1,12 +1,12 @@
 <template>
   <div class="inventory">
-    <button class="inventory-button" @click.stop="toggleInventory()" title="Inventory">
+    <button class="inventory-button" title="Inventory" @click.stop="toggleInventory()">
       <img :src="backpackIcon" />
     </button>
     <textarea
-      v-click-outside="hideInventory"
-      ref="inventory"
       v-show="isInventoryOpen"
+      ref="inventory"
+      v-click-outside="hideInventory"
       :value="inventory"
       @input="updateInventory"
     />
@@ -20,14 +20,14 @@ import BackpackIcon from '../img/backpack.svg'
 import ClickOutside from 'vue-click-outside'
 export default {
   name: 'Inventory',
+  directives: {
+    ClickOutside,
+  },
   props: {
     character: {
       type: Object,
       required: true,
     },
-  },
-  directives: {
-    ClickOutside,
   },
   data() {
     return {
