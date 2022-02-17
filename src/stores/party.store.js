@@ -1,4 +1,5 @@
 import { encounterDifficulties } from '../tables'
+import { getUniqueId } from '../utils'
 
 export const LOCAL_STORAGE_STATE_KEY = 'campaigner-party'
 
@@ -26,6 +27,7 @@ const updateEncounterLimits = state => {
 const migrateState = state => {
   state.characters.forEach(character => (character.conditions ??= []))
   state.characters.forEach(character => (character.inventory ??= ''))
+  state.characters.forEach(character => (character.id ??= getUniqueId()))
   return state
 }
 
@@ -60,6 +62,7 @@ const storeConfig = {
         ...state.characters,
         {
           name: '',
+          id: getUniqueId(),
           level: 1,
           hitPoints: 1,
           maxHitPoints: 1,
