@@ -1,5 +1,10 @@
 <template>
-  <div class="combat-ally" :title="monster.name" @dragstart="$emit('dragstart', $event)">
+  <div
+    class="combat-ally"
+    :title="monster.name"
+    @dragstart="$emit('dragstart', $event)"
+    @click.prevent="$emit('click')"
+  >
     {{ monster.name[0] }}
   </div>
 </template>

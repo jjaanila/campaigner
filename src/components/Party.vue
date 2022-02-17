@@ -124,7 +124,6 @@ export default {
       'addCondition',
       'removeCondition',
     ]),
-    ...mapActions('ui', ['setIsConditionMenuOpen']),
     downloadState() {
       const link = document.createElement('a')
       link.href = URL.createObjectURL(
@@ -152,6 +151,7 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 .party {
+  z-index: 3;
   position: fixed;
   top: 1rem;
   right: 1rem;

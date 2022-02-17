@@ -1,5 +1,10 @@
 <template>
-  <div class="combat-character" :title="character.name" @dragstart="$emit('dragstart', $event)">
+  <div
+    class="combat-character"
+    :title="character.name"
+    @dragstart="$emit('dragstart', $event)"
+    @click="$emit('click', $event)"
+  >
     {{ character.name.slice(0, 2) }}
   </div>
 </template>

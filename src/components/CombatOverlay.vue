@@ -8,6 +8,7 @@
           background: `url(${require('../img/paper.jpg')})`,
         }"
       >
+        <combat-turn-order />
         <table>
           <tr v-for="(row, y) in grid" :key="y">
             <td
@@ -19,21 +20,21 @@
               @dragenter.prevent
             >
               <combat-enemy
-                v-for="unit in cell.units.filter(u => u.type === 'enemy')"
+                v-for="unit in cell.units.filter(u => u.unitType === 'enemy')"
                 :key="unit.id"
                 draggable="true"
                 :monster="unit"
                 @dragstart="onUnitDragStart($event, unit, { x, y })"
               />
               <combat-character
-                v-for="unit in cell.units.filter(u => u.type === 'character')"
+                v-for="unit in cell.units.filter(u => u.unitType === 'character')"
                 :key="unit.id"
                 draggable="true"
                 :character="unit"
                 @dragstart="onUnitDragStart($event, unit, { x, y })"
               />
               <combat-ally
-                v-for="unit in cell.units.filter(u => u.type === 'ally')"
+                v-for="unit in cell.units.filter(u => u.unitType === 'ally')"
                 :key="unit.id"
                 draggable="true"
                 :monster="unit"
@@ -60,17 +61,19 @@ import { mapState, mapActions } from 'vuex'
 import CombatAlly from './CombatAlly.vue'
 import CombatEnemy from './CombatEnemy.vue'
 import CombatCharacter from './CombatCharacter.vue'
+import CombatTurnOrder from './CombatTurnOrder.vue'
 export default {
   name: 'CombatOverlay',
   components: {
     CombatAlly,
     CombatEnemy,
     CombatCharacter,
+    CombatTurnOrder,
   },
   computed: {
     ...mapState({
       isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
-      party: state => state.party.characters,
+      characters: state => state.party.characters,
       isInCombat: state => state.combat.isInCombat,
       enemies: state => state.combat.enemies,
       allies: state => state.combat.allies,
@@ -108,6 +111,8 @@ export default {
   z-index: 1;
 }
 .combat-overlay-content {
+  display: flex;
+  flex-flow: column nowrap;
   position: fixed;
   right: 5rem;
   top: 1rem;
@@ -117,6 +122,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.combat-turn-order {
+  margin-bottom: 1rem;
 }
 .open-combat-overlay-button {
   position: fixed;
@@ -128,7 +136,6 @@ export default {
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
 }
-
 .combat-empty-cell {
   width: 100%;
   height: 100%;
