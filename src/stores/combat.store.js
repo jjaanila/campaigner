@@ -175,10 +175,16 @@ const storeConfig = {
         return
       }
       if (state.grid[newPosition.y][newPosition.x].units.length) {
-        console.error(
-          `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but new position is occupied`
-        )
-        return
+        const hasAtLeastTwoNonSwarmUnits =
+          [...state.grid[newPosition.y][newPosition.x].units, unit].filter(
+            unit => !(unit.passives?.some(passive => passive.name === 'Swarm') ?? false)
+          ).length > 1
+        if (hasAtLeastTwoNonSwarmUnits) {
+          console.error(
+            `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but new position is occupied`
+          )
+          return
+        }
       }
       commit('moveUnit', { unit, oldPosition, newPosition })
     },

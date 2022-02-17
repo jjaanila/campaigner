@@ -53,6 +53,10 @@ module.exports = Object.freeze({
           description:
             "The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
         },
+        {
+          name: 'Swarm',
+          description: 'Blaa blaa',
+        },
       ],
       actions: [
         {

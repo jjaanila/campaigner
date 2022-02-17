@@ -13,6 +13,7 @@
             <td
               v-for="(cell, x) in row"
               :key="x"
+              :class="cell.units.length > 1 ? 'combat-cell many' : 'combat-cell'"
               @drop="onDropOnCell($event, cell, { x, y })"
               @dragover.prevent
               @dragenter.prevent
@@ -122,6 +123,12 @@ export default {
   bottom: 0.5rem;
   right: 0.5rem;
 }
+.combat-cell.many {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
 .combat-empty-cell {
   width: 100%;
   height: 100%;
