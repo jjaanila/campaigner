@@ -1,6 +1,6 @@
 <template>
   <div class="combat-character" :title="character.name" @dragstart="$emit('dragstart', $event)">
-    {{ character.name[0] }}
+    {{ character.name.slice(0, 2) }}
   </div>
 </template>
 
