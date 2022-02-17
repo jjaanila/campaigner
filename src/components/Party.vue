@@ -95,6 +95,7 @@
       </tbody>
     </table>
     <button title="Add party member" @click="addCharacter()">+</button>
+    <button title="Download state" @click.prevent="downloadState()">Download state</button>
   </div>
 </template>
 
@@ -111,6 +112,8 @@ export default {
   computed: {
     ...mapState({
       characters: state => state.party.characters,
+      party: state => state.party,
+      combat: state => state.combat,
     }),
   },
   methods: {
@@ -122,6 +125,17 @@ export default {
       'removeCondition',
     ]),
     ...mapActions('ui', ['setIsConditionMenuOpen']),
+    downloadState() {
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(
+        new Blob([JSON.stringify({ party: this.party, combat: this.combat })], {
+          type: 'text/plain',
+        })
+      )
+      link.download = `campaigner-state-${new Date().toISOString()}.json`
+      link.click()
+      URL.revokeObjectURL(link.href)
+    },
   },
 }
 </script>
