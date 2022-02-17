@@ -1,5 +1,5 @@
 <template>
-  <div class="combat-enemy" :title="monster.name">
+  <div class="combat-enemy" :title="monster.name" @dragstart="$emit('dragstart', $event)">
     {{ monster.name[0] }}
   </div>
 </template>

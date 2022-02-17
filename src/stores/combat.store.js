@@ -66,7 +66,7 @@ const addEnemiesToGrid = (grid, enemies) => {
       x = closestX
       y = closestY
     }
-    grid[y][x].units.push({ enemy })
+    grid[y][x].units.push({ ...enemy, type: 'enemy' })
   })
   return grid
 }
@@ -81,7 +81,7 @@ const addPartyToGrid = (grid, characters) => {
       x = closestX
       y = closestY
     }
-    grid[y][x].units.push({ character })
+    grid[y][x].units.push({ ...character, type: 'character' })
   })
   return grid
 }
@@ -96,7 +96,7 @@ const addAlliesToGrid = (grid, allies) => {
       x = closestX
       y = closestY
     }
-    grid[y][x].units.push({ ally })
+    grid[y][x].units.push({ ...ally, type: 'ally' })
   })
   return grid
 }
@@ -116,6 +116,12 @@ const storeConfig = {
     },
     setGrid(state, grid) {
       state.grid = grid
+    },
+    moveUnit(state, { unit, oldPosition, newPosition }) {
+      state.grid[oldPosition.y][oldPosition.x].units = state.grid[oldPosition.y][oldPosition.x].units.filter(
+        oldPosUnit => oldPosUnit.id !== unit.id
+      )
+      state.grid[newPosition.y][newPosition.x].units.push(unit)
     },
   },
   actions: {
@@ -160,6 +166,21 @@ const storeConfig = {
     },
     setIsInCombat({ commit }, value) {
       commit('setIsInCombat', value)
+    },
+    moveUnit({ commit, state }, { unit, oldPosition, newPosition }) {
+      if (!state.grid[oldPosition.y][oldPosition.x].units.some(oldPosUnit => oldPosUnit.id === unit.id)) {
+        console.error(
+          `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but unit was not found`
+        )
+        return
+      }
+      if (state.grid[newPosition.y][newPosition.x].units.length) {
+        console.error(
+          `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but new position is occupied`
+        )
+        return
+      }
+      commit('moveUnit', { unit, oldPosition, newPosition })
     },
   },
 }

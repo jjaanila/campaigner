@@ -10,27 +10,33 @@
       >
         <table>
           <tr v-for="(row, y) in grid" :key="y">
-            <td v-for="(cell, x) in row" :key="x">
+            <td
+              v-for="(cell, x) in row"
+              :key="x"
+              @drop="onDropOnCell($event, cell, { x, y })"
+              @dragover.prevent
+              @dragenter.prevent
+            >
               <combat-enemy
-                v-for="unit in cell.units.filter(u => u.enemy)"
-                :key="unit.enemy.id"
+                v-for="unit in cell.units.filter(u => u.type === 'enemy')"
+                :key="unit.id"
                 draggable="true"
-                :monster="unit.enemy"
-                @dragstart="onDragStart($event, unit.enemy, { x, y })"
+                :monster="unit"
+                @dragstart="onUnitDragStart($event, unit, { x, y })"
               />
               <combat-character
-                v-for="unit in cell.units.filter(u => u.character)"
-                :key="unit.character.id"
+                v-for="unit in cell.units.filter(u => u.type === 'character')"
+                :key="unit.id"
                 draggable="true"
-                :character="unit.character"
-                @dragstart="onDragStart($event, unit.character, { x, y })"
+                :character="unit"
+                @dragstart="onUnitDragStart($event, unit, { x, y })"
               />
               <combat-ally
-                v-for="unit in cell.units.filter(u => u.ally)"
-                :key="unit.ally.id"
+                v-for="unit in cell.units.filter(u => u.type === 'ally')"
+                :key="unit.id"
                 draggable="true"
-                :monster="unit.ally"
-                @dragstart="onDragStart($event, unit.ally, { x, y })"
+                :monster="unit"
+                @dragstart="onUnitDragStart($event, unit, { x, y })"
               />
               <div v-if="!cell.units.length" class="combat-empty-cell" />
             </td>
@@ -72,8 +78,15 @@ export default {
   },
   methods: {
     ...mapActions('ui', ['setIsCombatOverlayOpen']),
-    onDragStart(event, unit, oldPosition) {
-      event.dataTransfer.setData(JSON.stringify({ unit, oldPosition }))
+    ...mapActions('combat', ['moveUnit']),
+    onUnitDragStart(event, unit, oldPosition) {
+      event.dataTransfer.dropEffect = 'move'
+      event.dataTransfer.effectAllowed = 'move'
+      event.dataTransfer.setData('dragUnit', JSON.stringify({ unit, oldPosition }))
+    },
+    onDropOnCell(event, cell, newPosition) {
+      const { unit, oldPosition } = JSON.parse(event.dataTransfer.getData('dragUnit'))
+      this.moveUnit({ unit, oldPosition, newPosition })
     },
   },
 }
