@@ -192,6 +192,7 @@ const storeConfig = {
         'setTurnOrder',
         [...characterUnits, ...enemyUnits, ...allyUnits].map(unit => unit.id)
       )
+      commit('setUnitIdInTurn', characterUnits[0].id)
     },
     setIsInCombat({ commit }, value) {
       commit('setIsInCombat', value)
