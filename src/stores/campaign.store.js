@@ -1,13 +1,13 @@
-import campaignJson from 'project-root/campaign'
+import campaignJs from 'project-root/campaign'
 import { sortByKey, generateId } from '../utils'
 import Dice from '../Dice'
 import { findCRData } from '../tables'
 
-export const parseCampaign = campaignJson => {
+const parseCampaign = campaignJs => {
   return {
-    ...campaignJson,
+    ...campaignJs,
     monsters: sortByKey(
-      campaignJson.monsters.map(monster => ({
+      campaignJs.monsters.map(monster => ({
         ...monster,
         xp: findCRData(monster.challengeRating).xp,
         id: generateId(monster.name, 'monster'),
@@ -20,7 +20,7 @@ export const parseCampaign = campaignJson => {
       'name'
     ),
     document: {
-      parts: campaignJson.document.parts.map(part => ({
+      parts: campaignJs.document.parts.map(part => ({
         ...part,
         id: generateId(part.name, 'part'),
         chapters: part.chapters.map(chapter => ({
@@ -36,7 +36,7 @@ export const parseCampaign = campaignJson => {
   }
 }
 
-export default {
+export default () => ({
   namespaced: true,
-  state: parseCampaign(campaignJson),
-}
+  state: parseCampaign(campaignJs),
+})
