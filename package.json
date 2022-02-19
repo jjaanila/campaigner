@@ -11,15 +11,13 @@
     "campaigner": "./src/campaigner.js"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy-example": "gh-pages -d dist",
+    "deploy-example": "npm run build && gh-pages -d dist",
     "prepare": "husky install",
     "test": "jest",
     "test:watch": "jest --watch",
     "start": "cross-env webpack-dev-server --mode=development --open --hot",
-    "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress",
+    "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress && rm dist/*.js*",
     "validate": "node ./scripts/validate.js",
-    "release": "npm run build && rm dist/*.js* && (cd dist; zip -r $npm_package_name-v$npm_package_version.zip .)",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "eslint": "eslint src scripts *.js --ext .vue,.js --max-warnings=0",
