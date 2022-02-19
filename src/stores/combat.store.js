@@ -198,10 +198,9 @@ const storeConfig = {
     },
     moveUnit({ commit, state }, { unit, oldPosition, newPosition }) {
       if (!state.grid[oldPosition.y][oldPosition.x].units.some(oldPosUnit => oldPosUnit.id === unit.id)) {
-        console.error(
+        throw new Error(
           `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but unit was not found`
         )
-        return
       }
       if (state.grid[newPosition.y][newPosition.x].units.length) {
         const hasAtLeastTwoNonSwarmUnits =
@@ -209,7 +208,7 @@ const storeConfig = {
             unit => !(unit.passives?.some(passive => passive.name === 'Swarm') ?? false)
           ).length > 1
         if (hasAtLeastTwoNonSwarmUnits) {
-          console.error(
+          console.info(
             `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but new position is occupied`
           )
           return

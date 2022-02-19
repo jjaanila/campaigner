@@ -13,6 +13,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vue/require-default-prop': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
   },
   env: {
     browser: true,

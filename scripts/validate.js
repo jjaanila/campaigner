@@ -3,4 +3,4 @@ const validate = require('jsonschema').validate
 const CampaignSchema = require('../src/schemas/campaign.json')
 
 validate(campaignJson, CampaignSchema, { throwAll: true })
-console.log('campaign.js is valid!')
+console.info('campaign.js is valid!')
