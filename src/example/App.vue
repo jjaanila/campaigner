@@ -128,7 +128,7 @@ time {
   text-align: center;
 }
 main {
-  font-family: 'Merriweather';
+  font-family: 'Merriweather', sans-serif;
   position: absolute;
   width: 100%;
   display: flex;

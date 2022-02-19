@@ -1,5 +1,6 @@
 <template>
   <div class="combat-turn-order">
+    <span class="combat-turn-order-first">First</span>
     <div v-for="unit in orderedUnits" :key="unit.id" class="combat-turn-unit-container">
       <span v-if="unit.id === unitIdInTurn" class="combat-turn-indicator" />
       <combat-character
@@ -24,6 +25,7 @@
         @click="setUnitIdInTurn(unit.id)"
       />
     </div>
+    <span>Last</span>
   </div>
 </template>
 
@@ -69,9 +71,13 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  font-family: 'Merriweather', sans-serif;
 }
 .combat-turn-unit-container {
   position: relative;
+  margin-right: 0.5rem;
+}
+.combat-turn-order > span {
   margin-right: 0.5rem;
 }
 .combat-turn-indicator {
