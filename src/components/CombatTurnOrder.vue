@@ -2,14 +2,18 @@
   <div class="combat-turn-order">
     <span class="combat-turn-order-first">First</span>
     <div v-for="unit in orderedUnits" :key="unit.id" class="combat-turn-unit-container">
-      <span v-if="unit.id === unitIdInTurn" class="combat-turn-indicator" />
+      <span v-if="unit.id === unitIdInTurn" class="combat-turn-indicator on" />
+      <span
+        v-if="unit.id !== unitIdInTurn"
+        class="combat-turn-indicator off"
+        @click="setUnitIdInTurn(unit.id)"
+      />
       <combat-character
         v-if="unit.unitType === 'character'"
         :key="unit.id"
         class="combat-unit"
         :character="unit"
         draggable="true"
-        @click="setUnitIdInTurn(unit.id)"
         @dragstart="onUnitDragStart($event, unit)"
         @drop="onDropOnUnit($event, unit)"
         @dragover.prevent
@@ -21,7 +25,6 @@
         class="combat-unit"
         :monster="unit"
         draggable="true"
-        @click="setUnitIdInTurn(unit.id)"
         @dragstart="onUnitDragStart($event, unit)"
         @drop="onDropOnUnit($event, unit)"
         @dragover.prevent
@@ -33,7 +36,6 @@
         class="combat-unit"
         :monster="unit"
         draggable="true"
-        @click="setUnitIdInTurn(unit.id)"
         @dragstart="onUnitDragStart($event, unit)"
         @drop="onDropOnUnit($event, unit)"
         @dragover.prevent
@@ -119,5 +121,15 @@ export default {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   background-color: black;
+}
+.combat-turn-indicator.on {
+  opacity: 1;
+}
+.combat-turn-indicator.off {
+  cursor: pointer;
+  opacity: 0.25;
+}
+.combat-turn-indicator.off:hover {
+  opacity: 0.5;
 }
 </style>

@@ -27,8 +27,10 @@ const getInitialState = () => {
   return state
     ? migrateState(state)
     : {
+        units: [],
         enemies: [],
         allies: [],
+        characters: [],
         isInCombat: false,
         grid: getEmptyGrid(),
         turnOrder: [],
@@ -104,6 +106,15 @@ const addAlliesToGrid = (grid, allies) => {
   return grid
 }
 
+const createUnit = (creature, unitType) => {
+  return {
+    ...creature,
+    id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : creature.id,
+    selected: false,
+    unitType,
+  }
+}
+
 const storeConfig = {
   namespaced: true,
   state: getInitialState(),
@@ -129,11 +140,21 @@ const storeConfig = {
     setUnitIdInTurn(state, unitId) {
       state.unitIdInTurn = unitId
     },
+    setUnits(state, units) {
+      state.units = units
+    },
     moveUnit(state, { unit, oldPosition, newPosition }) {
       state.grid[oldPosition.y][oldPosition.x].units = state.grid[oldPosition.y][oldPosition.x].units.filter(
         oldPosUnit => oldPosUnit.id !== unit.id
       )
       state.grid[newPosition.y][newPosition.x].units.push(unit)
+    },
+    updateUnit(state, unit) {
+      const oldUnit = state.units.find(u => u.id === unit.id)
+      if (!oldUnit) {
+        throw new Error(`Unit with id ${unit.id} not found`)
+      }
+      Object.assign(oldUnit, unit)
     },
   },
   actions: {
@@ -162,7 +183,7 @@ const storeConfig = {
         return monsters.concat(
           Array(enemy.quantity)
             .fill(null)
-            .map(_i => ({ ...monster, id: getUniqueId(), unitType: 'enemy' }))
+            .map(_i => createUnit(monster, 'enemy'))
         )
       }, [])
       const allyUnits = allies.reduce((monsters, ally) => {
@@ -173,26 +194,25 @@ const storeConfig = {
         return monsters.concat(
           Array(ally.quantity)
             .fill(null)
-            .map(_i => ({ ...monster, id: getUniqueId(), unitType: 'ally' }))
+            .map(_i => createUnit(monster, 'ally'))
         )
       }, [])
       const grid = getEmptyGrid()
       addEnemiesToGrid(grid, enemyUnits)
-      const characterUnits = rootState.party.characters.map(character => ({
-        ...character,
-        unitType: 'character',
-      }))
+      const characterUnits = rootState.party.characters.map(character => createUnit(character, 'character'))
+      const units = [...characterUnits, ...enemyUnits, ...allyUnits]
       addPartyToGrid(grid, characterUnits)
       addAlliesToGrid(grid, allyUnits)
       commit('setGrid', grid)
       commit('setAllies', allyUnits)
       commit('setEnemies', enemyUnits)
       commit('setCharacters', characterUnits)
+      commit('setUnits', units)
       commit(
         'setTurnOrder',
-        [...characterUnits, ...enemyUnits, ...allyUnits].map(unit => unit.id)
+        units.map(unit => unit.id)
       )
-      commit('setUnitIdInTurn', characterUnits[0].id)
+      commit('setUnitIdInTurn', units[0].id)
     },
     setIsInCombat({ commit }, value) {
       commit('setIsInCombat', value)
@@ -222,6 +242,9 @@ const storeConfig = {
     },
     setUnitIdInTurn({ commit }, unitId) {
       commit('setUnitIdInTurn', unitId)
+    },
+    updateUnit({ commit }, unit) {
+      commit('updateUnit', unit)
     },
   },
 }

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="combat-unit"
+    :class="{ 'combat-unit': true, selected: creature.selected }"
     :title="creature.name"
     @dragstart="$emit('dragstart', $event)"
-    @click="$emit('click', $event)"
+    @click="onClick($event)"
     @drop="$emit('drop', $event)"
     @dragover.prevent
     @dragenter.prevent
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'CombatUnit',
   props: {
@@ -21,7 +22,13 @@ export default {
       required: true,
     },
   },
-  computed: {},
+  methods: {
+    ...mapActions('combat', ['updateUnit']),
+    onClick($event) {
+      this.updateUnit({ ...this.creature, selected: !this.creature.selected })
+      this.$emit('click', $event)
+    },
+  },
 }
 </script>
 
@@ -39,5 +46,9 @@ export default {
   filter: brightness(90%);
   transition: all 0.2s ease;
   cursor: pointer;
+}
+.selected {
+  box-sizing: border-box;
+  border: solid black;
 }
 </style>
