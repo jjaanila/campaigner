@@ -68,13 +68,15 @@ export default {
       unitIdInTurn: state => state.combat.unitIdInTurn,
     }),
     orderedUnits() {
-      return this.turnOrder.map(id => {
-        const unit = [...this.characters, ...this.enemies, ...this.allies].find(c => c.id === id)
-        if (!unit) {
-          throw new Error(`Could not find unit with id ${id}`)
-        }
-        return unit
-      })
+      return this.turnOrder
+        .map(id => {
+          const unit = [...this.characters, ...this.enemies, ...this.allies].find(c => c.id === id)
+          if (!unit) {
+            throw new Error(`Could not find unit with id ${id}`)
+          }
+          return unit
+        })
+        .filter(unit => unit.hitPoints > 0)
     },
   },
   methods: {

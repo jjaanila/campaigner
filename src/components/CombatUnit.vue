@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ 'combat-unit': true, selected: creature.selected }"
+    :class="{ 'combat-unit': true, selected: creature.selected, dead: creature.hitPoints === 0 }"
     :title="creature.name"
     @dragstart="$emit('dragstart', $event)"
     @click="onClick($event)"
@@ -50,5 +50,9 @@ export default {
 .selected {
   box-sizing: border-box;
   border: solid black;
+}
+.dead {
+  color: white;
+  font-weight: bold;
 }
 </style>

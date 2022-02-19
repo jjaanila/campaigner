@@ -1,6 +1,8 @@
 <template>
   <div class="combat-unit-details">
-    <button class="close-button" @click="updateUnit({ ...unit, selected: false })">X</button>
+    <button class="close-button" title="Remove selection" @click="updateUnit({ ...unit, selected: false })">
+      X
+    </button>
     <div @mouseover="hover = true" @mouseleave="hover = false">
       <span>{{ unit.name }}</span>
     </div>
