@@ -14,6 +14,22 @@ export default class Dice {
     return Math.floor((this.sides / 2 + 0.5) * this.throws) + this.constant
   }
 
+  throwOnce() {
+    return Math.round(Math.random() * (this.sides - 1) + 1)
+  }
+
+  throw() {
+    if (!this.throws || !this.sides) {
+      return this.constant
+    }
+    return (
+      Array(this.throws)
+        .fill(null)
+        .map(this.throwOnce.bind(this))
+        .reduce((a, b) => a + b, 0) + this.constant
+    )
+  }
+
   toString() {
     if (!this.throws && !this.sides && this.constant) {
       return String(this.constant)

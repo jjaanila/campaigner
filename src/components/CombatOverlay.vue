@@ -9,41 +9,44 @@
         }"
       >
         <combat-turn-order />
-        <table>
-          <tr v-for="(row, y) in grid" :key="y">
-            <td
-              v-for="(cell, x) in row"
-              :key="x"
-              :class="{ 'combat-cell': true, many: cell.units.length > 1 }"
-              @drop="onDropOnCell($event, { x, y })"
-              @dragover.prevent
-              @dragenter.prevent
-            >
-              <combat-enemy
-                v-for="unit in cell.units.filter(u => u.unitType === 'enemy')"
-                :key="unit.id"
-                draggable="true"
-                :monster="unit"
-                @dragstart="onUnitDragStart($event, unit, { x, y })"
-              />
-              <combat-character
-                v-for="unit in cell.units.filter(u => u.unitType === 'character')"
-                :key="unit.id"
-                draggable="true"
-                :character="unit"
-                @dragstart="onUnitDragStart($event, unit, { x, y })"
-              />
-              <combat-ally
-                v-for="unit in cell.units.filter(u => u.unitType === 'ally')"
-                :key="unit.id"
-                draggable="true"
-                :monster="unit"
-                @dragstart="onUnitDragStart($event, unit, { x, y })"
-              />
-              <div v-if="!cell.units.length" class="combat-empty-cell" />
-            </td>
-          </tr>
-        </table>
+        <div class="board-container">
+          <combat-unit-details-list />
+          <table>
+            <tr v-for="(row, y) in grid" :key="y">
+              <td
+                v-for="(cell, x) in row"
+                :key="x"
+                :class="{ 'combat-cell': true, many: cell.units.length > 1 }"
+                @drop="onDropOnCell($event, { x, y })"
+                @dragover.prevent
+                @dragenter.prevent
+              >
+                <combat-enemy
+                  v-for="unit in cell.units.filter(u => u.unitType === 'enemy')"
+                  :key="unit.id"
+                  draggable="true"
+                  :monster="unit"
+                  @dragstart="onUnitDragStart($event, unit, { x, y })"
+                />
+                <combat-character
+                  v-for="unit in cell.units.filter(u => u.unitType === 'character')"
+                  :key="unit.id"
+                  draggable="true"
+                  :character="unit"
+                  @dragstart="onUnitDragStart($event, unit, { x, y })"
+                />
+                <combat-ally
+                  v-for="unit in cell.units.filter(u => u.unitType === 'ally')"
+                  :key="unit.id"
+                  draggable="true"
+                  :monster="unit"
+                  @dragstart="onUnitDragStart($event, unit, { x, y })"
+                />
+                <div v-if="!cell.units.length" class="combat-empty-cell" />
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
     <button
@@ -62,6 +65,7 @@ import CombatAlly from './CombatAlly.vue'
 import CombatEnemy from './CombatEnemy.vue'
 import CombatCharacter from './CombatCharacter.vue'
 import CombatTurnOrder from './CombatTurnOrder.vue'
+import CombatUnitDetailsList from './CombatUnitDetailsList.vue'
 export default {
   name: 'CombatOverlay',
   components: {
@@ -69,6 +73,7 @@ export default {
     CombatEnemy,
     CombatCharacter,
     CombatTurnOrder,
+    CombatUnitDetailsList,
   },
   data() {
     return {
@@ -135,6 +140,10 @@ export default {
 }
 .combat-turn-order {
   margin-bottom: 1rem;
+}
+.board-container {
+  display: flex;
+  flex-flow: row nowrap;
 }
 .open-combat-overlay-button {
   position: fixed;

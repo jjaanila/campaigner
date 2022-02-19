@@ -1,3 +1,4 @@
+import Dice from '../Dice'
 import { getUniqueId } from '../utils'
 
 export const LOCAL_STORAGE_STATE_KEY = 'campaigner-combat'
@@ -107,10 +108,13 @@ const addAlliesToGrid = (grid, allies) => {
 }
 
 const createUnit = (creature, unitType) => {
+  const maxHp = creature.hitPoints instanceof Dice ? creature.hitPoints.throw() : creature.hitPoints
   return {
     ...creature,
     id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : creature.id,
     selected: false,
+    maxHitPoints: maxHp,
+    hitPoints: maxHp,
     unitType,
   }
 }
@@ -154,6 +158,7 @@ const storeConfig = {
       if (!oldUnit) {
         throw new Error(`Unit with id ${unit.id} not found`)
       }
+      unit.hitPoints = Math.max(Math.min(unit.hitPoints, oldUnit.maxHitPoints), 0)
       Object.assign(oldUnit, unit)
     },
   },
