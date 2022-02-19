@@ -38,6 +38,7 @@ export default {
       characters: state => state.party.characters,
       encounterLimits: state => state.party.encounterLimits,
       isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
+      isInCombat: state => state.combat.isInCombat,
     }),
     enemiesWithMonsters() {
       return [...this.enemies].map(enemy => {
@@ -113,6 +114,9 @@ export default {
     ...mapActions('combat', ['initializeCombat', 'setIsInCombat']),
     ...mapActions('ui', ['setIsCombatOverlayOpen']),
     startCombat() {
+      if (this.isInCombat && !confirm('The party is already in combat. Do you want to start a new one?')) {
+        return
+      }
       this.initializeCombat({
         enemies: this.enemies,
         allies: this.allies,
