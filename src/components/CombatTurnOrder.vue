@@ -110,11 +110,14 @@ export default {
 }
 .combat-turn-indicator {
   position: absolute;
-  top: -0.75rem;
+  top: -0.8rem;
   left: calc(50% - 5px);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: red;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  background-color: black;
 }
 </style>
