@@ -15,7 +15,7 @@
               v-for="(cell, x) in row"
               :key="x"
               :class="cell.units.length > 1 ? 'combat-cell many' : 'combat-cell'"
-              @drop="onDropOnCell($event, cell, { x, y })"
+              @drop="onDropOnCell($event, { x, y })"
               @dragover.prevent
               @dragenter.prevent
             >
@@ -83,6 +83,7 @@ export default {
       enemies: state => state.combat.enemies,
       allies: state => state.combat.allies,
       grid: state => state.combat.grid,
+      units: state => state.combat.units,
     }),
   },
   methods: {
@@ -93,9 +94,13 @@ export default {
       event.dataTransfer.effectAllowed = 'move'
       event.dataTransfer.setData('dragUnit', JSON.stringify({ unit, oldPosition }))
     },
-    onDropOnCell(event, cell, newPosition) {
+    onDropOnCell(event, newPosition) {
       const { unit, oldPosition } = JSON.parse(event.dataTransfer.getData('dragUnit'))
-      this.moveUnit({ unit, oldPosition, newPosition })
+      const unitRef = this.units.find(u => unit.id === u.id)
+      if (!unitRef) {
+        throw new Error(`Could not find unit with id ${unit.id}`)
+      }
+      this.moveUnit({ unit: unitRef, oldPosition, newPosition })
     },
   },
 }
