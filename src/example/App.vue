@@ -16,7 +16,8 @@
           To install Campaigner, read instructions in
           <a href="https://github.com/jjaanila/campaigner">https://github.com/jjaanila/campaigner</a>. The
           process starts with installation of <a href="https://nodejs.org/en/">Node.js</a>. Then you need to
-          install <em>campaigner</em> npm package with <code>npm install campaigner</code> If you face any
+          install <em>campaigner</em> npm package with <code>npm install campaigner</code> Alternatively, you
+          can fork this repository or generate a new one with github's template feature. If you face any
           trouble, you can create an issue in
           <a href="https://github.com/jjaanila/campaigner/issues"
             >https://github.com/jjaanila/campaigner/issues</a

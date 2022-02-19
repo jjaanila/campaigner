@@ -4,29 +4,37 @@ Dungeons & Dragons campaign building and documentation library. Heavily inspired
 
 **Features**
 
-- HTML ID based linking to monsters, areas, parts, chapters, sections, etc.
+- HTML id based linking to monsters, areas, parts, chapters, sections, etc.
 - Vue 2 components that are pretty close to the style of D&D 5th ed.
 - Builds only one HTML file with everything included inline.
 - Fancy Table of Contents.
-- An example campaign.
-- Party tracker. (WIP)
-- JSON schema for defining campaign document and monsters. (WIP)
+- A simple example campaign.
+- Party tracker.
+- Combat tracker.
+- JSON schema for defining campaign document and monsters.
+- Can be installed via npm or used as a template repository.
 
 See Issues for planned features.
 
+## Installation
+
+`npm install campaigner`
+
+See `./src/example` and `./campaign.js` for an example campaign.
+
 ## Structure
-
-### Components
-
-Vue 2 components in `src/components` for creating a nice looking campaign site. `src/App.vue` defines the Vue app which uses the components.
 
 ### campaign.js
 
-A single file in the project root that defines the structure and many variables of the campaign document. See `src/schemas/campaign.json` for file schema. campaign.js is parsed with `src/parser.js`.
+A file in the project root that defines the structure and metadata of the campaign document. See `src/schemas/campaign.json` for file schema.
 
 - Campaign metadata, e.g. cover page information
 - Parts, Chapters, and Sections. Used (so far) only for generating Table of Contents.
 - Monsters
+
+### Components
+
+Vue 2 components in `src/components` for creating a nice looking campaign site.
 
 ## Development
 
@@ -34,20 +42,14 @@ A single file in the project root that defines the structure and many variables 
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with HMR at http://localhost:8080
 npm start
 
-# validate current campaign.js against the schema
+# validate current campaign.js against the JSON schema
 npm run validate
-
-# build for production with minification
-npm run build
-
-# package a release of production build
-npm run release
 ```
 
-## Resources
+## External Resources
 
 ### Icons
 
