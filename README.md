@@ -8,7 +8,7 @@ Dungeons & Dragons campaign building and documentation library. Heavily inspired
 - Vue 2 components that are pretty close to the style of D&D 5th ed.
 - Builds only one HTML file with everything included inline.
 - Fancy Table of Contents.
-- A simple example campaign.
+- [A simple example campaign](https://jjaanila.github.io/campaigner/).
 - Party tracker.
 - Combat tracker.
 - JSON schema for defining campaign document and monsters.
