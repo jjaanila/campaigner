@@ -11,6 +11,8 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "start": "cross-env webpack-dev-server --mode=development --open --hot",
     "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress",
     "validate": "node ./scripts/validate.js",
@@ -56,6 +58,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.4.1",
     "husky": "^7.0.4",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1"
   }
 }

@@ -5,6 +5,9 @@ export default class Dice {
     isInteger(throws)
     isInteger(sides)
     isInteger(constant)
+    if (throws <= 0 || sides <= 0 || constant < 0) {
+      throw new Error('Throws and sides must be positive integers. Constant must be non-negative integer.')
+    }
     this.throws = throws
     this.sides = sides
     this.constant = constant
@@ -19,9 +22,6 @@ export default class Dice {
   }
 
   throw() {
-    if (!this.throws || !this.sides) {
-      return this.constant
-    }
     return (
       Array(this.throws)
         .fill(null)
