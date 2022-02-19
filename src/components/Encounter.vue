@@ -3,10 +3,10 @@
     <span v-for="enemy in enemiesWithMonsters" :key="enemy.id">
       {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
     </span>
-    <div v-if="richAllies.length">
+    <div v-if="alliesWithMonsters.length">
       <strong>Allies</strong>
-      <span v-for="ally in richAllies" :key="ally.id"
-        >{{ ally.quantity }} <id-link :id="ally.id" :name="ally.name"
+      <span v-for="ally in alliesWithMonsters" :key="ally.id"
+        >{{ ally.quantity }} <id-link :id="ally.id" :name="ally.monster.name" type="monster"
       /></span>
     </div>
     <span>
@@ -51,8 +51,17 @@ export default {
         }
       })
     },
-    richAllies() {
-      return [...this.allies]
+    alliesWithMonsters() {
+      return [...this.allies].map(ally => {
+        const monster = this.monsters.find(monster => monster.name === ally.name)
+        if (!monster) {
+          throw new Error(`Monster ${ally.name} not found!`)
+        }
+        return {
+          ...ally,
+          monster,
+        }
+      })
     },
     totalEnemyXP() {
       return this.enemiesWithMonsters.reduce((total, enemy) => total + enemy.quantity * enemy.monster.xp, 0)
