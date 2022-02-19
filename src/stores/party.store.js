@@ -46,7 +46,7 @@ const initializeFromLocalStorage = () => {
       }
 }
 
-const storeConfig = {
+export default () => ({
   namespaced: true,
   state: initializeFromLocalStorage(),
   mutations: {
@@ -93,7 +93,7 @@ const storeConfig = {
     addCondition({ commit, state, rootState }, params) {
       const character = state.characters.find(character => character.name === params.characterName)
       if (!character) {
-        throw new Error(`Did not find character ${params.characterName}`)
+        throw new Error(`Character ${params.characterName} not found`)
       }
       if (character.conditions.find(condition => condition.name === params.conditionName)) {
         return
@@ -102,7 +102,7 @@ const storeConfig = {
         condition => condition.name === params.conditionName
       )
       if (!condition) {
-        throw new Error(`Did not find condition ${params.conditionName}`)
+        throw new Error(`Condition ${params.conditionName} not found`)
       }
       character.conditions.push(condition)
       commit('setCharacters', state.characters)
@@ -110,7 +110,7 @@ const storeConfig = {
     removeCondition({ commit, state }, params) {
       const character = state.characters.find(character => character.name === params.characterName)
       if (!character) {
-        throw new Error(`Did not find character ${params.characterName}`)
+        throw new Error(`Character ${params.characterName} not found`)
       }
       character.conditions = character.conditions.filter(condition => condition.name !== params.conditionName)
       commit('setCharacters', state.characters)
@@ -118,12 +118,10 @@ const storeConfig = {
     updateCharacterInventory({ commit, state }, params) {
       const character = state.characters.find(character => character.name === params.characterName)
       if (!character) {
-        throw new Error(`Did not find character ${params.characterName}`)
+        throw new Error(`Character ${params.characterName} not found`)
       }
       character.inventory = params.inventory
       commit('setCharacters', state.characters)
     },
   },
-}
-
-export default storeConfig
+})
