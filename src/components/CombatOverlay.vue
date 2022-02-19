@@ -14,7 +14,7 @@
             <td
               v-for="(cell, x) in row"
               :key="x"
-              :class="cell.units.length > 1 ? 'combat-cell many' : 'combat-cell'"
+              :class="{ 'combat-cell': true, many: cell.units.length > 1 }"
               @drop="onDropOnCell($event, { x, y })"
               @dragover.prevent
               @dragenter.prevent
@@ -145,6 +145,11 @@ export default {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
+}
+.combat-cell.many > .combat-unit {
+  width: 0.75rem;
+  height: 0.75rem;
+  font-size: 0.5rem;
 }
 .combat-empty-cell {
   width: 100%;
