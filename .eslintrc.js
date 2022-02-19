@@ -12,6 +12,7 @@ module.exports = {
     'vue/no-unused-vars': 'error',
     'vue/multi-word-component-names': 'off',
     'vue/require-default-prop': 'off',
+    'vue/no-mutating-props': 'off', // The only way I have found to get inputs to work smoothly is with v-model and it triggers this eslint rule
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
   },
