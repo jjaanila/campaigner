@@ -127,7 +127,6 @@ const storeConfig = {
       state.turnOrder = turnOrder
     },
     setUnitIdInTurn(state, unitId) {
-      console.log(unitId)
       state.unitIdInTurn = unitId
     },
     moveUnit(state, { unit, oldPosition, newPosition }) {
@@ -218,8 +217,8 @@ const storeConfig = {
       }
       commit('moveUnit', { unit, oldPosition, newPosition })
     },
-    setTurnOrder({ commit, state }) {
-      commit('setTurnOrder', state.turnOrder)
+    setTurnOrder({ commit }, turnOrder) {
+      commit('setTurnOrder', turnOrder)
     },
     setUnitIdInTurn({ commit }, unitId) {
       commit('setUnitIdInTurn', unitId)

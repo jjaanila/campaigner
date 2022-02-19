@@ -8,21 +8,36 @@
         :key="unit.id"
         class="combat-unit"
         :character="unit"
+        draggable="true"
         @click="setUnitIdInTurn(unit.id)"
+        @dragstart="onUnitDragStart($event, unit)"
+        @drop="onDropOnUnit($event, unit)"
+        @dragover.prevent
+        @dragenter.prevent
       />
       <combat-ally
         v-if="unit.unitType === 'ally'"
         :key="unit.id"
         class="combat-unit"
         :monster="unit"
+        draggable="true"
         @click="setUnitIdInTurn(unit.id)"
+        @dragstart="onUnitDragStart($event, unit)"
+        @drop="onDropOnUnit($event, unit)"
+        @dragover.prevent
+        @dragenter.prevent
       />
       <combat-enemy
         v-if="unit.unitType === 'enemy'"
         :key="unit.id"
         class="combat-unit"
         :monster="unit"
+        draggable="true"
         @click="setUnitIdInTurn(unit.id)"
+        @dragstart="onUnitDragStart($event, unit)"
+        @drop="onDropOnUnit($event, unit)"
+        @dragover.prevent
+        @dragenter.prevent
       />
     </div>
     <span>Last</span>
@@ -61,7 +76,20 @@ export default {
     },
   },
   methods: {
-    ...mapActions('combat', ['setUnitIdInTurn']),
+    ...mapActions('combat', ['setUnitIdInTurn', 'setTurnOrder']),
+    onUnitDragStart(event, movedUnit) {
+      event.dataTransfer.dropEffect = 'move'
+      event.dataTransfer.effectAllowed = 'move'
+      event.dataTransfer.setData('dragUnit', JSON.stringify({ movedUnit }))
+    },
+    onDropOnUnit(event, targetUnit) {
+      const { movedUnit } = JSON.parse(event.dataTransfer.getData('dragUnit'))
+      let newOrderedUnits = [...this.orderedUnits]
+      const targetUnitIndex = newOrderedUnits.findIndex(unit => unit.id === targetUnit.id)
+      newOrderedUnits = newOrderedUnits.filter(unit => unit.id !== movedUnit.id)
+      newOrderedUnits.splice(targetUnitIndex, 0, movedUnit)
+      this.setTurnOrder(newOrderedUnits.map(unit => unit.id))
+    },
   },
 }
 </script>
@@ -88,9 +116,5 @@ export default {
   height: 10px;
   border-radius: 50%;
   background-color: red;
-}
-.combat-unit {
-  width: 20px;
-  height: 20px;
 }
 </style>

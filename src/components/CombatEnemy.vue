@@ -1,17 +1,22 @@
 <template>
-  <div
+  <combat-unit
     class="combat-enemy"
-    :title="monster.name"
+    :creature="monster"
     @dragstart="$emit('dragstart', $event)"
     @click="$emit('click', $event)"
-  >
-    {{ monster.name[0] }}
-  </div>
+    @drop="$emit('drop', $event)"
+    @dragover.prevent
+    @dragenter.prevent
+  />
 </template>
 
 <script>
+import CombatUnit from './CombatUnit.vue'
 export default {
   name: 'CombatEnemy',
+  components: {
+    CombatUnit,
+  },
   props: {
     monster: {
       type: Object,
@@ -25,16 +30,5 @@ export default {
 <style scoped>
 .combat-enemy {
   background-color: pink;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-}
-.combat-enemy:hover {
-  filter: brightness(90%);
-  transition: all 0.2s ease;
-  cursor: pointer;
 }
 </style>

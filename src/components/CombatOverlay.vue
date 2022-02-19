@@ -5,7 +5,7 @@
       <div
         class="combat-overlay-content"
         :style="{
-          background: `url(${require('../img/paper.jpg')})`,
+          background: `url(${backgroundImage})`,
         }"
       >
         <combat-turn-order />
@@ -69,6 +69,11 @@ export default {
     CombatEnemy,
     CombatCharacter,
     CombatTurnOrder,
+  },
+  data() {
+    return {
+      backgroundImage: require('../img/paper.jpg'),
+    }
   },
   computed: {
     ...mapState({

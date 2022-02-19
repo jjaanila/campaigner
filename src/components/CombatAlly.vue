@@ -1,17 +1,22 @@
 <template>
-  <div
+  <combat-unit
     class="combat-ally"
-    :title="monster.name"
+    :creature="monster"
     @dragstart="$emit('dragstart', $event)"
-    @click.prevent="$emit('click')"
-  >
-    {{ monster.name[0] }}
-  </div>
+    @click="$emit('click', $event)"
+    @drop="$emit('drop', $event)"
+    @dragover.prevent
+    @dragenter.prevent
+  />
 </template>
 
 <script>
+import CombatUnit from './CombatUnit.vue'
 export default {
   name: 'CombatAlly',
+  components: {
+    CombatUnit,
+  },
   props: {
     monster: {
       type: Object,
@@ -25,16 +30,5 @@ export default {
 <style scoped>
 .combat-ally {
   background-color: lightblue;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-}
-.combat-ally:hover {
-  filter: brightness(90%);
-  transition: all 0.2s ease;
-  cursor: pointer;
 }
 </style>
