@@ -17,4 +17,8 @@ jobs:
           node-version: "17"
           cache: "npm"
       - run: npm install
-      - run: npm run deploy-example
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
