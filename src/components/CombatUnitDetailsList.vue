@@ -37,5 +37,6 @@ export default {
 }
 .combat-unit-details-list > li {
   width: 100%;
+  margin-bottom: 0.25rem;
 }
 </style>

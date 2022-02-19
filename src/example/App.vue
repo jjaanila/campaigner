@@ -77,7 +77,7 @@
         <section-title name="encounter" />
         <encounter
           :enemies="[
-            { name: 'Thug', quantity: 3 },
+            { name: 'Swashbuckler of Long Name Islands', quantity: 3 },
             { name: 'Commoner', quantity: 5 },
           ]"
           :allies="[{ name: 'Commoner', quantity: 1 }]"

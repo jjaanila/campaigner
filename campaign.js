@@ -30,7 +30,7 @@ module.exports = Object.freeze({
   },
   monsters: [
     {
-      name: 'Thug',
+      name: 'Swashbuckler of Long Name Islands',
       size: 'medium',
       type: 'humanoid',
       alignment: 'any alignment',
