@@ -31,6 +31,11 @@
           <span>No records</span>
         </li>
       </ol>
+      <div>
+        {{ currentPage + 1 }} / {{ pages.length }}
+        <button>-</button>
+        <button>+</button>
+      </div>
       <div v-if="shownRecord" class="notebook-record">
         <input
           placeholder="Title"
@@ -56,6 +61,7 @@ import NotebookIcon from '../img/notebook.svg'
 import ClickOutside from 'vue-click-outside'
 import { getUniqueId } from '../utils'
 import sortBy from 'lodash/sortBy'
+const ITEMS_PER_PAGE = 10
 export default {
   name: 'Notebook',
   directives: {
@@ -67,13 +73,19 @@ export default {
       shownRecord: undefined,
       notebookIcon: NotebookIcon,
       search: '',
-      newRecord: undefined,
+      currentPage: 0,
     }
   },
   computed: {
     ...mapState({
       notebook: state => state.party.notebook,
     }),
+    pages() {
+      const numberOfPages = Math.ceil(this.records.length / ITEMS_PER_PAGE)
+      return [...Array(numberOfPages).keys()].map(page =>
+        this.records.slice(page * ITEMS_PER_PAGE, (page + 1) * ITEMS_PER_PAGE)
+      )
+    },
     records() {
       let records = Object.values(this.notebook)
       if (this.search) {
