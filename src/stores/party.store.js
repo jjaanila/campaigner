@@ -75,13 +75,13 @@ export default () => ({
       ])
       commit('updateEncounterLimits')
     },
-    removeCharacter({ commit, state }, name) {
-      if (!confirm(`Do you really want to remove ${name}?`)) {
-        return
-      }
-      const characterIndex = state.characters.findIndex(character => character.name === name)
+    removeCharacter({ commit, state }, id) {
+      const characterIndex = state.characters.findIndex(character => character.id === id)
       if (characterIndex === -1) {
-        throw new Error(`Character ${name} not found`)
+        throw new Error(`Character with id ${id} not found`)
+      }
+      if (!confirm(`Do you really want to remove ${state.characters[characterIndex].name}?`)) {
+        return
       }
       state.characters.splice(characterIndex, 1)
       commit('setCharacters', state.characters)

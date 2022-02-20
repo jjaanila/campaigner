@@ -177,7 +177,7 @@ describe('store.party', () => {
       it('should remove a character', () => {
         getPartyModule().actions.removeCharacter(
           { commit: commitMock, state: { characters: [...characters], encounterLimits: {} } },
-          characters[1].name
+          characters[1].id
         )
         expect(commitMock).toHaveBeenCalledWith('setCharacters', [characters[0], characters[2]])
         expect(commitMock).toHaveBeenCalledWith('updateEncounterLimits')
@@ -189,7 +189,7 @@ describe('store.party', () => {
             { commit: commitMock, state: { characters: [...characters], encounterLimits: {} } },
             'this does not exist'
           )
-        ).toThrow(new Error('Character this does not exist not found'))
+        ).toThrow(new Error('Character with id this does not exist not found'))
         expect(commitMock).toHaveBeenCalledTimes(0)
       })
     })
@@ -202,7 +202,7 @@ describe('store.party', () => {
             state: { characters: [...characters], encounterLimits: {} },
             rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'blind' }, { name: 'c' }] } },
           },
-          { characterName: characters[1].name, conditionName: 'blind' }
+          { characterId: characters[1].id, conditionName: 'blind' }
         )
         expect(commitMock).toHaveBeenCalledWith('setCharacters', [
           characters[0],
@@ -218,7 +218,7 @@ describe('store.party', () => {
             state: { characters: [...characters], encounterLimits: {} },
             rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'poisoned' }, { name: 'c' }] } },
           },
-          { characterName: characters[1].name, conditionName: 'poisoned' }
+          { characterId: characters[1].id, conditionName: 'poisoned' }
         )
         expect(commitMock).toHaveBeenCalledTimes(0)
       })
@@ -231,9 +231,9 @@ describe('store.party', () => {
               state: { characters: [...characters], encounterLimits: {} },
               rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'poisoned' }, { name: 'c' }] } },
             },
-            { characterName: 'this does not exist', conditionName: 'poisoned' }
+            { characterId: 'this does not exist', conditionName: 'poisoned' }
           )
-        ).toThrow(new Error('Character this does not exist not found'))
+        ).toThrow(new Error('Character with id this does not exist not found'))
       })
 
       it('should throw if condition not found', () => {
@@ -244,7 +244,7 @@ describe('store.party', () => {
               state: { characters: [...characters], encounterLimits: {} },
               rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'c' }] } },
             },
-            { characterName: characters[1].name, conditionName: 'b' }
+            { characterId: characters[1].id, conditionName: 'b' }
           )
         ).toThrow(new Error('Condition b not found'))
       })
@@ -258,7 +258,7 @@ describe('store.party', () => {
             state: { characters: [...characters], encounterLimits: {} },
             rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'blind' }, { name: 'c' }] } },
           },
-          { characterName: characters[1].name, conditionName: 'poisoned' }
+          { characterId: characters[1].id, conditionName: 'poisoned' }
         )
         expect(commitMock).toHaveBeenCalledWith('setCharacters', [
           characters[0],
@@ -274,7 +274,7 @@ describe('store.party', () => {
             state: { characters: [...characters], encounterLimits: {} },
             rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'poisoned' }, { name: 'c' }] } },
           },
-          { characterName: characters[1].name, conditionName: 'a' }
+          { characterId: characters[1].id, conditionName: 'a' }
         )
         expect(commitMock).toHaveBeenCalledWith('setCharacters', characters)
       })
@@ -287,9 +287,9 @@ describe('store.party', () => {
               state: { characters: [...characters], encounterLimits: {} },
               rootState: { campaign: { conditions: [{ name: 'a' }, { name: 'poisoned' }, { name: 'c' }] } },
             },
-            { characterName: 'this does not exist', conditionName: 'poisoned' }
+            { characterId: 'this does not exist', conditionName: 'poisoned' }
           )
-        ).toThrow(new Error('Character this does not exist not found'))
+        ).toThrow(new Error('Character with id this does not exist not found'))
       })
     })
 
@@ -297,7 +297,7 @@ describe('store.party', () => {
       it('should update inventory of one character', () => {
         getPartyModule().actions.updateCharacterInventory(
           { commit: commitMock, state: { characters: [...characters], encounterLimits: {} } },
-          { characterName: characters[1].name, inventory: 'a' }
+          { characterId: characters[1].id, inventory: 'a' }
         )
         expect(commitMock).toHaveBeenCalledWith('setCharacters', [
           characters[0],
@@ -313,9 +313,9 @@ describe('store.party', () => {
               commit: commitMock,
               state: { characters: [...characters], encounterLimits: {} },
             },
-            { characterName: 'this does not exist', inventory: 'a' }
+            { characterId: 'this does not exist', inventory: 'a' }
           )
-        ).toThrow(new Error('Character this does not exist not found'))
+        ).toThrow(new Error('Character with id this does not exist not found'))
       })
     })
   })

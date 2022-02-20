@@ -89,7 +89,7 @@
             />
           </td>
           <td>
-            <button title="Remove party member" @click="removeCharacter(character.name)">-</button>
+            <button title="Remove party member" @click="removeCharacter(character.id)">-</button>
           </td>
         </tr>
       </tbody>

@@ -58,7 +58,7 @@ export default {
       this.isInventoryOpen = false
     },
     updateInventory(e) {
-      this.updateCharacterInventory({ characterName: this.character.name, inventory: e.target.value })
+      this.updateCharacterInventory({ characterId: this.character.id, inventory: e.target.value })
     },
   },
 }

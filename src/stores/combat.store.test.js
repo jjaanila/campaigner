@@ -132,6 +132,7 @@ describe('store.combat', () => {
             unitType: 'character',
             selected: false,
             maxHitPoints: 3,
+            conditions: [],
           },
           {
             ...enemy1,
@@ -141,6 +142,7 @@ describe('store.combat', () => {
             selected: false,
             hitPoints: 1,
             maxHitPoints: 1,
+            conditions: [],
           },
           {
             ...ally1,
@@ -150,6 +152,7 @@ describe('store.combat', () => {
             selected: false,
             hitPoints: 2,
             maxHitPoints: 2,
+            conditions: [],
           },
         ]
         expect(commitMock).toHaveBeenCalledWith('setGrid', expect.any(Array))
