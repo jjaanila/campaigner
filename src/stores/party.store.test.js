@@ -62,6 +62,26 @@ describe('store.party', () => {
       global.localStorage = undefined
     })
 
+    it('should initialize without existing state', () => {
+      global.localStorage = {
+        getItem: jest.fn().mockImplementation(() => null),
+      }
+      const store = new Vuex.Store({
+        modules: {
+          party: getPartyModule(),
+        },
+      })
+      expect(store.state.party).toEqual({
+        characters: [],
+        encounterLimits: {
+          easy: 0,
+          medium: 0,
+          hard: 0,
+          deadly: 0,
+        },
+      })
+    })
+
     it('should initialize using localStorage', () => {
       const store = new Vuex.Store({
         modules: {

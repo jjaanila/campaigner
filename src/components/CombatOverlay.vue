@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import CombatAlly from './CombatAlly.vue'
 import CombatEnemy from './CombatEnemy.vue'
 import CombatCharacter from './CombatCharacter.vue'
@@ -83,12 +83,15 @@ export default {
   computed: {
     ...mapState({
       isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
-      characters: state => state.party.characters,
       isInCombat: state => state.combat.isInCombat,
-      enemies: state => state.combat.enemies,
-      allies: state => state.combat.allies,
       grid: state => state.combat.grid,
       units: state => state.combat.units,
+    }),
+    ...mapGetters({
+      enemies: 'combat/enemies',
+      characters: 'combat/characters',
+      allies: 'combat/allies',
+      getUnitById: 'combat/getUnitById',
     }),
   },
   methods: {
@@ -101,7 +104,7 @@ export default {
     },
     onDropOnCell(event, newPosition) {
       const { unit, oldPosition } = JSON.parse(event.dataTransfer.getData('dragUnit'))
-      const unitRef = this.units.find(u => unit.id === u.id)
+      const unitRef = this.getUnitById(unit.id)
       if (!unitRef) {
         throw new Error(`Could not find unit with id ${unit.id}`)
       }

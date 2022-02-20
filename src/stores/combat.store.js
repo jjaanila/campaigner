@@ -29,9 +29,6 @@ const getInitialState = () => {
     ? migrateState(state)
     : {
         units: [],
-        enemies: [],
-        allies: [],
-        characters: [],
         isInCombat: false,
         grid: getEmptyGrid(),
         turnOrder: [],
@@ -119,19 +116,16 @@ const createUnit = (creature, unitType) => {
   }
 }
 
-const storeConfig = {
+export default () => ({
   namespaced: true,
   state: getInitialState(),
+  getters: {
+    getUnitById: state => id => state.units.find(unit => unit.id === id),
+    enemies: state => state.units.filter(unit => unit.unitType === 'enemy'),
+    allies: state => state.units.filter(unit => unit.unitType === 'ally'),
+    characters: state => state.units.filter(unit => unit.unitType === 'character'),
+  },
   mutations: {
-    setEnemies(state, enemies) {
-      state.enemies = enemies
-    },
-    setAllies(state, allies) {
-      state.allies = allies
-    },
-    setCharacters(state, characters) {
-      state.characters = characters
-    },
     setIsInCombat(state, value) {
       state.isInCombat = value
     },
@@ -163,22 +157,6 @@ const storeConfig = {
     },
   },
   actions: {
-    addCharacter({ commit, state }) {
-      commit('setCharacters', [
-        ...state.characters,
-        {
-          name: '',
-          level: 1,
-          hitPoints: 1,
-          maxHitPoints: 1,
-          armorClass: 1,
-          passiveWisdom: 1,
-          speed: 30,
-          conditions: [],
-          inventory: '',
-        },
-      ])
-    },
     initializeCombat({ commit, rootState }, { enemies, allies }) {
       const enemyUnits = enemies.reduce((monsters, enemy) => {
         const monster = rootState.campaign.monsters.find(monster => monster.name === enemy.name)
@@ -209,9 +187,6 @@ const storeConfig = {
       addPartyToGrid(grid, characterUnits)
       addAlliesToGrid(grid, allyUnits)
       commit('setGrid', grid)
-      commit('setAllies', allyUnits)
-      commit('setEnemies', enemyUnits)
-      commit('setCharacters', characterUnits)
       commit('setUnits', units)
       commit(
         'setTurnOrder',
@@ -223,12 +198,20 @@ const storeConfig = {
       commit('setIsInCombat', value)
     },
     moveUnit({ commit, state }, { unit, oldPosition, newPosition }) {
+      if (
+        newPosition.x < 0 ||
+        newPosition.x >= state.grid[0].length ||
+        newPosition.y < 0 ||
+        newPosition.y >= state.grid.length
+      ) {
+        throw new Error(`Invalid position ${newPosition.x}, ${newPosition.y}`)
+      }
       if (!state.grid[oldPosition.y][oldPosition.x].units.some(oldPosUnit => oldPosUnit.id === unit.id)) {
         throw new Error(
           `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but unit was not found`
         )
       }
-      if (state.grid[newPosition.y][newPosition.x].units.length) {
+      if (state.grid[newPosition.y][newPosition.x].units.filter(u => u.id !== unit.id).length) {
         const hasAtLeastTwoNonSwarmUnits =
           [...state.grid[newPosition.y][newPosition.x].units, unit].filter(
             unit => !(unit.passives?.some(passive => passive.name === 'Swarm') ?? false)
@@ -252,6 +235,4 @@ const storeConfig = {
       commit('updateUnit', unit)
     },
   },
-}
-
-export default storeConfig
+})
