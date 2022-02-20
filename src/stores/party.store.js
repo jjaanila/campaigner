@@ -90,37 +90,35 @@ export default () => ({
     updateCharacters({ commit }) {
       commit('updateEncounterLimits')
     },
-    addCondition({ commit, state, rootState }, params) {
-      const character = state.characters.find(character => character.name === params.characterName)
+    addCondition({ commit, state, rootState }, { characterId, conditionName }) {
+      const character = state.characters.find(character => character.id === characterId)
       if (!character) {
-        throw new Error(`Character ${params.characterName} not found`)
+        throw new Error(`Character with id ${characterId} not found`)
       }
-      if (character.conditions.find(condition => condition.name === params.conditionName)) {
+      if (character.conditions.find(condition => condition.name === conditionName)) {
         return
       }
-      const condition = rootState.campaign.conditions.find(
-        condition => condition.name === params.conditionName
-      )
+      const condition = rootState.campaign.conditions.find(condition => condition.name === conditionName)
       if (!condition) {
-        throw new Error(`Condition ${params.conditionName} not found`)
+        throw new Error(`Condition ${conditionName} not found`)
       }
       character.conditions.push(condition)
       commit('setCharacters', state.characters)
     },
-    removeCondition({ commit, state }, params) {
-      const character = state.characters.find(character => character.name === params.characterName)
+    removeCondition({ commit, state }, { characterId, conditionName }) {
+      const character = state.characters.find(character => character.id === characterId)
       if (!character) {
-        throw new Error(`Character ${params.characterName} not found`)
+        throw new Error(`Character with id ${characterId} not found`)
       }
-      character.conditions = character.conditions.filter(condition => condition.name !== params.conditionName)
+      character.conditions = character.conditions.filter(condition => condition.name !== conditionName)
       commit('setCharacters', state.characters)
     },
-    updateCharacterInventory({ commit, state }, params) {
-      const character = state.characters.find(character => character.name === params.characterName)
+    updateCharacterInventory({ commit, state }, { characterId, inventory }) {
+      const character = state.characters.find(character => character.id === characterId)
       if (!character) {
-        throw new Error(`Character ${params.characterName} not found`)
+        throw new Error(`Character with id ${characterId} not found`)
       }
-      character.inventory = params.inventory
+      character.inventory = inventory
       commit('setCharacters', state.characters)
     },
   },

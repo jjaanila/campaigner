@@ -6,7 +6,7 @@
         :key="condition.name"
         class="condition available-condition"
         :title="condition.name"
-        @click="addConditionToCreature(condition)"
+        @click="addConditionToCreature(creature.id, condition.name)"
       >
         {{ condition.name.slice(0, 3) }}
       </button>
@@ -16,7 +16,7 @@
       :key="condition.name"
       class="condition active-condition"
       :title="condition.name"
-      @click="removeCondition({ characterName: creature.name, conditionName: condition.name })"
+      @click="removeConditionFromCreature(creature.id, condition.name)"
     >
       {{ condition.name.slice(0, 3) }}
     </button>
@@ -58,6 +58,7 @@ export default {
   computed: {
     ...mapState({
       conditions: state => state.campaign.conditions,
+      isInCombat: state => state.combat.isInCombat,
     }),
     availableConditions() {
       return this.conditions.filter(
@@ -67,11 +68,35 @@ export default {
     },
   },
   methods: {
-    ...mapActions('party', ['addCondition', 'removeCondition']),
-    addConditionToCreature(condition) {
-      this.addCondition({ characterName: this.creature.name, conditionName: condition.name })
-    },
+    ...mapActions({
+      addCombatCondition: 'combat/addCondition',
+      removeCombatCondition: 'combat/removeCondition',
+      addCharacterCondition: 'party/addCondition',
+      removeCharacterCondition: 'party/removeCondition',
+    }),
     sortByKey,
+    addConditionToCreature(creatureId, conditionName) {
+      try {
+        this.addCharacterCondition({ characterId: creatureId, conditionName })
+      } catch (err) {
+        // Not a character. Let's try finding any combat unit
+        if (!this.isInCombat) {
+          throw err
+        }
+        this.addCombatCondition({ unitId: creatureId, conditionName })
+      }
+    },
+    removeConditionFromCreature(creatureId, conditionName) {
+      try {
+        this.removeCharacterCondition({ characterId: creatureId, conditionName })
+      } catch (err) {
+        // Not a character. Let's try finding any combat unit
+        if (!this.isInCombat) {
+          throw err
+        }
+        this.removeCombatCondition({ unitId: creatureId, conditionName })
+      }
+    },
   },
 }
 </script>
@@ -79,14 +104,16 @@ export default {
 <style>
 .condition {
   width: 2rem;
+  height: 1.5rem;
   padding: 0 0.2rem;
 }
 .available-conditions {
   display: flex;
-}
-.available-conditions {
-  display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+  position: absolute;
+  right: -0.25rem;
+  top: 1.5rem;
+  z-index: 4;
 }
 .available-condition {
   color: #58180d;
@@ -94,7 +121,11 @@ export default {
 .active-condition {
   color: green;
 }
+.condition-menu-close-button {
+  height: 1.5rem;
+}
 .condition-menu {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
 }

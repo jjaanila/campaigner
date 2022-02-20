@@ -18,13 +18,18 @@
       / {{ unit.maxHitPoints }}
     </div>
     <div v-if="hover" class="unit-tooltip"><monster id="" v-bind="unit" /></div>
+    <condition-menu class="unit-conditions" :creature="unit" />
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import ConditionMenu from './ConditionMenu.vue'
 export default {
   name: 'CombatUnitDetails',
+  components: {
+    ConditionMenu,
+  },
   props: {
     unit: {
       type: Object,
@@ -49,7 +54,7 @@ export default {
   display: grid;
   width: 100%;
   grid-template-columns: 2rem 10rem 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: auto 1fr;
   align-items: center;
   justify-items: flex-start;
 }
@@ -84,5 +89,9 @@ export default {
   min-width: 25rem;
   max-width: 40rem;
   z-index: 3;
+}
+.unit-conditions {
+  grid-column: 1 / span 3;
+  justify-self: flex-end;
 }
 </style>

@@ -78,6 +78,7 @@ export default {
 }
 .inventory-button {
   width: 1.5rem;
+  height: 1.5rem;
   padding: 0 0.2rem 0 0.2rem;
 }
 </style>

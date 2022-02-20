@@ -113,6 +113,7 @@ const createUnit = (creature, unitType) => {
     maxHitPoints: maxHp,
     hitPoints: maxHp,
     unitType,
+    conditions: creature.conditions ?? [],
   }
 }
 
@@ -233,6 +234,29 @@ export default () => ({
     },
     updateUnit({ commit }, unit) {
       commit('updateUnit', unit)
+    },
+    addCondition({ commit, state, rootState }, { unitId, conditionName }) {
+      const unit = state.units.find(unit => unit.id === unitId)
+      if (!unit) {
+        throw new Error(`Unit with id ${unitId} not found`)
+      }
+      if (unit.conditions.find(condition => condition.name === conditionName)) {
+        return
+      }
+      const condition = rootState.campaign.conditions.find(condition => condition.name === conditionName)
+      if (!condition) {
+        throw new Error(`Condition ${conditionName} not found`)
+      }
+      unit.conditions.push(condition)
+      commit('setUnits', state.units)
+    },
+    removeCondition({ commit, state }, { unitId, conditionName }) {
+      const unit = state.units.find(unit => unit.id === unitId)
+      if (!unit) {
+        throw new Error(`unit with id ${unitId} not found`)
+      }
+      unit.conditions = unit.conditions.filter(condition => condition.name !== conditionName)
+      commit('setUnits', state.units)
     },
   },
 })
