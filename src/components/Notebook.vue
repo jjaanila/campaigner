@@ -5,11 +5,11 @@
         v-show="isNotebookOpen && !shownRecord"
         class="notebook-add-record-button"
         title="Add record"
-        @click.stop="startRecordCreation()"
+        @click="startRecordCreation()"
       >
         +
       </button>
-      <button class="notebook-button" title="Notebook" @click.stop="toggleNotebook()">
+      <button class="notebook-button" title="Notebook" @click="toggleNotebook()">
         <img :src="notebookIcon" />
       </button>
     </div>
@@ -22,14 +22,8 @@
         @input="search = $event.target.value"
       />
       <ol v-show="!shownRecord" class="notebook-records-list">
-        <li>
-          <button
-            v-for="record in records"
-            :key="record.id"
-            class="notebook-record-button"
-            :title="record.title"
-            @click.stop="openRecord(record.id)"
-          >
+        <li v-for="record in records" :key="record.id">
+          <button class="notebook-record-button" :title="record.title" @click="openRecord(record.id)">
             {{ record.title }}
           </button>
         </li>
@@ -45,7 +39,7 @@
         />
         <textarea ref="record" :value="shownRecord.text" @input="updateRecordText($event.target.value)" />
         <div class="record-control-button-container">
-          <button @click="createRecord()">Save</button>
+          <button v-show="shownRecord.id === null" @click="createRecord()">Save</button>
           <button @click="closeRecord()">Close</button>
           <button v-show="shownRecord.id !== null" class="record-delete-button" @click="removeRecord()">
             Delete
@@ -61,6 +55,7 @@ import { mapState, mapActions } from 'vuex'
 import NotebookIcon from '../img/notebook.svg'
 import ClickOutside from 'vue-click-outside'
 import { getUniqueId } from '../utils'
+import sortBy from 'lodash/sortBy'
 export default {
   name: 'Notebook',
   directives: {
@@ -77,16 +72,14 @@ export default {
   },
   computed: {
     ...mapState({
-      notebook(state) {
-        return state.party.notebook
-      },
+      notebook: state => state.party.notebook,
     }),
     records() {
-      const records = Object.values(this.notebook)
+      let records = Object.values(this.notebook)
       if (this.search) {
-        return records.filter(record => record.title.toLowerCase().includes(this.search.toLowerCase()))
+        records = records.filter(record => record.title.toLowerCase().includes(this.search.toLowerCase()))
       }
-      return records
+      return sortBy(records, 'created_at', 'desc')
     },
   },
   mounted() {
@@ -103,7 +96,7 @@ export default {
     startRecordCreation() {
       this.shownRecord = {
         id: null,
-        title: '',
+        title: new Date().toDateString(),
         text: '',
       }
     },
@@ -197,5 +190,9 @@ export default {
 }
 .record-delete-button {
   margin-left: auto;
+}
+.record-date {
+  font-size: 0.5rem;
+  color: black;
 }
 </style>

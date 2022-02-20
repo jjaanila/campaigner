@@ -1,12 +1,13 @@
 import campaignJs from 'project-root/campaign'
-import { sortByKey, generateId } from '../utils'
+import { generateId } from '../utils'
+import sortBy from 'lodash/sortBy'
 import Dice from '../Dice'
 import { findCRData } from '../tables'
 
 const parseCampaign = campaignJs => {
   return {
     ...campaignJs,
-    monsters: sortByKey(
+    monsters: sortBy(
       campaignJs.monsters.map(monster => ({
         ...monster,
         xp: findCRData(monster.challengeRating).xp,

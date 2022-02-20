@@ -2,7 +2,7 @@
   <div class="condition-menu">
     <div v-if="isConditionMenuOpen" class="available-conditions">
       <button
-        v-for="condition in sortByKey([...availableConditions], 'name')"
+        v-for="condition in sortBy([...availableConditions], 'name')"
         :key="condition.name"
         class="condition available-condition"
         :title="condition.name"
@@ -12,7 +12,7 @@
       </button>
     </div>
     <button
-      v-for="condition in sortByKey([...creature.conditions], 'name')"
+      v-for="condition in sortBy([...creature.conditions], 'name')"
       :key="condition.name"
       class="condition active-condition"
       :title="condition.name"
@@ -41,7 +41,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import { sortByKey } from '../utils'
+import sortBy from 'lodash/sortBy'
 export default {
   name: 'ConditionMenu',
   props: {
@@ -74,7 +74,7 @@ export default {
       addCharacterCondition: 'party/addCondition',
       removeCharacterCondition: 'party/removeCondition',
     }),
-    sortByKey,
+    sortBy,
     addConditionToCreature(creatureId, conditionName) {
       try {
         this.addCharacterCondition({ characterId: creatureId, conditionName })
