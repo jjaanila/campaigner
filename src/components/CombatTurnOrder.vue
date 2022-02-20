@@ -2,12 +2,7 @@
   <div class="combat-turn-order">
     <span class="combat-turn-order-first">First</span>
     <div v-for="unit in orderedUnits" :key="unit.id" class="combat-turn-unit-container">
-      <span v-if="unit.id === unitIdInTurn" class="combat-turn-indicator on" />
-      <span
-        v-if="unit.id !== unitIdInTurn"
-        class="combat-turn-indicator off"
-        @click="setUnitIdInTurn(unit.id)"
-      />
+      <turn-indicator :class="{ on: unit.id === unitIdInTurn }" @click="setUnitIdInTurn(unit.id)" />
       <combat-character
         v-if="unit.unitType === 'character'"
         :key="unit.id"
@@ -50,6 +45,7 @@
 import CombatEnemy from './CombatEnemy.vue'
 import CombatAlly from './CombatAlly.vue'
 import CombatCharacter from './CombatCharacter.vue'
+import TurnIndicator from './TurnIndicator.vue'
 import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
@@ -58,6 +54,7 @@ export default {
     CombatEnemy,
     CombatAlly,
     CombatCharacter,
+    TurnIndicator,
   },
   computed: {
     ...mapState({
@@ -112,26 +109,9 @@ export default {
 .combat-turn-order > span {
   margin-right: 0.5rem;
 }
-.combat-turn-indicator {
+.turn-indicator {
   position: absolute;
   top: -0.8rem;
   left: calc(50% - 5px);
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  background-color: black;
-}
-.combat-turn-indicator.on {
-  opacity: 1;
-}
-.combat-turn-indicator.off {
-  cursor: pointer;
-  opacity: 0.25;
-}
-.combat-turn-indicator.off:hover {
-  opacity: 0.5;
 }
 </style>

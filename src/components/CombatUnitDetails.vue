@@ -1,5 +1,6 @@
 <template>
   <div class="combat-unit-details">
+    <turn-indicator :class="{ on: true, invisible: unitIdInTurn !== unit.id }" />
     <button class="close-button" title="Remove selection" @click="updateUnit({ ...unit, selected: false })">
       X
     </button>
@@ -23,12 +24,14 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
+import TurnIndicator from './TurnIndicator.vue'
 export default {
   name: 'CombatUnitDetails',
   components: {
     ConditionMenu,
+    TurnIndicator,
   },
   props: {
     unit: {
@@ -41,7 +44,11 @@ export default {
       hover: false,
     }
   },
-  computed: {},
+  computed: {
+    ...mapState({
+      unitIdInTurn: state => state.combat.unitIdInTurn,
+    }),
+  },
   methods: {
     ...mapActions('combat', ['updateUnit']),
   },
@@ -53,7 +60,7 @@ export default {
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: 2rem 10rem 1fr;
+  grid-template-columns: 1rem 2rem 10rem 1fr;
   grid-template-rows: auto 1fr;
   align-items: center;
   justify-items: flex-start;
@@ -91,7 +98,10 @@ export default {
   z-index: 3;
 }
 .unit-conditions {
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 4;
   justify-self: flex-end;
+}
+.invisible {
+  visibility: hidden;
 }
 </style>
