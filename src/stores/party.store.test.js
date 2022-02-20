@@ -73,6 +73,7 @@ describe('store.party', () => {
       })
       expect(store.state.party).toEqual({
         characters: [],
+        notebook: {},
         encounterLimits: {
           easy: 0,
           medium: 0,
@@ -90,6 +91,7 @@ describe('store.party', () => {
       })
       expect(store.state.party).toEqual({
         characters,
+        notebook: {},
         encounterLimits: {
           easy: 150,
           medium: 300,
@@ -143,6 +145,7 @@ describe('store.party', () => {
           hard: 75,
           deadly: 100,
         },
+        notebook: {},
       })
     })
   })

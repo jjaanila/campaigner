@@ -28,6 +28,7 @@ const migrateState = state => {
   state.characters.forEach(character => (character.conditions ??= []))
   state.characters.forEach(character => (character.inventory ??= ''))
   state.characters.forEach(character => (character.id ??= getUniqueId()))
+  state.notebook ??= {}
   return state
 }
 
@@ -37,6 +38,7 @@ const initializeFromLocalStorage = () => {
     ? updateEncounterLimits(migrateState(state))
     : {
         characters: [],
+        notebook: {},
         encounterLimits: {
           easy: 0,
           medium: 0,
@@ -54,6 +56,19 @@ export default () => ({
     setCharacters(state, characters) {
       state.characters = characters
       updateEncounterLimits(state)
+    },
+    updateRecord(state, record) {
+      if (state.notebook[record.id]) {
+        Object.assign(state.notebook[record.id], record)
+      } else {
+        record.created_at = new Date().toISOString()
+        state.notebook[record.id] = record
+      }
+    },
+    deleteRecord(state, recordId) {
+      if (state.notebook[recordId]) {
+        delete state.notebook[recordId]
+      }
     },
   },
   actions: {
@@ -120,6 +135,12 @@ export default () => ({
       }
       character.inventory = inventory
       commit('setCharacters', state.characters)
+    },
+    updateRecord({ commit }, record) {
+      commit('updateRecord', record)
+    },
+    deleteRecord({ commit }, recordId) {
+      commit('deleteRecord', recordId)
     },
   },
 })

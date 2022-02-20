@@ -96,6 +96,7 @@
     </table>
     <button title="Add party member" @click="addCharacter()">+</button>
     <button title="Download state" @click.prevent="downloadState()">Download state</button>
+    <notebook />
   </div>
 </template>
 
@@ -103,11 +104,13 @@
 import { mapState, mapActions } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
 import Inventory from './Inventory.vue'
+import Notebook from './Notebook.vue'
 export default {
   name: 'Party',
   components: {
-    conditionMenu: ConditionMenu,
-    inventory: Inventory,
+    ConditionMenu,
+    Inventory,
+    Notebook,
   },
   computed: {
     ...mapState({
