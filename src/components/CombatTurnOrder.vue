@@ -50,7 +50,7 @@
 import CombatEnemy from './CombatEnemy.vue'
 import CombatAlly from './CombatAlly.vue'
 import CombatCharacter from './CombatCharacter.vue'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'CombatTurnOrder',
@@ -62,15 +62,15 @@ export default {
   computed: {
     ...mapState({
       turnOrder: state => state.combat.turnOrder,
-      characters: state => state.combat.characters,
-      enemies: state => state.combat.enemies,
-      allies: state => state.combat.allies,
       unitIdInTurn: state => state.combat.unitIdInTurn,
+    }),
+    ...mapGetters({
+      getUnitById: 'combat/getUnitById',
     }),
     orderedUnits() {
       return this.turnOrder
         .map(id => {
-          const unit = [...this.characters, ...this.enemies, ...this.allies].find(c => c.id === id)
+          const unit = this.getUnitById(id)
           if (!unit) {
             throw new Error(`Could not find unit with id ${id}`)
           }
