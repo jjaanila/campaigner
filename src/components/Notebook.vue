@@ -21,8 +21,13 @@
         :value="search"
         @input="search = $event.target.value"
       />
+      <div v-show="!shownRecord" class="notebook-pagination">
+        {{ pages.length ? currentPage + 1 : 0 }} / {{ pages.length }}
+        <button @click="currentPage = Math.max(currentPage - 1, 0)">-</button>
+        <button @click="currentPage = Math.min(currentPage + 1, pages.length - 1)">+</button>
+      </div>
       <ol v-show="!shownRecord" class="notebook-records-list">
-        <li v-for="record in records" :key="record.id">
+        <li v-for="record in pages[currentPage]" :key="record.id">
           <button class="notebook-record-button" :title="record.title" @click="openRecord(record.id)">
             {{ record.title }}
           </button>
@@ -31,11 +36,6 @@
           <span>No records</span>
         </li>
       </ol>
-      <div>
-        {{ currentPage + 1 }} / {{ pages.length }}
-        <button>-</button>
-        <button>+</button>
-      </div>
       <div v-if="shownRecord" class="notebook-record">
         <input
           placeholder="Title"
@@ -199,6 +199,9 @@ export default {
 }
 .notebook-record-button {
   width: 100%;
+}
+.notebook-pagination {
+  margin: 0.25rem 0 0.25rem 0;
 }
 .record-delete-button {
   margin-left: auto;
