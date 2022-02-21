@@ -61,6 +61,8 @@ import NotebookIcon from '../img/notebook.svg'
 import ClickOutside from 'vue-click-outside'
 import { getUniqueId } from '../utils'
 import sortBy from 'lodash/sortBy'
+import Fuse from 'fuse.js'
+
 const ITEMS_PER_PAGE = 10
 export default {
   name: 'Notebook',
@@ -86,12 +88,26 @@ export default {
         this.records.slice(page * ITEMS_PER_PAGE, (page + 1) * ITEMS_PER_PAGE)
       )
     },
+    fuse() {
+      return new Fuse(Object.values(this.notebook), {
+        isCaseSensitive: false,
+        includeScore: false,
+        shouldSort: true,
+        includeMatches: false,
+        findAllMatches: false,
+        minMatchCharLength: 1,
+        threshold: 0.3,
+        useExtendedSearch: false,
+        ignoreLocation: true,
+        ignoreFieldNorm: false,
+        keys: ['title', 'text'],
+      })
+    },
     records() {
-      let records = Object.values(this.notebook)
       if (this.search) {
-        records = records.filter(record => record.title.toLowerCase().includes(this.search.toLowerCase()))
+        return this.fuse.search(this.search).map(result => result.item)
       }
-      return sortBy(records, 'created_at', 'desc')
+      return sortBy(Object.values(this.notebook), 'created_at', 'desc')
     },
   },
   mounted() {
