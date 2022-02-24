@@ -5,9 +5,9 @@ export default class Dice {
     isInteger(throws)
     isInteger(sides)
     isInteger(constant)
-    if (throws < 0 || sides < 0 || constant < 0) {
+    if (throws < 0 || sides < 0) {
       throw new Error(
-        `Throws ${throws}, sides ${sides} and constant ${constant} must be non-negative integers.`
+        `Throws ${throws}, sides ${sides} must be non-negative integers and constant ${constant} integer.`
       )
     }
     this.throws = throws
