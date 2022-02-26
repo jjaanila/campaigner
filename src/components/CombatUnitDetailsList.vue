@@ -58,6 +58,7 @@ export default {
   margin-bottom: 0.25rem;
 }
 .combat-convert-to-horde-button {
+  align-self: center;
   margin: 0.5rem;
 }
 </style>

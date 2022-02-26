@@ -20,7 +20,9 @@
     </div>
     <div v-if="hover" class="unit-tooltip"><monster id="" v-bind="unit.monster" /></div>
     <condition-menu class="unit-conditions" :creature="unit" />
-    <button v-if="isHorde(unit)" @click="splitHorde(unit.id)">Split horde</button>
+    <button v-if="isHorde(unit)" class="unit-split-horde-button" @click="splitHorde(unit.id)">
+      Split Horde
+    </button>
   </div>
 </template>
 
@@ -63,7 +65,7 @@ export default {
   display: grid;
   width: 100%;
   grid-template-columns: 1rem 2rem 10rem 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr 1fr;
   align-items: center;
   justify-items: flex-start;
 }
@@ -102,6 +104,12 @@ export default {
 .unit-conditions {
   grid-column: 1 / span 4;
   justify-self: flex-end;
+  margin-top: 0.25rem;
+}
+.unit-split-horde-button {
+  grid-column: 4;
+  justify-self: flex-end;
+  margin-top: 0.25rem;
 }
 .invisible {
   visibility: hidden;

@@ -125,8 +125,23 @@ const addUnitsToGrid = (grid, units) => {
   }
 }
 
+const isHorde = unit => {
+  return Array.isArray(unit.members)
+}
+
 const splitHorde = horde => {
-  return horde.members.filter(member => member.hitPoints > 0)
+  let remainingHitpoints = horde.hitPoints
+  const remainingUnits = []
+  horde.members.forEach(memberUnit => {
+    if (remainingHitpoints === 0) {
+      remainingUnits.push({ ...memberUnit, hitPoints: 0 })
+      return
+    }
+    const unitHitPoints = Math.min(remainingHitpoints, memberUnit.maxHitPoints)
+    remainingUnits.push({ ...memberUnit, hitPoints: unitHitPoints })
+    remainingHitpoints -= unitHitPoints
+  })
+  return remainingUnits
 }
 
 const createHorde = units => {
@@ -136,10 +151,7 @@ const createHorde = units => {
   ) {
     throw new Error('Horde must be made of multiple units of same unitType and name')
   }
-  const members = units.reduce(
-    (memo, unit) => memo.concat(unit.members.length > 1 ? splitHorde(unit) : [unit]),
-    []
-  )
+  const members = units.reduce((memo, unit) => memo.concat(isHorde(unit) ? splitHorde(unit) : [unit]), [])
   const hitPoints = units.reduce((totalHp, unit) => totalHp + unit.hitPoints, 0)
   const maxHitPoints = units.reduce((totalMaxHp, unit) => totalMaxHp + unit.maxHitPoints, 0)
   return {
@@ -169,7 +181,6 @@ const createUnitFromCreature = (monsterOrCharacter, unitType) => {
     hitPoints: maxHitPoints,
     unitType,
     conditions: monsterOrCharacter.conditions ?? [],
-    members: monsterOrCharacter.members ?? [],
   }
 }
 
@@ -187,7 +198,7 @@ export default () => ({
     allies: state => state.units.filter(unit => unit.unitType === 'ally'),
     characters: state => state.units.filter(unit => unit.unitType === 'character'),
     selectedUnits: state => state.units.filter(unit => unit.selected),
-    isHorde: () => unit => unit.members.length > 1,
+    isHorde: () => isHorde,
     canConvertSelectedToHorde(state, getters) {
       return (
         getters.selectedUnits.length > 1 &&
