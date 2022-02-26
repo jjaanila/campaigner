@@ -1,7 +1,7 @@
 import { isInteger } from './validators'
 
 export default class Dice {
-  constructor(throws, sides, constant) {
+  constructor(throws, sides, constant = 0) {
     try {
       isInteger(throws)
       isInteger(sides)
@@ -39,13 +39,17 @@ export default class Dice {
     )
   }
 
-  toString() {
+  toString(showAverage = true) {
     if (!this.throws && !this.sides && this.constant) {
       return String(this.constant)
     }
-    return `${this.averageHitPoints} (${this.throws}d${this.sides}${
-      this.constant ? ` + ${this.constant}` : ''
-    })`
+    if (showAverage) {
+      return `${this.averageHitPoints} (${this.throws}d${this.sides}${
+        this.constant ? ` + ${this.constant}` : ''
+      })`
+    } else {
+      return `${this.throws}d${this.sides}${this.constant ? ` + ${this.constant}` : ''}`
+    }
   }
 
   static deserialize(serializedDice) {

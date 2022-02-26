@@ -6,11 +6,16 @@ describe('Dice', () => {
     [1, 6, 0],
     [10, 10, 10],
     [30, 20, 10],
+    [30, 20, undefined],
   ])(`should construct object with: throws: %i, sides: %i, constant: %i`, (throws, sides, constant) => {
     const dice = new Dice(throws, sides, constant)
     expect(dice.throws).toEqual(throws)
     expect(dice.sides).toEqual(sides)
-    expect(dice.constant).toEqual(constant)
+    if (constant === undefined) {
+      expect(dice.constant).toEqual(0)
+    } else {
+      expect(dice.constant).toEqual(constant)
+    }
   })
 
   it.each([
