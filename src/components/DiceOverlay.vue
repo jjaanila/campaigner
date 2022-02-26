@@ -40,7 +40,7 @@ export default {
 
 <style scoped>
 .dice-overlay {
-  position: absolute;
+  position: fixed;
   bottom: 0.5rem;
   left: 0.5rem;
 }
