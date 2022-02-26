@@ -1,5 +1,13 @@
 <template>
   <div class="dice-overlay">
+    <div class="dice-history">
+      <span
+        v-for="(record, i) in history"
+        :key="record.id"
+        :class="{ 'dice-last': i === 0, 'dice-record': true }"
+        >{{ record.result }} {{ record.dice.toString(false) }}</span
+      >
+    </div>
     <input
       v-model.number="throws"
       class="dice-overlay-throws"
@@ -15,9 +23,6 @@
     <button @click="throwDice({ throws, sides: 12 })">{{ throws }}d12</button>
     <button @click="throwDice({ throws, sides: 20 })">{{ throws }}d20</button>
     <button @click="throwDice({ throws, sides: 100 })">{{ throws }}d100</button>
-    <span v-if="last.result" class="dice-result"
-      ><strong>{{ last.result }}</strong> {{ last.dice.toString(false) }}
-    </span>
   </div>
 </template>
 
@@ -28,7 +33,7 @@ export default {
   computed: {
     ...mapState({
       last: state => state.ui.dice?.last ?? {},
-      history: state => state.ui.dice.history,
+      history: state => state.ui.dice.history.slice(0, 10),
       throws: state => state.ui.dice.throws,
     }),
   },
@@ -46,5 +51,21 @@ export default {
 }
 .dice-overlay-throws {
   width: 3rem;
+}
+.dice-history {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  position: fixed;
+  overflow-y: auto;
+  bottom: 2rem;
+  left: 0.5rem;
+  width: 10rem;
+  height: 20rem;
+}
+.dice-last {
+  font-weight: bold;
+}
+.dice-record {
 }
 </style>

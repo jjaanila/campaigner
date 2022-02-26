@@ -1,4 +1,5 @@
 import Dice from '../Dice'
+import { getUniqueId } from '../utils'
 
 export default {
   namespaced: true,
@@ -33,8 +34,8 @@ export default {
     },
     throwDice(state, { throws, sides, constant }) {
       const dice = new Dice(throws, sides, constant)
-      state.dice.last = { dice, result: dice.throw() }
-      state.dice.history.unshift(state.last)
+      state.dice.last = { dice, result: dice.throw(), id: getUniqueId() }
+      state.dice.history.unshift(state.dice.last)
     },
     setThrows(state, throws) {
       state.dice.throws = throws
