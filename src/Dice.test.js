@@ -16,10 +16,12 @@ describe('Dice', () => {
   it.each([
     [-1, 0, 0],
     [0, -1, 0],
-    [0, 0, -1],
+    [0.5, 0.5, 0.5],
   ])(`should throw: throws: %i, sides: %i, constant: %i`, (throws, sides, constant) => {
     expect(() => new Dice(throws, sides, constant)).toThrow(
-      Error(`Throws ${throws}, sides ${sides} and constant ${constant} must be non-negative integers.`)
+      Error(
+        `Throws ${throws} and sides ${sides} must be non-negative integers and constant ${constant} integer.`
+      )
     )
   })
 

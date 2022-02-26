@@ -7,12 +7,36 @@ Vue.use(Vuex)
 describe('store.combat', () => {
   let state
   let commitMock
+  let enemy1
+  let ally1
+  let monster1
+  let monster2
 
   beforeEach(() => {
+    monster1 = {
+      id: 'monster1',
+      name: 'Monster 1',
+      hitPoints: 1,
+      passives: [],
+    }
+    monster2 = {
+      id: 'monster2',
+      name: 'Monster 2',
+      hitPoints: 2,
+      passives: [{ name: 'Swarm', description: 'Swarm description' }],
+    }
+    enemy1 = {
+      name: 'Monster 1',
+      monster: monster1,
+    }
+    ally1 = {
+      name: 'Monster 2',
+      monster: monster2,
+    }
     state = Object.freeze({
       grid: [
-        [{ units: [{ id: 'enemy1', name: 'Monster 1', unitType: 'enemy' }] }],
-        [{ units: [{ id: 'ally1', name: 'Commoner', unitType: 'ally' }] }],
+        [{ units: [enemy1] }],
+        [{ units: [ally1] }],
         [{ units: [{ id: 'character1', name: 'Ismo', unitType: 'character' }] }],
       ],
       turnOrder: ['ally1', 'character1', 'enemy1'],
@@ -76,35 +100,13 @@ describe('store.combat', () => {
 
   describe('actions', () => {
     let character1
-    let enemy1
-    let ally1
-    let monster1
-    let monster2
     let campaign
 
     beforeEach(() => {
       character1 = {
         id: 'character1',
         name: 'Character 1',
-        level: 1,
         hitPoints: 3,
-      }
-      enemy1 = {
-        name: 'Monster 1',
-      }
-      ally1 = {
-        name: 'Monster 2',
-      }
-      monster1 = {
-        id: 'monster1',
-        name: 'Monster 1',
-        hitPoints: 1,
-      }
-      monster2 = {
-        id: 'monster2',
-        name: 'Monster 2',
-        hitPoints: 2,
-        passives: [{ name: 'Swarm', description: 'Swarm description' }],
       }
       campaign = {
         monsters: [monster1, monster2],
@@ -136,7 +138,6 @@ describe('store.combat', () => {
           },
           {
             ...enemy1,
-            ...monster1,
             id: expect.any(String),
             unitType: 'enemy',
             selected: false,
@@ -146,7 +147,6 @@ describe('store.combat', () => {
           },
           {
             ...ally1,
-            ...monster2,
             id: expect.any(String),
             unitType: 'ally',
             selected: false,
@@ -155,28 +155,67 @@ describe('store.combat', () => {
             conditions: [],
           },
         ]
-        expect(commitMock).toHaveBeenCalledWith('setGrid', expect.any(Array))
-        const grid = commitMock.mock.calls[0][1]
-        expect(grid).toHaveLength(30)
-        const gridUnits = grid
-          .flat()
-          .map(y => y.units)
-          .flat()
-        expect(gridUnits).toHaveLength(expectedUnits.length)
-        expect(gridUnits).toEqual(expect.arrayContaining(expectedUnits))
-        expect(commitMock).toHaveBeenCalledWith('setUnits', expectedUnits)
-        expect(commitMock).toHaveBeenCalledWith('setTurnOrder', [
-          character1.id,
-          expect.any(String),
-          expect.any(String),
+        expect(commitMock.mock.calls).toEqual([
+          ['clear'],
+          ['setGrid', expect.any(Array)],
+          [
+            'updateUnits',
+            [
+              {
+                ...expectedUnits[0],
+                monster: undefined,
+              },
+              {
+                ...expectedUnits[1],
+                monster: monster1,
+              },
+              {
+                ...expectedUnits[2],
+                monster: monster2,
+              },
+            ],
+          ],
+          ['setTurnOrder', [character1.id, expect.any(String), expect.any(String)]],
+          ['setUnitIdInTurn', character1.id],
         ])
-        expect(commitMock).toHaveBeenCalledWith('setUnitIdInTurn', character1.id)
       })
+    })
+    describe('moveUnit', () => {
+      it.each([[{ x: 0, y: 0 }], [{ x: 0, y: 2 }], [{ x: 3, y: 3 }]])(
+        'should move unit from {x: 0, y: 0} to %s',
+        newPosition => {
+          getCombatModule().actions.moveUnit(
+            {
+              commit: commitMock,
+              state: {
+                grid: [
+                  [{ units: [enemy1] }, { units: [character1] }, { units: [ally1] }, { units: [] }],
+                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
+                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
+                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
+                ],
+              },
+              rootState: {
+                party: {
+                  characters: [character1],
+                },
+                campaign,
+              },
+            },
+            { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition }
+          )
+          expect(commitMock).toHaveBeenCalledWith('moveUnit', {
+            unit: enemy1,
+            oldPosition: { x: 0, y: 0 },
+            newPosition,
+          })
+        }
+      )
 
-      describe('moveUnit', () => {
-        it.each([[{ x: 0, y: 0 }], [{ x: 0, y: 2 }], [{ x: 3, y: 3 }]])(
-          'should move unit from {x: 0, y: 0} to %s',
-          newPosition => {
+      it.each([[{ x: 4, y: 4 }], [{ x: -1, y: -1 }]])(
+        'should throw when trying to move unit from {x: 0, y: 0} to %s',
+        newPosition => {
+          expect(() =>
             getCombatModule().actions.moveUnit(
               {
                 commit: commitMock,
@@ -197,65 +236,32 @@ describe('store.combat', () => {
               },
               { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition }
             )
-            expect(commitMock).toHaveBeenCalledWith('moveUnit', {
-              unit: enemy1,
-              oldPosition: { x: 0, y: 0 },
-              newPosition,
-            })
-          }
-        )
+          ).toThrow(new Error(`Invalid position ${newPosition.x}, ${newPosition.y}`))
+        }
+      )
 
-        it.each([[{ x: 4, y: 4 }], [{ x: -1, y: -1 }]])(
-          'should throw when trying to move unit from {x: 0, y: 0} to %s',
-          newPosition => {
-            expect(() =>
-              getCombatModule().actions.moveUnit(
-                {
-                  commit: commitMock,
-                  state: {
-                    grid: [
-                      [{ units: [enemy1] }, { units: [character1] }, { units: [ally1] }, { units: [] }],
-                      [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                      [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                      [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                    ],
-                  },
-                  rootState: {
-                    party: {
-                      characters: [character1],
-                    },
-                    campaign,
-                  },
-                },
-                { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition }
-              )
-            ).toThrow(new Error(`Invalid position ${newPosition.x}, ${newPosition.y}`))
-          }
-        )
-
-        it('should do nothing if trying to move into occupied cell ', () => {
-          getCombatModule().actions.moveUnit(
-            {
-              commit: commitMock,
-              state: {
-                grid: [
-                  [{ units: [enemy1] }, { units: [character1] }, { units: [] }, { units: [] }],
-                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                ],
-              },
-              rootState: {
-                party: {
-                  characters: [character1],
-                },
-                campaign,
-              },
+      it('should do nothing if trying to move into occupied cell ', () => {
+        getCombatModule().actions.moveUnit(
+          {
+            commit: commitMock,
+            state: {
+              grid: [
+                [{ units: [enemy1] }, { units: [character1] }, { units: [] }, { units: [] }],
+                [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
+                [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
+                [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
+              ],
             },
-            { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition: { x: 1, y: 0 } }
-          )
-          expect(commitMock).not.toHaveBeenCalled()
-        })
+            rootState: {
+              party: {
+                characters: [character1],
+              },
+              campaign,
+            },
+          },
+          { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition: { x: 1, y: 0 } }
+        )
+        expect(commitMock).not.toHaveBeenCalled()
       })
     })
   })

@@ -177,7 +177,7 @@ const createUnitFromCreature = (monsterOrCharacter, unitType) => {
       : monsterOrCharacter.hitPoints
   return {
     name: monsterOrCharacter.name,
-    monster: ['enemy', 'ally'].includes(unitType) && monsterOrCharacter,
+    monster: ['enemy', 'ally'].includes(unitType) ? monsterOrCharacter : undefined,
     id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : monsterOrCharacter.id,
     selected: false,
     maxHitPoints,
@@ -300,11 +300,11 @@ export default () => ({
         )
       }, [])
       const grid = getEmptyGrid()
+      commit('setGrid', grid)
       const characterUnits = rootState.party.characters.map(character =>
         createUnitFromCreature(character, 'character')
       )
       const units = [...characterUnits, ...enemyUnits, ...allyUnits]
-      commit('setGrid', grid)
       commit('updateUnits', units)
       commit(
         'setTurnOrder',
@@ -332,7 +332,7 @@ export default () => ({
       if (state.grid[newPosition.y][newPosition.x].units.filter(u => u.id !== unit.id).length) {
         const hasAtLeastTwoNonSwarmUnits =
           [...state.grid[newPosition.y][newPosition.x].units, unit].filter(
-            unit => !(unit.monster.passives?.some(passive => passive.name === 'Swarm') ?? false)
+            unit => !(unit.monster?.passives?.some(passive => passive.name === 'Swarm') ?? false)
           ).length > 1
         if (hasAtLeastTwoNonSwarmUnits) {
           console.info(

@@ -2,12 +2,16 @@ import { isInteger } from './validators'
 
 export default class Dice {
   constructor(throws, sides, constant) {
-    isInteger(throws)
-    isInteger(sides)
-    isInteger(constant)
-    if (throws < 0 || sides < 0) {
+    try {
+      isInteger(throws)
+      isInteger(sides)
+      isInteger(constant)
+      if (throws < 0 || sides < 0) {
+        throw new Error('Negative throws or sides')
+      }
+    } catch (err) {
       throw new Error(
-        `Throws ${throws}, sides ${sides} must be non-negative integers and constant ${constant} integer.`
+        `Throws ${throws} and sides ${sides} must be non-negative integers and constant ${constant} integer.`
       )
     }
     this.throws = throws
