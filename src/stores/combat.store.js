@@ -129,6 +129,9 @@ const isHorde = unit => {
   return Array.isArray(unit.members)
 }
 
+const getHordeName = members =>
+  `Horde of ${members.filter(member => member.hitPoints > 0).length} ${members[0].monster.name}`
+
 const splitHorde = horde => {
   let remainingHitpoints = horde.hitPoints
   const remainingUnits = []
@@ -155,7 +158,7 @@ const createHorde = units => {
   const hitPoints = units.reduce((totalHp, unit) => totalHp + unit.hitPoints, 0)
   const maxHitPoints = units.reduce((totalMaxHp, unit) => totalMaxHp + unit.maxHitPoints, 0)
   return {
-    name: `Horde of ${members.length} ${units[0].monster.name}`,
+    name: getHordeName(members),
     monster: units[0].monster,
     id: getUniqueId(),
     selected: true,
@@ -264,6 +267,10 @@ export default () => ({
         throw new Error(`Unit with id ${unit.id} not found`)
       }
       unit.hitPoints = Math.max(Math.min(unit.hitPoints, oldUnit.maxHitPoints), 0)
+      if (isHorde(unit)) {
+        unit.members = splitHorde(unit)
+        unit.name = getHordeName(unit.members)
+      }
       Object.assign(oldUnit, unit)
     },
   },
