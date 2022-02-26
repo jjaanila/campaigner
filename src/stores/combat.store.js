@@ -1,5 +1,5 @@
-import Dice from '../Dice'
 import { getUniqueId } from '../utils'
+import Dice from '../Dice'
 
 export const LOCAL_STORAGE_STATE_KEY = 'campaigner-combat'
 
@@ -23,17 +23,17 @@ const migrateState = state => {
   return state
 }
 
+const getEmptyState = () => ({
+  units: [],
+  isInCombat: false,
+  grid: getEmptyGrid(),
+  turnOrder: [],
+  unitIdInTurn: undefined,
+})
+
 const getInitialState = () => {
   const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY))
-  return state
-    ? migrateState(state)
-    : {
-        units: [],
-        isInCombat: false,
-        grid: getEmptyGrid(),
-        turnOrder: [],
-        unitIdInTurn: undefined,
-      }
+  return state ? migrateState(state) : getEmptyState()
 }
 
 const getClosestUnoccupiedCell = (grid, x, y) => {
@@ -59,62 +59,123 @@ const getRandomInteger = (min, max) => {
   return Math.round(Math.random() * (max - min) + min)
 }
 
-const addEnemiesToGrid = (grid, enemies) => {
-  enemies.forEach(enemy => {
-    let x = getRandomInteger(0, GRID_LAST_X)
-    let y = getRandomInteger(0, Math.ceil(GRID_LAST_Y / 2))
-
-    if (grid[y][x].units.length) {
-      const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
-      x = closestX
-      y = closestY
-    }
-    grid[y][x].units.push(enemy)
-  })
-  return grid
+const removeUnitFromGrid = (grid, unit) => {
+  const unitIndex = grid[unit.position.y][unit.position.x].units.findIndex(u => u.id === unit.id)
+  grid[unit.position.y][unit.position.x].units.splice(unitIndex, 1)
+  unit.position = undefined
 }
 
-const addPartyToGrid = (grid, characters) => {
-  characters.forEach(character => {
-    let x = getRandomInteger(0, GRID_LAST_X)
-    let y = GRID_LAST_Y - 5
-
-    if (grid[y][x].units.length) {
-      const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
-      x = closestX
-      y = closestY
-    }
-    grid[y][x].units.push(character)
-  })
-  return grid
+const addUnitToGrid = (grid, unit, position) => {
+  grid[position.y][position.x].units.push(unit)
+  unit.position = position
 }
 
-const addAlliesToGrid = (grid, allies) => {
-  allies.forEach(ally => {
-    let x = getRandomInteger(0, GRID_LAST_X)
-    let y = GRID_LAST_Y - 5
+const addEnemyToGrid = (grid, enemy) => {
+  let x = getRandomInteger(0, GRID_LAST_X)
+  let y = getRandomInteger(0, Math.ceil(GRID_LAST_Y / 2))
 
-    if (grid[y][x].units.length) {
-      const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
-      x = closestX
-      y = closestY
-    }
-    grid[y][x].units.push(ally)
-  })
-  return grid
-}
-
-const createUnit = (creature, unitType) => {
-  const maxHp = creature.hitPoints instanceof Dice ? creature.hitPoints.throw() : creature.hitPoints
-  return {
-    ...creature,
-    id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : creature.id,
-    selected: false,
-    maxHitPoints: maxHp,
-    hitPoints: maxHp,
-    unitType,
-    conditions: creature.conditions ?? [],
+  if (grid[y][x].units.length) {
+    const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+    x = closestX
+    y = closestY
   }
+  addUnitToGrid(grid, enemy, { x, y })
+}
+
+const addCharacterToGrid = (grid, character) => {
+  let x = getRandomInteger(0, GRID_LAST_X)
+  let y = GRID_LAST_Y - 5
+
+  if (grid[y][x].units.length) {
+    const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+    x = closestX
+    y = closestY
+  }
+  addUnitToGrid(grid, character, { x, y })
+}
+
+const addAllyToGrid = (grid, ally) => {
+  let x = getRandomInteger(0, GRID_LAST_X)
+  let y = GRID_LAST_Y - 5
+
+  if (grid[y][x].units.length) {
+    const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+    x = closestX
+    y = closestY
+  }
+  addUnitToGrid(grid, ally, { x, y })
+}
+
+const addUnitsToGrid = (grid, units) => {
+  for (const unit of units) {
+    switch (unit.unitType) {
+      case 'character':
+        addCharacterToGrid(grid, unit)
+        continue
+      case 'enemy':
+        addEnemyToGrid(grid, unit)
+        continue
+      case 'ally':
+        addAllyToGrid(grid, unit)
+        continue
+      default:
+        console.info(unit)
+        throw new Error(`Unknown unit type ${unit.unitType}`)
+    }
+  }
+}
+
+const splitHorde = horde => {
+  return horde.members.filter(member => member.hitPoints > 0)
+}
+
+const createHorde = units => {
+  if (
+    units.length < 1 ||
+    !units.every(unit => unit.monster.name === units[0].monster.name && unit.unitType === units[0].unitType)
+  ) {
+    throw new Error('Horde must be made of multiple units of same unitType and name')
+  }
+  const members = units.reduce(
+    (memo, unit) => memo.concat(unit.members.length > 1 ? splitHorde(unit) : [unit]),
+    []
+  )
+  const hitPoints = units.reduce((totalHp, unit) => totalHp + unit.hitPoints, 0)
+  const maxHitPoints = units.reduce((totalMaxHp, unit) => totalMaxHp + unit.maxHitPoints, 0)
+  return {
+    name: `Horde of ${members.length} ${units[0].monster.name}`,
+    monster: units[0].monster,
+    id: getUniqueId(),
+    selected: true,
+    maxHitPoints,
+    hitPoints,
+    unitType: units[0].unitType,
+    conditions: [],
+    members,
+  }
+}
+
+const createUnitFromCreature = (monsterOrCharacter, unitType) => {
+  const maxHitPoints =
+    monsterOrCharacter.hitPoints instanceof Dice
+      ? monsterOrCharacter.hitPoints.throw()
+      : monsterOrCharacter.hitPoints
+  return {
+    name: monsterOrCharacter.name,
+    monster: ['enemy', 'ally'].includes(unitType) && monsterOrCharacter,
+    id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : monsterOrCharacter.id,
+    selected: false,
+    maxHitPoints,
+    hitPoints: maxHitPoints,
+    unitType,
+    conditions: monsterOrCharacter.conditions ?? [],
+    members: monsterOrCharacter.members ?? [],
+  }
+}
+
+const getNextInTurn = (unitIdInTurn, turnOrder) => {
+  const inTurnIndex = turnOrder.findIndex(unit => unit.id === unitIdInTurn)
+  return turnOrder[(inTurnIndex + 1) % turnOrder.length]
 }
 
 export default () => ({
@@ -125,6 +186,19 @@ export default () => ({
     enemies: state => state.units.filter(unit => unit.unitType === 'enemy'),
     allies: state => state.units.filter(unit => unit.unitType === 'ally'),
     characters: state => state.units.filter(unit => unit.unitType === 'character'),
+    selectedUnits: state => state.units.filter(unit => unit.selected),
+    isHorde: () => unit => unit.members.length > 1,
+    canConvertSelectedToHorde(state, getters) {
+      return (
+        getters.selectedUnits.length > 1 &&
+        getters.selectedUnits.every(
+          unit =>
+            unit.monster.name === getters.selectedUnits[0].monster.name &&
+            unit.unitType === getters.selectedUnits[0].unitType &&
+            unit.unitType !== 'character'
+        )
+      )
+    },
   },
   mutations: {
     setIsInCombat(state, value) {
@@ -139,14 +213,39 @@ export default () => ({
     setUnitIdInTurn(state, unitId) {
       state.unitIdInTurn = unitId
     },
-    setUnits(state, units) {
+    clear(state) {
+      Object.assign(state, getEmptyState())
+    },
+    updateUnits(state, units) {
+      const deletedUnits = state.units.filter(unit => !units.find(u => u.id === unit.id))
+      const addedUnits = units.filter(unit => !state.units.find(u => u.id === unit.id))
+      const turnOrderWithAdded = [...state.turnOrder, ...addedUnits.map(unit => unit.id)]
+      const newTurnOrder = turnOrderWithAdded.filter(unitId => !deletedUnits.some(unit => unit.id === unitId))
+      let nextInTurn
+      if (deletedUnits.some(unit => unit.id === state.unitIdInTurn)) {
+        nextInTurn = getNextInTurn(state.unitIdInTurn, turnOrderWithAdded)
+        while (deletedUnits.some(unit => unit.id === nextInTurn) && newTurnOrder.length) {
+          nextInTurn = getNextInTurn(state.unitIdInTurn, turnOrderWithAdded)
+        }
+      }
+      deletedUnits.forEach(unit => removeUnitFromGrid(state.grid, unit))
+      addUnitsToGrid(state.grid, addedUnits)
+      state.turnOrder = newTurnOrder
       state.units = units
+      if (nextInTurn) {
+        state.unitIdInTurn = nextInTurn
+      }
     },
     moveUnit(state, { unit, oldPosition, newPosition }) {
       state.grid[oldPosition.y][oldPosition.x].units = state.grid[oldPosition.y][oldPosition.x].units.filter(
         oldPosUnit => oldPosUnit.id !== unit.id
       )
       state.grid[newPosition.y][newPosition.x].units.push(unit)
+      unit.position = { x: newPosition.x, y: newPosition.y }
+    },
+    deleteUnit(state, { unitId }) {
+      const unitIndex = state.units.findIndex(u => u.id === unitId)
+      state.units.splice(unitIndex, 1)
     },
     updateUnit(state, unit) {
       const oldUnit = state.units.find(u => u.id === unit.id)
@@ -159,6 +258,7 @@ export default () => ({
   },
   actions: {
     initializeCombat({ commit, rootState }, { enemies, allies }) {
+      commit('clear')
       const enemyUnits = enemies.reduce((monsters, enemy) => {
         const monster = rootState.campaign.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
@@ -167,7 +267,7 @@ export default () => ({
         return monsters.concat(
           Array(enemy.quantity)
             .fill(null)
-            .map(_i => createUnit(monster, 'enemy'))
+            .map(_i => createUnitFromCreature(monster, 'enemy'))
         )
       }, [])
       const allyUnits = allies.reduce((monsters, ally) => {
@@ -178,17 +278,16 @@ export default () => ({
         return monsters.concat(
           Array(ally.quantity)
             .fill(null)
-            .map(_i => createUnit(monster, 'ally'))
+            .map(_i => createUnitFromCreature(monster, 'ally'))
         )
       }, [])
       const grid = getEmptyGrid()
-      addEnemiesToGrid(grid, enemyUnits)
-      const characterUnits = rootState.party.characters.map(character => createUnit(character, 'character'))
+      const characterUnits = rootState.party.characters.map(character =>
+        createUnitFromCreature(character, 'character')
+      )
       const units = [...characterUnits, ...enemyUnits, ...allyUnits]
-      addPartyToGrid(grid, characterUnits)
-      addAlliesToGrid(grid, allyUnits)
       commit('setGrid', grid)
-      commit('setUnits', units)
+      commit('updateUnits', units)
       commit(
         'setTurnOrder',
         units.map(unit => unit.id)
@@ -215,7 +314,7 @@ export default () => ({
       if (state.grid[newPosition.y][newPosition.x].units.filter(u => u.id !== unit.id).length) {
         const hasAtLeastTwoNonSwarmUnits =
           [...state.grid[newPosition.y][newPosition.x].units, unit].filter(
-            unit => !(unit.passives?.some(passive => passive.name === 'Swarm') ?? false)
+            unit => !(unit.monster.passives?.some(passive => passive.name === 'Swarm') ?? false)
           ).length > 1
         if (hasAtLeastTwoNonSwarmUnits) {
           console.info(
@@ -248,7 +347,7 @@ export default () => ({
         throw new Error(`Condition ${conditionName} not found`)
       }
       unit.conditions.push(condition)
-      commit('setUnits', state.units)
+      commit('updateUnits', state.units)
     },
     removeCondition({ commit, state }, { unitId, conditionName }) {
       const unit = state.units.find(unit => unit.id === unitId)
@@ -256,7 +355,21 @@ export default () => ({
         throw new Error(`unit with id ${unitId} not found`)
       }
       unit.conditions = unit.conditions.filter(condition => condition.name !== conditionName)
-      commit('setUnits', state.units)
+      commit('updateUnits', state.units)
+    },
+    convertSelectedToHorde({ commit, state }) {
+      const selectedUnits = state.units.filter(unit => unit.selected)
+      commit('updateUnits', [
+        ...state.units.filter(unit => !unit.selected),
+        { ...createHorde(selectedUnits), selected: true },
+      ])
+    },
+    splitHorde({ commit, state, getters }, hordeId) {
+      const horde = state.units.find(unit => unit.id === hordeId && getters.isHorde(unit))
+      if (!horde) {
+        throw new Error(`Horde unit with id ${hordeId} not found`)
+      }
+      commit('updateUnits', [...state.units.filter(unit => unit.id !== hordeId), ...splitHorde(horde)])
     },
   },
 })

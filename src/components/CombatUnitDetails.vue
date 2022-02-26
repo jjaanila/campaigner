@@ -18,13 +18,14 @@
       />
       / {{ unit.maxHitPoints }}
     </div>
-    <div v-if="hover" class="unit-tooltip"><monster id="" v-bind="unit" /></div>
+    <div v-if="hover" class="unit-tooltip"><monster id="" v-bind="unit.monster" /></div>
     <condition-menu class="unit-conditions" :creature="unit" />
+    <button v-if="isHorde(unit)" @click="splitHorde(unit.id)">Split horde</button>
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
 import TurnIndicator from './TurnIndicator.vue'
 export default {
@@ -48,9 +49,10 @@ export default {
     ...mapState({
       unitIdInTurn: state => state.combat.unitIdInTurn,
     }),
+    ...mapGetters('combat', ['isHorde']),
   },
   methods: {
-    ...mapActions('combat', ['updateUnit']),
+    ...mapActions('combat', ['updateUnit', 'splitHorde']),
   },
 }
 </script>
@@ -78,9 +80,9 @@ export default {
   justify-content: flex-end;
 }
 .unit-hit-points > input {
-  width: 2rem;
+  width: 4rem;
   margin-left: 0.5rem;
-  height: 0.75rem;
+  height: 1.25rem;
   margin-right: 0.5rem;
 }
 .hp-button {
