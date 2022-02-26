@@ -14,7 +14,7 @@
         :size="unit.maxHitPoints && unit.maxHitPoints.toString().length"
         min="0"
         value="0"
-        @input="updateUnit({ ...unit, hitPoints: parseInt($event.target.value) })"
+        @input="updateUnit({ ...unit, hitPoints: parseInt($event.target.value) || 0 })"
       />
       / {{ unit.maxHitPoints }}
     </div>
