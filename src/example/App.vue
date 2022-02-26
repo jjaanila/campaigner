@@ -5,8 +5,6 @@
         background: `url(${backgroundImage})`,
       }"
     >
-      <table-of-contents />
-      <party />
       <page>
         <campaign-title />
         <part-title name="Creating a campaign" />
@@ -94,14 +92,21 @@
       </page>
     </main>
     <combat-overlay />
+    <table-of-contents />
+    <party />
+    <dice-overlay />
   </div>
 </template>
 
 <script>
 import 'normalize.css'
+import DiceOverlay from '../components/DiceOverlay.vue'
 
 export default {
   name: 'App',
+  components: {
+    DiceOverlay: DiceOverlay,
+  },
   data() {
     return {
       backgroundImage: require('../img/paper.jpg'),
