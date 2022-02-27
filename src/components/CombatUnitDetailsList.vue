@@ -3,7 +3,7 @@
     <button
       v-if="selectedUnits.length && !unitRows.length"
       class="combat-unit-details-list-action"
-      @click="removeUnits(selectedUnits.map(unit => unit.id))"
+      @click="confirmAndRemoveUnits()"
     >
       Remove units
     </button>
@@ -104,6 +104,11 @@ export default {
           }
         })
       )
+    },
+    confirmAndRemoveUnits() {
+      if (confirm(`Are you sure you want to remove these ${this.selectedUnits.length} units?`)) {
+        this.removeUnits(this.selectedUnits.map(unit => unit.id))
+      }
     },
   },
 }
