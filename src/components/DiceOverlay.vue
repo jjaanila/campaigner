@@ -1,10 +1,16 @@
 <template>
   <div class="dice-overlay">
-    <div class="dice-history">
-      <span
-        v-for="(record, i) in history"
-        :key="record.id"
-        :class="{ 'dice-last': i === 0, 'dice-record': true }"
+    <div
+      v-if="history.length"
+      class="dice-history"
+      :style="{
+        background: `url(${backgroundImage})`,
+      }"
+    >
+      <span class="dice-record dice-last"
+        >{{ last.result }} {{ last && last.dice && last.dice.toString(false) }}</span
+      >
+      <span v-for="record in history.slice(1)" :key="record.id" class="dice-record"
         >{{ record.result }} {{ record.dice.toString(false) }}</span
       >
     </div>
@@ -30,6 +36,9 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'DiceOverlay',
+  data() {
+    return { backgroundImage: require('../img/paper.jpg') }
+  },
   computed: {
     ...mapState({
       last: state => state.ui.dice?.last ?? {},
@@ -58,14 +67,19 @@ export default {
   justify-content: flex-end;
   position: fixed;
   overflow-y: auto;
-  bottom: 2rem;
+  bottom: 2.5rem;
   left: 0.5rem;
-  width: 10rem;
-  height: 20rem;
+  max-height: 20rem;
+  width: 7em;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #c9ad6a;
+  box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+.dice-record {
+  padding: 0 0.25rem;
 }
 .dice-last {
   font-weight: bold;
-}
-.dice-record {
 }
 </style>
