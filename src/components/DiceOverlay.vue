@@ -15,11 +15,10 @@
       >
     </div>
     <input
-      v-model.number="throws"
       class="dice-overlay-throws"
       type="number"
       min="1"
-      value="1"
+      :value="throws"
       @input="setThrows(parseInt($event.target.value) || 1)"
     />
     <button @click="throwDice({ throws, sides: 4 })">{{ throws }}d4</button>
