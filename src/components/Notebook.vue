@@ -21,7 +21,7 @@
         :value="search"
         @input="search = $event.target.value"
       />
-      <div v-show="!shownRecord" class="notebook-pagination">
+      <div v-if="pages.length > 1" v-show="!shownRecord" class="notebook-pagination">
         {{ pages.length ? currentPage + 1 : 0 }} / {{ pages.length }}
         <button @click="currentPage = Math.max(currentPage - 1, 0)">-</button>
         <button @click="currentPage = Math.min(currentPage + 1, pages.length - 1)">+</button>
