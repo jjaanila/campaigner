@@ -1,5 +1,5 @@
 <template>
-  <div class="condition-menu">
+  <div v-click-outside="close" class="condition-menu">
     <div v-if="isConditionMenuOpen" class="available-conditions">
       <button
         v-for="condition in sortBy([...availableConditions], 'name')"
@@ -21,20 +21,11 @@
       {{ condition.name.slice(0, 3) }}
     </button>
     <button
-      v-if="isConditionMenuOpen"
-      class="condition-menu-close-button"
-      title="Close"
-      @click="isConditionMenuOpen = false"
+      class="condition-menu-open-button"
+      :title="isConditionMenuOpen ? '-' : '+'"
+      @click="isConditionMenuOpen = !isConditionMenuOpen"
     >
-      -
-    </button>
-    <button
-      v-if="!isConditionMenuOpen"
-      class="condition-menu-add-button"
-      title="Add condition"
-      @click="isConditionMenuOpen = true"
-    >
-      +
+      {{ isConditionMenuOpen ? '-' : '+' }}
     </button>
   </div>
 </template>
@@ -42,8 +33,12 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import sortBy from 'lodash/sortBy'
+import ClickOutside from 'vue-click-outside'
 export default {
   name: 'ConditionMenu',
+  directives: {
+    ClickOutside,
+  },
   props: {
     creature: {
       type: Object,
@@ -74,6 +69,9 @@ export default {
       addCharacterCondition: 'party/addCondition',
       removeCharacterCondition: 'party/removeCondition',
     }),
+    close() {
+      this.isConditionMenuOpen = false
+    },
     sortBy,
     addConditionToCreature(creatureId, conditionName) {
       try {
@@ -121,12 +119,13 @@ export default {
 .active-condition {
   color: green;
 }
-.condition-menu-close-button {
-  height: 1.5rem;
-}
 .condition-menu {
   position: relative;
   display: flex;
   flex-flow: row wrap;
+}
+.condition-menu-open-button {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 </style>

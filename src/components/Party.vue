@@ -25,7 +25,7 @@
           <td>
             <input
               v-model.number="character.armorClass"
-              class="character-armor-class"
+              class="stat-input character-armor-class"
               type="number"
               min="1"
               max="30"
@@ -36,7 +36,7 @@
           <td>
             <input
               v-model.number="character.hitPoints"
-              class="character-hit-points"
+              class="stat-input character-hit-points"
               type="number"
               min="0"
               :max="character.maxHitPoints"
@@ -47,7 +47,7 @@
           <td>
             <input
               v-model.number="character.maxHitPoints"
-              class="character-max-hit-points"
+              class="stat-input character-max-hit-points"
               type="number"
               :size="character.maxHitPoints && character.maxHitPoints.toString().length"
               min="1"
@@ -58,7 +58,7 @@
           <td>
             <input
               v-model.number="character.level"
-              class="character-level"
+              class="stat-input character-level"
               type="number"
               min="1"
               max="20"
@@ -69,7 +69,7 @@
           <td>
             <input
               v-model.number="character.passiveWisdom"
-              class="character-passive-wisdom"
+              class="stat-input character-passive-wisdom"
               type="number"
               min="1"
               max="30"
@@ -80,7 +80,7 @@
           <td>
             <input
               v-model.number="character.speed"
-              class="character-speed"
+              class="stat-input character-speed"
               type="number"
               min="0"
               max="100"
@@ -163,8 +163,14 @@ input[type='number'] {
   flex-flow: column wrap;
   align-items: flex-end;
 }
+.party > * {
+  pointer-events: auto;
+}
 .party > table {
   border-spacing: 0;
+}
+.stat-input {
+  width: 2rem;
 }
 .condition-menu-td {
   display: flex;
