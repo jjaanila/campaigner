@@ -101,6 +101,7 @@
 <script>
 import 'normalize.css'
 import DiceOverlay from '../components/DiceOverlay.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
@@ -113,8 +114,18 @@ export default {
     }
   },
   computed: {
-    monsters() {
-      return this.$store.state.campaign.monsters
+    ...mapState({
+      monsters: state => state.campaign.monsters,
+      isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
+    }),
+  },
+  watch: {
+    isCombatOverlayOpen(isCombatOverlayOpen) {
+      if (isCombatOverlayOpen) {
+        document.documentElement.style.overflowY = 'hidden'
+        return
+      }
+      document.documentElement.style.overflowY = 'auto'
     },
   },
 }
