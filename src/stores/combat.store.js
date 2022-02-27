@@ -32,8 +32,12 @@ const getEmptyState = () => ({
 })
 
 const getInitialState = () => {
-  const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY))
-  return state ? migrateState(state) : getEmptyState()
+  try {
+    const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY))
+    return state ? migrateState(state) : getEmptyState()
+  } catch (e) {
+    return getEmptyState()
+  }
 }
 
 const getClosestUnoccupiedCell = (grid, x, y) => {
@@ -207,7 +211,7 @@ export default () => ({
         getters.selectedUnits.length > 1 &&
         getters.selectedUnits.every(
           unit =>
-            unit.monster.name === getters.selectedUnits[0].monster.name &&
+            unit.monster?.name === getters.selectedUnits[0].monster?.name &&
             unit.unitType === getters.selectedUnits[0].unitType &&
             unit.unitType !== 'character'
         )
@@ -256,10 +260,6 @@ export default () => ({
       )
       state.grid[newPosition.y][newPosition.x].units.push(unit)
       unit.position = { x: newPosition.x, y: newPosition.y }
-    },
-    deleteUnit(state, { unitId }) {
-      const unitIndex = state.units.findIndex(u => u.id === unitId)
-      state.units.splice(unitIndex, 1)
     },
     updateUnit(state, unit) {
       const oldUnit = state.units.find(u => u.id === unit.id)
@@ -349,8 +349,27 @@ export default () => ({
     setUnitIdInTurn({ commit }, unitId) {
       commit('setUnitIdInTurn', unitId)
     },
+    addUnits({ commit, state }, unitBatches) {
+      let newUnits = []
+      for (const unitBatch of unitBatches) {
+        let unitBatchUnits = Array(unitBatch.quantity)
+          .fill(null)
+          .map(_i => createUnitFromCreature(unitBatch.creature, unitBatch.unitType))
+        if (unitBatch.asHorde) {
+          unitBatchUnits = [createHorde(unitBatchUnits)]
+        }
+        newUnits = newUnits.concat(unitBatchUnits)
+      }
+      commit('updateUnits', [...state.units, ...newUnits])
+    },
     updateUnit({ commit }, unit) {
       commit('updateUnit', unit)
+    },
+    removeUnits({ commit, state }, unitIds) {
+      commit(
+        'updateUnits',
+        state.units.filter(unit => !unitIds.includes(unit.id))
+      )
     },
     addCondition({ commit, state, rootState }, { unitId, conditionName }) {
       const unit = state.units.find(unit => unit.id === unitId)

@@ -139,12 +139,14 @@ export default {
   z-index: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 .combat-turn-order {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 .board-container {
+  position: relative;
+  max-height: 80%;
   display: flex;
   flex-flow: row nowrap;
 }
