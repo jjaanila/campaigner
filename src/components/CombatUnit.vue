@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{ 'combat-unit': true, selected: creature.selected, dead: creature.hitPoints === 0 }"
-    :title="creature.name"
+    :title="`${creature.name} (${creature.unitType})`"
     @dragstart="$emit('dragstart', $event)"
     @click="onClick($event)"
     @drop="$emit('drop', $event)"
