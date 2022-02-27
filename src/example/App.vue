@@ -91,8 +91,8 @@
         <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
       </page>
     </main>
-    <combat-overlay />
     <table-of-contents />
+    <combat-overlay />
     <party />
     <dice-overlay />
   </div>
