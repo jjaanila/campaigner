@@ -12,9 +12,7 @@ export const createCampaign = app => {
   })
 
   return new Vue({
-    store: createStore({
-      sync: undefined,
-    }),
+    store: createStore(),
     el: '#app',
     render: h => h(app),
   })
