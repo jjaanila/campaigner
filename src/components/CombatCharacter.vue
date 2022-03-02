@@ -1,7 +1,7 @@
 <template>
   <combat-unit
     class="combat-character"
-    :creature="character"
+    :unit="unit"
     @dragstart="$emit('dragstart', $event)"
     @click="$emit('click', $event)"
     @drop="$emit('drop', $event)"
@@ -18,7 +18,7 @@ export default {
     CombatUnit,
   },
   props: {
-    character: {
+    unit: {
       type: Object,
       required: true,
     },

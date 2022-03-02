@@ -1,7 +1,7 @@
 <template>
   <combat-unit
     class="combat-ally"
-    :creature="monster"
+    :unit="unit"
     @dragstart="$emit('dragstart', $event)"
     @click="$emit('click', $event)"
     @drop="$emit('drop', $event)"
@@ -18,7 +18,7 @@ export default {
     CombatUnit,
   },
   props: {
-    monster: {
+    unit: {
       type: Object,
       required: true,
     },

@@ -1,14 +1,15 @@
 <template>
   <div
-    :class="{ 'combat-unit': true, selected: creature.selected, dead: creature.hitPoints === 0 }"
-    :title="`${creature.name} (${creature.unitType})`"
+    :class="{ 'combat-unit': true, selected: unit.selected, dead: unit.hitPoints === 0 }"
+    :title="`${unit.name} (${unit.unitType})`"
+    :style="{ backgroundColor: unit.selected ? unit.color : undefined }"
     @dragstart="$emit('dragstart', $event)"
     @click="onClick($event)"
     @drop="$emit('drop', $event)"
     @dragover.prevent
     @dragenter.prevent
   >
-    {{ creature.name.slice(0, 2) }}
+    {{ unit.name.slice(0, 2) }}
   </div>
 </template>
 
@@ -17,7 +18,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'CombatUnit',
   props: {
-    creature: {
+    unit: {
       type: Object,
       required: true,
     },
@@ -25,7 +26,7 @@ export default {
   methods: {
     ...mapActions('combat', ['updateUnit']),
     onClick($event) {
-      this.updateUnit({ ...this.creature, selected: !this.creature.selected })
+      this.updateUnit({ ...this.unit, selected: !this.unit.selected })
       this.$emit('click', $event)
     },
   },

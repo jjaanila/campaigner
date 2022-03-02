@@ -1,5 +1,6 @@
 import { getUniqueId } from '../utils'
 import Dice from '../Dice'
+import { distinguishableColors } from '../tables'
 
 export const LOCAL_STORAGE_STATE_KEY = 'campaigner-combat'
 
@@ -17,9 +18,12 @@ const getEmptyGrid = () =>
         .map(_x => ({ units: [] }))
     )
 
+const defaultUnitColors = distinguishableColors.map(color => ({ color, isUsed: false }))
+
 const migrateState = state => {
   state.grid ??= getEmptyGrid()
   state.turnOrder ??= []
+  state.colors ??= [...defaultUnitColors]
   return state
 }
 
@@ -29,6 +33,7 @@ const getEmptyState = () => ({
   grid: getEmptyGrid(),
   turnOrder: [],
   unitIdInTurn: undefined,
+  unitColors: [...defaultUnitColors],
 })
 
 const getInitialState = () => {
@@ -129,7 +134,7 @@ const addUnitsToGrid = (grid, units) => {
   }
 }
 
-const isHorde = unit => {
+export const isHorde = unit => {
   return Array.isArray(unit.members)
 }
 
@@ -174,7 +179,16 @@ const createHorde = units => {
   }
 }
 
-const createUnitFromCreature = (monsterOrCharacter, unitType) => {
+const reserveUnitColor = unitColors => {
+  const unitColor = unitColors.find(color => !color.isUsed) // We can run out of colors!
+  if (unitColor === undefined) {
+    return 'red'
+  }
+  unitColor.isUsed = true
+  return unitColor.color
+}
+
+const createUnitFromCreature = (monsterOrCharacter, unitType, unitColors) => {
   const maxHitPoints =
     monsterOrCharacter.hitPoints instanceof Dice
       ? monsterOrCharacter.hitPoints.throw()
@@ -188,6 +202,7 @@ const createUnitFromCreature = (monsterOrCharacter, unitType) => {
     hitPoints: maxHitPoints,
     unitType,
     conditions: monsterOrCharacter.conditions ?? [],
+    color: ['enemy', 'ally'].includes(unitType) && reserveUnitColor(unitColors),
   }
 }
 
@@ -205,7 +220,6 @@ export default () => ({
     allies: state => state.units.filter(unit => unit.unitType === 'ally'),
     characters: state => state.units.filter(unit => unit.unitType === 'character'),
     selectedUnits: state => state.units.filter(unit => unit.selected),
-    isHorde: () => isHorde,
     canConvertSelectedToHorde(state, getters) {
       return (
         getters.selectedUnits.length > 1 &&
@@ -273,10 +287,15 @@ export default () => ({
       }
       Object.assign(oldUnit, unit)
     },
+    updateUnitColors(state, unitColors) {
+      state.unitColors.length = 0
+      state.unitColors.push(...unitColors)
+    },
   },
   actions: {
     initializeCombat({ commit, rootState }, { enemies, allies }) {
       commit('clear')
+      const unitColors = [...defaultUnitColors]
       const enemyUnits = enemies.reduce((monsters, enemy) => {
         const monster = rootState.campaign.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
@@ -285,7 +304,7 @@ export default () => ({
         return monsters.concat(
           Array(enemy.quantity)
             .fill(null)
-            .map(_i => createUnitFromCreature(monster, 'enemy'))
+            .map(_i => createUnitFromCreature(monster, 'enemy', unitColors))
         )
       }, [])
       const allyUnits = allies.reduce((monsters, ally) => {
@@ -296,13 +315,13 @@ export default () => ({
         return monsters.concat(
           Array(ally.quantity)
             .fill(null)
-            .map(_i => createUnitFromCreature(monster, 'ally'))
+            .map(_i => createUnitFromCreature(monster, 'ally', unitColors))
         )
       }, [])
       const grid = getEmptyGrid()
       commit('setGrid', grid)
       const characterUnits = rootState.party.characters.map(character =>
-        createUnitFromCreature(character, 'character')
+        createUnitFromCreature(character, 'character', unitColors)
       )
       const units = [...characterUnits, ...enemyUnits, ...allyUnits]
       commit('updateUnits', units)
@@ -311,6 +330,7 @@ export default () => ({
         units.map(unit => unit.id)
       )
       commit('setUnitIdInTurn', units[0].id)
+      commit('updateUnitColors', unitColors)
     },
     setIsInCombat({ commit }, value) {
       commit('setIsInCombat', value)
@@ -351,25 +371,34 @@ export default () => ({
     },
     addUnits({ commit, state }, unitBatches) {
       let newUnits = []
+      const unitColors = [...state.unitColors]
       for (const unitBatch of unitBatches) {
         let unitBatchUnits = Array(unitBatch.quantity)
           .fill(null)
-          .map(_i => createUnitFromCreature(unitBatch.creature, unitBatch.unitType))
+          .map(_i => createUnitFromCreature(unitBatch.creature, unitBatch.unitType, unitColors))
         if (unitBatch.asHorde) {
           unitBatchUnits = [createHorde(unitBatchUnits)]
         }
         newUnits = newUnits.concat(unitBatchUnits)
       }
       commit('updateUnits', [...state.units, ...newUnits])
+      commit('updateUnitColors', unitColors)
     },
     updateUnit({ commit }, unit) {
       commit('updateUnit', unit)
     },
     removeUnits({ commit, state }, unitIds) {
+      const removedUnits = state.units.filter(unit => unitIds.includes(unit.id))
+      const unitColors = [...state.unitColors]
       commit(
         'updateUnits',
-        state.units.filter(unit => !unitIds.includes(unit.id))
+        state.units.filter(unit => !removedUnits.find(removedUnit => removedUnit.id === unit.id))
       )
+      const colorsOfRemovedUnits = removedUnits.map(unit => unit.color)
+      for (const removedUnitColor of colorsOfRemovedUnits) {
+        unitColors.find(unitColor => unitColor.color === removedUnitColor).isUsed = false
+      }
+      commit('updateUnitColors', unitColors)
     },
     addCondition({ commit, state, rootState }, { unitId, conditionName }) {
       const unit = state.units.find(unit => unit.id === unitId)

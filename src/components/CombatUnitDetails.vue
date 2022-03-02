@@ -19,6 +19,7 @@
       / {{ unit.maxHitPoints }}
     </div>
     <div v-if="hover" class="unit-tooltip"><monster id="" v-bind="unit.monster" /></div>
+    <div class="color-marker" :style="{ backgroundColor: unit.color }" />
     <condition-menu class="unit-conditions" :creature="unit" />
     <button v-if="isHorde(unit)" class="unit-split-horde-button" @click="splitHorde(unit.id)">
       Split Horde
@@ -27,9 +28,10 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
 import TurnIndicator from './TurnIndicator.vue'
+import { isHorde } from '../stores/combat.store'
 export default {
   name: 'CombatUnitDetails',
   components: {
@@ -51,10 +53,10 @@ export default {
     ...mapState({
       unitIdInTurn: state => state.combat.unitIdInTurn,
     }),
-    ...mapGetters('combat', ['isHorde']),
   },
   methods: {
     ...mapActions('combat', ['updateUnit', 'splitHorde']),
+    isHorde,
   },
 }
 </script>
@@ -113,5 +115,9 @@ export default {
 }
 .invisible {
   visibility: hidden;
+}
+.color-marker {
+  width: 1rem;
+  height: 1rem;
 }
 </style>

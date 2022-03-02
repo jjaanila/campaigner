@@ -25,21 +25,21 @@
                   v-for="unit in cell.units.filter(u => u.unitType === 'enemy')"
                   :key="unit.id"
                   draggable="true"
-                  :monster="unit"
+                  :unit="unit"
                   @dragstart="onUnitDragStart($event, unit, { x, y })"
                 />
                 <combat-character
                   v-for="unit in cell.units.filter(u => u.unitType === 'character')"
                   :key="unit.id"
                   draggable="true"
-                  :character="unit"
+                  :unit="unit"
                   @dragstart="onUnitDragStart($event, unit, { x, y })"
                 />
                 <combat-ally
                   v-for="unit in cell.units.filter(u => u.unitType === 'ally')"
                   :key="unit.id"
                   draggable="true"
-                  :monster="unit"
+                  :unit="unit"
                   @dragstart="onUnitDragStart($event, unit, { x, y })"
                 />
                 <div v-if="!cell.units.length" class="combat-empty-cell" />
