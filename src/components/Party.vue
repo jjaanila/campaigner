@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="character in characters" :key="character.name" class="character">
+        <tr v-for="character in characters" :key="character.id" class="character">
           <td class="condition-menu-td">
             <condition-menu :creature="character" />
             <inventory :character="character" />
