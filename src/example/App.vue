@@ -91,22 +91,19 @@
         <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
       </page>
     </main>
-    <table-of-contents />
-    <combat-overlay />
-    <party />
-    <dice-overlay />
+    <overlay />
   </div>
 </template>
 
 <script>
 import 'normalize.css'
-import DiceOverlay from '../components/DiceOverlay.vue'
+import Overlay from '../components/Overlay.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    DiceOverlay: DiceOverlay,
+    Overlay,
   },
   data() {
     return {
