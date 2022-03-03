@@ -1,6 +1,13 @@
 <template>
-  <div class="combat-unit-details">
-    <turn-indicator :class="{ on: true, invisible: unitIdInTurn !== unit.id }" />
+  <div
+    class="combat-unit-details"
+    :style="{
+      border: unit.hovered ? '2px dashed black' : undefined,
+    }"
+    @mouseover="updateUnit({ ...unit, hovered: true })"
+    @mouseleave="updateUnit({ ...unit, hovered: false })"
+  >
+    <turn-indicator v-show="unitIdInTurn !== unit.id" :class="{ on: true }" />
     <button class="close-button" title="Remove selection" @click="updateUnit({ ...unit, selected: false })">
       X
     </button>
@@ -66,10 +73,12 @@ export default {
   position: relative;
   display: grid;
   width: 100%;
+  padding: 0.25rem;
   grid-template-columns: 1rem 2rem 10rem 1fr;
   grid-template-rows: auto 1fr 1fr;
   align-items: center;
   justify-items: flex-start;
+  border: 2px solid transparent;
 }
 .close-button {
   width: 1rem;
@@ -117,7 +126,8 @@ export default {
   visibility: hidden;
 }
 .color-marker {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid black;
 }
 </style>

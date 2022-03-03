@@ -198,6 +198,7 @@ const createUnitFromCreature = (monsterOrCharacter, unitType, unitColors) => {
     monster: ['enemy', 'ally'].includes(unitType) ? monsterOrCharacter : undefined,
     id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : monsterOrCharacter.id,
     selected: false,
+    hovered: false,
     maxHitPoints,
     hitPoints: maxHitPoints,
     unitType,

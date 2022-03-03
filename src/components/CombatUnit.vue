@@ -2,14 +2,19 @@
   <div
     :class="{ 'combat-unit': true, selected: unit.selected, dead: unit.hitPoints === 0 }"
     :title="`${unit.name} (${unit.unitType})`"
-    :style="{ backgroundColor: unit.selected ? unit.color : undefined }"
+    :style="{
+      backgroundColor: unit.selected ? unit.color : undefined,
+      border: unit.hovered ? '2px dashed black' : undefined,
+    }"
     @dragstart="$emit('dragstart', $event)"
     @click="onClick($event)"
+    @mouseover="onMouseOver"
+    @mouseleave="onMouseLeave"
     @drop="$emit('drop', $event)"
     @dragover.prevent
     @dragenter.prevent
   >
-    {{ unit.name.slice(0, 2) }}
+    <span>{{ unit.name.slice(0, 2) }}</span>
   </div>
 </template>
 
@@ -28,6 +33,12 @@ export default {
     onClick($event) {
       this.updateUnit({ ...this.unit, selected: !this.unit.selected })
       this.$emit('click', $event)
+    },
+    onMouseOver() {
+      this.updateUnit({ ...this.unit, hovered: true })
+    },
+    onMouseLeave() {
+      this.updateUnit({ ...this.unit, hovered: false })
     },
   },
 }
