@@ -5,7 +5,7 @@
       X
     </button>
     <div @mouseover="hover = true" @mouseleave="hover = false">
-      <span>{{ unit.name }}</span>
+      <span>{{ unit.name }} ({{ unit.unitType }})</span>
     </div>
     <div class="unit-hit-points">
       <input
