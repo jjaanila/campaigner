@@ -23,7 +23,7 @@ const defaultUnitColors = distinguishableColors.map(color => ({ color, isUsed: f
 const migrateState = state => {
   state.grid ??= getEmptyGrid()
   state.turnOrder ??= []
-  state.colors ??= [...defaultUnitColors]
+  state.unitColors ??= [...defaultUnitColors]
   return state
 }
 
@@ -203,7 +203,7 @@ const createUnitFromCreature = (monsterOrCharacter, unitType, unitColors) => {
     hitPoints: maxHitPoints,
     unitType,
     conditions: monsterOrCharacter.conditions ?? [],
-    color: ['enemy', 'ally'].includes(unitType) && reserveUnitColor(unitColors),
+    color: ['enemy', 'ally'].includes(unitType) ? reserveUnitColor(unitColors) : undefined,
   }
 }
 

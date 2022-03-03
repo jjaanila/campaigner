@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { distinguishableColors } from '../tables'
 import getCombatModule from './combat.store'
 
 Vue.use(Vuex)
@@ -33,15 +34,16 @@ describe('store.combat', () => {
       name: 'Monster 2',
       monster: monster2,
     }
-    state = Object.freeze({
+    state = {
       grid: [
         [{ units: [enemy1] }],
         [{ units: [ally1] }],
         [{ units: [{ id: 'character1', name: 'Ismo', unitType: 'character' }] }],
       ],
       turnOrder: ['ally1', 'character1', 'enemy1'],
-      currentTurn: 'character1',
-    })
+      unitIdInTurn: 'character1',
+      unitColors: distinguishableColors.map(color => ({ color, isUsed: false })),
+    }
     global.localStorage = {
       getItem: jest.fn().mockImplementation(() => JSON.stringify(state)),
     }
@@ -94,6 +96,7 @@ describe('store.combat', () => {
         grid: expect.any(Array),
         turnOrder: [],
         unitIdInTurn: undefined,
+        unitColors: [...state.unitColors],
       })
     })
   })
@@ -133,6 +136,8 @@ describe('store.combat', () => {
             ...character1,
             unitType: 'character',
             selected: false,
+            hovered: false,
+            color: undefined,
             maxHitPoints: 3,
             conditions: [],
           },
@@ -141,6 +146,8 @@ describe('store.combat', () => {
             id: expect.any(String),
             unitType: 'enemy',
             selected: false,
+            hovered: false,
+            color: distinguishableColors[0],
             hitPoints: 1,
             maxHitPoints: 1,
             conditions: [],
@@ -150,11 +157,16 @@ describe('store.combat', () => {
             id: expect.any(String),
             unitType: 'ally',
             selected: false,
+            hovered: false,
+            color: distinguishableColors[1],
             hitPoints: 2,
             maxHitPoints: 2,
             conditions: [],
           },
         ]
+        const updatedUnitColors = [...state.unitColors]
+        updatedUnitColors[0].isUsed = true
+        updatedUnitColors[1].isUsed = true
         expect(commitMock.mock.calls).toEqual([
           ['clear'],
           ['setGrid', expect.any(Array)],
@@ -177,6 +189,7 @@ describe('store.combat', () => {
           ],
           ['setTurnOrder', [character1.id, expect.any(String), expect.any(String)]],
           ['setUnitIdInTurn', character1.id],
+          ['updateUnitColors', updatedUnitColors],
         ])
       })
     })
