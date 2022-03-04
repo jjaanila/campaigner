@@ -11,6 +11,8 @@ export class Synchronizer {
     this.storage = undefined
     this.lastRotateAt = undefined
     this.lastSyncAt = undefined
+    this.isRunning = false
+    this.unsubscribe = undefined
   }
 
   getSyncState(state) {
@@ -64,7 +66,7 @@ export class Synchronizer {
       })
   }
 
-  initialize() {
+  start() {
     if (this.config?.storage?.type === undefined) {
       return
     }
@@ -76,13 +78,21 @@ export class Synchronizer {
       ...this.config.storage.config,
     })
     return this.storage.initialize().then(() => {
-      this.config.store.subscribe((mutation, state) => {
+      this.unsubscribe = this.config.store.subscribe((mutation, state) => {
         if (!/^(party|combat)\//.test(mutation.type)) {
           return
         }
         this.queue.push(state)
         this.synchronize(this.storage) // TODO: This needs to be queued
       })
+      this.isRunning = true
     })
+  }
+
+  stop() {
+    this.isRunning = false
+    if (this.unsubscribe) {
+      this.unsubscribe()
+    }
   }
 }

@@ -95,18 +95,7 @@
       </tbody>
     </table>
     <button title="Add party member" @click="addCharacter()">+</button>
-    <button title="Download current Campaigner state" @click.prevent="downloadState()">Download state</button>
-    <button title="Load Campaigner state from disk" @click.prevent="openStateFileSelection()">
-      Upload state
-    </button>
-    <input
-      ref="stateFileInput"
-      accept="application/json"
-      type="file"
-      name="state-file"
-      style="display: none"
-      @change="uploadState"
-    />
+    <synchronization />
     <notebook />
   </div>
 </template>
@@ -116,12 +105,14 @@ import { mapState, mapActions } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
 import Inventory from './Inventory.vue'
 import Notebook from './Notebook.vue'
+import Synchronization from '../components/Synchronization.vue'
 export default {
   name: 'Party',
   components: {
     ConditionMenu,
     Inventory,
     Notebook,
+    Synchronization,
   },
   computed: {
     ...mapState({
@@ -138,37 +129,6 @@ export default {
       'addCondition',
       'removeCondition',
     ]),
-    openStateFileSelection() {
-      this.$refs.stateFileInput.click()
-    },
-    downloadState() {
-      const link = document.createElement('a')
-      link.href = URL.createObjectURL(
-        new Blob([JSON.stringify({ party: this.party, combat: this.combat })], {
-          type: 'text/plain',
-        })
-      )
-      link.download = `campaigner-state-${new Date().toISOString()}.json`
-      link.click()
-      URL.revokeObjectURL(link.href)
-    },
-    uploadState(e) {
-      e.target.files[0].text().then(stateText => {
-        try {
-          const state = JSON.parse(stateText)
-          if (confirm('This will overwrite your current Campaigner state. Are you sure?')) {
-            this.$store.replaceState({
-              ...this.$store.state,
-              ...state,
-            })
-          }
-        } catch (err) {
-          console.error(err)
-          alert('Invalid state file')
-          return
-        }
-      })
-    },
   },
 }
 </script>
