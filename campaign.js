@@ -55,7 +55,8 @@ module.exports = Object.freeze({
         },
         {
           name: 'Swarm',
-          description: 'Blaa blaa',
+          description:
+            "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.",
         },
       ],
       actions: [
