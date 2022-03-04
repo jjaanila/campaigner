@@ -22,7 +22,7 @@
     </button>
     <button
       class="condition-menu-open-button"
-      :title="isConditionMenuOpen ? '-' : '+'"
+      :title="isConditionMenuOpen ? 'Close' : 'Add condition'"
       @click="isConditionMenuOpen = !isConditionMenuOpen"
     >
       {{ isConditionMenuOpen ? '-' : '+' }}
