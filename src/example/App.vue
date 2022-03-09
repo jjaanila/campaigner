@@ -144,13 +144,13 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
-.page {
-  counter-reset: partcounter;
-}
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+.page {
+  counter-reset: partcounter;
 }
 address,
 time {

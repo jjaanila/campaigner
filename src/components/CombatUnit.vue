@@ -61,7 +61,7 @@ export default {
 }
 .selected {
   box-sizing: border-box;
-  border: solid black;
+  border: 2px solid black;
 }
 .dead {
   color: white;

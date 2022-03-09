@@ -12,6 +12,7 @@
         <combat-enemy
           v-for="unit in cell.units.filter(u => u.unitType === 'enemy')"
           :key="unit.id"
+          class="unit"
           draggable="true"
           :unit="unit"
           @dragstart="onUnitDragStart($event, unit, { x, y })"
@@ -19,6 +20,7 @@
         <combat-character
           v-for="unit in cell.units.filter(u => u.unitType === 'character')"
           :key="unit.id"
+          class="unit"
           draggable="true"
           :unit="unit"
           @dragstart="onUnitDragStart($event, unit, { x, y })"
@@ -26,6 +28,7 @@
         <combat-ally
           v-for="unit in cell.units.filter(u => u.unitType === 'ally')"
           :key="unit.id"
+          class="unit"
           draggable="true"
           :unit="unit"
           @dragstart="onUnitDragStart($event, unit, { x, y })"
@@ -96,9 +99,9 @@ table {
   border-spacing: 0;
   padding: 0;
   margin: 0;
+  table-layout: fixed;
+  width: 1px; /* To prevent expansion of cells, condition for table-layout to work */
 }
-tr,
-th,
 td {
   border: 1px solid gray;
   padding: 0;
@@ -107,5 +110,9 @@ td {
 td {
   height: 1.5rem;
   width: 1.5rem;
+}
+.unit {
+  width: calc(1.5rem - 1px); /* Leave 1px space for td border */
+  height: calc(1.5rem - 1px);
 }
 </style>

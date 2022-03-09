@@ -32,7 +32,10 @@ module.exports = function (env, argv) {
   }
   const isProduction = mode === 'production'
   return {
-    entry: path.join(projectRoot, campaign.entry),
+    entry: {
+      main: path.join(projectRoot, campaign.entry),
+      player: './src/player/index.js',
+    },
     output: {
       path: path.join(projectRoot, 'dist'),
       publicPath: '',
@@ -97,7 +100,16 @@ module.exports = function (env, argv) {
         cache: false,
         title: campaign.title,
         template: './templates/index.pug',
+        filename: 'player.html',
+        chunks: ['player'],
+      }),
+      new HtmlWebpackPlugin({
+        inject: false,
+        cache: false,
+        title: campaign.title,
+        template: './templates/index.pug',
         filename: 'index.html',
+        chunks: ['main'],
       }),
     ],
     optimization: isProduction
