@@ -75,7 +75,11 @@ describe('store.campaign', () => {
                 description:
                   "The thug has advantage on an attack roll against a creature if at least one of the thug's allies is within 5 ft. of the creature and the ally isn't incapacitated.",
               },
-              { name: 'Swarm', description: 'Blaa blaa' },
+              {
+                name: 'Swarm',
+                description:
+                  "The swarm can occupy another creature's space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can't regain hit points or gain temporary hit points.",
+              },
             ],
             actions: [
               { name: 'Multiattack', description: 'The thug makes two melee attacks.' },
