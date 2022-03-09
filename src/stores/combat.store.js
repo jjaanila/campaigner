@@ -356,9 +356,6 @@ export default () => ({
             unit => !(unit.monster?.passives?.some(passive => passive.name === 'Swarm') ?? false)
           ).length > 1
         if (hasAtLeastTwoNonSwarmUnits) {
-          console.info(
-            `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but new position is occupied`
-          )
           return
         }
       }
