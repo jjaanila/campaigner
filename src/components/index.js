@@ -1,6 +1,5 @@
 import CampaignTitle from './CampaignTitle.vue'
 import ChapterTitle from './ChapterTitle.vue'
-import Page from './Page.vue'
 import PageTitle from './PartTitle.vue'
 import SectionTitle from './SectionTitle.vue'
 import PartTitle from './PartTitle.vue'
@@ -12,15 +11,13 @@ import Item from './Item.vue'
 import Monster from './Monster.vue'
 import IdLink from './IdLink.vue'
 import Comment from './Comment.vue'
-import TableOfContents from './TableOfContents.vue'
 import Encounter from './Encounter.vue'
-import Party from './Party.vue'
-import CombatOverlay from './CombatOverlay.vue'
+import Overlay from './Overlay.vue'
+import Campaign from './Campaign.vue'
 
 export default {
   CampaignTitle,
   ChapterTitle,
-  Page,
   PageTitle,
   SectionTitle,
   PartTitle,
@@ -32,8 +29,7 @@ export default {
   Monster,
   IdLink,
   Comment,
-  TableOfContents,
   Encounter,
-  Party,
-  CombatOverlay,
+  Overlay,
+  Campaign,
 }

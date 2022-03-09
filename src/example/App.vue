@@ -91,16 +91,10 @@
 
 <script>
 import 'normalize.css'
-import Campaign from '../components/Campaign.vue'
-import Overlay from '../components/Overlay.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'App',
-  components: {
-    Campaign,
-    Overlay,
-  },
   computed: {
     ...mapState({
       monsters: state => state.campaign.monsters,

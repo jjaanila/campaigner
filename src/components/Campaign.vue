@@ -12,8 +12,12 @@
 
 <script>
 import { mapState } from 'vuex'
+import Page from './Page.vue'
 export default {
   name: 'Campaign',
+  components: {
+    Page,
+  },
   data() {
     return {
       backgroundImage: require('../img/paper.jpg'),
