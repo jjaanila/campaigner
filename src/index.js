@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import components from './components'
 import { createStore } from './stores/'
+import 'regenerator-runtime/runtime'
 
 export * from './components'
 
