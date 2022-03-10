@@ -12,6 +12,7 @@ export class Synchronizer {
     this.lastRotateAt = undefined
     this.lastSyncAt = undefined
     this.isRunning = false
+    this.isSynchronizing = false
     this.unsubscribe = undefined
   }
 
@@ -48,6 +49,7 @@ export class Synchronizer {
     if (!this.shouldSynchronize()) {
       return
     }
+    this.isSynchronizing = true
     if (this.shouldRotate()) {
       this.rotate()
     }
@@ -63,6 +65,9 @@ export class Synchronizer {
       })
       .catch(err => {
         console.error(`Synchronization of ${id} failed`, err)
+      })
+      .finally(() => {
+        this.isSynchronizing = false
       })
   }
 
@@ -86,6 +91,7 @@ export class Synchronizer {
         this.synchronize(this.storage) // TODO: This needs to be queued
       })
       this.isRunning = true
+      console.info('Synchronizer started')
     })
   }
 
@@ -94,5 +100,6 @@ export class Synchronizer {
     if (this.unsubscribe) {
       this.unsubscribe()
     }
+    console.info('Synchronizer stopped')
   }
 }

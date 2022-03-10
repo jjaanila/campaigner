@@ -1,14 +1,14 @@
 <template>
   <div class="sync">
     <button class="sync-button" title="Synchronization" @click="toggleSyncMenu">
-      <img :src="syncIcon" />
+      <img :class="{ spin: isSynchronizing }" :src="syncIcon" />
     </button>
     <div v-if="isMenuOpen" class="sync-menu">
       <div class="sync-token-container">
         <label for="sync-token">JsonBin token</label>
         <input id="sync-token" :value="token" @input="token = $event.target.value" />
       </div>
-      <button @click="isSynchronizing ? stop() : start()">{{ isSynchronizing ? 'Stop' : 'Start' }}</button>
+      <button @click="isRunning ? stop() : start()">{{ isRunning ? 'Stop' : 'Start' }}</button>
       <button title="Download current Campaigner state" @click.prevent="downloadState()">
         Download state
       </button>
@@ -56,6 +56,9 @@ export default {
       }
     },
     isSynchronizing() {
+      return this.synchronizer && this.synchronizer.isSynchronizing
+    },
+    isRunning() {
       return this.synchronizer && this.synchronizer.isRunning
     },
   },
@@ -127,5 +130,21 @@ export default {
   flex-direction: column;
   background-color: #f7f2e5;
   margin: 0 0 0.5rem 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 3000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 </style>
