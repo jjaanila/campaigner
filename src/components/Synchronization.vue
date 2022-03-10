@@ -1,7 +1,13 @@
 <template>
-  <div class="synchronization">
-    <button @click="toggleSyncMenu">Synchronization</button>
-    <div v-if="isMenuOpen" class="synchronization-menu">
+  <div class="sync">
+    <button class="sync-button" title="Synchronization" @click="toggleSyncMenu">
+      <img :src="syncIcon" />
+    </button>
+    <div v-if="isMenuOpen" class="sync-menu">
+      <div class="sync-token-container">
+        <label for="sync-token">JsonBin token</label>
+        <input id="sync-token" :value="token" @input="token = $event.target.value" />
+      </div>
       <button @click="isSynchronizing ? stop() : start()">{{ isSynchronizing ? 'Stop' : 'Start' }}</button>
       <button title="Download current Campaigner state" @click.prevent="downloadState()">
         Download state
@@ -23,12 +29,15 @@
 
 <script>
 import { Synchronizer } from '../sync'
+import syncIcon from '../img/cycle.svg'
 export default {
   name: 'Synchronization',
   data() {
     return {
       synchronizer: undefined,
       isMenuOpen: false,
+      token: '',
+      syncIcon,
     }
   },
   computed: {
@@ -37,12 +46,12 @@ export default {
         storage: {
           type: 'jsonBin',
           config: {
-            masterKey: '',
+            masterKey: this.token,
           },
         },
         manual: true,
         rotationIntervalMs: 15 * 60 * 1000,
-        syncIntervalMs: 15 * 60 * 1000,
+        syncIntervalMs: 60 * 1000,
         store: this.$store,
       }
     },
@@ -97,13 +106,26 @@ export default {
 </script>
 
 <style scoped>
-.synchronization {
+.sync {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  margin-top: 0.5rem;
 }
-.synchronization-menu {
+.sync-button {
+  width: 3rem;
+  height: 3rem;
+  padding: 0 0.2rem 0 0.2rem;
+}
+.sync-token-container {
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+.sync-menu {
   display: flex;
   flex-direction: column;
   background-color: #f7f2e5;
-  padding: 1rem;
-  margin: 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 </style>
