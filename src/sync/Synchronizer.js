@@ -6,14 +6,18 @@ const storageMap = Object.freeze({
 
 export class Synchronizer {
   constructor(config) {
-    this.queue = []
-    this.config = { ...config }
+    this.syncState = undefined
+    this.config = {
+      ...config,
+      syncDebounceMs: config.syncDebounceMs ?? 5000,
+    }
     this.storage = undefined
     this.lastRotateAt = undefined
     this.lastSyncAt = undefined
     this.isRunning = false
     this.isSynchronizing = false
     this.unsubscribe = undefined
+    this.timeout = undefined
   }
 
   getSyncState(state) {
@@ -54,11 +58,9 @@ export class Synchronizer {
       this.rotate()
     }
     console.info('Synchronizing...')
-    const latestState = this.queue.pop()
-    this.queue.length = 0
     const id = `campaigner-state-${new Date().toISOString()}`
     return storage
-      .save(id, this.getSyncState(latestState))
+      .save(id, this.syncState)
       .then(() => {
         console.info(`Synchronized ${id}`)
         this.lastSyncAt = new Date()
@@ -69,6 +71,15 @@ export class Synchronizer {
       .finally(() => {
         this.isSynchronizing = false
       })
+  }
+
+  scheduleSynchronization() {
+    if (this.timeout) {
+      clearTimeout(this.timeout)
+    }
+    this.timeout = setTimeout(() => {
+      this.synchronize(this.storage)
+    }, this.config.syncDebounceMs)
   }
 
   start() {
@@ -87,8 +98,8 @@ export class Synchronizer {
         if (!/^(party|combat)\//.test(mutation.type)) {
           return
         }
-        this.queue.push(state)
-        this.synchronize(this.storage) // TODO: This needs to be queued
+        this.syncState = this.getSyncState(state)
+        this.scheduleSynchronization()
       })
       this.isRunning = true
       console.info('Synchronizer started')
