@@ -21,3 +21,7 @@ jobs:
       - run: npm run eslint
       - run: npm test
       - run: npm run build
+      - name: npm test:cypress
+        uses: cypress-io/github-action@v2
+        with:
+          start: npx http-server dist -p 8080
