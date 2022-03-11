@@ -5,22 +5,22 @@ import getCampaignModule from './campaign.store'
 import uiStore from './ui.store'
 import getCombatModule, { LOCAL_STORAGE_STATE_KEY as COMBAT_LOCAL_STORAGE_STATE_KEY } from './combat.store'
 
-Vue.use(Vuex)
+export const createStore = () => {
+  Vue.use(Vuex)
+  const store = new Vuex.Store({
+    modules: {
+      party: getPartyModule(),
+      campaign: getCampaignModule(),
+      ui: uiStore,
+      combat: getCombatModule(),
+    },
+  })
 
-const store = new Vuex.Store({
-  modules: {
-    party: getPartyModule(),
-    campaign: getCampaignModule(),
-    ui: uiStore,
-    combat: getCombatModule(),
-  },
-})
-
-store.subscribe((mutation, state) => {
-  if (localStorage) {
-    localStorage.setItem(PARTY_LOCAL_STORAGE_STATE_KEY, JSON.stringify(state.party))
-    localStorage.setItem(COMBAT_LOCAL_STORAGE_STATE_KEY, JSON.stringify(state.combat))
-  }
-})
-
-export default store
+  store.subscribe((mutation, state) => {
+    if (localStorage) {
+      localStorage.setItem(PARTY_LOCAL_STORAGE_STATE_KEY, JSON.stringify(state.party))
+      localStorage.setItem(COMBAT_LOCAL_STORAGE_STATE_KEY, JSON.stringify(state.combat))
+    }
+  })
+  return store
+}

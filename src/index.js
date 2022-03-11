@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import components from './components'
-import store from './stores/'
+import { createStore } from './stores/'
+import 'regenerator-runtime/runtime'
 
 export * from './components'
 
@@ -12,7 +13,7 @@ export const createCampaign = app => {
   })
 
   return new Vue({
-    store,
+    store: createStore(),
     el: '#app',
     render: h => h(app),
   })

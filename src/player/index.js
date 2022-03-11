@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import store from '../stores/'
+import { createStore } from '../stores/'
 import Player from './Player.vue'
 
 Vue.config.productionTip = false
 
 new Vue({
-  store,
+  store: createStore(),
   el: '#app',
   render: h => h(Player),
 })
