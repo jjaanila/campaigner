@@ -7,10 +7,6 @@ export class Storage {
     return Promise.resolve()
   }
 
-  getOne(_id) {
-    throw new Error('Not implemented')
-  }
-
   save(_id, _data) {
     throw new Error('Not implemented')
   }
