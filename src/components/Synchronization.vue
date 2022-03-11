@@ -7,7 +7,7 @@
     <div v-if="isMenuOpen" class="sync-menu">
       <div class="sync-token-container">
         <label for="sync-token">JsonBin token</label>
-        <input id="sync-token" :value="token" @input="token = $event.target.value" />
+        <input id="sync-token" type="password" :value="token" @input="token = $event.target.value" />
       </div>
       <button :disabled="isStarting" @click="isRunning ? stop() : start()">
         {{ isRunning ? 'Stop' : 'Start' }}
