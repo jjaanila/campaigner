@@ -12,7 +12,7 @@
       <label for="show-toc-always">Keep open</label>
     </div>
     <ol v-if="isToCOpen">
-      <li v-for="part in document.parts" :key="part.name">
+      <li v-for="part in doc.parts" :key="part.name">
         <a class="toc-part" :href="`#${part.id}`" @click.stop>{{ part.name }}</a>
         <ol>
           <li v-for="chapter in part.chapters" :key="chapter.name">
@@ -31,10 +31,15 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { generateId } from '../utils'
 export default {
   name: 'TableOfContents',
+  data() {
+    return {
+      titleElements: [],
+    }
+  },
   computed: {
-    ...mapState('campaign', ['document']),
     ...mapState('ui', ['isToCOpen']),
     showToCAlways: {
       get() {
@@ -44,9 +49,86 @@ export default {
         this.$store.commit('ui/setShowToCAlways', value)
       },
     },
+    doc() {
+      const doc = { parts: [] }
+      this.titleElements.forEach(titleElement => {
+        const title = titleElement.textContent.trim()
+        if (titleElement.classList.contains('part-title')) {
+          doc.parts.push({
+            name: title,
+            id: generateId(title, 'part'),
+            chapters: [],
+          })
+        } else if (titleElement.classList.contains('chapter-title')) {
+          if (!doc.parts.length) {
+            throw new Error(`There are no PartTitles before ChapterTitle ${title}`)
+          }
+          doc.parts[doc.parts.length - 1].chapters.push({
+            name: title,
+            id: generateId(title, 'chapter'),
+            sections: [],
+          })
+        } else if (titleElement.classList.contains('section-title')) {
+          if (!doc.parts.length) {
+            throw new Error(`There are no PartTitles before SectionTitle ${title}`)
+          }
+          if (!doc.parts[doc.parts.length - 1].chapters.length) {
+            throw new Error(`There are no ChapterTitles before SectionTitle ${title}`)
+          }
+          doc.parts[doc.parts.length - 1].chapters[
+            doc.parts[doc.parts.length - 1].chapters.length - 1
+          ].sections.push({
+            name: title,
+            id: generateId(title, 'section'),
+          })
+        }
+      })
+      return doc
+    },
+  },
+  /**
+   * Generates the table of contents from the document by reading DOM.
+   * Is strict about the precedence of title types and their order in DOM.
+   * A part has to come before chapters, and a chapter has to come before sections.
+   * I tried observing also changes in title elements, but it didn't work with Webpack HMR.
+   */
+  mounted() {
+    this.$nextTick(() => {
+      this.refreshTitleElements()
+      this.mainObserver = new MutationObserver(mutations => {
+        for (const mutation of mutations) {
+          if (mutation.type === 'childList') {
+            const titleWasAddedorRemoved = mutation.addedNodes
+              .concat(mutation.removedNodes)
+              .some(
+                node =>
+                  node.classList.contains('part-title') ||
+                  node.classList.contains('chapter-title') ||
+                  node.classList.contains('section-title')
+              )
+            if (titleWasAddedorRemoved) {
+              this.refreshTitleElements()
+              break
+            }
+          }
+        }
+      })
+      this.mainObserver.observe(window.document.querySelector('main'), {
+        characterData: false,
+        attributes: false,
+        childList: true,
+        subtree: false,
+      })
+    })
+  },
+  unmounted() {
+    this.mainObserver.disconnect()
   },
   methods: {
     ...mapActions('ui', ['toggleToC']),
+    refreshTitleElements() {
+      this.titleElements = window.document.querySelectorAll('main .part-title,.chapter-title,.section-title')
+    },
   },
 }
 </script>
