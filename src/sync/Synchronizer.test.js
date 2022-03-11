@@ -42,13 +42,13 @@ describe('Synchronizer', function () {
   })
 
   describe('start', () => {
-    it('should throw for unknown storage type', () => {
+    it('should reject for unknown storage type', () => {
       const synchronizer = new Synchronizer({
         storage: {
           type: 'unknown',
         },
       })
-      expect(() => synchronizer.start()).toThrow('Unknown storage type')
+      return expect(synchronizer.start()).rejects.toEqual(new Error('Unknown storage type unknown'))
     })
     it('should start synchronizer', async () => {
       await synchronizer.start()
