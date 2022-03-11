@@ -20,20 +20,6 @@ const parseCampaign = campaignJs => {
       })),
       'name'
     ),
-    document: {
-      parts: campaignJs.document.parts.map(part => ({
-        ...part,
-        id: generateId(part.name, 'part'),
-        chapters: part.chapters.map(chapter => ({
-          ...chapter,
-          id: generateId(chapter.name, 'chapter'),
-          sections: chapter.sections.map(section => ({
-            ...section,
-            id: generateId(section.name, 'section'),
-          })),
-        })),
-      })),
-    },
   }
 }
 

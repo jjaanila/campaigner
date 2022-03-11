@@ -96,39 +96,6 @@ describe('store.campaign', () => {
             id: 'monster-swashbuckler-of-long-name-islands',
           },
         ],
-        document: {
-          parts: [
-            {
-              name: 'Creating a campaign',
-              id: 'part-creating-a-campaign',
-              chapters: [
-                {
-                  name: 'Getting started',
-                  id: 'chapter-getting-started',
-                  sections: [
-                    {
-                      name: 'Installing campaigner',
-                      id: 'section-installing-campaigner',
-                    },
-                    {
-                      name: 'campaign.js',
-                      id: 'section-campaignjs',
-                    },
-                    {
-                      name: 'Entry file',
-                      id: 'section-entry-file',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'Monsters',
-              id: 'part-monsters',
-              chapters: [],
-            },
-          ],
-        },
         conditions: [
           {
             name: 'blinded',

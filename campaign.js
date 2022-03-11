@@ -4,30 +4,6 @@ module.exports = Object.freeze({
   authorUrl: 'https://github.com/jjaanila',
   publishDate: '2022-02-13',
   entry: './src/example/index.js',
-  document: {
-    parts: [
-      {
-        name: 'Creating a campaign',
-        chapters: [
-          {
-            name: 'Getting started',
-            sections: [
-              {
-                name: 'Installing campaigner',
-              },
-              {
-                name: 'campaign.js',
-              },
-              {
-                name: 'Entry file',
-              },
-            ],
-          },
-        ],
-      },
-      { name: 'Monsters', chapters: [] },
-    ],
-  },
   monsters: [
     {
       name: 'Swashbuckler of Long Name Islands',
