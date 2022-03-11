@@ -16,6 +16,7 @@ export class Synchronizer {
     this.lastSyncAt = undefined
     this.isRunning = false
     this.isSynchronizing = false
+    this.isStarting = false
     this.unsubscribe = undefined
     this.timeout = undefined
     this.currentId = undefined
@@ -91,18 +92,26 @@ export class Synchronizer {
   }
 
   start() {
-    const storageClass = storageMap[this.config?.storage?.type]
-    if (!storageClass) {
-      throw new Error(`Unknown storage type ${this.config?.storage?.type}`)
-    }
-    this.storage = new storageClass({
-      ...this.config.storage.config,
-    })
-    return this.storage.initialize().then(() => {
-      this.unsubscribe = this.config.store.subscribe(this.onStoreUpdate)
-      this.isRunning = true
-      console.info('Synchronizer started')
-    })
+    return Promise.resolve()
+      .then(() => {
+        this.isStarting = true
+        const storageClass = storageMap[this.config?.storage?.type]
+        if (!storageClass) {
+          throw new Error(`Unknown storage type ${this.config?.storage?.type}`)
+        }
+        this.storage = new storageClass({
+          ...this.config.storage.config,
+        })
+        return this.storage.initialize()
+      })
+      .then(() => {
+        this.unsubscribe = this.config.store.subscribe(this.onStoreUpdate.bind(this))
+        this.isRunning = true
+        console.info('Synchronizer started')
+      })
+      .finally(() => {
+        this.isStarting = false
+      })
   }
 
   stop() {

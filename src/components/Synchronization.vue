@@ -2,13 +2,16 @@
   <div class="sync">
     <button class="sync-button" title="Synchronization" @click="toggleSyncMenu">
       <img :class="{ spin: isSynchronizing }" :src="syncIcon" />
+      <div :class="{ 'sync-status': true, running: isRunning }" />
     </button>
     <div v-if="isMenuOpen" class="sync-menu">
       <div class="sync-token-container">
         <label for="sync-token">JsonBin token</label>
         <input id="sync-token" :value="token" @input="token = $event.target.value" />
       </div>
-      <button @click="isRunning ? stop() : start()">{{ isRunning ? 'Stop' : 'Start' }}</button>
+      <button :disabled="isStarting" @click="isRunning ? stop() : start()">
+        {{ isRunning ? 'Stop' : 'Start' }}
+      </button>
       <button title="Download current Campaigner state" @click.prevent="downloadState()">
         Download state
       </button>
@@ -60,6 +63,9 @@ export default {
     },
     isRunning() {
       return this.synchronizer && this.synchronizer.isRunning
+    },
+    isStarting() {
+      return this.synchronizer && this.synchronizer.isStarting
     },
   },
   methods: {
@@ -116,6 +122,10 @@ export default {
   margin-top: 0.5rem;
 }
 .sync-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   width: 3rem;
   height: 3rem;
   padding: 0 0.2rem 0 0.2rem;
@@ -130,6 +140,19 @@ export default {
   flex-direction: column;
   background-color: #f7f2e5;
   margin: 0 0 0.5rem 0;
+}
+.sync-status {
+  position: absolute;
+  top: calc(50% - 0.25rem);
+  left: calc(50% - 0.25rem);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: red;
+  border-radius: 50%;
+}
+
+.sync-status.running {
+  background: lightgreen;
 }
 
 @keyframes spin {
