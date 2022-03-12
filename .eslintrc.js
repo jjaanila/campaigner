@@ -16,7 +16,9 @@ module.exports = {
     'vue/no-mutating-props': 'off', // The only way I have found to get inputs to work smoothly is with v-model and it triggers this eslint rule
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+    'no-only-tests/no-only-tests': ['error'],
   },
+  plugins: ['no-only-tests'],
   env: {
     browser: true,
     commonjs: true,
