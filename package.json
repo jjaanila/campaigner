@@ -1,7 +1,7 @@
 {
   "name": "campaigner",
   "description": "Dungeons and Dragons campaign framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Janne Jaanila (https://github.com/jjaanila)",
   "contributors": [
     "Taneli Hukkinen (https://github.com/hukkin)"
