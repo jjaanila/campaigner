@@ -36,13 +36,14 @@
         It is the entry point the bundler uses to access your campaign code. Bundler will include all the
         required JS, CSS, etc. files based on the dependencies, i.e. imports, between them so you shouldn't
         need to worry about that. The entry file should be a JS file that imports and calls createCampaign
-        function with the Vue app as an argument. For example like this:
+        function with the Vue app root component as an argument, and then mounts the returned Vue app. For
+        example like this:
       </p>
       <pre>
           import App from './App.vue'
           import { createCampaign } from '../src/index'
 
-          createCampaign(App)
+          createCampaign(App).mount('#app')
         </pre
       >
       <p>In the example campaign, index.js is the entry file.</p>
