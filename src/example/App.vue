@@ -56,7 +56,7 @@
         <code>import { IdLink } from 'campaigner'</code> but you have to remember to add them in components
         property to be able to use them in the Vue template!
       </p>
-      <section-title name="Running campaigner" />
+      <section-title name="Running Campaigner" />
       <p>
         After you have defined above files, you can run the campaigner with
         <code>npx campaigner start</code> The Vue app will soon open in your browser. With
@@ -83,7 +83,8 @@
         shown on the left on top of everything and it follows the reader. Its content is rendered using
         "document" property of campaign.js file.
       </p>
-      <part-title name="Monsters" />
+      <part-title name="Resources" />
+      <section-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
     </campaign>
     <overlay />
