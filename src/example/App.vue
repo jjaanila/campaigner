@@ -56,7 +56,7 @@
         <code>import { IdLink } from 'campaigner'</code> but you have to remember to add them in components
         property to be able to use them in the Vue template!
       </p>
-      <section-title name="Running campaigner" />
+      <section-title name="Running Campaigner" />
       <p>
         After you have defined above files, you can run the campaigner with
         <code>npx campaigner start</code> The Vue app will soon open in your browser. With
