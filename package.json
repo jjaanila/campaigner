@@ -1,12 +1,26 @@
 {
   "name": "campaigner",
-  "description": "A Vue.js project",
-  "version": "1.1.0",
-  "author": "Janne Jaanila <janne.jaanila@gmail.com>",
+  "description": "Dungeons and Dragons campaign framework",
+  "version": "1.0.0",
+  "author": "Janne Jaanila (https://github.com/jjaanila)",
+  "contributors": [
+    "Taneli Hukkinen (https://github.com/hukkin)"
+  ],
   "license": "MIT",
   "private": false,
   "main": "./src/index.js",
-  "homepage": "https://jjaanila.github.io/campaigner",
+  "homepage": "https://github.com/jjaanila/campaigner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjaanila/campaigner.git"
+  },
+  "files": [
+    "src/**/*",
+    "babel.config.js",
+    "webpack.config.js",
+    "templates",
+    "scripts"
+  ],
   "bin": {
     "campaigner": "./src/campaigner.js"
   },
