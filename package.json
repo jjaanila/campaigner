@@ -16,6 +16,7 @@
   },
   "files": [
     "src/**/*",
+    "!src/**/*.test.js",
     "babel.config.js",
     "webpack.config.js",
     "templates",
