@@ -15,7 +15,7 @@ if (process.argv[2] === 'start') {
 }
 
 if (process.argv[2] === 'build') {
-  cp.execSync(`npm build`, {
+  cp.execSync(`npm run build`, {
     cwd: rootDir,
     stdio: 'inherit',
   })
