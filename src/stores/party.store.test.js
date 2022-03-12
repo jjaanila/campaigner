@@ -1,8 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import getPartyModule from './party.store'
-
-Vue.use(Vuex)
 
 describe('store.party', () => {
   let characters
@@ -66,7 +63,7 @@ describe('store.party', () => {
       global.localStorage = {
         getItem: jest.fn().mockImplementation(() => null),
       }
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           party: getPartyModule(),
         },
@@ -84,7 +81,7 @@ describe('store.party', () => {
     })
 
     it('should initialize using localStorage', () => {
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           party: getPartyModule(),
         },
@@ -119,7 +116,7 @@ describe('store.party', () => {
           })
         ),
       }
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           party: getPartyModule(),
         },

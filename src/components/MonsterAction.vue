@@ -59,7 +59,7 @@ export default {
       const toHitStr = this.toHit ? `${this.toHit > 0 ? '+' : ''}${this.toHit} to hit` : ''
       const reachStr = this.reachFt ? `reach ${this.reachFt} ft.` : ''
       const rangeStr =
-        this.normalRangeFt || this.disadvantageRangeFt
+        this.rangeFt || this.disadvantageRangeFt
           ? `range ${this.rangeFt ?? 0}/${this.disadvantageRangeFt ?? 0} ft.`
           : ''
       const reachRangeStr =

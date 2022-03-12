@@ -42,7 +42,6 @@ module.exports = function (env, argv) {
     },
     resolve: {
       alias: {
-        vue: 'vue/dist/vue.js',
         'project-root': projectRoot,
       },
     },

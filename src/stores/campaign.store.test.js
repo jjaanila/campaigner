@@ -1,14 +1,11 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import getCampaignModule from './campaign.store'
 import Dice from '../Dice'
-
-Vue.use(Vuex)
 
 describe('store.campaign', () => {
   describe('initialization', () => {
     it('should parse campaign.js', () => {
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           campaign: getCampaignModule(),
         },

@@ -1,4 +1,4 @@
 import App from './App.vue'
 import { createCampaign } from '../index'
 
-createCampaign(App)
+createCampaign(App).mount('#app')
