@@ -83,7 +83,8 @@
         shown on the left on top of everything and it follows the reader. Its content is rendered using
         "document" property of campaign.js file.
       </p>
-      <part-title name="Monsters" />
+      <part-title name="Resources" />
+      <section-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
     </campaign>
     <overlay />

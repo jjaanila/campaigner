@@ -15,13 +15,18 @@
       <li v-for="part in doc.parts" :key="part.name">
         <a class="toc-part" :href="`#${part.id}`" @click.stop>{{ part.name }}</a>
         <ol>
-          <li v-for="chapter in part.chapters" :key="chapter.name">
-            <a class="toc-chapter" :href="`#${chapter.id}`" @click.stop>{{ chapter.name }}</a>
-            <ol>
-              <li v-for="section in chapter.sections" :key="section.name">
+          <li v-for="child in part.children" :key="child.name">
+            <a v-if="child.type === 'chapter'" class="toc-chapter" :href="`#${child.id}`" @click.stop>{{
+              child.name
+            }}</a>
+            <ol v-if="child.type === 'chapter'">
+              <li v-for="section in child.sections" :key="section.name">
                 <a class="toc-section" :href="`#${section.id}`" @click.stop>{{ section.name }}</a>
               </li>
             </ol>
+            <a v-if="child.type === 'section'" class="toc-section" :href="`#${child.id}`" @click.stop>{{
+              child.name
+            }}</a>
           </li>
         </ol>
       </li>
@@ -57,30 +62,35 @@ export default {
           doc.parts.push({
             name: title,
             id: generateId(title, 'part'),
-            chapters: [],
+            children: [],
           })
         } else if (titleElement.classList.contains('chapter-title')) {
           if (!doc.parts.length) {
             throw new Error(`There are no PartTitles before ChapterTitle ${title}`)
           }
-          doc.parts[doc.parts.length - 1].chapters.push({
+          doc.parts[doc.parts.length - 1].children.push({
             name: title,
             id: generateId(title, 'chapter'),
             sections: [],
+            type: 'chapter',
           })
         } else if (titleElement.classList.contains('section-title')) {
           if (!doc.parts.length) {
             throw new Error(`There are no PartTitles before SectionTitle ${title}`)
           }
-          if (!doc.parts[doc.parts.length - 1].chapters.length) {
-            throw new Error(`There are no ChapterTitles before SectionTitle ${title}`)
-          }
-          doc.parts[doc.parts.length - 1].chapters[
-            doc.parts[doc.parts.length - 1].chapters.length - 1
-          ].sections.push({
+          const lastChapterOfLastPart = [...doc.parts[doc.parts.length - 1].children]
+            .reverse()
+            .find(child => child.type === 'chapter')
+          const section = {
             name: title,
             id: generateId(title, 'section'),
-          })
+            type: 'section',
+          }
+          if (lastChapterOfLastPart) {
+            lastChapterOfLastPart.sections.push(section)
+          } else {
+            doc.parts[doc.parts.length - 1].children.push(section)
+          }
         }
       })
       return doc
@@ -91,6 +101,7 @@ export default {
    * Is strict about the precedence of title types and their order in DOM.
    * A part has to come before chapters, and a chapter has to come before sections.
    * I tried observing also changes in title elements, but it didn't work with Webpack HMR.
+   * Part may contain chapters and sections. Chapters should contain only sections.
    */
   mounted() {
     this.$nextTick(() => {
