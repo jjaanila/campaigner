@@ -32,7 +32,7 @@ it('renders correctly', function () {
   cy.get('nav.toc > ol > li:nth-child(2) > a.toc-part').shouldHaveTrimmedText('Resources')
 })
 
-it.only('is functional', function () {
+it('is functional', function () {
   cy.visit('http://localhost:8080/')
   cy.get('.page').click({ force: true })
   cy.get('#show-toc-always', { timeout: 10000 }).should('be.visible')
