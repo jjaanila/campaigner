@@ -1,8 +1,12 @@
 <template>
   <div class="inventory">
-    <button class="inventory-button" title="Inventory" @click.stop="toggleInventory()">
-      <img :src="backpackIcon" />
-    </button>
+    <IconButton
+      class="inventory-button"
+      title="Inventory"
+      size="small"
+      :icon-src="backpackIcon"
+      @click.stop="toggleInventory()"
+    />
     <textarea
       v-show="isInventoryOpen"
       ref="inventory"
@@ -17,8 +21,12 @@
 import { mapState, mapActions } from 'vuex'
 import BackpackIcon from '../img/backpack.svg'
 import ClickOutside from 'vue-click-outside'
+import IconButton from './IconButton.vue'
 export default {
   name: 'Inventory',
+  components: {
+    IconButton,
+  },
   directives: {
     ClickOutside,
   },

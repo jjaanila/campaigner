@@ -1,6 +1,13 @@
 <template>
   <div class="notebook">
-    <div>
+    <IconButton
+      class="notebook-button"
+      title="Notebook"
+      size="large"
+      :icon-src="notebookIcon"
+      @click="toggleNotebook()"
+    />
+    <div v-show="isNotebookOpen" class="notebook-container">
       <button
         v-show="isNotebookOpen && !shownRecord"
         class="notebook-add-record-button"
@@ -9,11 +16,6 @@
       >
         +
       </button>
-      <button class="notebook-button" title="Notebook" @click="toggleNotebook()">
-        <img :src="notebookIcon" />
-      </button>
-    </div>
-    <div v-show="isNotebookOpen" class="notebook-container">
       <input
         v-show="!shownRecord"
         class="notebook-search"
@@ -59,6 +61,7 @@
 import { mapState, mapActions } from 'vuex'
 import NotebookIcon from '../img/notebook.svg'
 import ClickOutside from 'vue-click-outside'
+import IconButton from './IconButton.vue'
 import { getUniqueId } from '../utils'
 import sortBy from 'lodash/sortBy'
 import Fuse from 'fuse.js'
@@ -66,6 +69,9 @@ import Fuse from 'fuse.js'
 const ITEMS_PER_PAGE = 10
 export default {
   name: 'Notebook',
+  components: {
+    IconButton,
+  },
   directives: {
     ClickOutside,
   },
@@ -187,10 +193,8 @@ export default {
   width: 100%;
   height: 20rem;
 }
-.notebook-button {
-  width: 3rem;
-  height: 3rem;
-  padding: 0 0.2rem 0 0.2rem;
+.notebook-add-record-button {
+  margin-left: auto;
 }
 .notebook-records-list {
   list-style: none;
