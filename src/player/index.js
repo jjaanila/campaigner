@@ -1,11 +1,7 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import { createStore } from '../stores/'
 import Player from './Player.vue'
 
-Vue.config.productionTip = false
-
-new Vue({
-  store: createStore(),
-  el: '#app',
-  render: h => h(Player),
-})
+const app = createApp(Player)
+app.use(createStore())
+app.mount('#app')

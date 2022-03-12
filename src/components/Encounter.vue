@@ -1,11 +1,14 @@
 <template>
   <div class="encounter">
-    <span v-for="enemy in enemiesWithMonsters" :key="enemy.id">
-      {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
-    </span>
-    <div v-if="alliesWithMonsters.length">
+    <div v-if="enemiesWithMonsters.length" class="encounter-unit-category">
+      <strong>Enemies</strong>
+      <span v-for="enemy in enemiesWithMonsters" :key="enemy.id" class="encounter-unit-group">
+        {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
+      </span>
+    </div>
+    <div v-if="alliesWithMonsters.length" class="encounter-unit-category">
       <strong>Allies</strong>
-      <span v-for="ally in alliesWithMonsters" :key="ally.id"
+      <span v-for="ally in alliesWithMonsters" :key="ally.id" class="encounter-unit-group"
         >{{ ally.quantity }} <id-link :id="ally.id" :name="ally.monster.name" type="monster"
       /></span>
     </div>
@@ -131,6 +134,12 @@ export default {
 <style scoped>
 .encounter {
   margin: 0.5rem 0;
+}
+.encounter-unit-group {
+  margin: 0.25rem 0.25rem;
+}
+.encounter-unit-category {
+  margin: 0.25rem 0;
 }
 .difficulty {
   font-weight: bold;

@@ -428,8 +428,8 @@ export default () => ({
         { ...createHorde(selectedUnits), selected: true },
       ])
     },
-    splitHorde({ commit, state, getters }, hordeId) {
-      const horde = state.units.find(unit => unit.id === hordeId && getters.isHorde(unit))
+    splitHorde({ commit, state }, hordeId) {
+      const horde = state.units.find(unit => unit.id === hordeId && isHorde(unit))
       if (!horde) {
         throw new Error(`Horde unit with id ${hordeId} not found`)
       }

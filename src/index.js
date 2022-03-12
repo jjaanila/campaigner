@@ -1,20 +1,15 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import components from './components'
 import { createStore } from './stores/'
 import 'regenerator-runtime/runtime'
 
 export * from './components'
 
-export const createCampaign = app => {
-  Vue.config.productionTip = false
-
+export const createCampaign = appComponent => {
+  const app = createApp(appComponent)
+  app.use(createStore())
   Object.keys(components).forEach(key => {
-    Vue.component(key, components[key])
+    app.component(key, components[key])
   })
-
-  return new Vue({
-    store: createStore(),
-    el: '#app',
-    render: h => h(app),
-  })
+  return app
 }

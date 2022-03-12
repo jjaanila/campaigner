@@ -29,7 +29,6 @@
               type="number"
               min="1"
               max="30"
-              value="1"
               @input="updateCharacters()"
             />
           </td>
@@ -40,7 +39,6 @@
               type="number"
               min="0"
               :max="character.maxHitPoints"
-              value="1"
               @input="updateCharacters()"
             />
           </td>
@@ -51,7 +49,6 @@
               type="number"
               :size="character.maxHitPoints && character.maxHitPoints.toString().length"
               min="1"
-              value="1"
               @input="updateCharacters()"
             />
           </td>
@@ -62,7 +59,6 @@
               type="number"
               min="1"
               max="20"
-              value="1"
               @input="updateCharacters()"
             />
           </td>
@@ -73,7 +69,6 @@
               type="number"
               min="1"
               max="30"
-              value="1"
               @input="updateCharacters()"
             />
           </td>
@@ -84,7 +79,6 @@
               type="number"
               min="0"
               max="100"
-              value="30"
               @input="updateCharacters()"
             />
           </td>

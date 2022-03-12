@@ -1,13 +1,11 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore as createVueXStore } from 'vuex'
 import getPartyModule, { LOCAL_STORAGE_STATE_KEY as PARTY_LOCAL_STORAGE_STATE_KEY } from './party.store'
 import getCampaignModule from './campaign.store'
 import uiStore from './ui.store'
 import getCombatModule, { LOCAL_STORAGE_STATE_KEY as COMBAT_LOCAL_STORAGE_STATE_KEY } from './combat.store'
 
 export const createStore = () => {
-  Vue.use(Vuex)
-  const store = new Vuex.Store({
+  const store = createVueXStore({
     modules: {
       party: getPartyModule(),
       campaign: getCampaignModule(),

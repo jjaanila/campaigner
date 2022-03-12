@@ -30,7 +30,7 @@ describe('Notebook', () => {
     cy.get('.notebook-container').should('be.hidden')
   })
 
-  it.only('search by content', function () {
+  it('search by content', function () {
     cy.visit('http://localhost:8080/')
     cy.get('.notebook-button > img').click()
     cy.get('.notebook-add-record-button').click()

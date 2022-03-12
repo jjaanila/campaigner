@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { encounterDifficulties } from '../tables'
 import { getUniqueId } from '../utils'
 
@@ -63,12 +62,12 @@ export default () => ({
         Object.assign(state.notebook[record.id], record)
       } else {
         record.createdAt = new Date().toISOString()
-        Vue.set(state.notebook, record.id, record)
+        state.notebook[record.id] = record
       }
     },
     deleteRecord(state, recordId) {
       if (state.notebook[recordId]) {
-        Vue.delete(state.notebook, recordId)
+        delete state.notebook[recordId]
       }
     },
   },

@@ -28,6 +28,7 @@ export default {
       required: true,
     },
   },
+  emits: ['dragstart', 'click', 'drop'],
   methods: {
     ...mapActions('combat', ['updateUnit']),
     onClick($event) {

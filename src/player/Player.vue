@@ -29,7 +29,7 @@ export default {
   mounted() {
     window.addEventListener('storage', this.onStorageChange)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('storage', this.onStorageChange)
   },
   methods: {

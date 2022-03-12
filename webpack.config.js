@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const DefinePlugin = require('webpack/lib/DefinePlugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -42,7 +43,6 @@ module.exports = function (env, argv) {
     },
     resolve: {
       alias: {
-        vue: 'vue/dist/vue.js',
         'project-root': projectRoot,
       },
     },
@@ -94,6 +94,10 @@ module.exports = function (env, argv) {
     },
     devtool: isProduction ? 'source-map' : 'eval-cheap-source-map',
     plugins: [
+      new DefinePlugin({
+        __VUE_OPTIONS_API__: true,
+        __VUE_PROD_DEVTOOLS__: true,
+      }),
       new VueLoaderPlugin(),
       new HtmlWebpackPlugin({
         inject: false,

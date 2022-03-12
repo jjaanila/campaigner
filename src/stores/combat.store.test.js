@@ -1,9 +1,6 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from 'vuex'
 import { distinguishableColors } from '../tables'
 import getCombatModule from './combat.store'
-
-Vue.use(Vuex)
 
 describe('store.combat', () => {
   let state
@@ -55,7 +52,7 @@ describe('store.combat', () => {
     })
 
     it('should initialize using localStorage', () => {
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           combat: getCombatModule(),
         },
@@ -67,7 +64,7 @@ describe('store.combat', () => {
       global.localStorage = {
         getItem: jest.fn().mockImplementation(() => JSON.stringify({})),
       }
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           combat: getCombatModule(),
         },
@@ -85,7 +82,7 @@ describe('store.combat', () => {
       global.localStorage = {
         getItem: jest.fn().mockImplementation(() => null),
       }
-      const store = new Vuex.Store({
+      const store = createStore({
         modules: {
           combat: getCombatModule(),
         },
