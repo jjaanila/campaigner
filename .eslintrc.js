@@ -25,6 +25,7 @@ module.exports = {
     node: true,
     es6: true,
     jest: true,
+    'vue/setup-compiler-macros': true,
   },
   parserOptions: {
     ecmaVersion: 2021,

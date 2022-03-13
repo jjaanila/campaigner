@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineExpose, ref } from 'vue'
+import { ref } from 'vue'
 import InlineSvg from 'vue-inline-svg'
 defineProps({
   size: {
