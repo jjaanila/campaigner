@@ -16,15 +16,22 @@
       <tbody>
         <tr v-for="character in characters" :key="character.id" class="character">
           <td class="condition-menu-td">
-            <condition-menu :creature="character" />
-            <inventory :character="character" />
+            <condition-menu :creature="character" :disabled="character.disabled" />
+            <inventory :character="character" :disabled="character.disabled" />
           </td>
           <td>
-            <input v-model="character.name" class="character-name" type="text" placeholder="Name" />
+            <input
+              v-model="character.name"
+              :disabled="character.disabled"
+              class="character-name"
+              type="text"
+              placeholder="Name"
+            />
           </td>
           <td>
             <input
               v-model.number="character.armorClass"
+              :disabled="character.disabled"
               class="stat-input character-armor-class"
               type="number"
               min="1"
@@ -35,6 +42,7 @@
           <td>
             <input
               v-model.number="character.hitPoints"
+              :disabled="character.disabled"
               class="stat-input character-hit-points"
               type="number"
               min="0"
@@ -45,6 +53,7 @@
           <td>
             <input
               v-model.number="character.maxHitPoints"
+              :disabled="character.disabled"
               class="stat-input character-max-hit-points"
               type="number"
               :size="character.maxHitPoints && character.maxHitPoints.toString().length"
@@ -55,6 +64,7 @@
           <td>
             <input
               v-model.number="character.level"
+              :disabled="character.disabled"
               class="stat-input character-level"
               type="number"
               min="1"
@@ -65,6 +75,7 @@
           <td>
             <input
               v-model.number="character.passiveWisdom"
+              :disabled="character.disabled"
               class="stat-input character-passive-wisdom"
               type="number"
               min="1"
@@ -75,6 +86,7 @@
           <td>
             <input
               v-model.number="character.speed"
+              :disabled="character.disabled"
               class="stat-input character-speed"
               type="number"
               min="0"

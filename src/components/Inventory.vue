@@ -1,6 +1,7 @@
 <template>
   <div class="inventory">
     <IconButton
+      :disabled="disabled"
       class="inventory-button"
       title="Inventory"
       size="small"
@@ -30,6 +31,10 @@ export default {
     character: {
       type: Object,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

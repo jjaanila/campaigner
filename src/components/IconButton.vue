@@ -1,5 +1,6 @@
 <script setup>
 import { defineProps, defineExpose, ref } from 'vue'
+import InlineSvg from 'vue-inline-svg'
 defineProps({
   size: {
     type: String,
@@ -12,6 +13,10 @@ defineProps({
     type: String,
     required: true,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 })
 const buttonRef = ref(null)
 defineExpose({
@@ -20,8 +25,12 @@ defineExpose({
 </script>
 
 <template>
-  <button ref="buttonRef" :class="{ 'icon-button': true, large: size === 'large', small: size === 'small' }">
-    <img class="icon" :src="iconSrc" />
+  <button
+    ref="buttonRef"
+    :disabled="disabled"
+    :class="{ 'icon-button': true, large: size === 'large', small: size === 'small', disabled: disabled }"
+  >
+    <InlineSvg class="icon" :src="iconSrc" />
   </button>
 </template>
 
@@ -31,6 +40,9 @@ defineExpose({
   justify-content: center;
   align-items: center;
   padding: 0;
+}
+.disabled {
+  fill: gray;
 }
 .icon {
   width: 80%;

@@ -21,6 +21,7 @@
       {{ condition.name.slice(0, 3) }}
     </button>
     <button
+      :disabled="disabled"
       class="condition-menu-open-button"
       :title="isConditionMenuOpen ? 'Close' : 'Add condition'"
       @click="isConditionMenuOpen = !isConditionMenuOpen"
@@ -39,6 +40,10 @@ export default {
     creature: {
       type: Object,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
