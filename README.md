@@ -5,12 +5,13 @@ Dungeons & Dragons campaign building and documentation library. Heavily inspired
 **Features**
 
 - HTML id based linking to monsters, areas, parts, chapters, sections, etc.
-- Vue 2 components that are pretty close to the style of D&D 5th ed.
+- Vue 3 components that are pretty close to the style of D&D 5th ed.
 - Builds only one HTML file with everything included inline.
-- Fancy Table of Contents.
-- [A simple example campaign](https://jjaanila.github.io/campaigner/).
+- Automatically generated table of contents.
+- [A simple example campaign](https://jjaanila.github.io/campaigner/). You can use this as a starting point for your own campaign.
 - Party tracker.
 - Combat tracker.
+- Dice roller.
 - JSON schema for defining campaign document and monsters.
 - Can be installed via npm or used as a template repository.
 
@@ -18,9 +19,10 @@ See Issues for planned features.
 
 ## Installation
 
-`npm install campaigner`
-
-See `./src/example` and `./campaign.js` for an example campaign.
+1. `npm install campaigner`
+2. Add `campaign.js` and `App.vue`. See `./src/example` and `./campaign.js` for an example campaign.
+3. Validate campaign.js with `npx campaigner validate`.
+4. Start development server with `npx campaigner start`.
 
 ## Structure
 
@@ -29,12 +31,13 @@ See `./src/example` and `./campaign.js` for an example campaign.
 A file in the project root that defines the structure and metadata of the campaign document. See `src/schemas/campaign.json` for file schema.
 
 - Campaign metadata, e.g. cover page information
-- Parts, Chapters, and Sections. Used (so far) only for generating Table of Contents.
 - Monsters
+- Conditions
+- Probably more in the future...
 
 ### Components
 
-Vue 2 components in `src/components` for creating a nice looking campaign site.
+Vue components in `src/components` for creating a nice looking campaign site.
 
 ## Development
 
@@ -54,4 +57,4 @@ npm run validate
 ### Icons
 
 Delapouite, https://delapouite.com: backpack.svg, notebook.svg
-Lorc, https://lorcblog.blogspot.com/: cycle.svg
+Lorc, https://lorcblog.blogspot.com/: cycle.svg, cog.svg
