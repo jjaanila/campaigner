@@ -27,6 +27,7 @@ describe('store.party', () => {
         speed: 10,
         conditions: [],
         inventory: '',
+        disabled: false,
       },
       {
         id: 'character2',
@@ -39,6 +40,7 @@ describe('store.party', () => {
         speed: 20,
         conditions: [{ name: 'poisoned' }],
         inventory: 'boots',
+        disabled: false,
       },
       {
         id: 'character3',
@@ -51,6 +53,7 @@ describe('store.party', () => {
         speed: 30,
         conditions: [],
         inventory: '',
+        disabled: false,
       },
     ]
   })
@@ -134,6 +137,7 @@ describe('store.party', () => {
             speed: 30,
             conditions: [],
             inventory: '',
+            disabled: false,
           },
         ],
         encounterLimits: {
@@ -167,6 +171,7 @@ describe('store.party', () => {
             speed: 30,
             conditions: [],
             inventory: '',
+            disabled: false,
           },
         ])
         expect(commitMock).toHaveBeenCalledWith('updateEncounterLimits')

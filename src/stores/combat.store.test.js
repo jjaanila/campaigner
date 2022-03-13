@@ -120,10 +120,10 @@ describe('store.combat', () => {
             commit: commitMock,
             state: {},
             rootState: {
-              party: {
-                characters: [character1],
-              },
               campaign,
+            },
+            rootGetters: {
+              'party/enabledCharacters': [character1],
             },
           },
           { enemies: [enemy1], allies: [ally1] }
@@ -206,10 +206,10 @@ describe('store.combat', () => {
                 ],
               },
               rootState: {
-                party: {
-                  characters: [character1],
-                },
                 campaign,
+              },
+              rootGetters: {
+                'party/enabledCharacters': [character1],
               },
             },
             { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition }
@@ -238,10 +238,10 @@ describe('store.combat', () => {
                   ],
                 },
                 rootState: {
-                  party: {
-                    characters: [character1],
-                  },
                   campaign,
+                },
+                rootGetters: {
+                  'party/enabledCharacters': [character1],
                 },
               },
               { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition }
@@ -263,10 +263,10 @@ describe('store.combat', () => {
               ],
             },
             rootState: {
-              party: {
-                characters: [character1],
-              },
               campaign,
+            },
+            rootGetters: {
+              'party/enabledCharacters': [character1],
             },
           },
           { unit: enemy1, oldPosition: { x: 0, y: 0 }, newPosition: { x: 1, y: 0 } }
