@@ -29,9 +29,11 @@ const toggle = async () => {
 
 <template>
   <IconButton ref="button" class="context-menu-button" size="small" :icon-src="Cog" @click="toggle" />
-  <teleport to="body">
-    <div v-if="isOpen" ref="menu" v-click-away="hide" role="menu" class="context-menu"><slot /></div>
-  </teleport>
+  <Teleport to="body">
+    <div v-if="isOpen" ref="menu" v-click-away="hide" role="menu" class="context-menu" @click="hide">
+      <slot />
+    </div>
+  </Teleport>
 </template>
 
 <style scoped>

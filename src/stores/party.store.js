@@ -25,9 +25,12 @@ const updateEncounterLimits = state => {
 }
 
 const migrateState = state => {
-  state.characters.forEach(character => (character.conditions ??= []))
-  state.characters.forEach(character => (character.inventory ??= ''))
-  state.characters.forEach(character => (character.id ??= getUniqueId()))
+  state.characters.forEach(character => {
+    character.conditions ??= []
+    character.inventory ??= ''
+    character.id ??= getUniqueId()
+    character.disabled ??= false
+  })
   state.notebook ??= {}
   return state
 }
@@ -86,6 +89,7 @@ export default () => ({
           speed: 30,
           conditions: [],
           inventory: '',
+          disabled: false,
         },
       ])
       commit('updateEncounterLimits')
@@ -141,6 +145,22 @@ export default () => ({
     },
     deleteRecord({ commit }, recordId) {
       commit('deleteRecord', recordId)
+    },
+    enableCharacter({ commit, state }, characterId) {
+      const character = state.characters.find(character => character.id === characterId)
+      if (!character) {
+        throw new Error(`Character with id ${characterId} not found`)
+      }
+      character.disabled = false
+      commit('setCharacters', state.characters)
+    },
+    disableCharacter({ commit, state }, characterId) {
+      const character = state.characters.find(character => character.id === characterId)
+      if (!character) {
+        throw new Error(`Character with id ${characterId} not found`)
+      }
+      character.disabled = true
+      commit('setCharacters', state.characters)
     },
   },
 })

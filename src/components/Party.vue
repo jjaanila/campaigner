@@ -84,6 +84,10 @@
           </td>
           <td>
             <ContextMenu>
+              <ContextMenuItem
+                :text="character.disabled ? 'Enable' : 'Disable'"
+                @click="toggleDisabilityOfCharacter(character.id)"
+              />
               <ContextMenuItem text="Delete" @click="removeCharacter(character.id)" />
             </ContextMenu>
           </td>
@@ -128,7 +132,17 @@ export default {
       'updateCharacters',
       'addCondition',
       'removeCondition',
+      'enableCharacter',
+      'disableCharacter',
     ]),
+    toggleDisabilityOfCharacter(characterId) {
+      const character = this.characters.find(character => character.id === characterId)
+      if (character.disabled) {
+        this.enableCharacter(character.id)
+      } else {
+        this.disableCharacter(character.id)
+      }
+    },
   },
 }
 </script>
