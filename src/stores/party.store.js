@@ -4,23 +4,25 @@ import { getUniqueId } from '../utils'
 export const LOCAL_STORAGE_STATE_KEY = 'campaigner-party'
 
 const updateEncounterLimits = state => {
-  state.encounterLimits = state.characters.reduce(
-    (limits, character) => {
-      if (typeof character.level !== 'number') {
+  state.encounterLimits = state.characters
+    .filter(character => !character.disabled)
+    .reduce(
+      (limits, character) => {
+        if (typeof character.level !== 'number') {
+          return limits
+        }
+        const characterLimits = encounterDifficulties.find(ed => ed.characterLevel === character.level)
+        if (!characterLimits) {
+          throw new Error('Did not find character limits for character level ' + character.level)
+        }
+        limits.easy += characterLimits.easy
+        limits.medium += characterLimits.medium
+        limits.hard += characterLimits.hard
+        limits.deadly += characterLimits.deadly
         return limits
-      }
-      const characterLimits = encounterDifficulties.find(ed => ed.characterLevel === character.level)
-      if (!characterLimits) {
-        throw new Error('Did not find character limits for character level ' + character.level)
-      }
-      limits.easy += characterLimits.easy
-      limits.medium += characterLimits.medium
-      limits.hard += characterLimits.hard
-      limits.deadly += characterLimits.deadly
-      return limits
-    },
-    { easy: 0, medium: 0, hard: 0, deadly: 0 }
-  )
+      },
+      { easy: 0, medium: 0, hard: 0, deadly: 0 }
+    )
   return state
 }
 
@@ -54,6 +56,11 @@ const initializeFromLocalStorage = () => {
 export default () => ({
   namespaced: true,
   state: initializeFromLocalStorage(),
+  getters: {
+    enabledCharacters(state) {
+      return state.characters.filter(character => !character.disabled)
+    },
+  },
   mutations: {
     updateEncounterLimits,
     setCharacters(state, characters) {

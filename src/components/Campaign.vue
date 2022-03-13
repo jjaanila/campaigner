@@ -88,4 +88,7 @@ pre {
   display: block;
   margin: 1rem 0;
 }
+button {
+  font-size: 1rem;
+}
 </style>

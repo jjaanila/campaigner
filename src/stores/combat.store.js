@@ -294,7 +294,7 @@ export default () => ({
     },
   },
   actions: {
-    initializeCombat({ commit, rootState }, { enemies, allies }) {
+    initializeCombat({ commit, rootState, rootGetters }, { enemies, allies }) {
       commit('clear')
       const unitColors = [...defaultUnitColors]
       const enemyUnits = enemies.reduce((monsters, enemy) => {
@@ -321,7 +321,7 @@ export default () => ({
       }, [])
       const grid = getEmptyGrid()
       commit('setGrid', grid)
-      const characterUnits = rootState.party.characters.map(character =>
+      const characterUnits = rootGetters['party/enabledCharacters'].map(character =>
         createUnitFromCreature(character, 'character', unitColors)
       )
       const units = [...characterUnits, ...enemyUnits, ...allyUnits]
