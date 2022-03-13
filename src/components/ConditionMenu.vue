@@ -4,6 +4,7 @@
       <button
         v-for="condition in sortBy([...availableConditions], 'name')"
         :key="condition.name"
+        :disabled="disabled"
         class="condition available-condition"
         :title="condition.name"
         @click="addConditionToCreature(creature.id, condition.name)"
@@ -14,6 +15,7 @@
     <button
       v-for="condition in sortBy([...creature.conditions], 'name')"
       :key="condition.name"
+      :disabled="disabled"
       class="condition active-condition"
       :title="condition.name"
       @click="removeConditionFromCreature(creature.id, condition.name)"
