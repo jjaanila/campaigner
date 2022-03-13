@@ -1,5 +1,5 @@
 <template>
-  <div v-click-outside="close" class="condition-menu">
+  <div v-click-away="close" class="condition-menu">
     <div v-if="isConditionMenuOpen" class="available-conditions">
       <button
         v-for="condition in sortBy([...availableConditions], 'name')"
@@ -33,12 +33,8 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import sortBy from 'lodash/sortBy'
-import ClickOutside from 'vue-click-outside'
 export default {
   name: 'ConditionMenu',
-  directives: {
-    ClickOutside,
-  },
   props: {
     creature: {
       type: Object,

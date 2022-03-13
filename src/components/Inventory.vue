@@ -10,7 +10,7 @@
     <textarea
       v-show="isInventoryOpen"
       ref="inventory"
-      v-click-outside="hideInventory"
+      v-click-away="hideInventory"
       :value="inventory"
       @input="updateInventory"
     />
@@ -20,15 +20,11 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import BackpackIcon from '../img/backpack.svg'
-import ClickOutside from 'vue-click-outside'
 import IconButton from './IconButton.vue'
 export default {
   name: 'Inventory',
   components: {
     IconButton,
-  },
-  directives: {
-    ClickOutside,
   },
   props: {
     character: {

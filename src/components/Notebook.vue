@@ -60,7 +60,6 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import NotebookIcon from '../img/notebook.svg'
-import ClickOutside from 'vue-click-outside'
 import IconButton from './IconButton.vue'
 import { getUniqueId } from '../utils'
 import sortBy from 'lodash/sortBy'
@@ -71,9 +70,6 @@ export default {
   name: 'Notebook',
   components: {
     IconButton,
-  },
-  directives: {
-    ClickOutside,
   },
   data() {
     return {
