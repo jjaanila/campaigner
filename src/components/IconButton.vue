@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, defineExpose, ref } from 'vue'
 defineProps({
   size: {
     type: String,
@@ -13,11 +13,15 @@ defineProps({
     required: true,
   },
 })
+const buttonRef = ref(null)
+defineExpose({
+  buttonRef,
+})
 </script>
 
 <template>
-  <button :class="{ 'icon-button': true, large: size === 'large', small: size === 'small' }">
-    <img :src="iconSrc" />
+  <button ref="buttonRef" :class="{ 'icon-button': true, large: size === 'large', small: size === 'small' }">
+    <img class="icon" :src="iconSrc" />
   </button>
 </template>
 
@@ -26,15 +30,18 @@ defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
+}
+.icon {
+  width: 80%;
+  height: 80%;
 }
 .small {
   width: 1.5rem;
   height: 1.5rem;
-  padding: 0 0.2rem 0 0.2rem;
 }
 .large {
   width: 3rem;
   height: 3rem;
-  padding: 0 0.2rem 0 0.2rem;
 }
 </style>

@@ -83,7 +83,9 @@
             />
           </td>
           <td>
-            <button title="Remove party member" @click="removeCharacter(character.id)">-</button>
+            <ContextMenu>
+              <ContextMenuItem text="Delete" @click="removeCharacter(character.id)" />
+            </ContextMenu>
           </td>
         </tr>
       </tbody>
@@ -100,10 +102,14 @@ import ConditionMenu from './ConditionMenu.vue'
 import Inventory from './Inventory.vue'
 import Notebook from './Notebook.vue'
 import Synchronization from '../components/Synchronization.vue'
+import ContextMenu from '../components/ContextMenu.vue'
+import ContextMenuItem from '../components/ContextMenuItem.vue'
 export default {
   name: 'Party',
   components: {
     ConditionMenu,
+    ContextMenu,
+    ContextMenuItem,
     Inventory,
     Notebook,
     Synchronization,
