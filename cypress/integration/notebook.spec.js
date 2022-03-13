@@ -1,7 +1,7 @@
 describe('Notebook', () => {
   it('edit records', function () {
     cy.visit('http://localhost:8080/')
-    cy.get('.notebook-button > img').click()
+    cy.get('.notebook-button').click()
     cy.get('.notebook-add-record-button').click()
     cy.get('textarea').click()
     cy.get('textarea').clear()
@@ -26,13 +26,13 @@ describe('Notebook', () => {
     cy.get(':nth-child(2) > .notebook-record-button').click()
     cy.get('.record-delete-button').click()
     cy.get('.notebook-record-button').should('have.length', 1)
-    cy.get('.notebook-button > img').click()
+    cy.get('.notebook-button').click()
     cy.get('.notebook-container').should('be.hidden')
   })
 
   it('search by content', function () {
     cy.visit('http://localhost:8080/')
-    cy.get('.notebook-button > img').click()
+    cy.get('.notebook-button').click()
     cy.get('.notebook-add-record-button').click()
     cy.get('textarea').clear()
     cy.get('textarea').type('first')
