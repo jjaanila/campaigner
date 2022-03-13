@@ -1,12 +1,17 @@
 <template>
   <div class="inventory">
-    <button class="inventory-button" title="Inventory" @click.stop="toggleInventory()">
-      <img :src="backpackIcon" />
-    </button>
+    <IconButton
+      :disabled="disabled"
+      class="inventory-button"
+      title="Inventory"
+      size="small"
+      :icon-src="backpackIcon"
+      @click.stop="toggleInventory()"
+    />
     <textarea
       v-show="isInventoryOpen"
       ref="inventory"
-      v-click-outside="hideInventory"
+      v-click-away="hideInventory"
       :value="inventory"
       @input="updateInventory"
     />
@@ -16,16 +21,20 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import BackpackIcon from '../img/backpack.svg'
-import ClickOutside from 'vue-click-outside'
+import IconButton from './IconButton.vue'
 export default {
   name: 'Inventory',
-  directives: {
-    ClickOutside,
+  components: {
+    IconButton,
   },
   props: {
     character: {
       type: Object,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {

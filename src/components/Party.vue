@@ -16,15 +16,22 @@
       <tbody>
         <tr v-for="character in characters" :key="character.id" class="character">
           <td class="condition-menu-td">
-            <condition-menu :creature="character" />
-            <inventory :character="character" />
+            <condition-menu :creature="character" :disabled="character.disabled" />
+            <inventory :character="character" :disabled="character.disabled" />
           </td>
           <td>
-            <input v-model="character.name" class="character-name" type="text" placeholder="Name" />
+            <input
+              v-model="character.name"
+              :disabled="character.disabled"
+              class="character-name"
+              type="text"
+              placeholder="Name"
+            />
           </td>
           <td>
             <input
               v-model.number="character.armorClass"
+              :disabled="character.disabled"
               class="stat-input character-armor-class"
               type="number"
               min="1"
@@ -35,6 +42,7 @@
           <td>
             <input
               v-model.number="character.hitPoints"
+              :disabled="character.disabled"
               class="stat-input character-hit-points"
               type="number"
               min="0"
@@ -45,6 +53,7 @@
           <td>
             <input
               v-model.number="character.maxHitPoints"
+              :disabled="character.disabled"
               class="stat-input character-max-hit-points"
               type="number"
               :size="character.maxHitPoints && character.maxHitPoints.toString().length"
@@ -55,6 +64,7 @@
           <td>
             <input
               v-model.number="character.level"
+              :disabled="character.disabled"
               class="stat-input character-level"
               type="number"
               min="1"
@@ -65,6 +75,7 @@
           <td>
             <input
               v-model.number="character.passiveWisdom"
+              :disabled="character.disabled"
               class="stat-input character-passive-wisdom"
               type="number"
               min="1"
@@ -75,6 +86,7 @@
           <td>
             <input
               v-model.number="character.speed"
+              :disabled="character.disabled"
               class="stat-input character-speed"
               type="number"
               min="0"
@@ -83,7 +95,13 @@
             />
           </td>
           <td>
-            <button title="Remove party member" @click="removeCharacter(character.id)">-</button>
+            <ContextMenu>
+              <ContextMenuItem
+                :text="character.disabled ? 'Enable' : 'Disable'"
+                @click="toggleDisabilityOfCharacter(character.id)"
+              />
+              <ContextMenuItem text="Delete" @click="removeCharacter(character.id)" />
+            </ContextMenu>
           </td>
         </tr>
       </tbody>
@@ -100,10 +118,14 @@ import ConditionMenu from './ConditionMenu.vue'
 import Inventory from './Inventory.vue'
 import Notebook from './Notebook.vue'
 import Synchronization from '../components/Synchronization.vue'
+import ContextMenu from '../components/ContextMenu.vue'
+import ContextMenuItem from '../components/ContextMenuItem.vue'
 export default {
   name: 'Party',
   components: {
     ConditionMenu,
+    ContextMenu,
+    ContextMenuItem,
     Inventory,
     Notebook,
     Synchronization,
@@ -122,7 +144,17 @@ export default {
       'updateCharacters',
       'addCondition',
       'removeCondition',
+      'enableCharacter',
+      'disableCharacter',
     ]),
+    toggleDisabilityOfCharacter(characterId) {
+      const character = this.characters.find(character => character.id === characterId)
+      if (character.disabled) {
+        this.enableCharacter(character.id)
+      } else {
+        this.disableCharacter(character.id)
+      }
+    },
   },
 }
 </script>
