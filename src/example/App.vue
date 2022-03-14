@@ -80,9 +80,11 @@
       <section-title name="table-of-contents" />
       <p>
         Table of contents is a component that displays a list of chapters and sections in the campaign. It is
-        shown on the left on top of everything and it follows the reader. Its content is rendered using
-        "document" property of campaign.js file.
+        shown on the left on top of everything and it follows the reader. Its content is generated
+        automatically.
       </p>
+      <section-title name="captioned-figure" />
+      <captioned-figure :path="paper" caption="Example figure" width="30rem" />
       <part-title name="Resources" />
       <section-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
@@ -97,6 +99,9 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'App',
+  data() {
+    return { paper: require('../img/paper.jpg') }
+  },
   computed: {
     ...mapState({
       monsters: state => state.campaign.monsters,
