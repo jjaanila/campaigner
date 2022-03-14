@@ -68,6 +68,10 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+#app {
+  height: 100%;
+  width: 100%;
+}
 body {
   width: 100%;
   height: 100%;
