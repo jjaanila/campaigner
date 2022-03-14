@@ -109,6 +109,7 @@
     <button title="Add party member" @click="addCharacter()">+</button>
     <synchronization />
     <notebook />
+    <combat-overlay />
   </div>
 </template>
 
@@ -120,12 +121,14 @@ import Notebook from './Notebook.vue'
 import Synchronization from '../components/Synchronization.vue'
 import ContextMenu from '../components/ContextMenu.vue'
 import ContextMenuItem from '../components/ContextMenuItem.vue'
+import CombatOverlay from './CombatOverlay.vue'
 export default {
   name: 'Party',
   components: {
     ConditionMenu,
     ContextMenu,
     ContextMenuItem,
+    CombatOverlay,
     Inventory,
     Notebook,
     Synchronization,

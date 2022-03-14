@@ -15,13 +15,14 @@
         </div>
       </div>
     </div>
-    <button
-      v-if="!isCombatOverlayOpen && isInCombat"
-      class="open-combat-overlay-button"
+    <IconButton
+      v-if="isInCombat"
+      :icon-src="crossedSwordsSvg"
+      size="large"
+      title="Combat"
+      class="combat-overlay-open-button"
       @click="setIsCombatOverlayOpen(true)"
-    >
-      Open Combat Overlay
-    </button>
+    />
   </div>
 </template>
 
@@ -30,16 +31,19 @@ import { mapState, mapActions } from 'vuex'
 import CombatTurnOrder from './CombatTurnOrder.vue'
 import CombatUnitDetailsList from './CombatUnitDetailsList.vue'
 import CombatGrid from './CombatGrid.vue'
+import IconButton from './IconButton.vue'
 export default {
   name: 'CombatOverlay',
   components: {
     CombatTurnOrder,
     CombatUnitDetailsList,
     CombatGrid,
+    IconButton,
   },
   data() {
     return {
       backgroundImage: require('../img/paper.jpg'),
+      crossedSwordsSvg: require('../img/crossed-swords.svg'),
     }
   },
   computed: {
@@ -89,10 +93,5 @@ export default {
   max-height: 80%;
   display: flex;
   flex-flow: row nowrap;
-}
-.open-combat-overlay-button {
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
 }
 </style>
