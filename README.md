@@ -54,4 +54,4 @@ npm run validate
 ### Icons
 
 Delapouite, https://delapouite.com: backpack.svg, notebook.svg
-Lorc, https://lorcblog.blogspot.com/: cycle.svg
+Lorc, https://lorcblog.blogspot.com/: cycle.svg, cog.svg, crossed-swords.svg
