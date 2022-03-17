@@ -1,28 +1,18 @@
 <template>
-  <div>
-    <div v-if="isCombatOverlayOpen" class="combat-overlay">
-      <div class="combat-overlay-mask" @click="setIsCombatOverlayOpen(false)" />
-      <div
-        class="combat-overlay-content"
-        :style="{
-          background: `url(${backgroundImage})`,
-        }"
-      >
-        <combat-turn-order />
-        <div class="board-container">
-          <combat-unit-details-list />
-          <combat-grid />
-        </div>
+  <div v-if="isCombatOverlayOpen" class="combat-overlay">
+    <div class="combat-overlay-mask" @click="setIsCombatOverlayOpen(false)" />
+    <div
+      class="combat-overlay-content"
+      :style="{
+        background: `url(${backgroundImage})`,
+      }"
+    >
+      <combat-turn-order />
+      <div class="board-container">
+        <combat-unit-details-list />
+        <combat-grid />
       </div>
     </div>
-    <IconButton
-      v-if="isInCombat"
-      :icon-src="crossedSwordsSvg"
-      size="large"
-      title="Combat"
-      class="combat-overlay-open-button"
-      @click="setIsCombatOverlayOpen(true)"
-    />
   </div>
 </template>
 
@@ -31,19 +21,16 @@ import { mapState, mapActions } from 'vuex'
 import CombatTurnOrder from './CombatTurnOrder.vue'
 import CombatUnitDetailsList from './CombatUnitDetailsList.vue'
 import CombatGrid from './CombatGrid.vue'
-import IconButton from './IconButton.vue'
 export default {
   name: 'CombatOverlay',
   components: {
     CombatTurnOrder,
     CombatUnitDetailsList,
     CombatGrid,
-    IconButton,
   },
   data() {
     return {
       backgroundImage: require('../img/paper.jpg'),
-      crossedSwordsSvg: require('../img/crossed-swords.svg'),
     }
   },
   computed: {
@@ -93,5 +80,6 @@ export default {
   max-height: 80%;
   display: flex;
   flex-flow: row nowrap;
+  overflow: auto;
 }
 </style>

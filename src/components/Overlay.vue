@@ -1,17 +1,23 @@
 <template>
-  <table-of-contents v-if="tableOfContents" />
-  <party v-if="party" />
-  <dice-overlay v-if="dice" />
+  <TableOfContents v-if="tableOfContents" />
+  <CombatOverlay />
+  <Menu />
+  <Party v-if="party" />
+  <DiceOverlay v-if="dice" />
 </template>
 
 <script>
 import DiceOverlay from './DiceOverlay.vue'
 import Party from './Party.vue'
 import TableOfContents from './TableOfContents.vue'
+import CombatOverlay from './CombatOverlay.vue'
+import Menu from './Menu.vue'
 export default {
   name: 'Overlay',
   components: {
+    CombatOverlay,
     DiceOverlay,
+    Menu,
     Party,
     TableOfContents,
   },

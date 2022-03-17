@@ -17,7 +17,7 @@
       <span :class="difficultyClass">{{ difficulty }}</span> ({{ adjustedTotalEnemyXP }}
       XP)
     </span>
-    <button @click="startCombat">Start</button>
+    <button class="encounter-start-button" @click="startCombat">Start</button>
   </div>
 </template>
 

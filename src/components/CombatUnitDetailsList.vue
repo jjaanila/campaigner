@@ -2,21 +2,21 @@
   <div class="combat-unit-details-list-container">
     <button
       v-if="selectedUnits.length && !unitRows.length"
-      class="combat-unit-details-list-action"
+      class="combat-unit-details-list-action combat-remove-units-button"
       @click="confirmAndRemoveUnits()"
     >
       Remove units
     </button>
     <button
       v-if="!unitRows.length"
-      class="combat-unit-details-list-action"
+      class="combat-unit-details-list-action combat-add-units-button"
       @click="unitRows.push({ quantity: 1, creature: undefined, unitType: 'enemy' })"
     >
       Add new units
     </button>
     <button
       v-if="canConvertSelectedToHorde && !unitRows.length"
-      class="combat-unit-details-list-action"
+      class="combat-unit-details-list-action combat-convert-to-horde-button"
       @click="convertSelectedToHorde()"
     >
       Convert to Horde
