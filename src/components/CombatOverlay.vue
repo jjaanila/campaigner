@@ -80,5 +80,6 @@ export default {
   max-height: 80%;
   display: flex;
   flex-flow: row nowrap;
+  overflow: auto;
 }
 </style>

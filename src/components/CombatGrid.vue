@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table class="combat-grid">
     <tr v-for="(row, y) in grid" :key="y">
       <td
         v-for="(cell, x) in row"
@@ -98,7 +98,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   padding: 0;
-  margin: 0;
+  margin: 1rem;
   table-layout: fixed;
   width: 1px; /* To prevent expansion of cells, condition for table-layout to work */
 }

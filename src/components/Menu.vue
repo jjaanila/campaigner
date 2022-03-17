@@ -17,7 +17,7 @@ const setIsCombatOverlayOpen = value => {
 </script>
 
 <template>
-  <div class="menu">
+  <nav class="menu">
     <Synchronization />
     <Notebook />
     <IconButton
@@ -28,7 +28,7 @@ const setIsCombatOverlayOpen = value => {
       class="combat-overlay-open-button"
       @click="setIsCombatOverlayOpen(!isCombatOverlayOpen)"
     />
-  </div>
+  </nav>
 </template>
 
 <style scoped>
