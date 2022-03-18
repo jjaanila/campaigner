@@ -1,5 +1,12 @@
 <template>
-  <div class="monster-action">
+  <div
+    class="monster-action"
+    :role="rollable ? 'button' : ''"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
+    @click="roll"
+  >
+    <div v-show="rollable && isHovered" class="rollable-mask">Roll</div>
     <span class="monster-action-description">
       <span class="monster-action-name">{{ name }}.</span>
       {{ descriptionStr }}
@@ -9,6 +16,7 @@
 
 <script>
 import Dice from '../Dice'
+import { mapActions } from 'vuex'
 export default {
   name: 'MonsterAction',
   props: {
@@ -44,6 +52,11 @@ export default {
       type: String,
     },
   },
+  data() {
+    return {
+      isHovered: false,
+    }
+  },
   computed: {
     descriptionStr() {
       if (this.description) {
@@ -67,15 +80,41 @@ export default {
       const hitStr = ` Hit: ${this.damage.toString()} ${this.damageType} damage`
       return `${attackTypeStr}${toHitStr}${reachRangeStr}${hitStr}. ${this.extra ?? ''}`
     },
+    rollable() {
+      return this.toHit > 0 || this.damage
+    },
+  },
+  methods: {
+    ...mapActions('ui', ['throwDice']),
+    roll() {
+      this.throwDice({ throws: 1, sides: 20, constant: this.toHit, description: `To hit with ${this.name}` })
+      this.throwDice({ ...this.damage, description: this.name })
+    },
   },
 }
 </script>
 
 <style scoped>
 .monster-action {
+  position: relative;
   text-indent: 0;
   display: flex;
   flex-flow: row nowrap;
+}
+.rollable-mask {
+  cursor: pointer;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
 }
 .monster-action-name {
   font-weight: bold;
