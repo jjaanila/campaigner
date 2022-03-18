@@ -184,8 +184,8 @@ describe('store.combat', () => {
               },
             ],
           ],
-          ['setTurnOrder', [character1.id, expect.any(String), expect.any(String)]],
-          ['setUnitIdInTurn', character1.id],
+          ['setTurnOrder', []],
+          ['setUnitIdInTurn', undefined],
           ['updateUnitColors', updatedUnitColors],
         ])
       })

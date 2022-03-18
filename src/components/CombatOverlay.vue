@@ -7,11 +7,12 @@
         background: `url(${backgroundImage})`,
       }"
     >
-      <combat-turn-order />
-      <div class="board-container">
+      <combat-turn-order v-if="isInitialized" />
+      <div v-if="isInitialized" class="board-container">
         <combat-unit-details-list />
         <combat-grid />
       </div>
+      <CombatInitialization v-else />
     </div>
   </div>
 </template>
@@ -21,12 +22,14 @@ import { mapState, mapActions } from 'vuex'
 import CombatTurnOrder from './CombatTurnOrder.vue'
 import CombatUnitDetailsList from './CombatUnitDetailsList.vue'
 import CombatGrid from './CombatGrid.vue'
+import CombatInitialization from './CombatInitialization.vue'
 export default {
   name: 'CombatOverlay',
   components: {
     CombatTurnOrder,
     CombatUnitDetailsList,
     CombatGrid,
+    CombatInitialization,
   },
   data() {
     return {
@@ -37,7 +40,11 @@ export default {
     ...mapState({
       isCombatOverlayOpen: state => state.ui.isCombatOverlayOpen,
       isInCombat: state => state.combat.isInCombat,
+      turnOrder: state => state.combat.turnOrder,
     }),
+    isInitialized() {
+      return this.turnOrder.length
+    },
   },
   methods: {
     ...mapActions('ui', ['setIsCombatOverlayOpen']),

@@ -297,23 +297,23 @@ export default () => ({
     initializeCombat({ commit, rootState, rootGetters }, { enemies, allies }) {
       commit('clear')
       const unitColors = [...defaultUnitColors]
-      const enemyUnits = enemies.reduce((monsters, enemy) => {
+      const enemyUnits = enemies.reduce((units, enemy) => {
         const monster = rootState.campaign.monsters.find(monster => monster.name === enemy.name)
         if (!monster) {
           throw new Error(`Monster ${enemy.name} not found`)
         }
-        return monsters.concat(
+        return units.concat(
           Array(enemy.quantity)
             .fill(null)
             .map(_i => createUnitFromCreature(monster, 'enemy', unitColors))
         )
       }, [])
-      const allyUnits = allies.reduce((monsters, ally) => {
+      const allyUnits = allies.reduce((units, ally) => {
         const monster = rootState.campaign.monsters.find(monster => monster.name === ally.name)
         if (!monster) {
           throw new Error(`Monster ${ally.name} not found`)
         }
-        return monsters.concat(
+        return units.concat(
           Array(ally.quantity)
             .fill(null)
             .map(_i => createUnitFromCreature(monster, 'ally', unitColors))
@@ -326,11 +326,8 @@ export default () => ({
       )
       const units = [...characterUnits, ...enemyUnits, ...allyUnits]
       commit('updateUnits', units)
-      commit(
-        'setTurnOrder',
-        units.map(unit => unit.id)
-      )
-      commit('setUnitIdInTurn', units[0].id)
+      commit('setTurnOrder', [])
+      commit('setUnitIdInTurn', undefined)
       commit('updateUnitColors', unitColors)
     },
     setIsInCombat({ commit }, value) {
