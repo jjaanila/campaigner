@@ -71,9 +71,9 @@ export default {
   flex-flow: column nowrap;
   overflow: auto;
   position: fixed;
-  right: 5rem;
+  right: 1rem;
   top: 1rem;
-  width: calc(100% - 10rem);
+  width: calc(100% - 2rem);
   height: calc(100% - 2rem);
   z-index: 1;
   display: flex;
