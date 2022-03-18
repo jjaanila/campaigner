@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, nextTick } from 'vue'
 import { useStore } from 'vuex'
 import Dice from '../Dice'
 import { isHorde } from '../stores/combat.store'
@@ -23,20 +23,25 @@ const unitGroups = computed(() =>
         units: [unit],
         id,
       })
-      if (unit.monster) {
-        setInitiative(id, new Dice(1, 20).throw() + getAbilityScoreModifier(unit.monster.dexterity))
-      }
+      setInitiative(
+        id,
+        unit.monster ? new Dice(1, 20).throw() + getAbilityScoreModifier(unit.monster.dexterity) : ''
+      )
       return groups
     }
     unitGroup.units.push(unit)
     return groups
   }, [])
 )
+const groupInputRefs = {}
+unitGroups.value.forEach(group => {
+  groupInputRefs[group.id] = ref(null)
+})
 const sortedGroups = computed(() => {
   return [...unitGroups.value].sort((a, b) => {
     const aInitiative = initiatives.value[a.id]
     const bInitiative = initiatives.value[b.id]
-    return bInitiative - aInitiative
+    return (bInitiative ?? 0) - (aInitiative ?? 0)
   })
 })
 const completeInitialization = () => {
@@ -48,6 +53,12 @@ const completeInitialization = () => {
   store.commit('combat/setTurnOrder', turnOrder)
   store.commit('combat/setUnitIdInTurn', turnOrder[0])
 }
+const onInitiativeChange = (groupId, $event) => {
+  setInitiative(groupId, $event.target.value)
+  nextTick(() => {
+    groupInputRefs[groupId].focus()
+  })
+}
 </script>
 
 <template>
@@ -57,12 +68,19 @@ const completeInitialization = () => {
       <label :for="`initiative-${group.id}`">{{ group.name }}</label>
       <input
         :id="`initiative-${group.id}`"
+        :ref="
+          el => {
+            groupInputRefs[group.id] = el
+          }
+        "
         v-model.number="initiatives[group.id]"
         type="number"
-        @input="setInitiative(group.id, $event.target.value)"
+        @input="onInitiativeChange(group.id, $event)"
       />
     </div>
-    <button @click="completeInitialization">Start combat</button>
+    <button class="combat-initialization-start-combat-button" type="button" @click="completeInitialization">
+      Start combat
+    </button>
   </form>
 </template>
 
@@ -74,6 +92,9 @@ const completeInitialization = () => {
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+.combat-initialization-start-combat-button {
+  margin-top: 2rem;
 }
 .initiative {
   display: flex;

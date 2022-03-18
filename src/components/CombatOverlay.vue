@@ -7,7 +7,7 @@
         background: `url(${backgroundImage})`,
       }"
     >
-      <combat-turn-order />
+      <combat-turn-order v-if="isInitialized" />
       <div v-if="isInitialized" class="board-container">
         <combat-unit-details-list />
         <combat-grid />
