@@ -69,6 +69,7 @@ export default {
 .combat-overlay-content {
   display: flex;
   flex-flow: column nowrap;
+  overflow: auto;
   position: fixed;
   right: 5rem;
   top: 1rem;
@@ -84,7 +85,7 @@ export default {
 }
 .board-container {
   position: relative;
-  max-height: 80%;
+  max-height: 95%;
   display: flex;
   flex-flow: row nowrap;
   overflow: auto;
