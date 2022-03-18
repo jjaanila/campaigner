@@ -1,8 +1,15 @@
 describe('Combat', () => {
-  it('should open and close', () => {
+  beforeEach(() => {
     cy.visit('http://localhost:8080')
+    cy.get('[title="Add party member"]').click()
+    cy.get('.character-name').clear()
+    cy.get('.character-name').type('Maukka')
     cy.get('button.encounter-start-button').click()
     cy.get('.combat-overlay').should('be.visible')
+    cy.get('.initiative:contains(Maukka) input').clear().type('10')
+    cy.get('.combat-initialization-start-combat-button').click()
+  })
+  it('should open and close', () => {
     cy.get('.party').should('be.visible')
     cy.get('.menu').should('be.visible')
     cy.get('.dice-overlay').should('be.visible')
@@ -18,12 +25,6 @@ describe('Combat', () => {
   })
 
   it('should render units', () => {
-    cy.visit('http://localhost:8080')
-    cy.get('[title="Add party member"]').click()
-    cy.get('.character-name').clear()
-    cy.get('.character-name').type('Maukka')
-    cy.get('button.encounter-start-button').click()
-    cy.get('.combat-overlay').should('be.visible')
     cy.get('.combat-turn-order .combat-character').should('have.length', 1)
     cy.get('.combat-turn-order .combat-enemy').should('have.length', 8)
     cy.get('.combat-turn-order .combat-ally').should('have.length', 1)
@@ -48,12 +49,6 @@ describe('Combat', () => {
   })
 
   it('should move unit to new position', () => {
-    cy.visit('http://localhost:8080')
-    cy.get('[title="Add party member"]').click()
-    cy.get('.character-name').clear()
-    cy.get('.character-name').type('Maukka')
-    cy.get('button.encounter-start-button').click()
-    cy.get('.combat-overlay').should('be.visible')
     cy.get('.combat-grid .combat-character')
       .trigger('mousedown')
       .trigger('mousemove', { clientX: 0, clientY: -30 })
@@ -62,9 +57,6 @@ describe('Combat', () => {
   })
 
   it('should remove unit', () => {
-    cy.visit('http://localhost:8080')
-    cy.get('button.encounter-start-button').click()
-    cy.get('.combat-overlay').should('be.visible')
     cy.get('.combat-grid .combat-ally').contains('Co').click()
     cy.get('.combat-grid .combat-ally.selected').contains('Co').should('be.visible')
     cy.get('.combat-turn-order .combat-ally.selected').contains('Co').should('be.visible')
