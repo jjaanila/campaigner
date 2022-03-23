@@ -1,4 +1,5 @@
 {
   "diffEditor.wordWrap": "on",
   "vetur.format.enable": false,
+  "editor.formatOnSave": true,
 }

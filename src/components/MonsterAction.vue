@@ -1,12 +1,21 @@
 <template>
-  <div
-    class="monster-action"
-    :role="rollable ? 'button' : ''"
-    @mouseenter="isHovered = true"
-    @mouseleave="isHovered = false"
-    @click="roll"
-  >
-    <div v-show="rollable && isHovered" class="rollable-mask">Roll</div>
+  <div class="monster-action" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+    <div
+      v-show="canHit && isHovered"
+      class="rollable-mask hit-mask"
+      :role="canHit ? 'button' : ''"
+      @click="rollHit"
+    >
+      Roll hit
+    </div>
+    <div
+      v-show="hasDamage && isHovered"
+      class="rollable-mask damage-mask"
+      :role="hasDamage ? 'button' : ''"
+      @click="rollDamage"
+    >
+      Roll damage
+    </div>
     <span class="monster-action-description">
       <span class="monster-action-name">{{ name }}.</span>
       {{ descriptionStr }}
@@ -80,15 +89,20 @@ export default {
       const hitStr = ` Hit: ${this.damage.toString()} ${this.damageType} damage`
       return `${attackTypeStr}${toHitStr}${reachRangeStr}${hitStr}. ${this.extra ?? ''}`
     },
-    rollable() {
-      return this.toHit > 0 || this.damage
+    canHit() {
+      return this.toHit !== undefined
+    },
+    hasDamage() {
+      return this.damage
     },
   },
   methods: {
     ...mapActions('ui', ['throwDice']),
-    roll() {
+    rollHit() {
       this.throwDice({ throws: 1, sides: 20, constant: this.toHit, description: `To hit with ${this.name}` })
-      this.throwDice({ ...this.damage, description: this.name })
+    },
+    rollDamage() {
+      this.throwDice({ ...this.damage, description: `${this.name} damage` })
     },
   },
 }
@@ -104,17 +118,29 @@ export default {
 .rollable-mask {
   cursor: pointer;
   box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
   background: rgba(0, 0, 0, 0.4);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 2px;
+}
+.rollable-mask:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.hit-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+}
+.damage-mask {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
 }
 .monster-action-name {
   font-weight: bold;

@@ -11,7 +11,7 @@
     <button class="close-button" title="Remove selection" @click="updateUnit({ ...unit, selected: false })">
       X
     </button>
-    <span>{{ unit.unitType }}</span>
+    <span>{{ unit.name }} ({{ unit.unitType }})</span>
     <div class="unit-hit-points">
       <input
         v-model="unit.hitPoints"
@@ -27,7 +27,7 @@
     <button v-if="isHorde(unit)" class="unit-split-horde-button" @click="splitHorde(unit.id)">
       Split Horde
     </button>
-    <Monster class="unit-monster" v-bind="unit.monster" />
+    <Monster v-show="unit.hovered" class="unit-monster" v-bind="unit.monster" />
   </div>
 </template>
 
@@ -118,5 +118,6 @@ export default {
   width: 1.25rem;
   height: 1.25rem;
   border: 2px solid black;
+  margin-left: 0.5rem;
 }
 </style>
