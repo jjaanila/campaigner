@@ -4,8 +4,8 @@
     :style="{
       border: unit.hovered ? '2px dashed black' : undefined,
     }"
-    @mouseover="updateUnit({ ...unit, hovered: true })"
-    @mouseleave="updateUnit({ ...unit, hovered: false })"
+    @mouseover="onMouseOver"
+    @mouseleave="onMouseLeave"
   >
     <turn-indicator :class="{ on: unitIdInTurn === unit.id }" />
     <button class="close-button" title="Remove selection" @click="updateUnit({ ...unit, selected: false })">
@@ -27,7 +27,7 @@
     <button v-if="isHorde(unit)" class="unit-split-horde-button" @click="splitHorde(unit.id)">
       Split Horde
     </button>
-    <Monster v-show="unit.hovered" class="unit-monster" v-bind="unit.monster" />
+    <Monster v-show="isDetailHovered" class="unit-monster" v-bind="unit.monster" />
   </div>
 </template>
 
@@ -50,6 +50,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isDetailHovered: false,
+    }
+  },
   computed: {
     ...mapState({
       unitIdInTurn: state => state.combat.unitIdInTurn,
@@ -58,6 +63,14 @@ export default {
   methods: {
     ...mapActions('combat', ['updateUnit', 'splitHorde']),
     isHorde,
+    onMouseOver() {
+      this.updateUnit({ ...this.unit, hovered: true })
+      this.isDetailHovered = true
+    },
+    onMouseLeave() {
+      this.updateUnit({ ...this.unit, hovered: false })
+      this.isDetailHovered = false
+    },
   },
 }
 </script>
