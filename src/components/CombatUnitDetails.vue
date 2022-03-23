@@ -4,7 +4,7 @@
     :style="{
       border: unit.hovered ? '2px dashed black' : undefined,
     }"
-    @mouseover="onMouseOver"
+    @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
   >
     <turn-indicator :class="{ on: unitIdInTurn === unit.id }" />
@@ -63,7 +63,7 @@ export default {
   methods: {
     ...mapActions('combat', ['updateUnit', 'splitHorde']),
     isHorde,
-    onMouseOver() {
+    onMouseEnter() {
       this.updateUnit({ ...this.unit, hovered: true })
       this.isDetailHovered = true
     },

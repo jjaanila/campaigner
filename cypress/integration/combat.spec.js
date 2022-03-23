@@ -71,6 +71,8 @@ describe('Combat', () => {
 
   it('should roll for monster hit and damage', () => {
     cy.get('.combat-turn-order > :nth-child(9) > .combat-unit > span').click()
+    cy.get('.combat-unit-details').trigger('mouseenter')
+    cy.get('.combat-unit-details .monster-action').should('be.visible')
     cy.get('.combat-unit-details .monster-action').trigger('mouseenter')
     cy.get('.combat-unit-details .monster-action > .hit-mask').should('be.visible')
     cy.get('.combat-unit-details .monster-action > .damage-mask').should('be.visible')
