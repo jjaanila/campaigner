@@ -156,7 +156,26 @@ const splitHorde = horde => {
   return remainingUnits
 }
 
-const createHorde = units => {
+const reserveUnitColor = unitColors => {
+  const unitColor = unitColors.find(color => !color.isUsed) // We can run out of colors!
+  if (unitColor === undefined) {
+    return 'red'
+  }
+  unitColor.isUsed = true
+  return unitColor.color
+}
+
+const freeUnitColors = (unitColors, colorsTobeFreed) => {
+  for (const color of colorsTobeFreed) {
+    const unitColor = unitColors.find(uc => uc.color === color)
+    if (unitColor) {
+      unitColor.isUsed = false
+    }
+  }
+  return unitColors
+}
+
+const createHorde = (units, unitColors) => {
   if (
     units.length < 1 ||
     !units.every(unit => unit.monster.name === units[0].monster.name && unit.unitType === units[0].unitType)
@@ -166,6 +185,10 @@ const createHorde = units => {
   const members = units.reduce((memo, unit) => memo.concat(isHorde(unit) ? splitHorde(unit) : [unit]), [])
   const hitPoints = units.reduce((totalHp, unit) => totalHp + unit.hitPoints, 0)
   const maxHitPoints = units.reduce((totalMaxHp, unit) => totalMaxHp + unit.maxHitPoints, 0)
+  freeUnitColors(
+    unitColors,
+    members.map(member => member.color)
+  )
   return {
     name: getHordeName(members),
     monster: units[0].monster,
@@ -176,16 +199,8 @@ const createHorde = units => {
     unitType: units[0].unitType,
     conditions: [],
     members,
+    color: reserveUnitColor(unitColors),
   }
-}
-
-const reserveUnitColor = unitColors => {
-  const unitColor = unitColors.find(color => !color.isUsed) // We can run out of colors!
-  if (unitColor === undefined) {
-    return 'red'
-  }
-  unitColor.isUsed = true
-  return unitColor.color
 }
 
 const createUnitFromCreature = (monsterOrCharacter, unitType, unitColors) => {
@@ -372,7 +387,7 @@ export default () => ({
           .fill(null)
           .map(_i => createUnitFromCreature(unitBatch.creature, unitBatch.unitType, unitColors))
         if (unitBatch.asHorde) {
-          unitBatchUnits = [createHorde(unitBatchUnits)]
+          unitBatchUnits = [createHorde(unitBatchUnits, unitColors)]
         }
         newUnits = newUnits.concat(unitBatchUnits)
       }
@@ -422,7 +437,7 @@ export default () => ({
       const selectedUnits = state.units.filter(unit => unit.selected)
       commit('updateUnits', [
         ...state.units.filter(unit => !unit.selected),
-        { ...createHorde(selectedUnits), selected: true },
+        { ...createHorde(selectedUnits, state.unitColors), selected: true },
       ])
     },
     splitHorde({ commit, state }, hordeId) {
