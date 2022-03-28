@@ -32,9 +32,9 @@ export default {
     setIsCombatOverlayOpen(state, isCombatOverlayOpen) {
       state.isCombatOverlayOpen = isCombatOverlayOpen
     },
-    throwDice(state, { throws, sides, constant }) {
+    throwDice(state, { throws, sides, constant, description = '' }) {
       const dice = new Dice(throws, sides, constant)
-      state.dice.last = { dice, result: dice.throw(), id: getUniqueId() }
+      state.dice.last = { dice, result: dice.throw(), id: getUniqueId(), description }
       state.dice.history.unshift(state.dice.last)
     },
     setThrows(state, throws) {

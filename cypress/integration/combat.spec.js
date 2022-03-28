@@ -7,6 +7,8 @@ describe('Combat', () => {
     cy.get('button.encounter-start-button').click()
     cy.get('.combat-overlay').should('be.visible')
     cy.get('.initiative:contains(Maukka) input').clear().type('10')
+    cy.get('.initiative:contains(Swashbuckler of Long Name Islands) input').clear().type('9')
+    cy.get('.initiative:contains(Commoner) input').clear().type('8')
     cy.get('.combat-initialization-start-combat-button').click()
   })
   it('should open and close', () => {
@@ -65,5 +67,19 @@ describe('Combat', () => {
     cy.get('.combat-grid .combat-ally').should('not.exist')
     cy.get('.combat-turn-order .combat-ally').should('not.exist')
     cy.get('.combat-unit-details').should('not.exist')
+  })
+
+  it('should roll for monster hit and damage', () => {
+    cy.get('.combat-turn-order > :nth-child(9) > .combat-unit > span').click()
+    cy.get('.combat-unit-details').trigger('mouseenter')
+    cy.get('.combat-unit-details .monster-action').should('be.visible')
+    cy.get('.combat-unit-details .monster-action').trigger('mouseenter')
+    cy.get('.combat-unit-details .monster-action > .hit-mask').should('be.visible')
+    cy.get('.combat-unit-details .monster-action > .damage-mask').should('be.visible')
+    cy.get('.combat-unit-details .monster-action > .hit-mask').click()
+    cy.get('.dice-overlay .dice-record:nth-child(1)').contains('To hit with Club')
+    cy.get('.combat-unit-details .monster-action > .damage-mask').click()
+    cy.get('.dice-overlay .dice-record:nth-child(1)').contains('Club damage')
+    cy.get('.dice-overlay .dice-record:nth-child(2)').contains('To hit with Club')
   })
 })
