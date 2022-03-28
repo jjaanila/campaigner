@@ -4,16 +4,14 @@
     :style="{
       border: unit.hovered ? '2px dashed black' : undefined,
     }"
-    @mouseover="updateUnit({ ...unit, hovered: true })"
-    @mouseleave="updateUnit({ ...unit, hovered: false })"
+    @mouseenter="onMouseEnter"
+    @mouseleave="onMouseLeave"
   >
-    <turn-indicator v-show="unitIdInTurn !== unit.id" :class="{ on: true }" />
+    <turn-indicator :class="{ on: unitIdInTurn === unit.id }" />
     <button class="close-button" title="Remove selection" @click="updateUnit({ ...unit, selected: false })">
       X
     </button>
-    <div @mouseover="hover = true" @mouseleave="hover = false">
-      <span>{{ unit.name }} ({{ unit.unitType }})</span>
-    </div>
+    <span>{{ unit.name }} ({{ unit.unitType }})</span>
     <div class="unit-hit-points">
       <input
         v-model="unit.hitPoints"
@@ -24,12 +22,12 @@
       />
       / {{ unit.maxHitPoints }}
     </div>
-    <div v-if="hover" class="unit-tooltip"><monster id="" v-bind="unit.monster" /></div>
     <div class="color-marker" :style="{ backgroundColor: unit.color }" />
     <condition-menu class="unit-conditions" :creature="unit" />
     <button v-if="isHorde(unit)" class="unit-split-horde-button" @click="splitHorde(unit.id)">
       Split Horde
     </button>
+    <Monster v-show="isDetailHovered" class="unit-monster" v-bind="unit.monster" />
   </div>
 </template>
 
@@ -37,11 +35,13 @@
 import { mapActions, mapState } from 'vuex'
 import ConditionMenu from './ConditionMenu.vue'
 import TurnIndicator from './TurnIndicator.vue'
+import Monster from './Monster.vue'
 import { isHorde } from '../stores/combat.store'
 export default {
   name: 'CombatUnitDetails',
   components: {
     ConditionMenu,
+    Monster,
     TurnIndicator,
   },
   props: {
@@ -52,7 +52,7 @@ export default {
   },
   data() {
     return {
-      hover: false,
+      isDetailHovered: false,
     }
   },
   computed: {
@@ -63,6 +63,14 @@ export default {
   methods: {
     ...mapActions('combat', ['updateUnit', 'splitHorde']),
     isHorde,
+    onMouseEnter() {
+      this.updateUnit({ ...this.unit, hovered: true })
+      this.isDetailHovered = true
+    },
+    onMouseLeave() {
+      this.updateUnit({ ...this.unit, hovered: false })
+      this.isDetailHovered = false
+    },
   },
 }
 </script>
@@ -74,7 +82,7 @@ export default {
   width: 100%;
   padding: 0.25rem;
   grid-template-columns: 1rem 2rem 10rem 1fr;
-  grid-template-rows: auto 1fr 1fr;
+  grid-template-rows: auto auto auto;
   align-items: center;
   justify-items: flex-start;
   border: 2px solid transparent;
@@ -103,16 +111,11 @@ export default {
   font-size: 0.75rem;
   padding: 0;
 }
-.unit-tooltip {
-  position: absolute;
-  top: 1rem;
-  left: 0;
-  min-width: 25rem;
-  max-width: 40rem;
-  z-index: 3;
+.unit-monster {
+  grid-column: 1 / span 4;
 }
 .unit-conditions {
-  grid-column: 1 / span 4;
+  grid-column: 2 / span 4;
   justify-self: flex-end;
   margin-top: 0.25rem;
 }
@@ -128,5 +131,6 @@ export default {
   width: 1.25rem;
   height: 1.25rem;
   border: 2px solid black;
+  margin-left: 0.5rem;
 }
 </style>

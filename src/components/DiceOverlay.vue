@@ -7,12 +7,13 @@
         background: `url(${backgroundImage})`,
       }"
     >
-      <span class="dice-record dice-last"
-        >{{ last.result }} {{ last && last.dice && last.dice.toString(false) }}</span
-      >
-      <span v-for="record in history.slice(1)" :key="record.id" class="dice-record"
-        >{{ record.result }} {{ record.dice.toString(false) }}</span
-      >
+      <span v-for="record in history" :key="record.id" class="dice-record">
+        <span class="dice-record-result">{{ record.result }}</span>
+        <span class="dice-record-dice">({{ record.dice.toString(false) }})</span>
+        <span v-if="record.description" class="dice-record-description">
+          {{ record.description }}
+        </span>
+      </span>
     </div>
     <input
       class="dice-overlay-throws"
@@ -40,8 +41,7 @@ export default {
   },
   computed: {
     ...mapState({
-      last: state => state.ui.dice?.last ?? {},
-      history: state => state.ui.dice.history.slice(0, 10),
+      history: state => state.ui.dice.history,
       throws: state => state.ui.dice.throws,
     }),
   },
@@ -63,22 +63,35 @@ export default {
 .dice-history {
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: fixed;
   overflow-y: auto;
   bottom: 2.5rem;
   left: 0.5rem;
-  max-height: 20rem;
-  width: 7em;
+  max-height: 15rem;
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid #c9ad6a;
   box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 .dice-record {
-  padding: 0 0.25rem;
+  padding: 0 0 0 0.25rem;
+  display: inline-flex;
+  align-items: center;
 }
-.dice-last {
+.dice-record-result {
   font-weight: bold;
+  margin-right: 0.25rem;
+  font-size: 1.25rem;
+}
+.dice-record-dice {
+  margin-right: 0.5rem;
+}
+.dice-record-description {
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: lighter;
+  font-weight: bold;
+  font-style: italic;
 }
 </style>
