@@ -1,3 +1,80 @@
+<script setup>
+import { Synchronizer } from '../sync'
+import syncIcon from '../img/cycle.svg'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
+const synchronizer = ref()
+const isMenuOpen = ref(false)
+const token = ref('')
+const stateFileInput = ref()
+const config = computed(() => {
+  return {
+    storage: {
+      type: 'jsonBin',
+      config: {
+        masterKey: token,
+      },
+    },
+    manual: true,
+    rotationIntervalMs: 15 * 60 * 1000,
+    syncIntervalMs: 60 * 1000,
+    store,
+  }
+})
+const isSynchronizing = computed(() => {
+  return synchronizer.value && synchronizer.value.isSynchronizing
+})
+const isRunning = computed(() => {
+  return synchronizer.value && synchronizer.value.isRunning
+})
+const isStarting = computed(() => {
+  return synchronizer.value && synchronizer.value.isStarting
+})
+
+const start = () => {
+  synchronizer.value = new Synchronizer(config.value)
+  return synchronizer.value.start()
+}
+const stop = () => {
+  synchronizer.value.stop()
+}
+const toggleSyncMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+const openStateFileSelection = () => {
+  stateFileInput.value.click()
+}
+const downloadState = () => {
+  const link = document.createElement('a')
+  link.href = URL.createObjectURL(
+    new Blob([JSON.stringify({ party: store.state.party, combat: store.state.combat })], {
+      type: 'text/plain',
+    })
+  )
+  link.download = `campaigner-state-${new Date().toISOString()}.json`
+  link.click()
+  URL.revokeObjectURL(link.href)
+}
+const uploadState = e => {
+  e.target.files[0].text().then(stateText => {
+    try {
+      const state = JSON.parse(stateText)
+      if (confirm('This will overwrite your current Campaigner state. Are you sure?')) {
+        store.replaceState({
+          ...store.state,
+          ...state,
+        })
+      }
+    } catch (err) {
+      console.error(err)
+      alert('Invalid state file')
+      return
+    }
+  })
+}
+</script>
+
 <template>
   <div class="sync">
     <button class="sync-button" title="Synchronization" @click="toggleSyncMenu">
@@ -29,90 +106,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import { Synchronizer } from '../sync'
-import syncIcon from '../img/cycle.svg'
-export default {
-  name: 'Synchronization',
-  data() {
-    return {
-      synchronizer: undefined,
-      isMenuOpen: false,
-      token: '',
-      syncIcon,
-    }
-  },
-  computed: {
-    config() {
-      return {
-        storage: {
-          type: 'jsonBin',
-          config: {
-            masterKey: this.token,
-          },
-        },
-        manual: true,
-        rotationIntervalMs: 15 * 60 * 1000,
-        syncIntervalMs: 60 * 1000,
-        store: this.$store,
-      }
-    },
-    isSynchronizing() {
-      return this.synchronizer && this.synchronizer.isSynchronizing
-    },
-    isRunning() {
-      return this.synchronizer && this.synchronizer.isRunning
-    },
-    isStarting() {
-      return this.synchronizer && this.synchronizer.isStarting
-    },
-  },
-  methods: {
-    start() {
-      this.synchronizer = new Synchronizer(this.config)
-      return this.synchronizer.start()
-    },
-    stop() {
-      this.synchronizer.stop()
-    },
-    toggleSyncMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-    },
-    openStateFileSelection() {
-      this.$refs.stateFileInput.click()
-    },
-    downloadState() {
-      const link = document.createElement('a')
-      link.href = URL.createObjectURL(
-        new Blob([JSON.stringify({ party: this.party, combat: this.combat })], {
-          type: 'text/plain',
-        })
-      )
-      link.download = `campaigner-state-${new Date().toISOString()}.json`
-      link.click()
-      URL.revokeObjectURL(link.href)
-    },
-    uploadState(e) {
-      e.target.files[0].text().then(stateText => {
-        try {
-          const state = JSON.parse(stateText)
-          if (confirm('This will overwrite your current Campaigner state. Are you sure?')) {
-            this.$store.replaceState({
-              ...this.$store.state,
-              ...state,
-            })
-          }
-        } catch (err) {
-          console.error(err)
-          alert('Invalid state file')
-          return
-        }
-      })
-    },
-  },
-}
-</script>
 
 <style scoped>
 .sync {
