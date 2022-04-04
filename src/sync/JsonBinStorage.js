@@ -80,7 +80,13 @@ export class JsonBinStorage extends Storage {
   }
 
   readOne(id) {
-    return this.fetch(`${this.API_URL}/v3/b/${id}`).then(response => response.json())
+    return this.fetch(`${this.API_URL}/v3/b/${id}`)
+      .then(response => response.json())
+      .then(body => ({
+        id: body.metadata.id,
+        name: body.metadata.name,
+        data: body.record,
+      }))
   }
 
   /**

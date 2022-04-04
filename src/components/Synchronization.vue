@@ -60,16 +60,26 @@ const downloadState = () => {
   URL.revokeObjectURL(link.href)
 }
 const refreshBackups = async () => {
-  backups.value = await synchronizer.value.storage.readPage()
-}
-const restoreBackup = backup => {
-  if (confirm('This will overwrite your current Campaigner state. Are you sure?')) {
-    store.replaceState({
-      ...store.state,
-      ...backup,
-    })
+  try {
+    backups.value = await synchronizer.value.storage.readPage()
+  } catch (e) {
+    alert(`Failed to refresh backups: ${e}`)
   }
 }
+const restoreBackup = async backup => {
+  try {
+    if (confirm('This will overwrite your current Campaigner state. Are you sure?')) {
+      const record = await synchronizer.value.storage.readOne(backup.id)
+      store.replaceState({
+        ...store.state,
+        ...record.data,
+      })
+    }
+  } catch (e) {
+    alert(`Failed to restore backup: ${e}`)
+  }
+}
+const navigator = window.navigator
 const uploadState = e => {
   e.target.files[0].text().then(stateText => {
     try {
@@ -111,20 +121,20 @@ const uploadState = e => {
         Refresh backups
       </button>
       <button title="Download current Campaigner state to disk" @click.prevent="downloadState()">
-        Download backup
+        Save to disk
       </button>
       <button title="Load Campaigner state from disk" @click.prevent="openStateFileSelection()">
-        Upload backup
+        Load from disk
       </button>
       <ol class="sync-backups-list">
-        <li v-for="backup in backups" :key="backup.id" class="sync-backup">
-          <div>
-            <strong>
-              {{ backup.createdAt.toLocaleDateString() }}
-              {{ backup.createdAt.toLocaleTimeString() }}
-            </strong>
-            <button title="Restore backup" @click.prevent="restoreBackup(backup)">Restore</button>
-          </div>
+        <li v-for="backup in backups.slice(undefined, 10)" :key="backup.id" class="sync-backup">
+          <strong class="sync-backup-name">
+            {{ backup.createdAt.toLocaleDateString(navigator.language) }}
+            {{
+              backup.createdAt.toLocaleTimeString(navigator.language, { hour: '2-digit', minute: '2-digit' })
+            }}
+          </strong>
+          <button title="Restore backup" @click.prevent="restoreBackup(backup)">Restore</button>
         </li>
       </ol>
       <input
@@ -182,6 +192,11 @@ const uploadState = e => {
 
 .sync-backups-list {
   list-style: none;
+  margin: 0.25rem 0;
+}
+
+.sync-backup-name {
+  margin: 0 1rem;
 }
 
 @keyframes spin {
