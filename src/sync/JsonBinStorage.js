@@ -3,9 +3,6 @@ import { Storage } from './Storage'
 export class JsonBinStorage extends Storage {
   constructor(config) {
     super()
-    if (!config.masterKey) {
-      throw new Error('JsonBinStorage requires a masterKey')
-    }
     this.masterKey = config.masterKey
     this.currentBinId = undefined
     this.collectionId = undefined
@@ -13,7 +10,14 @@ export class JsonBinStorage extends Storage {
     this.API_URL = 'https://api.jsonbin.io'
   }
 
+  setMasterKey(masterKey) {
+    this.masterKey = masterKey
+  }
+
   fetch(url, init = {}) {
+    if (!this.masterKey) {
+      throw new Error('JsonBinStorage requires a masterKey')
+    }
     return fetch(url, {
       method: 'GET',
       ...init,
@@ -26,6 +30,9 @@ export class JsonBinStorage extends Storage {
   }
 
   initialize() {
+    if (this.collectionId) {
+      return Promise.resolve()
+    }
     return this.fetch(`${this.API_URL}/v3/c`)
       .then(response => response.json())
       .then(collections => {
@@ -54,11 +61,32 @@ export class JsonBinStorage extends Storage {
   }
 
   readPage() {
-    return this.fetch(`${this.API_URL}/v3/c/${this.collectionId}/bins`).then(response => response.json())
+    return this.initialize()
+      .then(() => {
+        return this.fetch(`${this.API_URL}/v3/c/${this.collectionId}/bins`)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to read page: ${response.status}`)
+        }
+        return response.json()
+      })
+      .then(bins => {
+        return bins.map(bin => ({
+          createdAt: new Date(bin.snippetMeta.name.replace(/^campaigner-state-/, '')),
+          id: bin.record,
+        }))
+      })
   }
 
   readOne(id) {
-    return this.fetch(`${this.API_URL}/v3/b/${id}`).then(response => response.json())
+    return this.fetch(`${this.API_URL}/v3/b/${id}`)
+      .then(response => response.json())
+      .then(body => ({
+        id: body.metadata.id,
+        name: body.metadata.name,
+        data: body.record,
+      }))
   }
 
   /**

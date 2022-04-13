@@ -11,7 +11,13 @@ export class Synchronizer {
       ...config,
       syncDebounceMs: config.syncDebounceMs ?? 5000,
     }
-    this.storage = undefined
+    const storageClass = storageMap[this.config?.storage?.type]
+    if (!storageClass) {
+      throw new Error(`Unknown storage type ${this.config?.storage?.type}`)
+    }
+    this.storage = new storageClass({
+      ...this.config.storage.config,
+    })
     this.lastRotateAt = undefined
     this.lastSyncAt = undefined
     this.isRunning = false
@@ -95,13 +101,6 @@ export class Synchronizer {
     return Promise.resolve()
       .then(() => {
         this.isStarting = true
-        const storageClass = storageMap[this.config?.storage?.type]
-        if (!storageClass) {
-          throw new Error(`Unknown storage type ${this.config?.storage?.type}`)
-        }
-        this.storage = new storageClass({
-          ...this.config.storage.config,
-        })
         return this.storage.initialize()
       })
       .then(() => {

@@ -4,16 +4,16 @@ import syncIcon from '../img/cycle.svg'
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
-const synchronizer = ref()
 const isMenuOpen = ref(false)
 const token = ref('')
 const stateFileInput = ref()
+const backups = ref([])
 const config = computed(() => {
   return {
     storage: {
       type: 'jsonBin',
       config: {
-        masterKey: token,
+        masterKey: '',
       },
     },
     manual: true,
@@ -22,6 +22,7 @@ const config = computed(() => {
     store,
   }
 })
+const synchronizer = ref(new Synchronizer(config.value))
 const isSynchronizing = computed(() => {
   return synchronizer.value && synchronizer.value.isSynchronizing
 })
@@ -31,13 +32,15 @@ const isRunning = computed(() => {
 const isStarting = computed(() => {
   return synchronizer.value && synchronizer.value.isStarting
 })
-
 const start = () => {
-  synchronizer.value = new Synchronizer(config.value)
   return synchronizer.value.start()
 }
 const stop = () => {
   synchronizer.value.stop()
+}
+const updateToken = $event => {
+  token.value = $event.target.value
+  synchronizer.value.storage.setMasterKey(token.value)
 }
 const toggleSyncMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -56,6 +59,27 @@ const downloadState = () => {
   link.click()
   URL.revokeObjectURL(link.href)
 }
+const refreshBackups = async () => {
+  try {
+    backups.value = await synchronizer.value.storage.readPage()
+  } catch (e) {
+    alert(`Failed to refresh backups: ${e}`)
+  }
+}
+const restoreBackup = async backup => {
+  try {
+    if (confirm('This will overwrite your current Campaigner state. Are you sure?')) {
+      const record = await synchronizer.value.storage.readOne(backup.id)
+      store.replaceState({
+        ...store.state,
+        ...record.data,
+      })
+    }
+  } catch (e) {
+    alert(`Failed to restore backup: ${e}`)
+  }
+}
+const navigator = window.navigator
 const uploadState = e => {
   e.target.files[0].text().then(stateText => {
     try {
@@ -84,17 +108,35 @@ const uploadState = e => {
     <div v-if="isMenuOpen" class="sync-menu">
       <div class="sync-token-container">
         <label for="sync-token">JsonBin token</label>
-        <input id="sync-token" type="password" :value="token" @input="token = $event.target.value" />
+        <input id="sync-token" type="password" :value="token" @input="updateToken" />
       </div>
-      <button :disabled="isStarting" @click="isRunning ? stop() : start()">
-        {{ isRunning ? 'Stop' : 'Start' }}
+      <button
+        title="Autosynchronization to remote storage"
+        :disabled="isStarting"
+        @click="isRunning ? stop() : start()"
+      >
+        {{ isRunning ? 'Stop auto-backup' : 'Start auto-backup' }}
       </button>
-      <button title="Download current Campaigner state" @click.prevent="downloadState()">
-        Download state
+      <button title="Fetch backups from remote storage" @click.prevent="refreshBackups">
+        Refresh backups
+      </button>
+      <button title="Download current Campaigner state to disk" @click.prevent="downloadState()">
+        Save to disk
       </button>
       <button title="Load Campaigner state from disk" @click.prevent="openStateFileSelection()">
-        Upload state
+        Load from disk
       </button>
+      <ol class="sync-backups-list">
+        <li v-for="backup in backups.slice(undefined, 10)" :key="backup.id" class="sync-backup">
+          <strong class="sync-backup-name">
+            {{ backup.createdAt.toLocaleDateString(navigator.language) }}
+            {{
+              backup.createdAt.toLocaleTimeString(navigator.language, { hour: '2-digit', minute: '2-digit' })
+            }}
+          </strong>
+          <button title="Restore backup" @click.prevent="restoreBackup(backup)">Restore</button>
+        </li>
+      </ol>
       <input
         ref="stateFileInput"
         accept="application/json"
@@ -146,6 +188,15 @@ const uploadState = e => {
 
 .sync-status.running {
   background: lightgreen;
+}
+
+.sync-backups-list {
+  list-style: none;
+  margin: 0.25rem 0;
+}
+
+.sync-backup-name {
+  margin: 0 1rem;
 }
 
 @keyframes spin {
