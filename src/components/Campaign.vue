@@ -77,12 +77,6 @@ main {
   flex-flow: column;
   align-items: center;
 }
-p {
-  text-align: justify;
-}
-p + p {
-  text-indent: 2em;
-}
 code,
 pre {
   display: block;

@@ -1,8 +1,8 @@
 <template>
   <div :id="containerId" class="monster">
-    <span class="monster-name">{{ name }}</span>
-    <span class="monster-properties">{{ propertiesStr }}</span>
-    <p class="monster-description">
+    <span class="monster-name" tabindex="0">{{ name }}</span>
+    <span class="monster-properties" tabindex="0">{{ propertiesStr }}</span>
+    <p v-if="description" class="monster-description" tabindex="0">
       {{ description }}
     </p>
     <monster-divider />

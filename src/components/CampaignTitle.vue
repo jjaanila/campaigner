@@ -1,12 +1,12 @@
 <template>
   <div class="campaign-title-container">
-    <h1 class="campaign-title">
+    <h1 class="campaign-title" tabindex="0">
       {{ title }}
     </h1>
     <address class="author">
       <a rel="author" class="url fn n" :href="authorUrl">{{ author }}</a>
     </address>
-    <time pubdate :datetime="publishDate" :title="publishDate">on {{ publishDate }}</time>
+    <time pubdate :datetime="publishDate" :title="publishDate" tabindex="0">on {{ publishDate }}</time>
   </div>
 </template>
 

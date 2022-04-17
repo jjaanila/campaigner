@@ -1,5 +1,5 @@
 <template>
-  <div class="read-aloud">
+  <div class="read-aloud" tabindex="0">
     <slot />
   </div>
 </template>

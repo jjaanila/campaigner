@@ -14,6 +14,7 @@ import Comment from './Comment.vue'
 import Encounter from './Encounter.vue'
 import Overlay from './Overlay.vue'
 import Campaign from './Campaign.vue'
+import Paragraph from './Paragraph.vue'
 
 export default {
   CampaignTitle,
@@ -32,4 +33,5 @@ export default {
   Encounter,
   Overlay,
   Campaign,
+  Paragraph,
 }

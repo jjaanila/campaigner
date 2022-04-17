@@ -1,5 +1,5 @@
 <template>
-  <div v-click-away="close" class="condition-menu">
+  <div v-click-away="close" class="condition-menu" tabindex="0">
     <div v-if="isConditionMenuOpen" class="available-conditions">
       <button
         v-for="condition in sortBy([...availableConditions], 'name')"

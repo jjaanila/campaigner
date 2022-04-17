@@ -1,18 +1,18 @@
 <template>
   <div class="encounter">
-    <div v-if="enemiesWithMonsters.length" class="encounter-unit-category">
+    <div v-if="enemiesWithMonsters.length" class="encounter-unit-category" tabindex="0">
       <strong>Enemies</strong>
       <span v-for="enemy in enemiesWithMonsters" :key="enemy.id" class="encounter-unit-group">
         {{ enemy.quantity }} <id-link :id="enemy.id" :name="enemy.monster.name" type="monster" />
       </span>
     </div>
-    <div v-if="alliesWithMonsters.length" class="encounter-unit-category">
+    <div v-if="alliesWithMonsters.length" class="encounter-unit-category" tabindex="0">
       <strong>Allies</strong>
       <span v-for="ally in alliesWithMonsters" :key="ally.id" class="encounter-unit-group"
         >{{ ally.quantity }} <id-link :id="ally.id" :name="ally.monster.name" type="monster"
       /></span>
     </div>
-    <span>
+    <span tabindex="0">
       {{ totalEnemyXP }} XP (á {{ XPPerCharacter }} XP)
       <span :class="difficultyClass">{{ difficulty }}</span> ({{ adjustedTotalEnemyXP }}
       XP)

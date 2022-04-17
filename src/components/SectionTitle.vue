@@ -1,5 +1,5 @@
 <template>
-  <h4 :id="h4Id" class="section-title">
+  <h4 :id="h4Id" class="section-title" tabindex="0">
     {{ name }}
   </h4>
 </template>

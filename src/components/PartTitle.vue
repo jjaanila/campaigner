@@ -1,5 +1,5 @@
 <template>
-  <h2 :id="h2Id" class="part-title"><br /><br />{{ name }}</h2>
+  <h2 :id="h2Id" class="part-title" tabindex="0"><br /><br />{{ name }}</h2>
 </template>
 
 <script>

@@ -1,8 +1,9 @@
 <template>
-  <div class="monster-action" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+  <div class="monster-action" tabindex="0" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
     <div
       v-show="canHit && isHovered"
       class="rollable-mask hit-mask"
+      tabindex="0"
       :role="canHit ? 'button' : ''"
       @click="rollHit"
     >
@@ -11,12 +12,13 @@
     <div
       v-show="hasDamage && isHovered"
       class="rollable-mask damage-mask"
+      tabindex="0"
       :role="hasDamage ? 'button' : ''"
       @click="rollDamage"
     >
       Roll damage
     </div>
-    <span class="monster-action-description">
+    <span class="monster-action-description" tabindex="0">
       <span class="monster-action-name">{{ name }}.</span>
       {{ descriptionStr }}
     </span>
