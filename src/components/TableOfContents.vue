@@ -1,6 +1,6 @@
 <template>
   <nav class="toc" @click="toggleToC()">
-    <span>Table of Contents</span>
+    <span tabindex="0">Table of Contents</span>
     <div v-if="isToCOpen">
       <input
         id="show-toc-always"

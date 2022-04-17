@@ -89,7 +89,6 @@
       <section-title name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
     </campaign>
-    <overlay />
   </div>
 </template>
 

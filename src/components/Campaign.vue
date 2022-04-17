@@ -4,18 +4,21 @@
       background: `url(${backgroundImage})`,
     }"
   >
-    <page>
+    <Page>
+      <Overlay />
       <slot />
-    </page>
+    </Page>
   </main>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import Page from './Page.vue'
+import Overlay from './Overlay.vue'
 export default {
   name: 'Campaign',
   components: {
+    Overlay,
     Page,
   },
   data() {

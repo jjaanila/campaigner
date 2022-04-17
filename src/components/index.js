@@ -12,7 +12,6 @@ import Monster from './Monster.vue'
 import IdLink from './IdLink.vue'
 import Comment from './Comment.vue'
 import Encounter from './Encounter.vue'
-import Overlay from './Overlay.vue'
 import Campaign from './Campaign.vue'
 import Paragraph from './Paragraph.vue'
 
@@ -31,7 +30,6 @@ export default {
   IdLink,
   Comment,
   Encounter,
-  Overlay,
   Campaign,
   Paragraph,
 }
