@@ -18,7 +18,7 @@
     >
       Roll damage
     </div>
-    <span class="monster-action-description" tabindex="0">
+    <span class="monster-action-description">
       <span class="monster-action-name">{{ name }}.</span>
       {{ descriptionStr }}
     </span>
