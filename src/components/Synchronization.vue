@@ -154,7 +154,6 @@ const uploadState = e => {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
-  margin-top: 0.5rem;
 }
 .sync-button {
   display: flex;

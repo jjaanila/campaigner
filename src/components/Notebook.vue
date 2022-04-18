@@ -1,15 +1,8 @@
 <template>
-  <div class="notebook">
-    <IconButton
-      class="notebook-button"
-      title="Notebook"
-      size="large"
-      :icon-src="notebookIcon"
-      @click="toggleNotebook()"
-    />
-    <div v-show="isNotebookOpen" class="notebook-container">
+  <MenuItem :icon="notebookIcon" title="Notebook">
+    <div class="notebook-container" @click.stop>
       <button
-        v-show="isNotebookOpen && !shownRecord"
+        v-show="!shownRecord"
         class="notebook-add-record-button"
         title="Add record"
         @click="startRecordCreation()"
@@ -54,13 +47,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </MenuItem>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
 import NotebookIcon from '../img/notebook.svg'
-import IconButton from './IconButton.vue'
+import MenuItem from './MenuItem.vue'
 import { getUniqueId } from '../utils'
 import sortBy from 'lodash/sortBy'
 import Fuse from 'fuse.js'
@@ -69,11 +62,10 @@ const ITEMS_PER_PAGE = 10
 export default {
   name: 'Notebook',
   components: {
-    IconButton,
+    MenuItem,
   },
   data() {
     return {
-      isNotebookOpen: false,
       shownRecord: undefined,
       notebookIcon: NotebookIcon,
       search: '',
@@ -117,12 +109,6 @@ export default {
   },
   methods: {
     ...mapActions('party', ['updateRecord', 'deleteRecord']),
-    toggleNotebook() {
-      this.isNotebookOpen = !this.isNotebookOpen
-    },
-    closeNotebook() {
-      this.isNotebookOpen = false
-    },
     startRecordCreation() {
       this.shownRecord = {
         id: null,

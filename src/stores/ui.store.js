@@ -7,6 +7,9 @@ export default {
     isToCOpen: true,
     showToCAlways: true,
     isCombatOverlayOpen: false,
+    hideToC: false,
+    hideParty: false,
+    hideDice: false,
     dice: {
       throws: 1,
       last: undefined,

@@ -150,7 +150,7 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  max-width: 250px;
+  max-width: 20rem;
   font-family: 'Cinzel', sans-serif;
   text-indent: 0;
   background-color: #f2ead6;
