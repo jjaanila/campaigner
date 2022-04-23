@@ -31,11 +31,13 @@ defineExpose({
     :class="{ 'icon-button': true, large: size === 'large', small: size === 'small', disabled: disabled }"
   >
     <InlineSvg class="icon" :src="iconSrc" />
+    <slot />
   </button>
 </template>
 
 <style scoped>
 .icon-button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

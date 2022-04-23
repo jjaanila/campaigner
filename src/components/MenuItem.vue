@@ -11,9 +11,11 @@ const isOpen = ref(false)
 const props = defineProps({
   icon: {
     type: String,
+    required: false,
   },
   title: {
     type: String,
+    required: false,
   },
 })
 
@@ -41,11 +43,13 @@ const toggle = async () => {
     :title="props.title"
     class="menu-item-button"
     size="large"
-    :icon-src="props.icon"
+    :icon-src="props.icon ?? ''"
     @click="toggle"
-  />
+  >
+    <slot name="menuButtonContent" />
+  </IconButton>
   <Teleport to="body">
-    <div v-if="isOpen" ref="menuItem" v-click-away="hide" role="menu" class="menu-item-content" @click="hide">
+    <div v-if="isOpen" ref="menuItem" v-click-away="hide" role="menu" class="menu-item-content">
       <slot />
     </div>
   </Teleport>
