@@ -1,5 +1,5 @@
 <template>
-  <h3 :id="h3Id" class="chapter-title">
+  <h3 :id="h3Id" class="chapter-title" tabindex="0">
     {{ name }}
   </h3>
 </template>

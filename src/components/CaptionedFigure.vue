@@ -1,7 +1,7 @@
 <template>
   <figure :id="figureId" class="captioned-figure">
-    <figcaption>{{ caption }}</figcaption>
-    <img :src="path" :alt="caption" :style="imgStyle" />
+    <figcaption tabindex="0">{{ caption }}</figcaption>
+    <img :src="path" :alt="caption" :style="imgStyle" tabindex="0" />
   </figure>
 </template>
 

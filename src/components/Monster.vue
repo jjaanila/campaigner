@@ -1,8 +1,8 @@
 <template>
   <div :id="containerId" class="monster">
-    <span class="monster-name">{{ name }}</span>
-    <span class="monster-properties">{{ propertiesStr }}</span>
-    <p class="monster-description">
+    <span class="monster-name" tabindex="0">{{ name }}</span>
+    <span class="monster-properties" tabindex="0">{{ propertiesStr }}</span>
+    <p v-if="description" class="monster-description" tabindex="0">
       {{ description }}
     </p>
     <monster-divider />
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { generateId, capitalize, getAbilityScoreModifier } from '../utils'
+import { capitalize, getAbilityScoreModifier } from '../utils'
 import MonsterStatRow from './MonsterStatRow.vue'
 import AbilityScore from './AbilityScore.vue'
 import MonsterSectionHeader from './MonsterSectionHeader.vue'
@@ -180,7 +180,7 @@ export default {
   },
   computed: {
     containerId() {
-      return this.id ?? generateId(this.name, 'monster')
+      return this.id
     },
     armorClassStr() {
       return `${this.armorClass}${this.armor ? ` (${this.armor})` : ''}`

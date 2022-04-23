@@ -1,7 +1,7 @@
 <template>
-  <h4 :id="h4Id" class="section-title">
+  <component :is="headingTag" :id="headingId" class="section-title" tabindex="0">
     {{ name }}
-  </h4>
+  </component>
 </template>
 
 <script>
@@ -16,9 +16,13 @@ export default {
     id: {
       type: String,
     },
+    headingTag: {
+      type: String,
+      default: 'h4',
+    },
   },
   computed: {
-    h4Id() {
+    headingId() {
       return this.id ?? generateId(this.name, 'section')
     },
   },

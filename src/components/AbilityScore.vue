@@ -1,5 +1,5 @@
 <template>
-  <div class="ability-score">
+  <div class="ability-score" tabindex="0">
     <span class="ability-score-name">{{ name }}</span>
     <span class="ability-score-value">{{ value }} ({{ abilityModifier }})</span>
   </div>

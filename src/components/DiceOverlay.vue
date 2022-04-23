@@ -15,7 +15,9 @@
         </span>
       </span>
     </div>
+    <label class="dice-overlay-throws-label" for="dice-overlay-throws">Throws</label>
     <input
+      id="dice-overlay-throws"
       class="dice-overlay-throws"
       type="number"
       min="1"
@@ -59,6 +61,9 @@ export default {
 }
 .dice-overlay-throws {
   width: 3rem;
+}
+.dice-overlay-throws-label {
+  margin-right: 0.5rem;
 }
 .dice-history {
   display: flex;

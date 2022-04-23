@@ -1,5 +1,5 @@
 <template>
-  <h5 :id="h5Id" class="area-title">
+  <h5 :id="h5Id" class="area-title" tabindex="0">
     {{ name }}
   </h5>
 </template>

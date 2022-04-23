@@ -1,10 +1,10 @@
 <script setup>
 import { Synchronizer } from '../sync'
+import MenuItem from './MenuItem.vue'
 import syncIcon from '../img/cycle.svg'
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
-const isMenuOpen = ref(false)
 const token = ref('')
 const stateFileInput = ref()
 const backups = ref([])
@@ -41,9 +41,6 @@ const stop = () => {
 const updateToken = $event => {
   token.value = $event.target.value
   synchronizer.value.storage.setMasterKey(token.value)
-}
-const toggleSyncMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
 }
 const openStateFileSelection = () => {
   stateFileInput.value.click()
@@ -100,53 +97,57 @@ const uploadState = e => {
 </script>
 
 <template>
-  <div class="sync">
-    <button class="sync-button" title="Synchronization" @click="toggleSyncMenu">
-      <img :class="{ spin: isSynchronizing }" :src="syncIcon" />
-      <div :class="{ 'sync-status': true, running: isRunning }" />
-    </button>
-    <div v-if="isMenuOpen" class="sync-menu">
-      <div class="sync-token-container">
-        <label for="sync-token">JsonBin token</label>
-        <input id="sync-token" type="password" :value="token" @input="updateToken" />
+  <MenuItem title="Synchronization" :icon="syncIcon">
+    <template #menuButtonContent>
+      <div :class="{ 'sync-status': true, running: isRunning, blink: isSynchronizing }" />
+    </template>
+    <div class="sync">
+      <div class="sync-menu">
+        <div class="sync-token-container">
+          <label for="sync-token">JsonBin token</label>
+          <input id="sync-token" type="password" :value="token" @input="updateToken" />
+        </div>
+        <button
+          title="Autosynchronization to remote storage"
+          :disabled="isStarting"
+          @click="isRunning ? stop() : start()"
+        >
+          {{ isRunning ? 'Stop auto-backup' : 'Start auto-backup' }}
+        </button>
+        <button title="Fetch backups from remote storage" @click.prevent="refreshBackups">
+          Refresh backups
+        </button>
+        <button title="Download current Campaigner state to disk" @click.prevent="downloadState()">
+          Save to disk
+        </button>
+        <button title="Load Campaigner state from disk" @click.prevent="openStateFileSelection()">
+          Load from disk
+        </button>
+        <ol class="sync-backups-list">
+          <li v-for="backup in backups.slice(undefined, 10)" :key="backup.id" class="sync-backup">
+            <strong class="sync-backup-name">
+              {{ backup.createdAt.toLocaleDateString(navigator.language) }}
+              {{
+                backup.createdAt.toLocaleTimeString(navigator.language, {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })
+              }}
+            </strong>
+            <button title="Restore backup" @click.prevent="restoreBackup(backup)">Restore</button>
+          </li>
+        </ol>
+        <input
+          ref="stateFileInput"
+          accept="application/json"
+          type="file"
+          name="state-file"
+          style="display: none"
+          @change="uploadState"
+        />
       </div>
-      <button
-        title="Autosynchronization to remote storage"
-        :disabled="isStarting"
-        @click="isRunning ? stop() : start()"
-      >
-        {{ isRunning ? 'Stop auto-backup' : 'Start auto-backup' }}
-      </button>
-      <button title="Fetch backups from remote storage" @click.prevent="refreshBackups">
-        Refresh backups
-      </button>
-      <button title="Download current Campaigner state to disk" @click.prevent="downloadState()">
-        Save to disk
-      </button>
-      <button title="Load Campaigner state from disk" @click.prevent="openStateFileSelection()">
-        Load from disk
-      </button>
-      <ol class="sync-backups-list">
-        <li v-for="backup in backups.slice(undefined, 10)" :key="backup.id" class="sync-backup">
-          <strong class="sync-backup-name">
-            {{ backup.createdAt.toLocaleDateString(navigator.language) }}
-            {{
-              backup.createdAt.toLocaleTimeString(navigator.language, { hour: '2-digit', minute: '2-digit' })
-            }}
-          </strong>
-          <button title="Restore backup" @click.prevent="restoreBackup(backup)">Restore</button>
-        </li>
-      </ol>
-      <input
-        ref="stateFileInput"
-        accept="application/json"
-        type="file"
-        name="state-file"
-        style="display: none"
-        @change="uploadState"
-      />
     </div>
-  </div>
+  </MenuItem>
 </template>
 
 <style scoped>
@@ -154,7 +155,6 @@ const uploadState = e => {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
-  margin-top: 0.5rem;
 }
 .sync-button {
   display: flex;
@@ -199,19 +199,13 @@ const uploadState = e => {
   margin: 0 1rem;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@keyframes blink {
+  50% {
+    visibility: hidden;
   }
 }
 
-.spin {
-  animation-name: spin;
-  animation-duration: 3000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.blink {
+  animation: blink 0.3s step-start 0s infinite;
 }
 </style>

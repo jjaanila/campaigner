@@ -1,7 +1,7 @@
 <template>
   <div :id="commentId" class="comment">
-    <span class="comment-title">{{ title }}</span>
-    <span class="comment-body"><slot /></span>
+    <span class="comment-title" tabindex="0">{{ title }}</span>
+    <span class="comment-body" tabindex="0"><slot /></span>
   </div>
 </template>
 

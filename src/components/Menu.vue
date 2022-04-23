@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useStore } from 'vuex'
 import Synchronization from './Synchronization.vue'
 import Notebook from './Notebook.vue'
+import Settings from './Settings.vue'
 import IconButton from './IconButton.vue'
 import crossedSwordsSvg from '../img/crossed-swords.svg'
 
@@ -21,24 +22,25 @@ const setIsCombatOverlayOpen = value => {
     <Synchronization />
     <Notebook />
     <IconButton
-      v-if="isInCombat"
+      :disabled="!isInCombat"
       :icon-src="crossedSwordsSvg"
       size="large"
       title="Combat"
       class="combat-overlay-open-button"
       @click="setIsCombatOverlayOpen(!isCombatOverlayOpen)"
     />
+    <Settings />
   </nav>
 </template>
 
 <style scoped>
 .menu {
   position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translatey(-50%);
+  left: 50%;
+  top: 0;
+  transform: translatex(-50%);
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   align-items: flex-end;
 }
 </style>

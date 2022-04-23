@@ -280,7 +280,7 @@
     }
   },
   "type": "object",
-  "required": ["title", "author", "authorUrl", "publishDate", "entry", "monsters", "conditions"],
+  "required": ["title", "author", "authorUrl", "publishDate", "language", "entry", "monsters", "conditions"],
   "properties": {
     "title": {
       "type": "string"
@@ -295,6 +295,10 @@
     "publishDate": {
       "type": "string",
       "format": "date"
+    },
+    "language": {
+      "type": "string",
+      "description": "The language of the campaign as ISO 639-1 code"
     },
     "entry": {
       "type": "string"

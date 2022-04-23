@@ -1,5 +1,5 @@
 <template>
-  <img class="monster-divider" :src="monsterLine" />
+  <img class="monster-divider" :src="monsterLine" alt="" />
 </template>
 
 <script>
