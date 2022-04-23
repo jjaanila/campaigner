@@ -22,7 +22,7 @@ const setIsCombatOverlayOpen = value => {
     <Synchronization />
     <Notebook />
     <IconButton
-      v-if="isInCombat"
+      :disabled="!isInCombat"
       :icon-src="crossedSwordsSvg"
       size="large"
       title="Combat"

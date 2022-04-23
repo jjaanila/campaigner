@@ -1,5 +1,5 @@
 <template>
-  <nav class="toc" aria-label="Table of contents" @click="toggleToC()">
+  <nav class="toc" aria-label="Table of contents" @click.stop="toggleToC()">
     <span tabindex="0">Table of Contents</span>
     <div v-if="isToCOpen">
       <input
@@ -9,7 +9,7 @@
         name="show-toc-always"
         @click.stop
       />
-      <label for="show-toc-always">Keep open</label>
+      <label class="show-toc-always-label" for="show-toc-always">Keep open</label>
     </div>
     <ol v-if="isToCOpen">
       <li v-for="part in doc.parts" :key="part.name">
@@ -190,6 +190,9 @@ export default {
 .toc #show-toc-always {
   text-align: left;
   margin-top: 1rem;
+}
+.show-toc-always-label {
+  margin-left: 0.25rem;
 }
 .toc-section {
   font-size: 0.75rem;
