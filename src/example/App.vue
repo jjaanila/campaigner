@@ -86,7 +86,7 @@
       <section-title name="captioned-figure" />
       <captioned-figure :path="paper" caption="Example figure" width="30rem" />
       <part-title name="Resources" />
-      <section-title name="Monsters" />
+      <section-title heading-tag="h3" name="Monsters" />
       <monster v-for="monster in monsters" v-bind="monster" :key="monster.name" />
     </campaign>
   </div>

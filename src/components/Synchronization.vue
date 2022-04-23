@@ -102,7 +102,7 @@ const uploadState = e => {
 <template>
   <div class="sync">
     <button class="sync-button" title="Synchronization" @click="toggleSyncMenu">
-      <img :class="{ spin: isSynchronizing }" :src="syncIcon" />
+      <img :class="{ spin: isSynchronizing }" :src="syncIcon" alt="" />
       <div :class="{ 'sync-status': true, running: isRunning }" />
     </button>
     <div v-if="isMenuOpen" class="sync-menu">

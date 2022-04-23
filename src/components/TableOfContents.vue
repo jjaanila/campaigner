@@ -1,5 +1,5 @@
 <template>
-  <nav class="toc" @click="toggleToC()">
+  <nav class="toc" aria-label="Table of contents" @click="toggleToC()">
     <span tabindex="0">Table of Contents</span>
     <div v-if="isToCOpen">
       <input

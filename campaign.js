@@ -3,6 +3,7 @@ module.exports = Object.freeze({
   author: 'Janne Jaanila',
   authorUrl: 'https://github.com/jjaanila',
   publishDate: '2022-02-13',
+  language: 'en',
   entry: './src/example/index.js',
   monsters: [
     {
