@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import getUIModule from './ui.store'
+import Dice from '../Dice'
 
 describe('ui.store', () => {
   describe('initialization', () => {
@@ -31,6 +32,22 @@ describe('ui.store', () => {
     })
 
     it('should initialize using localStorage', () => {
+      global.localStorage = {
+        getItem: jest.fn().mockImplementation(() =>
+          JSON.stringify({
+            isToCOpen: true,
+            showToCAlways: true,
+            isCombatOverlayOpen: false,
+            hideToC: false,
+            hideParty: false,
+            hideDice: false,
+            dice: {
+              throws: 1,
+              history: [{ id: '123', result: 13, dice: { throws: 1, sides: 20, constant: 0 } }],
+            },
+          })
+        ),
+      }
       const store = createStore({
         modules: {
           ui: getUIModule(),
@@ -45,7 +62,7 @@ describe('ui.store', () => {
         hideDice: false,
         dice: {
           throws: 1,
-          history: [],
+          history: [{ id: '123', result: 13, dice: new Dice(1, 20, 0) }],
         },
       })
     })
