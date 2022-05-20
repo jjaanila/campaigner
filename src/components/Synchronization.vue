@@ -18,7 +18,8 @@ const config = computed(() => {
     },
     manual: true,
     rotationIntervalMs: 15 * 60 * 1000,
-    syncIntervalMs: 60 * 1000,
+    syncIntervalMs: 0,
+    syncDebounceMs: 5 * 1000,
     store,
   }
 })
