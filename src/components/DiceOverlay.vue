@@ -6,8 +6,9 @@
       :style="{
         background: `url(${backgroundImage})`,
       }"
+      @click="toggleHistory()"
     >
-      <span v-for="record in history" :key="record.id" class="dice-record">
+      <span v-for="record in shownHistory" :key="record.id" class="dice-record">
         <span class="dice-record-result">{{ record.result }}</span>
         <span class="dice-record-dice">({{ record.dice.toString(false) }})</span>
         <span v-if="record.description" class="dice-record-description">
@@ -39,16 +40,22 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: 'DiceOverlay',
   data() {
-    return { backgroundImage: require('../img/paper.jpg') }
+    return { backgroundImage: require('../img/paper.jpg'), isHistoryHidden: true }
   },
   computed: {
     ...mapState({
       history: state => state.ui.dice.history,
       throws: state => state.ui.dice.throws,
     }),
+    shownHistory() {
+      return this.isHistoryHidden ? this.history.slice(0, 1) : this.history.slice(0, 10)
+    },
   },
   methods: {
     ...mapActions('ui', ['throwDice', 'setThrows']),
+    toggleHistory() {
+      this.isHistoryHidden = !this.isHistoryHidden
+    },
   },
 }
 </script>
@@ -73,11 +80,13 @@ export default {
   overflow-y: auto;
   bottom: 2.5rem;
   left: 0.5rem;
-  max-height: 15rem;
   padding: 1rem;
   border-radius: 10px;
   border: 1px solid #c9ad6a;
   box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+}
+.dice-history:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .dice-record {
   padding: 0 0 0 0.25rem;

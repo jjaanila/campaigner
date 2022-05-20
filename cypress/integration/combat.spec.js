@@ -79,6 +79,7 @@ describe('Combat', () => {
     cy.get('.combat-unit-details .monster-action > .hit-mask').click()
     cy.get('.dice-overlay .dice-record:nth-child(1)').contains('To hit with Club')
     cy.get('.combat-unit-details .monster-action > .damage-mask').click()
+    cy.get('.dice-history').click()
     cy.get('.dice-overlay .dice-record:nth-child(1)').contains('Club damage')
     cy.get('.dice-overlay .dice-record:nth-child(2)').contains('To hit with Club')
   })

@@ -55,7 +55,7 @@ import { mapState, mapActions } from 'vuex'
 import NotebookIcon from '../img/notebook.svg'
 import MenuItem from './MenuItem.vue'
 import { getUniqueId } from '../utils'
-import sortBy from 'lodash/sortBy'
+import orderBy from 'lodash/orderBy'
 import Fuse from 'fuse.js'
 
 const ITEMS_PER_PAGE = 10
@@ -101,7 +101,7 @@ export default {
       if (this.search) {
         return this.fuse.search(this.search).map(result => result.item)
       }
-      return sortBy(Object.values(this.notebook), 'created_at', 'desc')
+      return orderBy(Object.values(this.notebook), 'createdAt', 'desc')
     },
   },
   mounted() {

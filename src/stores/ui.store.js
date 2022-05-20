@@ -27,6 +27,10 @@ const getEmptyState = () => ({
 const getInitialState = () => {
   try {
     const state = JSON.parse(localStorage.getItem(LOCAL_STORAGE_STATE_KEY))
+    state.dice.history = state.dice.history.map(record => ({
+      ...record,
+      dice: Dice.deserialize(record.dice),
+    }))
     return state ? migrateState(state) : getEmptyState()
   } catch (e) {
     return getEmptyState()
