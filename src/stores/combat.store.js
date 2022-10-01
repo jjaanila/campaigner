@@ -173,11 +173,7 @@ const freeUnitColors = (unitColors, colorsTobeFreed) => {
 }
 
 const getMonsterByName = (rootState, monsterName) => {
-  const monster = rootState.campaign.state.monsters.find(monster => monster.name === monsterName)
-  if (!monster) {
-    throw new Error(`Did not find monster ${monsterName}!`)
-  }
-  return monster
+  return rootState.campaign.state.monsters.find(monster => monster.name === monsterName)
 }
 
 const createHorde = (rootState, units, unitColors) => {
