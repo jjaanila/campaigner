@@ -37,7 +37,7 @@
           <button @click="unitRows.splice(i, 1)">-</button>
         </div>
         <select v-model="row.creatureName">
-          <option v-for="creature in addableCreatures" :key="`${creature.name}${creature.id}`">
+          <option v-for="creature in creatures" :key="`${creature.name}${creature.id}`">
             {{ creature.name }}
           </option>
         </select>
@@ -79,9 +79,6 @@ export default {
     ...mapGetters('combat', ['selectedUnits', 'canConvertSelectedToHorde']),
     selectedMonsters() {
       return this.selectedUnits.filter(unit => unit.selected && unit.unitType !== 'character')
-    },
-    addableCreatures() {
-      return this.creatures.filter(monster => !this.units.some(unit => unit.id === monster.id))
     },
     creatures() {
       return sortBy(this.monsters, 'name')

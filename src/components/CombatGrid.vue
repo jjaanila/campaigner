@@ -44,6 +44,7 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 import CombatAlly from './CombatAlly.vue'
 import CombatEnemy from './CombatEnemy.vue'
 import CombatCharacter from './CombatCharacter.vue'
+import { GRID_WIDTH, GRID_HEIGHT } from '../stores/combat.store'
 
 export default {
   name: 'CombatGrid',
@@ -54,11 +55,22 @@ export default {
   },
   computed: {
     ...mapState({
-      grid: state => state.combat.grid,
+      units: state => state.combat.units,
     }),
     ...mapGetters({
       getUnitById: 'combat/getUnitById',
     }),
+    grid() {
+      const grid = Array(GRID_WIDTH)
+        .fill(null)
+        .map(_y =>
+          Array(GRID_HEIGHT)
+            .fill(null)
+            .map(_x => ({ units: [] }))
+        )
+      this.units.forEach(unit => grid[unit.position.y][unit.position.x].units.push(unit))
+      return grid
+    },
   },
   methods: {
     ...mapActions('combat', ['moveUnit']),

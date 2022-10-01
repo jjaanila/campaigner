@@ -27,7 +27,7 @@
     <button v-if="isHorde(unit)" class="unit-split-horde-button" @click="splitHorde(unit.id)">
       Split Horde
     </button>
-    <Monster v-show="isDetailHovered" class="unit-monster" v-bind="unit.monster" />
+    <Monster v-show="isDetailHovered" class="unit-monster" v-bind="monster" />
   </div>
 </template>
 
@@ -58,7 +58,11 @@ export default {
   computed: {
     ...mapState({
       unitIdInTurn: state => state.combat.unitIdInTurn,
+      monsters: state => state.campaign.monsters,
     }),
+    monster() {
+      return this.monsters.find(monster => monster.name === this.unit.monsterName)
+    },
   },
   methods: {
     ...mapActions('combat', ['updateUnit', 'splitHorde']),

@@ -2,4 +2,5 @@
   "diffEditor.wordWrap": "on",
   "vetur.format.enable": false,
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 }
