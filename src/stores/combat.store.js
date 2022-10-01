@@ -173,7 +173,7 @@ const freeUnitColors = (unitColors, colorsTobeFreed) => {
 }
 
 const getMonsterByName = (rootState, monsterName) => {
-  return rootState.campaign.state.monsters.find(monster => monster.name === monsterName)
+  return rootState.campaign.monsters.find(monster => monster.name === monsterName)
 }
 
 const createHorde = (rootState, units, unitColors) => {
@@ -310,9 +310,9 @@ export default () => ({
       commit('clear')
       const unitColors = [...defaultUnitColors]
       const enemyUnits = enemies.reduce((units, enemy) => {
-        const monster = getMonsterByName(rootState, enemy.monsterName)
+        const monster = getMonsterByName(rootState, enemy.name)
         if (!monster) {
-          throw new Error(`Monster ${enemy.monsterName} not found`)
+          throw new Error(`Monster ${enemy.name} not found`)
         }
         return units.concat(
           Array(enemy.quantity)
@@ -321,7 +321,7 @@ export default () => ({
         )
       }, [])
       const allyUnits = allies.reduce((units, ally) => {
-        const monster = getMonsterByName(rootState, ally.monsterName)
+        const monster = getMonsterByName(rootState, ally.name)
         if (!monster) {
           throw new Error(`Monster ${ally.name} not found`)
         }

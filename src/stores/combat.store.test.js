@@ -133,9 +133,7 @@ describe('store.combat', () => {
         hitPoints: 3,
       }
       campaign = {
-        state: {
-          monsters: [monster1, monster2],
-        },
+        monsters: [monster1, monster2],
       }
     })
 
