@@ -27,13 +27,13 @@ describe('store.combat', () => {
     enemy1 = {
       id: 'enemy1',
       name: 'Monster 1',
-      monster: monster1,
+      monsterName: 'Monster 1',
       unitType: 'enemy',
     }
     ally1 = {
       id: 'ally1',
       name: 'Monster 2',
-      monster: monster2,
+      monsterName: 'Monster 2',
       unitType: 'ally',
     }
     character1 = { id: 'character1', name: 'Ismo', unitType: 'character' }
@@ -133,7 +133,9 @@ describe('store.combat', () => {
         hitPoints: 3,
       }
       campaign = {
-        monsters: [monster1, monster2],
+        state: {
+          monsters: [monster1, monster2],
+        },
       }
     })
 
@@ -190,23 +192,7 @@ describe('store.combat', () => {
         updatedUnitColors[1].isUsed = true
         expect(commitMock.mock.calls).toEqual([
           ['clear'],
-          [
-            'updateUnits',
-            [
-              {
-                ...expectedUnits[0],
-                monster: undefined,
-              },
-              {
-                ...expectedUnits[1],
-                monster: monster1,
-              },
-              {
-                ...expectedUnits[2],
-                monster: monster2,
-              },
-            ],
-          ],
+          ['updateUnits', expectedUnits],
           ['setTurnOrder', []],
           ['setUnitIdInTurn', undefined],
           ['updateUnitColors', updatedUnitColors],

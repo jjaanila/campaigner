@@ -13,6 +13,12 @@ const defaultUnitColors = distinguishableColors.map(color => ({ color, isUsed: f
 const migrateState = state => {
   delete state.grid
   state.units ??= []
+  state.units.forEach(unit => {
+    if (unit.monster) {
+      unit.monsterName = unit.monster.name
+      delete unit.monster
+    }
+  })
   state.turnOrder ??= []
   state.unitColors ??= [...defaultUnitColors]
   return state
@@ -130,7 +136,7 @@ export const isHorde = unit => {
 }
 
 const getHordeName = members =>
-  `Horde of ${members.filter(member => member.hitPoints > 0).length} ${members[0].monster.name}`
+  `Horde of ${members.filter(member => member.hitPoints > 0).length} ${members[0].monsterName}`
 
 const splitHorde = horde => {
   let remainingHitpoints = horde.hitPoints
@@ -166,13 +172,22 @@ const freeUnitColors = (unitColors, colorsTobeFreed) => {
   return unitColors
 }
 
-const createHorde = (units, unitColors) => {
+const getMonsterByName = (rootState, monsterName) => {
+  const monster = rootState.campaign.state.monsters.find(monster => monster.name === monsterName)
+  if (!monster) {
+    throw new Error(`Did not find monster ${monsterName}!`)
+  }
+  return monster
+}
+
+const createHorde = (rootState, units, unitColors) => {
   if (
     units.length < 1 ||
-    !units.every(unit => unit.monster.name === units[0].monster.name && unit.unitType === units[0].unitType)
+    !units.every(unit => unit.monsterName === units[0].monsterName && unit.unitType === units[0].unitType)
   ) {
-    throw new Error('Horde must be made of multiple units of same unitType and name')
+    throw new Error('Horde must be made of multiple units of same monster type and name')
   }
+  const monster = getMonsterByName(rootState, units[0].monsterName)
   const members = units.reduce((memo, unit) => memo.concat(isHorde(unit) ? splitHorde(unit) : [unit]), [])
   const hitPoints = units.reduce((totalHp, unit) => totalHp + unit.hitPoints, 0)
   const maxHitPoints = units.reduce((totalMaxHp, unit) => totalMaxHp + unit.maxHitPoints, 0)
@@ -182,7 +197,7 @@ const createHorde = (units, unitColors) => {
   )
   return {
     name: getHordeName(members),
-    monster: units[0].monster,
+    monsterName: monster.name,
     id: getUniqueId(),
     selected: true,
     maxHitPoints,
@@ -201,7 +216,7 @@ const createUnitFromCreature = (monsterOrCharacter, unitType, unitColors) => {
       : monsterOrCharacter.hitPoints
   return {
     name: monsterOrCharacter.name,
-    monster: ['enemy', 'ally'].includes(unitType) ? monsterOrCharacter : undefined,
+    monsterName: ['enemy', 'ally'].includes(unitType) ? monsterOrCharacter.name : undefined,
     id: ['enemy', 'ally'].includes(unitType) ? getUniqueId() : monsterOrCharacter.id,
     selected: false,
     hovered: false,
@@ -234,7 +249,7 @@ export default () => ({
         getters.selectedUnits.length > 1 &&
         getters.selectedUnits.every(
           unit =>
-            unit.monster?.name === getters.selectedUnits[0].monster?.name &&
+            unit.monsterName === getters.selectedUnits[0].monsterName &&
             unit.unitType === getters.selectedUnits[0].unitType &&
             unit.unitType !== 'character'
         )
@@ -299,9 +314,9 @@ export default () => ({
       commit('clear')
       const unitColors = [...defaultUnitColors]
       const enemyUnits = enemies.reduce((units, enemy) => {
-        const monster = rootState.campaign.monsters.find(monster => monster.name === enemy.name)
+        const monster = getMonsterByName(rootState, enemy.monsterName)
         if (!monster) {
-          throw new Error(`Monster ${enemy.name} not found`)
+          throw new Error(`Monster ${enemy.monsterName} not found`)
         }
         return units.concat(
           Array(enemy.quantity)
@@ -310,7 +325,7 @@ export default () => ({
         )
       }, [])
       const allyUnits = allies.reduce((units, ally) => {
-        const monster = rootState.campaign.monsters.find(monster => monster.name === ally.name)
+        const monster = getMonsterByName(rootState, ally.monsterName)
         if (!monster) {
           throw new Error(`Monster ${ally.name} not found`)
         }
@@ -332,7 +347,7 @@ export default () => ({
     setIsInCombat({ commit }, value) {
       commit('setIsInCombat', value)
     },
-    moveUnit({ commit, state }, { unit, oldPosition, newPosition }) {
+    moveUnit({ commit, state, rootState }, { unit, oldPosition, newPosition }) {
       if (
         newPosition.x < 0 ||
         newPosition.x >= GRID_WIDTH ||
@@ -354,7 +369,12 @@ export default () => ({
       if (unitsInNewCell.filter(u => u.id !== unit.id).length) {
         const hasAtLeastTwoNonSwarmUnits =
           [...unitsInNewCell, unit].filter(
-            unit => !(unit.monster?.passives?.some(passive => passive.name === 'Swarm') ?? false)
+            unit =>
+              !(
+                getMonsterByName(rootState, unit.monsterName)?.passives?.some(
+                  passive => passive.name === 'Swarm'
+                ) ?? false
+              )
           ).length > 1
         if (hasAtLeastTwoNonSwarmUnits) {
           return
@@ -368,7 +388,7 @@ export default () => ({
     setUnitIdInTurn({ commit }, unitId) {
       commit('setUnitIdInTurn', unitId)
     },
-    addUnits({ commit, state }, unitBatches) {
+    addUnits({ commit, state, rootState }, unitBatches) {
       let newUnits = []
       const unitColors = [...state.unitColors]
       for (const unitBatch of unitBatches) {
@@ -376,7 +396,7 @@ export default () => ({
           .fill(null)
           .map(_i => createUnitFromCreature(unitBatch.creature, unitBatch.unitType, unitColors))
         if (unitBatch.asHorde) {
-          unitBatchUnits = [createHorde(unitBatchUnits, unitColors)]
+          unitBatchUnits = [createHorde(rootState, unitBatchUnits, unitColors)]
         }
         newUnits = newUnits.concat(unitBatchUnits)
       }
