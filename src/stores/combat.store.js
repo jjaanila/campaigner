@@ -4,24 +4,15 @@ import { distinguishableColors } from '../tables'
 
 export const LOCAL_STORAGE_STATE_KEY = 'campaigner-combat'
 
-const GRID_WIDTH = 30
-const GRID_HEIGHT = 30
+export const GRID_WIDTH = 30
+export const GRID_HEIGHT = 30
 const GRID_LAST_X = GRID_WIDTH - 1
 const GRID_LAST_Y = GRID_HEIGHT - 1
-
-const getEmptyGrid = () =>
-  Array(GRID_HEIGHT)
-    .fill(null)
-    .map(_y =>
-      Array(GRID_WIDTH)
-        .fill(null)
-        .map(_x => ({ units: [] }))
-    )
-
 const defaultUnitColors = distinguishableColors.map(color => ({ color, isUsed: false }))
 
 const migrateState = state => {
-  state.grid ??= getEmptyGrid()
+  delete state.grid
+  state.units ??= []
   state.turnOrder ??= []
   state.unitColors ??= [...defaultUnitColors]
   return state
@@ -30,7 +21,6 @@ const migrateState = state => {
 const getEmptyState = () => ({
   units: [],
   isInCombat: false,
-  grid: getEmptyGrid(),
   turnOrder: [],
   unitIdInTurn: undefined,
   unitColors: [...defaultUnitColors],
@@ -45,13 +35,17 @@ const getInitialState = () => {
   }
 }
 
-const getClosestUnoccupiedCell = (grid, x, y) => {
+const getUnitsInCell = (units, x, y) => {
+  return units.filter(unit => unit.position && unit.position.x === x && unit.position.y === y)
+}
+
+const getClosestUnoccupiedCell = (units, x, y) => {
   let closestX = x
   let closestY = y
   let closestDistance = Infinity
   for (let i = 0; i < GRID_WIDTH; i++) {
     for (let j = 0; j < GRID_HEIGHT; j++) {
-      if (grid[j][i].units.length === 0) {
+      if (getUnitsInCell(units, i, j).length === 0) {
         const distance = Math.abs(x - i) + Math.abs(y - j)
         if (distance < closestDistance) {
           closestX = i
@@ -68,64 +62,61 @@ const getRandomInteger = (min, max) => {
   return Math.round(Math.random() * (max - min) + min)
 }
 
-const removeUnitFromGrid = (grid, unit) => {
-  const unitIndex = grid[unit.position.y][unit.position.x].units.findIndex(u => u.id === unit.id)
-  grid[unit.position.y][unit.position.x].units.splice(unitIndex, 1)
+const unpositionUnit = unit => {
   unit.position = undefined
 }
 
-const addUnitToGrid = (grid, unit, position) => {
-  grid[position.y][position.x].units.push(unit)
+const positionUnit = (unit, position) => {
   unit.position = position
 }
 
-const addEnemyToGrid = (grid, enemy) => {
+const positionEnemy = (units, enemy) => {
   let x = getRandomInteger(0, GRID_LAST_X)
   let y = getRandomInteger(0, Math.ceil(GRID_LAST_Y / 2))
 
-  if (grid[y][x].units.length) {
-    const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+  if (getUnitsInCell(units, x, y).length) {
+    const { closestX, closestY } = getClosestUnoccupiedCell(units, x, y)
     x = closestX
     y = closestY
   }
-  addUnitToGrid(grid, enemy, { x, y })
+  positionUnit(enemy, { x, y })
 }
 
-const addCharacterToGrid = (grid, character) => {
+const positionCharacter = (units, character) => {
   let x = getRandomInteger(0, GRID_LAST_X)
   let y = GRID_LAST_Y - 5
 
-  if (grid[y][x].units.length) {
-    const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+  if (getUnitsInCell(units, x, y).length) {
+    const { closestX, closestY } = getClosestUnoccupiedCell(units, x, y)
     x = closestX
     y = closestY
   }
-  addUnitToGrid(grid, character, { x, y })
+  positionUnit(character, { x, y })
 }
 
-const addAllyToGrid = (grid, ally) => {
+const positionAlly = (units, ally) => {
   let x = getRandomInteger(0, GRID_LAST_X)
   let y = GRID_LAST_Y - 5
 
-  if (grid[y][x].units.length) {
-    const { closestX, closestY } = getClosestUnoccupiedCell(grid, x, y)
+  if (getUnitsInCell(units, x, y).length) {
+    const { closestX, closestY } = getClosestUnoccupiedCell(units, x, y)
     x = closestX
     y = closestY
   }
-  addUnitToGrid(grid, ally, { x, y })
+  positionUnit(ally, { x, y })
 }
 
-const addUnitsToGrid = (grid, units) => {
-  for (const unit of units) {
+const positionUnits = (units, addedUnits) => {
+  for (const unit of addedUnits) {
     switch (unit.unitType) {
       case 'character':
-        addCharacterToGrid(grid, unit)
+        positionCharacter(units, unit)
         continue
       case 'enemy':
-        addEnemyToGrid(grid, unit)
+        positionEnemy(units, unit)
         continue
       case 'ally':
-        addAllyToGrid(grid, unit)
+        positionAlly(units, unit)
         continue
       default:
         console.info(unit)
@@ -222,6 +213,8 @@ const createUnitFromCreature = (monsterOrCharacter, unitType, unitColors) => {
   }
 }
 
+const getUnitById = (state, id) => state.units.find(unit => unit.id === id)
+
 const getNextInTurn = (unitIdInTurn, turnOrder) => {
   const inTurnIndex = turnOrder.findIndex(unit => unit.id === unitIdInTurn)
   return turnOrder[(inTurnIndex + 1) % turnOrder.length]
@@ -231,7 +224,7 @@ export default () => ({
   namespaced: true,
   state: getInitialState(),
   getters: {
-    getUnitById: state => id => state.units.find(unit => unit.id === id),
+    getUnitById: state => id => getUnitById(state, id),
     enemies: state => state.units.filter(unit => unit.unitType === 'enemy'),
     allies: state => state.units.filter(unit => unit.unitType === 'ally'),
     characters: state => state.units.filter(unit => unit.unitType === 'character'),
@@ -252,9 +245,6 @@ export default () => ({
     setIsInCombat(state, value) {
       state.isInCombat = value
     },
-    setGrid(state, grid) {
-      state.grid = grid
-    },
     setTurnOrder(state, turnOrder) {
       state.turnOrder = turnOrder
     },
@@ -264,9 +254,9 @@ export default () => ({
     clear(state) {
       Object.assign(state, getEmptyState())
     },
-    updateUnits(state, units) {
-      const deletedUnits = state.units.filter(unit => !units.find(u => u.id === unit.id))
-      const addedUnits = units.filter(unit => !state.units.find(u => u.id === unit.id))
+    updateUnits(state, updatedUnits) {
+      const deletedUnits = state.units.filter(unit => !updatedUnits.find(u => u.id === unit.id))
+      const addedUnits = updatedUnits.filter(unit => !state.units.find(u => u.id === unit.id))
       const turnOrderWithAdded = [...state.turnOrder, ...addedUnits.map(unit => unit.id)]
       const newTurnOrder = turnOrderWithAdded.filter(unitId => !deletedUnits.some(unit => unit.id === unitId))
       let nextInTurn
@@ -276,19 +266,15 @@ export default () => ({
           nextInTurn = getNextInTurn(state.unitIdInTurn, turnOrderWithAdded)
         }
       }
-      deletedUnits.forEach(unit => removeUnitFromGrid(state.grid, unit))
-      addUnitsToGrid(state.grid, addedUnits)
+      deletedUnits.forEach(unit => unpositionUnit(unit))
       state.turnOrder = newTurnOrder
-      state.units = units
+      state.units = updatedUnits
+      positionUnits(state.units, addedUnits)
       if (nextInTurn) {
         state.unitIdInTurn = nextInTurn
       }
     },
-    moveUnit(state, { unit, oldPosition, newPosition }) {
-      state.grid[oldPosition.y][oldPosition.x].units = state.grid[oldPosition.y][oldPosition.x].units.filter(
-        oldPosUnit => oldPosUnit.id !== unit.id
-      )
-      state.grid[newPosition.y][newPosition.x].units.push(unit)
+    moveUnit(_state, { unit, newPosition }) {
       unit.position = { x: newPosition.x, y: newPosition.y }
     },
     updateUnit(state, unit) {
@@ -334,8 +320,6 @@ export default () => ({
             .map(_i => createUnitFromCreature(monster, 'ally', unitColors))
         )
       }, [])
-      const grid = getEmptyGrid()
-      commit('setGrid', grid)
       const characterUnits = rootGetters['party/enabledCharacters'].map(character =>
         createUnitFromCreature(character, 'character', unitColors)
       )
@@ -351,27 +335,32 @@ export default () => ({
     moveUnit({ commit, state }, { unit, oldPosition, newPosition }) {
       if (
         newPosition.x < 0 ||
-        newPosition.x >= state.grid[0].length ||
+        newPosition.x >= GRID_WIDTH ||
         newPosition.y < 0 ||
-        newPosition.y >= state.grid.length
+        newPosition.y >= GRID_HEIGHT
       ) {
         throw new Error(`Invalid position ${newPosition.x}, ${newPosition.y}`)
       }
-      if (!state.grid[oldPosition.y][oldPosition.x].units.some(oldPosUnit => oldPosUnit.id === unit.id)) {
+      if (
+        !getUnitsInCell(state.units, oldPosition.x, oldPosition.y).some(
+          oldPosUnit => oldPosUnit.id === unit.id
+        )
+      ) {
         throw new Error(
           `Tried moving unit ${unit.id} from ${oldPosition.x}, ${oldPosition.y} to ${newPosition.x}, ${newPosition.y} but unit was not found`
         )
       }
-      if (state.grid[newPosition.y][newPosition.x].units.filter(u => u.id !== unit.id).length) {
+      const unitsInNewCell = getUnitsInCell(state.units, newPosition.x, newPosition.y)
+      if (unitsInNewCell.filter(u => u.id !== unit.id).length) {
         const hasAtLeastTwoNonSwarmUnits =
-          [...state.grid[newPosition.y][newPosition.x].units, unit].filter(
+          [...unitsInNewCell, unit].filter(
             unit => !(unit.monster?.passives?.some(passive => passive.name === 'Swarm') ?? false)
           ).length > 1
         if (hasAtLeastTwoNonSwarmUnits) {
           return
         }
       }
-      commit('moveUnit', { unit, oldPosition, newPosition })
+      commit('moveUnit', { unit, newPosition })
     },
     setTurnOrder({ commit }, turnOrder) {
       commit('setTurnOrder', turnOrder)

@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import { distinguishableColors } from '../tables'
-import getCombatModule from './combat.store'
+import getCombatModule, { GRID_WIDTH, GRID_HEIGHT } from './combat.store'
 
 describe('store.combat', () => {
   let state
@@ -9,6 +9,7 @@ describe('store.combat', () => {
   let ally1
   let monster1
   let monster2
+  let character1
 
   beforeEach(() => {
     monster1 = {
@@ -24,22 +25,23 @@ describe('store.combat', () => {
       passives: [{ name: 'Swarm', description: 'Swarm description' }],
     }
     enemy1 = {
+      id: 'enemy1',
       name: 'Monster 1',
       monster: monster1,
+      unitType: 'enemy',
     }
     ally1 = {
+      id: 'ally1',
       name: 'Monster 2',
       monster: monster2,
+      unitType: 'ally',
     }
+    character1 = { id: 'character1', name: 'Ismo', unitType: 'character' }
     state = {
-      grid: [
-        [{ units: [enemy1] }],
-        [{ units: [ally1] }],
-        [{ units: [{ id: 'character1', name: 'Ismo', unitType: 'character' }] }],
-      ],
       turnOrder: ['ally1', 'character1', 'enemy1'],
       unitIdInTurn: 'character1',
       unitColors: distinguishableColors.map(color => ({ color, isUsed: false })),
+      units: [],
     }
     global.localStorage = {
       getItem: jest.fn().mockImplementation(() => JSON.stringify(state)),
@@ -62,19 +64,19 @@ describe('store.combat', () => {
 
     it('should migrate state', () => {
       global.localStorage = {
-        getItem: jest.fn().mockImplementation(() => JSON.stringify({})),
+        getItem: jest.fn().mockImplementation(() =>
+          JSON.stringify({
+            grid: [],
+          })
+        ),
       }
       const store = createStore({
         modules: {
           combat: getCombatModule(),
         },
       })
-      expect(store.state.combat.grid).toEqual(expect.any(Array))
-      expect(store.state.combat.grid).toHaveLength(30)
-      store.state.combat.grid.forEach(y => {
-        expect(y).toEqual(expect.any(Array))
-        expect(y).toHaveLength(30)
-      })
+      expect(store.state.combat.grid).toEqual(undefined)
+      expect(store.state.combat.units).toEqual([])
       expect(store.state.combat.turnOrder).toEqual([])
     })
 
@@ -90,11 +92,33 @@ describe('store.combat', () => {
       expect(store.state.combat).toEqual({
         units: [],
         isInCombat: false,
-        grid: expect.any(Array),
         turnOrder: [],
         unitIdInTurn: undefined,
         unitColors: [...state.unitColors],
       })
+    })
+  })
+
+  describe('updateUnits', () => {
+    it('should position units', () => {
+      character1 = {
+        ...character1,
+        position: { x: 0, y: 0 },
+      }
+      ally1 = {
+        ...ally1,
+        position: { x: 0, y: 1 },
+      }
+      const state = {
+        units: [character1, ally1],
+        turnOrder: [],
+      }
+      getCombatModule().mutations.updateUnits(state, [enemy1, { ...character1, name: 'Jarmo' }, ally1])
+      expect(state.units).toEqual([
+        { ...enemy1, position: { x: expect.any(Number), y: expect.any(Number) } },
+        { ...character1, name: 'Jarmo' },
+        ally1,
+      ])
     })
   })
 
@@ -114,11 +138,11 @@ describe('store.combat', () => {
     })
 
     describe('initializeCombat', () => {
-      it('should place enemies and allies into grid', () => {
+      it('should call correct mutations', () => {
         getCombatModule().actions.initializeCombat(
           {
             commit: commitMock,
-            state: {},
+            state: { units: [enemy1, character1, ally1] },
             rootState: {
               campaign,
             },
@@ -166,7 +190,6 @@ describe('store.combat', () => {
         updatedUnitColors[1].isUsed = true
         expect(commitMock.mock.calls).toEqual([
           ['clear'],
-          ['setGrid', expect.any(Array)],
           [
             'updateUnits',
             [
@@ -194,17 +217,22 @@ describe('store.combat', () => {
       it.each([[{ x: 0, y: 0 }], [{ x: 0, y: 2 }], [{ x: 3, y: 3 }]])(
         'should move unit from {x: 0, y: 0} to %s',
         newPosition => {
+          enemy1.position = {
+            x: 0,
+            y: 0,
+          }
+          character1.position = {
+            x: 1,
+            y: 0,
+          }
+          ally1.position = {
+            x: 2,
+            y: 0,
+          }
           getCombatModule().actions.moveUnit(
             {
               commit: commitMock,
-              state: {
-                grid: [
-                  [{ units: [enemy1] }, { units: [character1] }, { units: [ally1] }, { units: [] }],
-                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                  [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                ],
-              },
+              state: { units: [enemy1, character1, ally1] },
               rootState: {
                 campaign,
               },
@@ -216,27 +244,31 @@ describe('store.combat', () => {
           )
           expect(commitMock).toHaveBeenCalledWith('moveUnit', {
             unit: enemy1,
-            oldPosition: { x: 0, y: 0 },
             newPosition,
           })
         }
       )
 
-      it.each([[{ x: 4, y: 4 }], [{ x: -1, y: -1 }]])(
+      it.each([[{ x: GRID_WIDTH, y: GRID_HEIGHT }], [{ x: -1, y: -1 }]])(
         'should throw when trying to move unit from {x: 0, y: 0} to %s',
         newPosition => {
+          enemy1.position = {
+            x: 0,
+            y: 0,
+          }
+          character1.position = {
+            x: 1,
+            y: 0,
+          }
+          ally1.position = {
+            x: 2,
+            y: 0,
+          }
           expect(() =>
             getCombatModule().actions.moveUnit(
               {
                 commit: commitMock,
-                state: {
-                  grid: [
-                    [{ units: [enemy1] }, { units: [character1] }, { units: [ally1] }, { units: [] }],
-                    [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                    [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                    [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                  ],
-                },
+                state: { units: [enemy1, character1, ally1] },
                 rootState: {
                   campaign,
                 },
@@ -251,17 +283,18 @@ describe('store.combat', () => {
       )
 
       it('should do nothing if trying to move into occupied cell ', () => {
+        enemy1.position = {
+          x: 0,
+          y: 0,
+        }
+        character1.position = {
+          x: 1,
+          y: 0,
+        }
         getCombatModule().actions.moveUnit(
           {
             commit: commitMock,
-            state: {
-              grid: [
-                [{ units: [enemy1] }, { units: [character1] }, { units: [] }, { units: [] }],
-                [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-                [{ units: [] }, { units: [] }, { units: [] }, { units: [] }],
-              ],
-            },
+            state: { units: [enemy1, character1] },
             rootState: {
               campaign,
             },
