@@ -5,8 +5,7 @@ Dungeons & Dragons campaign building and documentation library. Heavily inspired
 **Features**
 
 - HTML id based linking to monsters, areas, parts, chapters, sections, etc.
-- Vue 3 components that are pretty close to the style of D&D 5th ed.
-- Builds only one HTML file with everything included inline.
+- Vue 3 components that are pretty close to the style of D&D 5th edition.
 - Automatically generated table of contents.
 - [A simple example campaign](https://jjaanila.github.io/campaigner/). You can use this as a starting point for your own campaign.
 - Party tracker.
@@ -57,4 +56,5 @@ npm run validate
 ### Icons
 
 Delapouite, https://delapouite.com: backpack.svg, notebook.svg
+
 Lorc, https://lorcblog.blogspot.com/: cycle.svg, cog.svg, crossed-swords.svg
