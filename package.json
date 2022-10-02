@@ -88,7 +88,8 @@
     "http-server": "^14.1.0",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "semantic-release": "^19.0.5"
   },
   "engine": {
     "node": ">=16.0.0"
