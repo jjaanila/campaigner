@@ -32,7 +32,7 @@
     "test:cypress": "cypress run",
     "test:watch": "jest --watch",
     "start": "cross-env webpack-dev-server --mode=development --open --hot",
-    "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress && rm dist/*.js*",
+    "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress",
     "validate": "node ./scripts/validate.js",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
