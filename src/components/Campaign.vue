@@ -45,6 +45,7 @@ export default {
 
 <style>
 html {
+  position: relative;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
