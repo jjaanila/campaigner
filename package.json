@@ -60,7 +60,7 @@
     "jsonschema": "^1.4.0",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "regenerator-runtime": "^0.13.9",
     "terser-webpack-plugin": "^5.3.1",
