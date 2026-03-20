@@ -15,6 +15,7 @@
 import { mapState } from 'vuex'
 import Page from './Page.vue'
 import Overlay from './Overlay.vue'
+import backgroundImage from '../img/paper.jpg'
 export default {
   name: 'Campaign',
   components: {
@@ -23,7 +24,7 @@ export default {
   },
   data() {
     return {
-      backgroundImage: require('../img/paper.jpg'),
+      backgroundImage,
     }
   },
   computed: {

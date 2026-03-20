@@ -95,11 +95,12 @@
 <script>
 import 'normalize.css'
 import { mapState } from 'vuex'
+import paper from '../img/paper.jpg'
 
 export default {
   name: 'App',
   data() {
-    return { paper: require('../img/paper.jpg') }
+    return { paper }
   },
   computed: {
     ...mapState({
