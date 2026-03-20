@@ -6,9 +6,12 @@ describe('Combat', () => {
     cy.get('.character-name').type('Maukka')
     cy.get('button.encounter-start-button').click()
     cy.get('.combat-overlay').should('be.visible')
-    cy.get('.initiative:contains(Maukka) input').clear().type('10')
-    cy.get('.initiative:contains(Swashbuckler of Long Name Islands) input').clear().type('9')
-    cy.get('.initiative:contains(Commoner) input').clear().type('8')
+    cy.get('.initiative:contains(Maukka) input').clear()
+    cy.get('.initiative:contains(Maukka) input').type('10')
+    cy.get('.initiative:contains(Swashbuckler of Long Name Islands) input').clear()
+    cy.get('.initiative:contains(Swashbuckler of Long Name Islands) input').type('9')
+    cy.get('.initiative:contains(Commoner) input').clear()
+    cy.get('.initiative:contains(Commoner) input').type('8')
     cy.get('.combat-initialization-start-combat-button').click()
   })
   it('should open and close', () => {
@@ -51,10 +54,9 @@ describe('Combat', () => {
   })
 
   it('should move unit to new position', () => {
-    cy.get('.combat-grid .combat-character')
-      .trigger('mousedown')
-      .trigger('mousemove', { clientX: 0, clientY: -30 })
-      .trigger('mouseup')
+    cy.get('.combat-grid .combat-character').trigger('mousedown')
+    cy.get('.combat-grid .combat-character').trigger('mousemove', { clientX: 0, clientY: -30 })
+    cy.get('.combat-grid .combat-character').trigger('mouseup')
     // TODO: Should verify that the unit was actually moved to another cell
   })
 
