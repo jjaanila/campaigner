@@ -77,8 +77,8 @@ export default {
         this.type === 'melee'
           ? 'Melee Attack: '
           : this.type === 'ranged'
-          ? 'Ranged Attack: '
-          : 'Melee or Ranged Attack: '
+            ? 'Ranged Attack: '
+            : 'Melee or Ranged Attack: '
       }`
       const toHitStr = this.toHit ? `${this.toHit > 0 ? '+' : ''}${this.toHit} to hit` : ''
       const reachStr = this.reachFt ? `reach ${this.reachFt} ft.` : ''

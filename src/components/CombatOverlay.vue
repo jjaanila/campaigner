@@ -23,6 +23,7 @@ import CombatTurnOrder from './CombatTurnOrder.vue'
 import CombatUnitDetailsList from './CombatUnitDetailsList.vue'
 import CombatGrid from './CombatGrid.vue'
 import CombatInitialization from './CombatInitialization.vue'
+import backgroundImage from '../img/paper.jpg'
 export default {
   name: 'CombatOverlay',
   components: {
@@ -33,7 +34,7 @@ export default {
   },
   data() {
     return {
-      backgroundImage: require('../img/paper.jpg'),
+      backgroundImage,
     }
   },
   computed: {

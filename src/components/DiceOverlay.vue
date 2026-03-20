@@ -37,10 +37,11 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import backgroundImage from '../img/paper.jpg'
 export default {
   name: 'DiceOverlay',
   data() {
-    return { backgroundImage: require('../img/paper.jpg'), isHistoryHidden: true }
+    return { backgroundImage, isHistoryHidden: true }
   },
   computed: {
     ...mapState({
@@ -86,7 +87,9 @@ export default {
   box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
 }
 .dice-history:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .dice-record {
   padding: 0 0 0 0.25rem;

@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import components from './components'
 import { createStore } from './stores/'
-import 'regenerator-runtime/runtime'
 import ClickAway from 'vue3-click-away'
 
 export * from './components'

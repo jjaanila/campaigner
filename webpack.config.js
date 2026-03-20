@@ -3,6 +3,7 @@ const fs = require('fs')
 const DefinePlugin = require('webpack/lib/DefinePlugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
@@ -52,7 +53,10 @@ module.exports = function (env, argv) {
           test: /\.vue$/,
           loader: 'vue-loader',
         },
-        { test: /\.pug$/, loader: 'pug-loader' },
+        {
+          test: /\.pug$/,
+          loader: '@webdiscus/pug-loader',
+        },
         {
           test: /\.js$/,
           loader: 'babel-loader',
@@ -60,26 +64,22 @@ module.exports = function (env, argv) {
         },
         {
           test: /\.css$/,
-          use: ['vue-style-loader', 'css-loader'],
+          use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'],
         },
         ...(isProduction
           ? [
               {
                 test: /\.(jpg|png|gif|svg)$/,
                 loader: 'image-webpack-loader',
-                // Specify enforce: 'pre' to apply the loader
-                // before url-loader/svg-url-loader
-                // and not duplicate it in rules with them
                 enforce: 'pre',
               },
             ]
           : []),
         {
           test: /\.(png|jpg|gif|svg)$/,
-          loader: isProduction ? 'url-loader' : 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            esModule: false,
+          type: 'asset/resource',
+          generator: {
+            filename: '[path][name][ext]',
           },
         },
       ],
@@ -97,8 +97,10 @@ module.exports = function (env, argv) {
       new DefinePlugin({
         __VUE_OPTIONS_API__: true,
         __VUE_PROD_DEVTOOLS__: true,
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
       }),
       new VueLoaderPlugin(),
+      ...(isProduction ? [new MiniCssExtractPlugin()] : []),
       new HtmlWebpackPlugin({
         inject: false,
         cache: false,
@@ -124,7 +126,7 @@ module.exports = function (env, argv) {
           minimizer: [
             new TerserPlugin({
               terserOptions: {
-                compress: { warnings: true, comparisons: false },
+                compress: { comparisons: false },
                 mangle: { safari10: true },
                 output: { ascii_only: true },
                 safari10: true,

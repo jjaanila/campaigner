@@ -15,6 +15,7 @@ import CombatGrid from '../components/CombatGrid.vue'
 import CombatTurnOrder from '../components/CombatTurnOrder.vue'
 import { LOCAL_STORAGE_STATE_KEY as COMBAT_LOCAL_STORAGE_KEY } from '../stores/combat.store'
 import { LOCAL_STORAGE_STATE_KEY as PARTY_LOCAL_STORAGE_KEY } from '../stores/party.store'
+import backgroundImage from '../img/paper.jpg'
 export default {
   name: 'PlayerCombat',
   components: {
@@ -23,7 +24,7 @@ export default {
   },
   data() {
     return {
-      backgroundImage: require('../img/paper.jpg'),
+      backgroundImage,
     }
   },
   mounted() {
