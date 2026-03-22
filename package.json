@@ -29,14 +29,14 @@
     "deploy-example": "npm run build && gh-pages -d dist",
     "prepare": "husky",
     "test": "jest",
-    "test:cypress": "cypress run",
+    "test:e2e": "playwright test",
     "test:watch": "jest --watch",
     "start": "cross-env webpack serve --mode=development --open --hot",
     "build": "rm -rf ./dist/* && cross-env webpack --mode=production --progress",
     "validate": "node ./scripts/validate.js",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "eslint": "eslint src cypress scripts *.js --ext .vue,.js --max-warnings=0",
+    "eslint": "eslint src e2e scripts *.js --ext .vue,.js --max-warnings=0",
     "eslint:fix": "npm run eslint -- --fix"
   },
   "browserslist": [
@@ -74,12 +74,11 @@
     "webpack-dev-server": "^5.2.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@playwright/test": "^1.58.2",
     "axe-core": "^4.4.1",
-    "cypress": "^9.5.4",
-    "cypress-axe": "^0.14.0",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-no-only-tests": "^2.6.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-vue": "^9.33.0",

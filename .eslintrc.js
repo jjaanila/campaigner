@@ -6,7 +6,6 @@ module.exports = {
     'plugin:vue/vue3-strongly-recommended',
     'plugin:vue/vue3-recommended',
     'plugin:prettier/recommended',
-    'plugin:cypress/recommended',
   ],
   rules: {
     'vue/no-unused-vars': 'error',
