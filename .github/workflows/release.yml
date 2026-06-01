@@ -10,6 +10,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     needs: test
+    permissions:
+      id-token: write # OIDC trusted publishing to npm + provenance
+      contents: write # create git tag and GitHub release
+      issues: write # post release comments on issues/PRs
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
@@ -17,8 +21,8 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+      - run: npm install -g npm@latest # trusted publishing requires npm >= 11.5.1
       - run: npm ci
       - run: npx semantic-release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
